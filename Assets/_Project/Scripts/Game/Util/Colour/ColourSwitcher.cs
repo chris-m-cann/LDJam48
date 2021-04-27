@@ -15,14 +15,26 @@ namespace Util.Colour
 
         protected abstract void SetColour(Color colour);
 
-        private void OnValidate()
+        private void Awake()
         {
             SetUpColour();
         }
 
+        private void OnDisable()
+        {
+            colours.Value.OnChange -= SetUpColour;
+        }
+
+        // works great in editor but breaks at runtime
+        // private void OnValidate()
+        // {
+        //     SetUpColour();
+        // }
+
         private void SetUpColour()
         {
             if (colours == null) return;
+            if (colours.Value == null) return;
             var color = colours.Value.GetColour(colourIndex);
             color.a = alphaOverride;
 
@@ -31,6 +43,7 @@ namespace Util.Colour
             colours.Value.OnChange -= SetUpColour;
             colours.Value.OnChange += SetUpColour;
         }
+
 
 
         public void ChangeColour(int newColour)

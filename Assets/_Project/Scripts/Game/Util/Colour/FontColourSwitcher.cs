@@ -7,21 +7,13 @@ namespace Util.Colour
     [RequireComponent(typeof(TMP_Text))]
     public class FontColourSwitcher : ColourSwitcher
     {
-        [SerializeField] private ColourPaletteVariable colours;
-
-        private TMP_Text _text;
-
-        private void Awake()
-        {
-            _text = GetComponent<TMP_Text>();
-        }
-
-
         protected override void SetColour(Color colour)
         {
-            _text = this.GetComponentIfNull(_text);
+            var text = GetComponent<TMP_Text>();
 
-            _text.color = colour;
+            if (text == null) return;
+
+            text.color = colour;
         }
     }
 }

@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 866f282030cd40c1898688f182e750b2, type: 3}
+  m_Name: player_slash
+  m_EditorClassIdentifier: 
+  Clips:
+  - clip: {fileID: 8300000, guid: d455b625d6f1eee458a1fae3abd2d6bf, type: 3}
+    volume: 1
+    mixer: {fileID: 0}
+    Loop: 0
+    VaryPitch: 0
+    PitchFactor:
+      Start: 0
+      End: 0

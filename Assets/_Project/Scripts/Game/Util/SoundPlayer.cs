@@ -16,17 +16,7 @@ namespace Util
     // - taking the various fades as components so you can keep them separate
     public class SoundPlayer : MonoBehaviour
     {
-        [Serializable]
-        public class AudioClipEx
-        {
-            public AudioClip clip;
-            [Range(0, 1)] public float volume = 1f;
-            public AudioMixerGroup mixer;
-            public bool Loop;
-            public bool VaryPitch;
-            [RangeSlider(-3, 3)]
-            public Range PitchFactor;
-        }
+
 
         [SerializeField] private AudioClipEx[] sounds;
         [SerializeField] private AudioSource source;

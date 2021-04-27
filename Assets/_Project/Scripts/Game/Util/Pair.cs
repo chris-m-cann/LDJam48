@@ -23,5 +23,12 @@ namespace Util
             item1 = Item1;
             item2 = Item2;
         }
+
+
+    }
+
+    public static class PairEx
+    {
+        public static Pair<T1, T2> Make<T1, T2>(T1 item1, T2 item2) => new Pair<T1, T2>(item1, item2);
     }
 }

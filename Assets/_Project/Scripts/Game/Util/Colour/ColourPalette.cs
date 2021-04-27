@@ -25,6 +25,13 @@ namespace Util.Colour
             return colours[index];
         }
 
+        public void Overwrite(ColourPalette other)
+        {
+            colours = other.colours;
+            NotFound = other.NotFound;
+            OnValidate();
+        }
+
         private void OnValidate()
         {
             OnChange?.Invoke();

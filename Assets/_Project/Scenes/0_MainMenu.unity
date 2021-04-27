@@ -333,6 +333,7 @@ GameObject:
   m_Component:
   - component: {fileID: 202584498}
   - component: {fileID: 202584497}
+  - component: {fileID: 202584496}
   m_Layer: 0
   m_Name: MusicManager
   m_TagString: Music
@@ -340,6 +341,18 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &202584496
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 202584495}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 804c63a42a5e4ec6bf85d2c387a6a970, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!82 &202584497
 AudioSource:
   m_ObjectHideFlags: 0

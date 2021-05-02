@@ -5,10 +5,11 @@ using Util.Events;
 
 namespace LDJam48
 {
-    public class PlayerPickup : MonoBehaviour
+    public class Pickup : MonoBehaviour
     {
         public int Value;
         [SerializeField] private float inactiveTime = .5f;
+        [SerializeField] private string targetTag = "Player";
 
         [SerializeField] private AudioClipAssetGameEvent sfxChannel;
         [SerializeField] private AudioClipAsset clip;
@@ -25,7 +26,7 @@ namespace LDJam48
 
         private void OnTriggerEnter2D(Collider2D other)
         {
-            if (other.CompareTag("Player"))
+            if (other.CompareTag(targetTag))
             {
                 onPickupEvent.Raise(Value);
                 DestroyPickup();

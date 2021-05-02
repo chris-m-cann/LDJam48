@@ -17,6 +17,8 @@ namespace Util.Colour
 
         private void OnEnable()
         {
+            if (colours == null) return;
+            if (colours.Value == null) return;
             SetUpColour();
         }
 

@@ -10,7 +10,7 @@ namespace LDJam48
     public class GemWorth : MonoBehaviour
     {
         [SerializeField] private Vector2Int worth;
-        [SerializeField] private List<PlayerPickup> gems;
+        [SerializeField] private List<Pickup> gems;
         [SerializeField] private float offsetMax = 1;
 
         private SpawnOnDeath _spawner;

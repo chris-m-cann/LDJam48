@@ -13,6 +13,9 @@ namespace LDJam48
         [SerializeField] private AudioClipAssetGameEvent sfxChannel;
         [SerializeField] private AudioClipAsset dieClip;
 
+        [SerializeField]private string playerTag = "Player";
+
+
         private SpawnOnDeath _spawner;
 
         private void Awake()
@@ -38,7 +41,7 @@ namespace LDJam48
 
         private void OnTriggerEnter2D(Collider2D other)
         {
-            if (!other.CompareTag("Player")) return;
+            if (!other.CompareTag(playerTag)) return;
 
             bool attacking = other.GetComponent<AttackCollider>() != null;
 

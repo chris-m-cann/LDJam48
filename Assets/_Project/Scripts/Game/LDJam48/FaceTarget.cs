@@ -1,12 +1,14 @@
 using System;
 using UnityEngine;
+using Util.Variable;
 
 namespace LDJam48
 {
     [RequireComponent(typeof(SpriteRenderer))]
-    public class FacePlayer : MonoBehaviour
+    public class FaceTarget : MonoBehaviour
     {
-        private Transform _player;
+        [SerializeField] private GameObjectVariable initialTarget;
+        private Transform _target;
         private SpriteRenderer _sprite;
 
         private void Awake()
@@ -16,15 +18,17 @@ namespace LDJam48
 
         private void Start()
         {
-            _player = FindObjectOfType<PlayerController>()?.transform;
+            _target = initialTarget?.Value?.transform;
         }
 
         private void Update()
         {
-            if (_player == null) return;
+            if (_target == null) return;
 
-            var diff = _player.position.x - transform.position.x;
+            var diff = _target.position.x - transform.position.x;
             _sprite.flipX = diff < 0;
         }
+
+        public void SetTarget(Transform target) =>_target = target;
     }
 }

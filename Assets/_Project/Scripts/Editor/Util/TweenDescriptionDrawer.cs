@@ -32,6 +32,7 @@ namespace Util
             var propRandomDelay = property.FindPropertyRelative("RandomDelay");
             var propDefaultDelay = property.FindPropertyRelative("DefaultDelay");
             var propOnComplete = property.FindPropertyRelative("OnComplete");
+            var propTimeScaleDependent = property.FindPropertyRelative("TimeScaleDependent");
 
 
             // set up rect for the first property
@@ -81,6 +82,7 @@ namespace Util
                     rect = FloatFieldOnNextLine2(rect, propDefaultDelay);
                 }
 
+                rect = PropertyOnNextLine(rect, propTimeScaleDependent);
                 rect = PropertyOnNextLine(rect, propOnComplete);
             }
         }

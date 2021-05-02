@@ -51,6 +51,7 @@ namespace Util
             public bool PlayOnEnable;
             public bool RandomDelay;
             public Vector2 DefaultDelay;
+            public bool TimeScaleDependent;
             public UnityEvent OnComplete;
         }
 
@@ -124,7 +125,11 @@ namespace Util
                 _tweeners[idx].Kill();
             }
 
-            var tweener = BuildTweener(tween).SetDelay(delay).SetUpdate(UpdateType.Normal, true).OnComplete(() => OnComplete(idx));
+            var tweener = BuildTweener(tween)
+                .SetDelay(delay)
+                .SetUpdate(UpdateType.Normal, !tween.TimeScaleDependent)
+                .OnComplete(() => OnComplete(idx));
+
             _tweeners[idx] = tweener;
             if (tweener == null) yield break;
 

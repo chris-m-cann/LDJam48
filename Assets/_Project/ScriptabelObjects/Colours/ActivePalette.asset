@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a1ceb9389a649279de35c9c67315144, type: 3}
-  m_Name: PrimaryPalette
+  m_Script: {fileID: 11500000, guid: 759433f84efc4db88afe917f1f285a68, type: 3}
+  m_Name: ActivePalette
   m_EditorClassIdentifier: 
-  resetValue: {fileID: 11400000, guid: e8000f173acf5b9468332bd741fcdd3b, type: 2}
+  resetValue: {fileID: 11400000, guid: 95030470a2b53724599b696f56294a43, type: 2}

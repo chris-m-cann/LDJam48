@@ -2219,7 +2219,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.1137255, g: 0.20784315, b: 0.34117648, a: 1}
+  m_BackGroundColor: {r: 0.20000002, g: 0.17254902, b: 0.3137255, a: 1}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -2312,7 +2312,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6dff114ee40466fa0d523c038dc7c9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  colours: {fileID: 11400000, guid: b95cd2d97777ef3478c1fd3ba6af8bbb, type: 2}
+  colours: {fileID: 11400000, guid: 6b00a330c865904409f9fe572680299e, type: 2}
   colourIndex: 0
   alphaOverride: 1
 --- !u!1 &593079180 stripped
@@ -3003,7 +3003,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mat: {fileID: 2100000, guid: fc19902f22ef861469149340a28bda64, type: 2}
-  palette: {fileID: 11400000, guid: b95cd2d97777ef3478c1fd3ba6af8bbb, type: 2}
+  palette: {fileID: 11400000, guid: 6b00a330c865904409f9fe572680299e, type: 2}
 --- !u!114 &786991304
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3060,7 +3060,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d27e35283e784b0bb543391ded032747, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activePalette: {fileID: 11400000, guid: b95cd2d97777ef3478c1fd3ba6af8bbb, type: 2}
+  activePalette: {fileID: 11400000, guid: 6b00a330c865904409f9fe572680299e, type: 2}
   palettes:
   - {fileID: 11400000, guid: 89b42cc21f7ddce4e9967dddc96b70d3, type: 2}
   - {fileID: 11400000, guid: dca3e28c66666614b9c8bb984abb11b1, type: 2}
@@ -3421,8 +3421,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4293851889
-  m_fontColor: {r: 0.9450981, g: 0.9803922, b: 0.9333334, a: 1}
+    rgba: 4293194722
+  m_fontColor: {r: 0.8862746, g: 0.95294124, b: 0.8941177, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -3501,7 +3501,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b972daa291e4f1682d7e0acddcca4fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  colours: {fileID: 11400000, guid: b95cd2d97777ef3478c1fd3ba6af8bbb, type: 2}
+  colours: {fileID: 11400000, guid: 6b00a330c865904409f9fe572680299e, type: 2}
   colourIndex: 1
   alphaOverride: 1
 --- !u!1 &940442489
@@ -6876,7 +6876,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 0.5623836, y: 1}
+    m_SensorSize: {x: 0.5620438, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -7499,7 +7499,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b972daa291e4f1682d7e0acddcca4fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  colours: {fileID: 11400000, guid: b95cd2d97777ef3478c1fd3ba6af8bbb, type: 2}
+  colours: {fileID: 11400000, guid: 6b00a330c865904409f9fe572680299e, type: 2}
   colourIndex: 2
   alphaOverride: 1
 --- !u!114 &1600072905
@@ -7531,8 +7531,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4282792422
-  m_fontColor: {r: 0.90196085, g: 0.22352943, b: 0.27450982, a: 1}
+    rgba: 4282704788
+  m_fontColor: {r: 0.5803922, g: 0.89019614, b: 0.26666668, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -9984,7 +9984,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b972daa291e4f1682d7e0acddcca4fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  colours: {fileID: 11400000, guid: b95cd2d97777ef3478c1fd3ba6af8bbb, type: 2}
+  colours: {fileID: 11400000, guid: 6b00a330c865904409f9fe572680299e, type: 2}
   colourIndex: 1
   alphaOverride: 1
 --- !u!114 &1922605843
@@ -10016,8 +10016,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4293851889
-  m_fontColor: {r: 0.9450981, g: 0.9803922, b: 0.9333334, a: 1}
+    rgba: 4293194722
+  m_fontColor: {r: 0.8862746, g: 0.95294124, b: 0.8941177, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -10468,8 +10468,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4282792422
-  m_fontColor: {r: 0.90196085, g: 0.22352943, b: 0.27450982, a: 1}
+    rgba: 4282704788
+  m_fontColor: {r: 0.5803922, g: 0.89019614, b: 0.26666668, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -10548,7 +10548,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b972daa291e4f1682d7e0acddcca4fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  colours: {fileID: 11400000, guid: b95cd2d97777ef3478c1fd3ba6af8bbb, type: 2}
+  colours: {fileID: 11400000, guid: 6b00a330c865904409f9fe572680299e, type: 2}
   colourIndex: 2
   alphaOverride: 1
 --- !u!1 &2106027903

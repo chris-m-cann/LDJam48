@@ -8,7 +8,7 @@ namespace LDJam48
 {
     public class RandomPalette : MonoBehaviour
     {
-        [SerializeField] private ColourPaletteVariable activePalette;
+        [SerializeField] private ObservableColourPaletteVariable activePalette;
         [SerializeField] private ColourPalette[] palettes;
         [SerializeField] private bool randomizeOnStart;
 
@@ -25,7 +25,7 @@ namespace LDJam48
         {
             var palette = palettes.RandomElement();
 
-            activePalette.Value.Overwrite(palette);
+            activePalette.Value = palette;
         }
     }
 }

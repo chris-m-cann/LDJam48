@@ -7,7 +7,7 @@ namespace Util.Colour
     [ExecuteAlways]
     public abstract class ColourSwitcher : MonoBehaviour
     {
-        [SerializeField] private ColourPaletteVariable colours;
+        [SerializeField] private ObservableColourPaletteVariable colours;
         [SerializeField] private int colourIndex;
 
         [Range(0, 1)]
@@ -15,23 +15,26 @@ namespace Util.Colour
 
         protected abstract void SetColour(Color colour);
 
-        private void Awake()
+        private void OnEnable()
         {
             SetUpColour();
         }
 
         private void OnDisable()
         {
+            if (colours == null) return;
             colours.Value.OnChange -= SetUpColour;
+
+            if (colours.Value == null) return;
+            colours.OnValueChanged -= SetUpColour;
         }
 
-        // works great in editor but breaks at runtime
-        // private void OnValidate()
-        // {
-        //     SetUpColour();
-        // }
+        private void OnValidate()
+        {
+            SetColourFromPalette();
+        }
 
-        private void SetUpColour()
+        private void SetColourFromPalette()
         {
             if (colours == null) return;
             if (colours.Value == null) return;
@@ -39,10 +42,19 @@ namespace Util.Colour
             color.a = alphaOverride;
 
             SetColour(color);
+        }
+
+        private void SetUpColour(ColourPalette palette)
+        {
+            SetColourFromPalette();
 
             colours.Value.OnChange -= SetUpColour;
+            colours.OnValueChanged -= SetUpColour;
+            colours.OnValueChanged += SetUpColour;
             colours.Value.OnChange += SetUpColour;
         }
+
+        private void SetUpColour() => SetUpColour(colours.Value);
 
 
 

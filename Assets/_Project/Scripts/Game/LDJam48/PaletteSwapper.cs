@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using Util.Colour;
 using Util.Variable;
 
 namespace LDJam48
@@ -8,27 +9,27 @@ namespace LDJam48
     public class PaletteSwapper : MonoBehaviour
     {
         [SerializeField] private Material mat;
-        [SerializeField] private ColourPaletteVariable palette;
+        [SerializeField] private ObservableColourPaletteVariable palette;
 
         private void Start()
         {
-            SwapPalette();
+            SwapPalette(palette.Value);
         }
 
         private void OnEnable()
         {
-            palette.Value.OnChange += SwapPalette;
+            palette.OnValueChanged += SwapPalette;
         }
 
         private void OnDisable()
         {
-            palette.Value.OnChange -= SwapPalette;
+            palette.OnValueChanged -= SwapPalette;
         }
 
-        private void SwapPalette()
+        private void SwapPalette(ColourPalette newPalette)
         {
-            mat.SetColor("Replacement1", palette.Value.GetColour(2));
-            mat.SetColor("Replacement2", palette.Value.GetColour(1));
+            mat.SetColor("Replacement1", newPalette.GetColour(2));
+            mat.SetColor("Replacement2", newPalette.GetColour(1));
         }
 
     }

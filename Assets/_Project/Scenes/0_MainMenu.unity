@@ -504,7 +504,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5351764579356268726, guid: a262af11527b16f47950d39dcc5dbc77, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 9.248398
+      value: 9.248413
       objectReference: {fileID: 0}
     - target: {fileID: 5351764579356268726, guid: a262af11527b16f47950d39dcc5dbc77, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -540,11 +540,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5351764579743891986, guid: a262af11527b16f47950d39dcc5dbc77, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -1.2892
+      value: -1.2892151
       objectReference: {fileID: 0}
     - target: {fileID: 5351764579743891986, guid: a262af11527b16f47950d39dcc5dbc77, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 15.6379
+      value: 15.637901
       objectReference: {fileID: 0}
     - target: {fileID: 5351764580319228903, guid: a262af11527b16f47950d39dcc5dbc77, type: 3}
       propertyPath: m_text
@@ -576,7 +576,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5351764580319228904, guid: a262af11527b16f47950d39dcc5dbc77, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 1.1634979
+      value: 1.1635132
       objectReference: {fileID: 0}
     - target: {fileID: 5351764580319228904, guid: a262af11527b16f47950d39dcc5dbc77, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -1239,7 +1239,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.20000002, g: 0.17254902, b: 0.3137255, a: 1}
+  m_BackGroundColor: {r: 0.1137255, g: 0.20784315, b: 0.34117648, a: 1}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -1332,7 +1332,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6dff114ee40466fa0d523c038dc7c9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  colours: {fileID: 11400000, guid: b95cd2d97777ef3478c1fd3ba6af8bbb, type: 2}
+  colours: {fileID: 11400000, guid: 6b00a330c865904409f9fe572680299e, type: 2}
   colourIndex: 0
   alphaOverride: 1
 --- !u!1 &616804207
@@ -1518,7 +1518,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d27e35283e784b0bb543391ded032747, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activePalette: {fileID: 11400000, guid: b95cd2d97777ef3478c1fd3ba6af8bbb, type: 2}
+  activePalette: {fileID: 11400000, guid: 6b00a330c865904409f9fe572680299e, type: 2}
   palettes:
   - {fileID: 11400000, guid: 89b42cc21f7ddce4e9967dddc96b70d3, type: 2}
   - {fileID: 11400000, guid: dca3e28c66666614b9c8bb984abb11b1, type: 2}
@@ -1552,7 +1552,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mat: {fileID: 2100000, guid: fc19902f22ef861469149340a28bda64, type: 2}
-  palette: {fileID: 11400000, guid: b95cd2d97777ef3478c1fd3ba6af8bbb, type: 2}
+  palette: {fileID: 11400000, guid: 6b00a330c865904409f9fe572680299e, type: 2}
 --- !u!1001 &829356287
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1659,6 +1659,10 @@ PrefabInstance:
     - target: {fileID: 5351764579743891985, guid: a262af11527b16f47950d39dcc5dbc77, type: 3}
       propertyPath: m_fontSizeMax
       value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 5351764579743891986, guid: a262af11527b16f47950d39dcc5dbc77, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -2.4378052
       objectReference: {fileID: 0}
     - target: {fileID: 5351764579743891986, guid: a262af11527b16f47950d39dcc5dbc77, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -7245,7 +7249,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 0.5623836, y: 1}
+    m_SensorSize: {x: 0.5620438, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0

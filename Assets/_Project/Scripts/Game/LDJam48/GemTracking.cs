@@ -12,7 +12,7 @@ namespace LDJam48
         [SerializeField] private ObservableIntVariable totalGems;
         [SerializeField] private ObservableIntVariable health;
         [SerializeField] private int gemsTo1Life = 100;
-        [SerializeField] private IntGameEvent onGemPickup;
+        [SerializeField] private ObservableIntVariable onGemPickup;
 
         private void OnEnable()
         {

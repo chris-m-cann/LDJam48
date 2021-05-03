@@ -8,12 +8,14 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using Util.Variable;
+
 namespace Util.Events
 {
     using UnityEngine;
     
     [CreateAssetMenu(menuName = "Custom/Events/Util.AudioClipAsset")]
-    public sealed class AudioClipAssetGameEvent : GameEvent<Util.AudioClipAsset>
+    public sealed class AudioClipAssetGameEvent : ObservableVariable<Util.AudioClipAsset>
     {
     }
 }

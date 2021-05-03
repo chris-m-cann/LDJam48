@@ -1,10 +1,11 @@
 ﻿using UnityEngine;
+using Util.Variable;
 
 namespace Util.Events
 {
     [CreateAssetMenu(menuName = "Custom/Events/Void")]
-    public class VoidGameEvent : GameEvent<Void>
+    public class VoidGameEvent : ObservableVariable<Void>
     {
-        public void Raise() => Raise(Void.Instance);
+        public new void Raise() => Raise(Void.Instance);
     }
 }

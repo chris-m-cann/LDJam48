@@ -1,9 +1,10 @@
 ﻿using UnityEngine;
 using UnityEngine.Events;
+using Util.Variable;
 
 namespace Util.Events
 {
-    public abstract class GameEventListenerBehaviour<T, TGameEvent> : MonoBehaviour where TGameEvent : GameEvent<T>
+    public abstract class GameEventListenerBehaviour<T, TGameEvent> : MonoBehaviour where TGameEvent : ObservableVariable<T>
     {
         [SerializeField] private TGameEvent gameEvent;
 

@@ -2,6 +2,7 @@ using System;
 using UnityEngine;
 using Util;
 using Util.Events;
+using Util.Variable;
 
 namespace LDJam48
 {
@@ -14,7 +15,7 @@ namespace LDJam48
         [SerializeField] private AudioClipAssetGameEvent sfxChannel;
         [SerializeField] private AudioClipAsset clip;
 
-        [SerializeField] private IntGameEvent onPickupEvent;
+        [SerializeField] private ObservableIntVariable onPickupEvent;
 
         private Collider2D _col;
         private void Start()

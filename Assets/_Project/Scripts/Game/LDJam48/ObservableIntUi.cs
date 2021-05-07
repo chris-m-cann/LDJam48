@@ -1,7 +1,8 @@
 using System;
 using TMPro;
 using UnityEngine;
-using Util.Variable;
+using Util.Var;
+using Util.Var.Observe;
 
 namespace LDJam48
 {

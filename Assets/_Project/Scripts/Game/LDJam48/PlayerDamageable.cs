@@ -1,10 +1,9 @@
-using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 using Util;
-using Util.Events;
-using Util.Variable;
+using Util.Var.Events;
+using Util.Var.Observe;
 
 namespace LDJam48
 {

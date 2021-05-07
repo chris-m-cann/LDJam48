@@ -1,8 +1,7 @@
-using System;
-using Unity.VisualScripting;
 using UnityEngine;
-using Util.Events;
-using Util.Variable;
+using Util.Var;
+using Util.Var.Events;
+using Util.Var.Observe;
 
 namespace LDJam48
 {
@@ -12,7 +11,7 @@ namespace LDJam48
         [SerializeField] private ObservableIntVariable totalGems;
         [SerializeField] private ObservableIntVariable health;
         [SerializeField] private int gemsTo1Life = 100;
-        [SerializeField] private ObservableIntVariable onGemPickup;
+        [SerializeField] private IntGameEvent onGemPickup;
 
         private void OnEnable()
         {

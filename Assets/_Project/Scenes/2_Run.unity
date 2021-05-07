@@ -1250,6 +1250,15 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  ier:
+    Delimeter: 0
+    Event: {fileID: 0}
+    Variable: {fileID: 0}
+  fref:
+    Delimeter: 0
+    Variable: {fileID: 0}
+    Observable: {fileID: 0}
+    Constant: 0
 --- !u!1 &256502260
 GameObject:
   m_ObjectHideFlags: 3
@@ -2978,6 +2987,15 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  ier:
+    Delimeter: 0
+    Event: {fileID: 0}
+    Variable: {fileID: 0}
+  fref:
+    Delimeter: 0
+    Variable: {fileID: 0}
+    Observable: {fileID: 0}
+    Constant: 0.96
 --- !u!114 &786991301
 MonoBehaviour:
   m_ObjectHideFlags: 0

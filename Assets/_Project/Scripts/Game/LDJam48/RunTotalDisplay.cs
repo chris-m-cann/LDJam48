@@ -3,7 +3,8 @@ using System.Collections;
 using TMPro;
 using Unity.VisualScripting.FullSerializer;
 using UnityEngine;
-using Util.Variable;
+using Util.Var;
+using Util.Var.Observe;
 
 namespace LDJam48
 {

@@ -1,6 +1,7 @@
-using System;
 using UnityEngine;
 using UnityEngine.Events;
+using Util.Var;
+using Util.Var.Events;
 
 namespace Util
 {
@@ -8,6 +9,9 @@ namespace Util
     {
         [SerializeField] private KeyCode key = KeyCode.Escape;
         [SerializeField] private UnityEvent onKeyDown;
+
+        [SerializeField] private IntGameEventReference ier;
+        [SerializeField] private FloatReference fref;
 
 
         private void Update()

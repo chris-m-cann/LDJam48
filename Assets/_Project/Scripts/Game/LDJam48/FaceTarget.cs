@@ -1,6 +1,6 @@
 using System;
 using UnityEngine;
-using Util.Variable;
+using Util.Var;
 
 namespace LDJam48
 {

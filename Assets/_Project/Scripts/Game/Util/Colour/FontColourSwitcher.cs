@@ -1,6 +1,6 @@
 using TMPro;
 using UnityEngine;
-using Util.Variable;
+using Util.Var;
 
 namespace Util.Colour
 {

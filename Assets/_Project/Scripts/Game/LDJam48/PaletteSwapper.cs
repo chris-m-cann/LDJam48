@@ -1,7 +1,8 @@
 using System;
 using UnityEngine;
 using Util.Colour;
-using Util.Variable;
+using Util.Var;
+using Util.Var.Observe;
 
 namespace LDJam48
 {

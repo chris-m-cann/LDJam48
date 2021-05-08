@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Util.Var.Observe
 {
-    [CreateAssetMenu(menuName = "Custom/Variable/Observable/bool")]
+    [CreateAssetMenu(menuName = "Custom/Observable/bool")]
     public class ObservableBoolVariable : ObservableVariable<bool>
     {
 

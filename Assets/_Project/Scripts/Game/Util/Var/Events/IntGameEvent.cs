@@ -4,7 +4,7 @@ using Util.Var.Observe;
 
 namespace Util.Var.Events
 {
-    [CreateAssetMenu(menuName = "Custom/Events/int")]
+    [CreateAssetMenu(menuName = "Custom/Event/int")]
 
     public class IntGameEvent : GameEvent<int>
     {

@@ -15,7 +15,7 @@ namespace Util.Var.Events
 {
     using UnityEngine;
     
-    [CreateAssetMenu(menuName = "Custom/Events/Util.AudioClipAsset")]
+    [CreateAssetMenu(menuName = "Custom/Event/Util.AudioClipAsset")]
     public sealed class AudioClipAssetGameEvent : GameEvent<Util.AudioClipAsset>
     {
     }

@@ -8,9 +8,9 @@ using Microsoft.CSharp;
 using UnityEditor;
 using UnityEngine;
 
-namespace Util.Events
+namespace Util.Var
 {
-    public class GameEventBuilderWindow : EditorWindow
+    public class VariableTypeBuilderWindow : EditorWindow
     {
         private const string TARGET_TYPENAME_KEY = "Util.Events.GameEventBuilderWindow.TargetTypeName";
         private const string ROOT_NAMESPACE_KEY = "Util.Events.GameEventBuilderWindow.RootNamespace";
@@ -18,10 +18,6 @@ namespace Util.Events
         private const string OBSERVABLE_NAMESPACE_KEY = "Util.Events.GameEventBuilderWindow.ObservableNamespace";
 
         private const string ROOT_FILEPATH_KEY = "Util.Events.GameEventBuilderWindow.RootClassFilepath";
-        // private const string EDITOR_FILEPATH_KEY = "Util.Events.GameEventBuilderWindow.EditorClassFilepath";
-
-
-        // private const string EVENT_EDITOR_CLASS_SUFFIX = "GameEventEditor";
 
         public string TargetTypeName;
         public string RootNamespace = "Util.Var";
@@ -29,7 +25,6 @@ namespace Util.Events
         public string ObservableNamespace = "Observe";
 
         public string RootClassFilepath;
-        // public string EditorClassFilepath;
 
         private SerializedObject _so;
 
@@ -39,14 +34,12 @@ namespace Util.Events
         private SerializedProperty _propObservableNamespace;
 
         private SerializedProperty _propRootClassFilepath;
-        // private SerializedProperty _propEditorClassFilepath;
-
 
         [MenuItem("Tools/GameEventBuilder")]
         [MenuItem("Assets/Create/Custom/new variable...")]
         private static void ShowWindow()
         {
-            var window = GetWindow<GameEventBuilderWindow>();
+            var window = GetWindow<VariableTypeBuilderWindow>();
             window.titleContent = new GUIContent("Game Event Builder");
             window.Show();
         }
@@ -69,14 +62,12 @@ namespace Util.Events
             _propEventNamespace = _so.FindProperty(nameof(EventNamespace));
             _propObservableNamespace = _so.FindProperty(nameof(ObservableNamespace));
             _propRootClassFilepath = _so.FindProperty(nameof(RootClassFilepath));
-            // _propEditorClassFilepath = _so.FindProperty("EditorClassFilepath");
 
             TargetTypeName = EditorPrefs.GetString(TARGET_TYPENAME_KEY, TargetTypeName);
             RootNamespace = EditorPrefs.GetString(ROOT_NAMESPACE_KEY, RootNamespace);
             EventNamespace = EditorPrefs.GetString(EVENT_NAMESPACE_KEY, EventNamespace);
             ObservableNamespace = EditorPrefs.GetString(OBSERVABLE_NAMESPACE_KEY, ObservableNamespace);
             RootClassFilepath = EditorPrefs.GetString(ROOT_FILEPATH_KEY, RootClassFilepath);
-            // EditorClassFilepath = EditorPrefs.GetString(EDITOR_FILEPATH_KEY, EditorClassFilepath);
         }
 
         private void OnDisable()
@@ -86,7 +77,6 @@ namespace Util.Events
             EditorPrefs.SetString(EVENT_NAMESPACE_KEY, EventNamespace);
             EditorPrefs.SetString(OBSERVABLE_NAMESPACE_KEY, ObservableNamespace);
             EditorPrefs.SetString(ROOT_FILEPATH_KEY, RootClassFilepath);
-            // EditorPrefs.SetString(EDITOR_FILEPATH_KEY, EditorClassFilepath);
         }
 
         private void OnGUI()
@@ -103,12 +93,6 @@ namespace Util.Events
                     EditorGUILayout.PropertyField(_propRootClassFilepath);
                     LayoutBrowseButton(_propRootClassFilepath);
                 }
-
-                // using (new GUILayout.HorizontalScope())
-                // {
-                //     EditorGUILayout.PropertyField(_propEditorClassFilepath);
-                //     LayoutBrowseButton(_propEditorClassFilepath);
-                // }
 
                 if (GUILayout.Button("Generate"))
                 {
@@ -454,7 +438,6 @@ namespace Util.Events
                 GetObservableVariableFileDefinition(prefix).FilePath,
                 GetEventFileDefinition(prefix).FilePath,
                 GetEventListenerFileDefinition(prefix).FilePath,
-                //GetEditorPath(prefix)
             };
 
             foreach (var path in paths)

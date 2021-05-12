@@ -1,10 +1,7 @@
-using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
-using Util.Var;
-using Util.Var.Events;
 
-namespace Util.Events
+namespace Util.Var.Events
 {
     [CustomEditor(typeof(GameEvent<>), editorForChildClasses:true)]
     public class EventBaseEditor : Editor

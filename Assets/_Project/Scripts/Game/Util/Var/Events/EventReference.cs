@@ -8,7 +8,6 @@ namespace Util.Var.Events
     {
         public abstract event Action<T> OnEventTriggered;
         public abstract void Raise(T t);
-        public abstract void Raise();
     }
 
     public class EventReference<TEvent, TObVar, T> : EventReferenceBase<T> where TEvent : GameEvent<T> where TObVar : ObservableVariable<T>
@@ -36,11 +35,5 @@ namespace Util.Var.Events
             else Variable.Raise(t);
         }
 
-
-        public override void Raise()
-        {
-            if (Delimeter == 0) Event.Raise();
-            else Variable.Raise();
-        }
     }
 }

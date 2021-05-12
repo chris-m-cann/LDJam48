@@ -1,26 +1,25 @@
 using UnityEditor;
 using UnityEngine;
-using Util.Events;
-using Util.Var;
-using Util.Var.Events;
-using Util.Var.Observe;
 
-namespace Util
+namespace Util.Var.Events
 {
-    [CustomEditor(typeof(ObservableVariable<>), editorForChildClasses:true)]
-    public class ObservableVariableEditor : VariableEditor
+    [CustomEditor(typeof(VoidGameEvent))]
+    [CanEditMultipleObjects]
+    public class VoidGameEventEditor : Editor
     {
+
         public override void OnInspectorGUI()
         {
-            base.OnInspectorGUI();
-
             var prev = GUI.enabled;
             try
             {
+                GUI.enabled = false;
+                EditorGUILayout.PropertyField(serializedObject.FindProperty("m_Script"));
+
                 GUI.enabled = EditorApplication.isPlaying;
                 if (GUILayout.Button("Raise"))
                 {
-                    ((IEvent) target).Raise();
+                    ((VoidGameEvent) target).Raise();
                 }
             }
             finally

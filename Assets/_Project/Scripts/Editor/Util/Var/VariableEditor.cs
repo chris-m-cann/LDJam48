@@ -1,10 +1,8 @@
 using System;
 using UnityEditor;
 using UnityEngine;
-using Util.Events;
-using Util.Var;
 
-namespace Util
+namespace Util.Var
 {
     [CustomEditor(typeof(Variable<>), editorForChildClasses:true)]
     public class VariableEditor : Editor

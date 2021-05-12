@@ -8,7 +8,10 @@ namespace Util.Var.Events
         void Raise();
     }
 
-    public class GameEvent<T> : ScriptableObject, IEvent
+    public class GameEvent<T> : ScriptableObject
+#if UNITY_EDITOR
+        , IEvent
+#endif
     {
         public event Action<T> OnEventTrigger;
 

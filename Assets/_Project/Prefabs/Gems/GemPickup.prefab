@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5521815750464696713}
   - component: {fileID: 5521815750464696712}
   - component: {fileID: 5521815750464696715}
+  - component: {fileID: -6168884340559660904}
   m_Layer: 0
   m_Name: GemPickup
   m_TagString: Untagged
@@ -115,6 +116,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Value: 20
   inactiveTime: 0.5
+  targetTag: Player
   sfxChannel: {fileID: 11400000, guid: fe62c46c8f30fda40800c60b8eede838, type: 2}
   clip: {fileID: 11400000, guid: 99085aa03d50d204ca14e63b3b0fc0a7, type: 2}
-  onPickupEvent: {fileID: 11400000, guid: 41328ce113e941b49b7b00d8a8cd57c6, type: 2}
+  onPickupEvent:
+    Delimeter: 0
+    Event: {fileID: 11400000, guid: 41328ce113e941b49b7b00d8a8cd57c6, type: 2}
+    Variable: {fileID: 0}
+--- !u!114 &-6168884340559660904
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5521815750464696714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b68852f22d5e457b919e25218525d796, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 11400000, guid: 5f460cec9e88ae844ad9d902d4fae17b, type: 2}
+  killDistance: 30

@@ -1239,7 +1239,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.1137255, g: 0.20784315, b: 0.34117648, a: 1}
+  m_BackGroundColor: {r: 0.1155, g: 0.15118292, b: 0.22, a: 1}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -1499,6 +1499,7 @@ GameObject:
   - component: {fileID: 786991302}
   - component: {fileID: 786991303}
   - component: {fileID: 786991300}
+  - component: {fileID: 786991301}
   m_Layer: 0
   m_Name: Globals
   m_TagString: Untagged
@@ -1525,6 +1526,20 @@ MonoBehaviour:
   - {fileID: 11400000, guid: e8000f173acf5b9468332bd741fcdd3b, type: 2}
   - {fileID: 11400000, guid: 63e36ed85954dd34da970467e2b49028, type: 2}
   randomizeOnStart: 1
+--- !u!114 &786991301
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 786991299}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d89dc755935445e0be2808cb6af97e3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  width: 900
+  height: 1600
 --- !u!4 &786991302
 Transform:
   m_ObjectHideFlags: 0

@@ -106,6 +106,7 @@ MonoBehaviour:
     m_Extent: {x: 0.42, y: 0.14, z: 0}
   sfxChannel: {fileID: 11400000, guid: fe62c46c8f30fda40800c60b8eede838, type: 2}
   dieClip: {fileID: 11400000, guid: a2a4aa7bdad84dd4bb4817469e1d0e5e, type: 2}
+  playerTag: Player
 --- !u!61 &1422691526355482860
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -144,6 +145,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2dc23cdc558745cc92467b904030df02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  target: {fileID: 0}
   speed: {x: 0, y: 0}
   findRange: 7
   loseRange: 20
@@ -167,7 +169,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b68852f22d5e457b919e25218525d796, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
+  target: {fileID: 11400000, guid: 5f460cec9e88ae844ad9d902d4fae17b, type: 2}
   killDistance: 30
 --- !u!114 &8505563271019212765
 MonoBehaviour:

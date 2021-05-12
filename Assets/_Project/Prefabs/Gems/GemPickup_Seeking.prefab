@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2dc23cdc558745cc92467b904030df02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  target: {fileID: 11400000, guid: 5f460cec9e88ae844ad9d902d4fae17b, type: 2}
   speed: {x: 10, y: 12}
   findRange: 6
   loseRange: 30

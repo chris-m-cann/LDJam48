@@ -72,7 +72,7 @@ namespace LDJam48
             if (isSafe)
             {
                 // head bounce
-                other.GetComponent<PlayerController>()?.Bounce();
+                other.GetComponent<PlayerStateMachine>()?.Bounce();
                 Die();
             }
             else

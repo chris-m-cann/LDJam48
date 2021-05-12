@@ -1,10 +1,13 @@
 using UnityEngine;
+using Util.Var;
 using Random = UnityEngine.Random;
 
 namespace LDJam48
 {
     public class FollowerBehaviour : MonoBehaviour
     {
+        [SerializeField] private GameObjectVariable target;
+
         [SerializeField] private Vector2 speed;
         [SerializeField] private float findRange;
         [SerializeField] private float loseRange;
@@ -16,7 +19,7 @@ namespace LDJam48
         [SerializeField] private Vector2 initialDelay;
 
 
-        private Transform _player;
+        private Transform _target;
 
         private bool _isIdle = true;
         private RaycastHit2D[] _hits = new RaycastHit2D[1];
@@ -25,7 +28,7 @@ namespace LDJam48
 
         private void Start()
         {
-            _player = FindObjectOfType<PlayerController>()?.transform;
+            _target = target.Value.transform;
             _idleCounter = Random.Range(initialDelay.x, initialDelay.y);
             _actualSpeed = Random.Range(speed.x, speed.y);
         }
@@ -45,7 +48,7 @@ namespace LDJam48
 
         private void Update()
         {
-            if (_player == null)
+            if (_target == null)
             {
                 Idle();
                 return;
@@ -58,7 +61,7 @@ namespace LDJam48
                 return;
             }
 
-            var dist = Vector2.Distance(transform.position, _player.position);
+            var dist = Vector2.Distance(transform.position, _target.position);
 
             if (_isIdle && dist < findRange)
             {
@@ -92,7 +95,7 @@ namespace LDJam48
         private void Chase()
         {
 
-            var dir = _player.position - transform.position;
+            var dir = _target.position - transform.position;
 
             // pause after hitting the player to give them a chance to reposition
             if (dir.magnitude < minApproach)

@@ -310,26 +310,7 @@ namespace LDJam48
         }
 
 
-        public struct ContactDetails
-        {
-            public bool WasOnLeftWall;
-            public bool IsOnLeftWall;
 
-            public bool WasOnRightWall;
-            public bool IsOnRightWall;
-
-            public bool WasOnFloor;
-            public bool IsOnFloor;
-
-            public bool HitLeftWallThisTurn => !WasOnLeftWall && IsOnLeftWall;
-            public bool HitRightWallThisTurn => !WasOnRightWall && IsOnRightWall;
-            public bool HitFloorThisTurn => !WasOnFloor && IsOnFloor;
-
-
-            public bool LeftLeftWallThisTurn => WasOnLeftWall && !IsOnLeftWall;
-            public bool LeftRightWallThisTurn => WasOnRightWall && !IsOnRightWall;
-            public bool LeftFloorThisTurn => WasOnFloor && !IsOnFloor;
-        }
 
 
         public void Bounce()

@@ -10,20 +10,14 @@ namespace LDJam48
     {
         [SerializeField] private ObservableIntVariable distanceVariable;
         [SerializeField] private float startDistance = -13;
+        [SerializeField] private GameObjectVariable target;
 
-        private Transform _player;
-
-        private void Start()
-        {
-            _player = FindObjectOfType<PlayerController>()?.transform;
-        }
 
         private void Update()
         {
-            if (_player == null) return;
-            if (distanceVariable == null) return;
+            if (target.Value == null) return;
 
-            var dist = (int)Mathf.Max(0, (startDistance - _player.position.y));
+            var dist = (int)Mathf.Max(0, (startDistance - target.Value.transform.position.y));
 
             distanceVariable.Value = dist;
         }

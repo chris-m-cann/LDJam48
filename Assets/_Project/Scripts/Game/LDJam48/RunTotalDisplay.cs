@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using DG.Tweening;
 using TMPro;
 using Unity.VisualScripting.FullSerializer;
 using UnityEngine;
@@ -14,8 +15,9 @@ namespace LDJam48
         [SerializeField] private ObservableIntVariable totalGems;
         [SerializeField] private float initialDelay = 1f;
         [SerializeField] private float betweenDelay = .5f;
-        [SerializeField] private float depthDrainRate = 50f;
-        [SerializeField] private float gemsDrainRate = 80f;
+        [SerializeField] private float depthDrainTime = 1f;
+        [SerializeField] private float gemsDrainTime = 1f;
+
 
 
         private TMP_Text[] _texts;
@@ -39,9 +41,26 @@ namespace LDJam48
 
             yield return new WaitForSecondsRealtime(initialDelay);
 
-            yield return StartCoroutine(CoDrainDepth());
-            yield return new WaitForSecondsRealtime(betweenDelay);
-            yield return StartCoroutine(CoDrainGems());
+
+            var sequence = DOTween.Sequence();
+            sequence.SetUpdate(UpdateType.Normal, true);
+            sequence.Append(
+                DOTween.To(() => _total, it =>
+                {
+                    _total = it;
+                    SetTotalText();
+                }, depth.Value, depthDrainTime).From(0));
+
+            sequence.AppendInterval(betweenDelay);
+                sequence.Append(
+                DOTween.To(()=>_total, it =>
+                {
+                    _total = it;
+                    SetTotalText();
+                }, depth.Value + totalGems.Value, gemsDrainTime).From(depth.Value)
+            );
+
+            sequence.Play();
         }
 
         private void SetTotalText()
@@ -49,27 +68,6 @@ namespace LDJam48
             foreach (var text in _texts)
             {
                 text.text = _total.ToString();
-            }
-        }
-
-        private IEnumerator CoDrainDepth()
-        {
-            while (depth.Value > _total)
-            {
-                yield return new WaitForSecondsRealtime(1 / depthDrainRate);
-                _total += 1;
-                SetTotalText();
-            }
-        }
-
-        private IEnumerator CoDrainGems()
-        {
-            var finalTotal = _total + totalGems.Value;
-            while (finalTotal > _total)
-            {
-                yield return new WaitForSecondsRealtime(1 / gemsDrainRate);
-                _total += 1;
-                SetTotalText();
             }
         }
     }

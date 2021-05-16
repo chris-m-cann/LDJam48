@@ -678,6 +678,7 @@ GameObject:
   - component: {fileID: 180169414}
   - component: {fileID: 180169408}
   - component: {fileID: 180169415}
+  - component: {fileID: 180169416}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -1085,6 +1086,59 @@ MonoBehaviour:
   floorLayer:
     serializedVersion: 2
     m_Bits: 1024
+--- !u!114 &180169416
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 180169402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08b06a9ef3d24ca588e3c09da786311a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonActions:
+  - Phase: 3
+    Action: {fileID: 6516727628504968077, guid: 4ae9e70a4fe18824c8ec18962a585fc5, type: 3}
+    FollowOn:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 180169408}
+          m_TargetAssemblyTypeName: LDJam48.PlayerState.PlayerStateMachine, Assembly-CSharp
+          m_MethodName: Slam
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - Phase: 3
+    Action: {fileID: 6516727628504968077, guid: 4ae9e70a4fe18824c8ec18962a585fc5, type: 3}
+    FollowOn:
+      m_PersistentCalls:
+        m_Calls: []
+  vec2Actions:
+  - Phase: 3
+    Action: {fileID: -4239285882476611521, guid: 4ae9e70a4fe18824c8ec18962a585fc5, type: 3}
+    FollowOn:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 180169408}
+          m_TargetAssemblyTypeName: LDJam48.PlayerState.PlayerStateMachine, Assembly-CSharp
+          m_MethodName: Dash
+          m_Mode: 0
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &228349193
 GameObject:
   m_ObjectHideFlags: 0
@@ -3264,94 +3318,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08b06a9ef3d24ca588e3c09da786311a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  actions:
-  - Phase: 3
-    Action: {fileID: -1900606329464963722, guid: 4ae9e70a4fe18824c8ec18962a585fc5, type: 3}
-    FollowOn:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 786991307}
-          m_TargetAssemblyTypeName: LDJam48.RandomPalette, Assembly-CSharp
-          m_MethodName: RandomizePalette
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 786991301}
-          m_TargetAssemblyTypeName: Util.SceneManagementBehaviour, Assembly-CSharp
-          m_MethodName: ReloadScene
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - Phase: 3
-    Action: {fileID: 8403191227441039458, guid: 4ae9e70a4fe18824c8ec18962a585fc5, type: 3}
-    FollowOn:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 786991307}
-          m_TargetAssemblyTypeName: LDJam48.RandomPalette, Assembly-CSharp
-          m_MethodName: RandomizePalette
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 786991301}
-          m_TargetAssemblyTypeName: Util.SceneManagementBehaviour, Assembly-CSharp
-          m_MethodName: ReloadScene
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - Phase: 3
-    Action: {fileID: 7899694500918206279, guid: 4ae9e70a4fe18824c8ec18962a585fc5, type: 3}
-    FollowOn:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 786991307}
-          m_TargetAssemblyTypeName: LDJam48.RandomPalette, Assembly-CSharp
-          m_MethodName: RandomizePalette
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 786991301}
-          m_TargetAssemblyTypeName: Util.SceneManagementBehaviour, Assembly-CSharp
-          m_MethodName: ReloadScene
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+  buttonActions: []
+  vec2Actions: []
 --- !u!1 &818360049
 GameObject:
   m_ObjectHideFlags: 0
@@ -4115,35 +4083,11 @@ MonoBehaviour:
       m_Calls: []
   m_ActionEvents:
   - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 180169408}
-        m_TargetAssemblyTypeName: LDJam48.PlayerStateMachine, Assembly-CSharp
-        m_MethodName: Dash
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_ActionId: 30ea21da-3ba5-4979-b4bb-d8ee9f87af59
     m_ActionName: InGame/Dash[/Keyboard/leftArrow,/Keyboard/rightArrow]
   - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 180169408}
-        m_TargetAssemblyTypeName: LDJam48.PlayerStateMachine, Assembly-CSharp
-        m_MethodName: Slam
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_ActionId: 4dbd221a-3257-4a24-93ce-b65a83f90156
     m_ActionName: Dashing/Slam[/Keyboard/downArrow]
   - m_PersistentCalls:
@@ -13039,7 +12983,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08b06a9ef3d24ca588e3c09da786311a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  actions:
+  buttonActions:
   - Phase: 3
     Action: {fileID: 6072547665848448461, guid: 4ae9e70a4fe18824c8ec18962a585fc5, type: 3}
     FollowOn:
@@ -13091,6 +13035,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+  vec2Actions: []
 --- !u!114 &3992531650154514464
 MonoBehaviour:
   m_ObjectHideFlags: 0

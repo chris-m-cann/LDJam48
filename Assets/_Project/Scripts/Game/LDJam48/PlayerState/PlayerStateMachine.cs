@@ -80,23 +80,11 @@ namespace LDJam48.PlayerState
         }
 
         public void Dash(Vector2 direction) => OnDashInput?.Invoke(direction);
-        public void Dash(InputAction.CallbackContext input)
-        {
-            if (input.performed)
-            {
-                Debug.Log($"Dash done called, pahse = {input.phase}");
-                var direction = input.ReadValue<Vector2>();
-                OnDashInput?.Invoke(direction);
-            }
-        }
 
-        public void Slam(InputAction.CallbackContext input)
+        public void Slam()
         {
-            if (input.phase == InputActionPhase.Performed)
-            {
-                Debug.Log("Slam done called");
-                OnSlamInput?.Invoke();
-            }
+            Debug.Log("Slam done called");
+            OnSlamInput?.Invoke();
         }
     }
 

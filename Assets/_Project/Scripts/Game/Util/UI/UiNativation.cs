@@ -28,11 +28,23 @@ namespace Util.UI
             var keyboard = Keyboard.current;
             var gamepad = Gamepad.current;
 
-            return keyboard.leftArrowKey.wasPressedThisFrame ||
-                keyboard.rightArrowKey.wasPressedThisFrame ||
-                keyboard.upArrowKey.wasPressedThisFrame ||
-                keyboard.downArrowKey.wasPressedThisFrame ||
-                gamepad.leftStick.ReadValue().magnitude > deadzone;
+            var keyPressed = false;
+
+            if (keyboard != null)
+            {
+                keyPressed = keyboard.leftArrowKey.wasPressedThisFrame ||
+                             keyboard.rightArrowKey.wasPressedThisFrame ||
+                             keyboard.upArrowKey.wasPressedThisFrame ||
+                             keyboard.downArrowKey.wasPressedThisFrame;
+            }
+
+            var leftStickMoved = false;
+            if (gamepad != null)
+            {
+                leftStickMoved = gamepad.leftStick.ReadValue().magnitude > deadzone;
+            }
+
+            return keyPressed || leftStickMoved;
         }
 
         public void PrintMessage(string message) => Debug.Log(message);

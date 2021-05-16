@@ -46,5 +46,10 @@ namespace LDJam48.PlayerState
         {
             _currentState.OnEnter(this);
         }
+
+        public void OnDestroy()
+        {
+            _currentState.OnExit();
+        }
     }
 }

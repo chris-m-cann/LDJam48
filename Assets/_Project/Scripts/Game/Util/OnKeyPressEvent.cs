@@ -8,19 +8,26 @@ namespace Util
 {
     public class OnKeyPressEvent : MonoBehaviour
     {
-        [SerializeField] private InputAction action;
+        [SerializeField] private InputActionReference[] actions;
         [SerializeField] private UnityEvent onKeyDown;
 
 
         private void OnEnable()
         {
-            action.performed += Invoke;
+            foreach (var action in actions)
+            {
+                action.action.performed += Invoke;
+            }
+
         }
 
 
         private void OnDisable()
         {
-            action.performed -= Invoke;
+            foreach (var action in actions)
+            {
+                action.action.performed -= Invoke;
+            }
         }
 
         private void Invoke(InputAction.CallbackContext ctx) => onKeyDown.Invoke();

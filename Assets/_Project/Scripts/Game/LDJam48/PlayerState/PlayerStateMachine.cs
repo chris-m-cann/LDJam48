@@ -46,6 +46,7 @@ namespace LDJam48.PlayerState
 
         private void OnDisable()
         {
+            _machine.OnDestroy();
             _machine.OnStateChanged -= OnStateChanged;
         }
 

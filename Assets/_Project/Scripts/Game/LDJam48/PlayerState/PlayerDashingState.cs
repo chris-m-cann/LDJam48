@@ -45,6 +45,7 @@ namespace LDJam48.PlayerState
             _machine.Context.OnSlamInput += OnSlam;
 
             _prevActionMap = activeActionMap.Value;
+            Debug.Log($"Dashing Prev actionMap = {activeActionMap.Value}");
             activeActionMap.Value = actionMap;
         }
 

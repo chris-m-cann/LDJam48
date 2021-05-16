@@ -37,13 +37,13 @@ namespace LDJam48.PlayerState
         {
             base.TransitionChecks();
 
-            if (_machine.Context.Contacts.HitFloorThisTurn)
+            if (_machine.Context.Contacts.IsOnFloor)
             {
                 _machine.CurrentState = _machine.States.Idle;
                 return;
             }
 
-            if (_machine.Context.Contacts.HitLeftWallThisTurn || _machine.Context.Contacts.HitRightWallThisTurn)
+            if (_machine.Context.Contacts.IsOnLeftWall || _machine.Context.Contacts.IsOnRightWall)
             {
                 _machine.CurrentState = _machine.States.OnWall;
                 return;

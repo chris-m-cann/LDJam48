@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.Events;
 using Util.Var.Observe;
@@ -29,5 +30,12 @@ namespace LDJam48
             onResume?.Invoke();
         }
 
+        private void OnDestroy()
+        {
+            if (activeActionMap.Value == pauseActionMap)
+            {
+                activeActionMap.Value = _prevMap;
+            }
+        }
     }
 }

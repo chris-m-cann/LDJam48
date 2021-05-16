@@ -829,7 +829,6 @@ MonoBehaviour:
   MainCollider: {fileID: 180169406}
   SlashCollider: {fileID: 102804808}
   SlamCollider: {fileID: 876873559}
-  PlayerInput: {fileID: 952498997}
   isPaused:
     Delimeter: 1
     Variable: {fileID: 0}
@@ -12976,6 +12975,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3171864688175325708}
   - component: {fileID: 3171864688175325713}
+  - component: {fileID: 3171864688175325712}
   m_Layer: 0
   m_Name: UI
   m_TagString: Untagged
@@ -12983,6 +12983,50 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &3171864688175325712
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3171864688175325711}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da12f4b725d44b7ebef43f273fab8e64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activeActionMap: {fileID: 11400000, guid: 20f83fa3bf05ef744a919e80263dcdc8, type: 2}
+  pauseActionMap: Menu
+  onPause:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3171864687195783227}
+        m_TargetAssemblyTypeName: Util.UI.MenuManager, Assembly-CSharp
+        m_MethodName: ToggleMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onResume:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3171864687195783227}
+        m_TargetAssemblyTypeName: Util.UI.MenuManager, Assembly-CSharp
+        m_MethodName: ToggleMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &3171864688175325713
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13001,9 +13045,9 @@ MonoBehaviour:
     FollowOn:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 3171864687195783227}
-          m_TargetAssemblyTypeName: Util.UI.MenuManager, Assembly-CSharp
-          m_MethodName: ToggleMenu
+        - m_Target: {fileID: 3171864688175325712}
+          m_TargetAssemblyTypeName: LDJam48.OnPauseResume, Assembly-CSharp
+          m_MethodName: OnPause
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -13018,9 +13062,9 @@ MonoBehaviour:
     FollowOn:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 3171864687195783227}
-          m_TargetAssemblyTypeName: Util.UI.MenuManager, Assembly-CSharp
-          m_MethodName: ToggleMenu
+        - m_Target: {fileID: 3171864688175325712}
+          m_TargetAssemblyTypeName: LDJam48.OnPauseResume, Assembly-CSharp
+          m_MethodName: OnPause
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -13035,9 +13079,9 @@ MonoBehaviour:
     FollowOn:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 3171864687195783227}
-          m_TargetAssemblyTypeName: Util.UI.MenuManager, Assembly-CSharp
-          m_MethodName: ToggleMenu
+        - m_Target: {fileID: 3171864688175325712}
+          m_TargetAssemblyTypeName: LDJam48.OnPauseResume, Assembly-CSharp
+          m_MethodName: OnResume
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}

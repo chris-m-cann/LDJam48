@@ -11,8 +11,7 @@ namespace Util
         public override void OnGUI(Rect position, SerializedProperty property,
             GUIContent label)
         {
-            using (property.serializedObject.UpdateScope())
-            {
+                EditorGUI.BeginProperty(position, label, property);
 
                 var delimeter = property.FindPropertyRelative("Delimeter");
 
@@ -39,7 +38,8 @@ namespace Util
                 fieldPos.x += popUpPos.width;
                 fieldPos.width -= popUpPos.width;
                 EditorGUI.PropertyField(fieldPos, properties[delimeter.intValue], GUIContent.none);
-            }
+
+                EditorGUI.EndProperty();
         }
 
         private static List<string> GetPropertyNames(SerializedProperty property)

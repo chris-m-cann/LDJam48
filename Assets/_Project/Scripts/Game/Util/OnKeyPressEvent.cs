@@ -1,20 +1,28 @@
+using System;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.Controls;
 
 namespace Util
 {
     public class OnKeyPressEvent : MonoBehaviour
     {
-        [SerializeField] private KeyCode key = KeyCode.Escape;
+        [SerializeField] private InputAction action;
         [SerializeField] private UnityEvent onKeyDown;
 
 
-        private void Update()
+        private void OnEnable()
         {
-            if (Input.GetKeyDown(key))
-            {
-                onKeyDown.Invoke();
-            }
+            action.performed += Invoke;
         }
+
+
+        private void OnDisable()
+        {
+            action.performed -= Invoke;
+        }
+
+        private void Invoke(InputAction.CallbackContext ctx) => onKeyDown.Invoke();
     }
 }

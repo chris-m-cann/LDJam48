@@ -9,9 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 759433f84efc4db88afe917f1f285a68, type: 3}
-  m_Name: ActivePalette
+  m_Script: {fileID: 11500000, guid: fd9ec6a2f1d748ef867f41b30e883f0e, type: 3}
+  m_Name: Idle
   m_EditorClassIdentifier: 
-  value: {fileID: 11400000, guid: dca3e28c66666614b9c8bb984abb11b1, type: 2}
-  persistValue: 0
-  resetValue: {fileID: 11400000, guid: dca3e28c66666614b9c8bb984abb11b1, type: 2}
+  anim: player_idle
+  sound: {fileID: 11400000, guid: 46d12b6b9f148ec488d48442c8653ba6, type: 2}

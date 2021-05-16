@@ -9,9 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 759433f84efc4db88afe917f1f285a68, type: 3}
-  m_Name: ActivePalette
+  m_Script: {fileID: 11500000, guid: af81c93ecfc944e581458dc55071574c, type: 3}
+  m_Name: Slam
   m_EditorClassIdentifier: 
-  value: {fileID: 11400000, guid: dca3e28c66666614b9c8bb984abb11b1, type: 2}
-  persistValue: 0
-  resetValue: {fileID: 11400000, guid: dca3e28c66666614b9c8bb984abb11b1, type: 2}
+  speed: 10
+  duration: 0.3
+  anim: player_slam
+  sound: {fileID: 11400000, guid: 20fb2f936932dd641808f4c7636a2cb5, type: 2}

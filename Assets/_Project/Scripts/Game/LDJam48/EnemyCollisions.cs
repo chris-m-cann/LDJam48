@@ -1,3 +1,4 @@
+using LDJam48.PlayerState;
 using UnityEngine;
 using Util;
 using Util.Var.Events;

@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.InputSystem;
 
 namespace Util.UI
 {
@@ -32,6 +33,19 @@ namespace Util.UI
 
         public void ToggleMenu()
         {
+            if (_isOpen)
+            {
+                CloseMenu();
+            }
+            else
+            {
+                OpenMenu();
+            }
+        }
+
+        public void ToggleMenu(InputAction.CallbackContext ctx)
+        {
+            Debug.Log($"Toggleing menu phase = {ctx.phase}");
             if (_isOpen)
             {
                 CloseMenu();

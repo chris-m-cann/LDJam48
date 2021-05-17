@@ -28,6 +28,9 @@ namespace LDJam48.PlayerState
 
       [SerializeField] private BoolReference isPaused;
 
+      [SerializeField] private string activeState;
+
+
 
         private StateMachine _machine;
         private PlayerContacts _playerContacts;
@@ -50,29 +53,30 @@ namespace LDJam48.PlayerState
             _machine.OnStateChanged -= OnStateChanged;
         }
 
-        private void OnStateChanged(Pair<LDJam48.PlayerState.PlayerState, LDJam48.PlayerState.PlayerState> state)
+        private void OnStateChanged(Pair<PlayerState, PlayerState> state)
         {
-            // Debug.Log($"Changed State {state.First.Name} -> {state.Second.Name}");
+            Debug.Log($"Player State change {state.First.Name} -> {state.Second.Name}");
+            activeState = state.Second.Name;
         }
 
         private void Update()
         {
             if (isPaused.Value) return;
 
-            _machine.CurrentState.OnUpdate();
+            _machine.OnUpdate();
         }
 
         private void LateUpdate()
         {
             if (isPaused.Value) return;
-            _machine.CurrentState.OnLateUpdate();
+            _machine.OnLateUpdate();
         }
 
         private void FixedUpdate()
         {
             if (isPaused.Value) return;
             Contacts = _playerContacts.DetectContacts(Contacts);
-            _machine.CurrentState.OnFixedUpdate();
+            _machine.OnFixedUpdate();
         }
 
         public void Bounce()

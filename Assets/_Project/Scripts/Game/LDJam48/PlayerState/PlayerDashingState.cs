@@ -12,13 +12,13 @@ namespace LDJam48.PlayerState
         [SerializeField] private float dashSpeed = 15;
         [SerializeField] private string anim = "player_slice";
         [SerializeField] private string actionMap = "Dashing";
+        [SerializeField] private string onExitActionMap = "NotDashing";
         [SerializeField] private AudioClipAsset sound;
         [SerializeField] private ObservableStringVariable activeActionMap;
 
 
 
         private Vector2 _direction;
-        private string _prevActionMap;
 
         public PlayerDashingState Init(Vector2 direction)
         {
@@ -26,27 +26,26 @@ namespace LDJam48.PlayerState
             return this;
         }
 
-        public override void OnEnter(StateMachine machine)
+        public override PlayerState OnEnter()
         {
-            base.OnEnter(machine);
-
             _machine.Context.Sprite.flipX = _direction. x < 0;
 
 
             _machine.Context.Rigidbody2D.velocity = dashSpeed * _direction;
             _machine.Context.Animator.Play(anim);
 
-            machine.Context.MainCollider.enabled = false;
-            machine.Context.SlashCollider.enabled = true;
+            _machine.Context.MainCollider.enabled = false;
+            _machine.Context.SlashCollider.enabled = true;
 
             _machine.Context.SfxChannel.Raise(sound);
 
 
             _machine.Context.OnSlamInput += OnSlam;
 
-            _prevActionMap = activeActionMap.Value;
-            Debug.Log($"Dashing Prev actionMap = {activeActionMap.Value}");
+            Debug.Log($"OnEnter Setting actionMap = {actionMap}");
             activeActionMap.Value = actionMap;
+
+            return null;
         }
 
         public override void OnExit()
@@ -56,20 +55,21 @@ namespace LDJam48.PlayerState
             _machine.Context.MainCollider.enabled = true;
             _machine.Context.SlashCollider.enabled = false;
             _machine.Context.OnSlamInput -= OnSlam;
-            activeActionMap.Value = _prevActionMap;
+            Debug.Log($"On Exit Setting actionMap = {onExitActionMap}");
+            activeActionMap.Value = onExitActionMap;
         }
 
         private void OnSlam() => _machine.CurrentState = _machine.States.Slamming;
 
-        public override void TransitionChecks()
+        public override PlayerState TransitionChecks()
         {
-            base.TransitionChecks();
-
             if (_machine.Context.Contacts.HitLeftWallThisTurn ||
                 _machine.Context.Contacts.HitRightWallThisTurn)
             {
-                _machine.CurrentState = _machine.CurrentState = _machine.States.OnWall;
+                return _machine.States.OnWall;
             }
+
+            return null;
         }
     }
 }

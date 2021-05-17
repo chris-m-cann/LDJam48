@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace LDJam48
@@ -30,6 +31,7 @@ namespace LDJam48
             return contact;
         }
     }
+    [Serializable]
     public struct ContactDetails
     {
         public bool WasOnLeftWall;

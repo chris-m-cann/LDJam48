@@ -11,18 +11,18 @@ namespace LDJam48.PlayerState
 
         private bool _isLeft = false;
 
-        public override void OnEnter(StateMachine machine)
+        public override PlayerState OnEnter()
         {
-            base.OnEnter(machine);
+            _machine.Context.Rigidbody2D.velocity = new Vector2(0, -wallSpeed);
+            _machine.Context.Animator.Play(anim);
 
-            machine.Context.Rigidbody2D.velocity = new Vector2(0, -wallSpeed);
-            machine.Context.Animator.Play(anim);
-
-            _isLeft = machine.Context.Contacts.IsOnLeftWall;
-            machine.Context.Sprite.flipX = !_isLeft;
+            _isLeft = _machine.Context.Contacts.IsOnLeftWall;
+            _machine.Context.Sprite.flipX = !_isLeft;
 
 
             _machine.Context.OnDashInput += OnDash;
+
+            return null;
         }
 
         public override void OnExit()
@@ -44,14 +44,14 @@ namespace LDJam48.PlayerState
             }
         }
 
-        public override void TransitionChecks()
+        public override PlayerState TransitionChecks()
         {
-            base.TransitionChecks();
-
             if (_machine.Context.Contacts.LeftLeftWallThisTurn || _machine.Context.Contacts.LeftRightWallThisTurn)
             {
-                _machine.CurrentState = _machine.States.Falling;
+                return _machine.States.Falling;
             }
+
+            return null;
         }
     }
 }

@@ -9,21 +9,15 @@ namespace LDJam48.PlayerState
 
         [SerializeField] private string anim = "player_fall";
 
-        public override void OnEnter(StateMachine machine)
+        public override PlayerState OnEnter()
         {
-            base.OnEnter(machine);
+            _machine.Context.Animator.Play(anim);
 
-            if (machine.Context.Contacts.IsOnLeftWall || machine.Context.Contacts.IsOnRightWall)
-            {
-                machine.CurrentState = machine.States.OnWall;
-                return;
-            }
-
-            machine.Context.Animator.Play(anim);
-
-            machine.Context.Rigidbody2D.velocity = new Vector2(machine.Context.Rigidbody2D.velocity.x, -fallSpeed);
+            _machine.Context.Rigidbody2D.velocity = new Vector2(_machine.Context.Rigidbody2D.velocity.x, -fallSpeed);
 
             _machine.Context.OnDashInput += OnDash;
+
+            return null;
         }
 
         public override void OnExit()
@@ -33,21 +27,19 @@ namespace LDJam48.PlayerState
         }
 
         private void OnDash(Vector2 dir) => _machine.CurrentState = _machine.States.Dashing.Init(dir);
-        public override void TransitionChecks()
+        public override PlayerState TransitionChecks()
         {
-            base.TransitionChecks();
-
             if (_machine.Context.Contacts.IsOnFloor)
             {
-                _machine.CurrentState = _machine.States.Idle;
-                return;
+                return _machine.States.Idle;
             }
 
             if (_machine.Context.Contacts.IsOnLeftWall || _machine.Context.Contacts.IsOnRightWall)
             {
-                _machine.CurrentState = _machine.States.OnWall;
-                return;
+                return _machine.States.OnWall;
             }
+
+            return null;
         }
     }
 }

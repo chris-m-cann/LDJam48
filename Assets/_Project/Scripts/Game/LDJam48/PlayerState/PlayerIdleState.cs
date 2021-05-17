@@ -10,16 +10,16 @@ namespace LDJam48.PlayerState
         [SerializeField] private AudioClipAsset sound;
 
 
-        public override void OnEnter(StateMachine machine)
+        public override PlayerState OnEnter()
         {
-            base.OnEnter(machine);
-
-            machine.Context.Animator.Play(anim);
-            machine.Context.Rigidbody2D.velocity = Vector2.zero;
+            _machine.Context.Animator.Play(anim);
+            _machine.Context.Rigidbody2D.velocity = Vector2.zero;
 
             _machine.Context.SfxChannel.Raise(sound);
 
-            machine.Context.OnDashInput += OnDash;
+            _machine.Context.OnDashInput += OnDash;
+
+            return null;
         }
 
         public override void OnExit()

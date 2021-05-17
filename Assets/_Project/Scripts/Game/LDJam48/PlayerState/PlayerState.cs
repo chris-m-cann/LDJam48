@@ -8,36 +8,24 @@ namespace LDJam48.PlayerState
 
         public virtual string Name => GetType().Name;
 
-        public virtual void OnEnter(StateMachine machine)
+        public void SetMachine(StateMachine machine)
         {
             _machine = machine;
-
-            TransitionChecks();
         }
+
+        public virtual PlayerState OnEnter() => null;
 
         public virtual void OnExit()
         {
 
         }
 
-        public virtual void TransitionChecks()
-        {
+        public virtual PlayerState TransitionChecks() => null;
 
-        }
+        public virtual PlayerState OnUpdate() => null;
 
-        public virtual void OnUpdate()
-        {
+        public virtual PlayerState OnLateUpdate() => null;
 
-        }
-
-        public virtual void OnLateUpdate()
-        {
-
-        }
-
-        public virtual void OnFixedUpdate()
-        {
-            TransitionChecks();
-        }
+        public virtual PlayerState OnFixedUpdate() => TransitionChecks();
     }
 }

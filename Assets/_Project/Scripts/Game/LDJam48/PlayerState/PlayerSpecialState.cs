@@ -13,39 +13,38 @@ namespace LDJam48.PlayerState
 
 
 
-        public override void OnEnter(StateMachine machine)
+        public override PlayerState OnEnter()
         {
-            base.OnEnter(machine);
+            _machine.Context.Rigidbody2D.velocity = new Vector2(0, -speed);
+            _machine.Context.Animator.Play(anim);
 
-            machine.Context.Rigidbody2D.velocity = new Vector2(0, -speed);
-            machine.Context.Animator.Play(anim);
-
-            machine.Context.MainCollider.enabled = false;
-            machine.Context.SlamCollider.enabled = true;
+            _machine.Context.MainCollider.enabled = false;
+            _machine.Context.SlamCollider.enabled = true;
 
 
-            machine.Context.SfxChannel.Raise(sound);
+            _machine.Context.SfxChannel.Raise(sound);
 
             _machine.Context.ExecuteAfter(duration, () =>
             {
-                machine.Context.MainCollider.enabled = true;
-                machine.Context.SlamCollider.enabled = false;
-                if (machine.CurrentState == this)
+                _machine.Context.MainCollider.enabled = true;
+                _machine.Context.SlamCollider.enabled = false;
+                if (_machine.CurrentState == this)
                 {
-                    machine.CurrentState = machine.States.Falling;
+                    _machine.CurrentState = _machine.States.Falling;
                 }
             });
+
+            return null;
         }
 
-        public override void TransitionChecks()
+        public override PlayerState TransitionChecks()
         {
-            base.TransitionChecks();
-
             if (_machine.Context.Contacts.HitFloorThisTurn)
             {
-                _machine.CurrentState = _machine.CurrentState = _machine.States.Idle;
-                return;
+                return _machine.States.Idle;
             }
+
+            return null;
         }
     }
 }

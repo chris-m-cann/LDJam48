@@ -12,3 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 996a5eaf46ac4fdd89ff73c9340ed34b, type: 3}
   m_Name: Falling
   m_EditorClassIdentifier: 
+  fallSpeed: 13
+  anim: player_fall
+  maxVelocity:
+    Delimeter: 0
+    Variable: {fileID: 11400000, guid: 3bd77d1494521424f90a0af57fd9941f, type: 2}
+    Observable: {fileID: 0}
+    Constant: {x: 0, y: 0}

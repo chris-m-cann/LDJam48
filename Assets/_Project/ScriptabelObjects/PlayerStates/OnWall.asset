@@ -12,3 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 406bbf0bcc7441f78589f0438cd4e51d, type: 3}
   m_Name: OnWall
   m_EditorClassIdentifier: 
+  minWallSpeed: 5
+  maxWallSpeed: 10
+  anim: player_slide
+  maxVelocity:
+    Delimeter: 0
+    Variable: {fileID: 11400000, guid: 3bd77d1494521424f90a0af57fd9941f, type: 2}
+    Observable: {fileID: 0}
+    Constant: {x: 0, y: 0}

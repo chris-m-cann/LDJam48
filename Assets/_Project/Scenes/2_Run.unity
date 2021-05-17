@@ -667,7 +667,6 @@ GameObject:
   m_Component:
   - component: {fileID: 180169404}
   - component: {fileID: 180169403}
-  - component: {fileID: 180169406}
   - component: {fileID: 180169405}
   - component: {fileID: 180169409}
   - component: {fileID: 180169410}
@@ -679,6 +678,8 @@ GameObject:
   - component: {fileID: 180169408}
   - component: {fileID: 180169415}
   - component: {fileID: 180169416}
+  - component: {fileID: 180169417}
+  - component: {fileID: 180169406}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -770,14 +771,14 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0
-  m_GravityScale: 0
+  m_GravityScale: 1
   m_Material: {fileID: 6200000, guid: 531f50b46cb4ca34db0760dd0422ff6f, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 0
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!58 &180169406
-CircleCollider2D:
+--- !u!61 &180169406
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -789,9 +790,19 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.03129082, y: -0.017627954}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   serializedVersion: 2
-  m_Radius: 0.4
+  m_Size: {x: 0.42898846, y: 0.9592242}
+  m_EdgeRadius: 0
 --- !u!114 &180169407
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -837,6 +848,7 @@ MonoBehaviour:
   MainCollider: {fileID: 180169406}
   SlashCollider: {fileID: 102804808}
   SlamCollider: {fileID: 876873559}
+  CarriedYVel: 0
   isPaused:
     Delimeter: 1
     Variable: {fileID: 0}
@@ -1147,6 +1159,23 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &180169417
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 180169402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cda9607926bddc48ac401741c74d4e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  max:
+    Delimeter: 0
+    Variable: {fileID: 11400000, guid: 3bd77d1494521424f90a0af57fd9941f, type: 2}
+    Observable: {fileID: 0}
+    Constant: {x: 0, y: 0}
 --- !u!1 &228349193
 GameObject:
   m_ObjectHideFlags: 0
@@ -2717,7 +2746,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.445153, y: 0.03371507}
+  m_Offset: {x: -0.445153, y: 0.123716116}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -2728,7 +2757,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.387694, y: 0.71256983}
+  m_Size: {x: 0.387694, y: 0.78009367}
   m_EdgeRadius: 0
 --- !u!1001 &703019578
 PrefabInstance:
@@ -3360,7 +3389,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0032106042, y: -0.45338178}
+  m_Offset: {x: -0.025168598, y: -0.45338178}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -3371,7 +3400,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.47473902, y: 0.2620883}
+  m_Size: {x: 0.43082303, y: 0.2620883}
   m_EdgeRadius: 0
 --- !u!1 &843864080
 GameObject:
@@ -5454,7 +5483,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.4655764, y: 0.043868363}
+  m_Offset: {x: 0.4655764, y: 0.13589716}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -5465,7 +5494,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.31271398, y: 0.69226325}
+  m_Size: {x: 0.31271398, y: 0.779686}
   m_EdgeRadius: 0
 --- !u!1 &1166918952
 GameObject:

@@ -19,6 +19,7 @@ namespace LDJam48.PlayerState
 
 
         private Vector2 _direction;
+        private float _prevGravity = 1f;
 
         public PlayerDashingState Init(Vector2 direction)
         {
@@ -30,8 +31,11 @@ namespace LDJam48.PlayerState
         {
             _machine.Context.Sprite.flipX = _direction. x < 0;
 
+            _machine.Context.CarriedYVel = _machine.Context.Rigidbody2D.velocity.y;
 
             _machine.Context.Rigidbody2D.velocity = dashSpeed * _direction;
+            _prevGravity = _machine.Context.Rigidbody2D.gravityScale;
+            _machine.Context.Rigidbody2D.gravityScale = 0f;
             _machine.Context.Animator.Play(anim);
 
             _machine.Context.MainCollider.enabled = false;
@@ -57,6 +61,8 @@ namespace LDJam48.PlayerState
             _machine.Context.OnSlamInput -= OnSlam;
             Debug.Log($"On Exit Setting actionMap = {onExitActionMap}");
             activeActionMap.Value = onExitActionMap;
+
+            _machine.Context.Rigidbody2D.gravityScale = _prevGravity;
         }
 
         private void OnSlam() => _machine.CurrentState = _machine.States.Slamming;

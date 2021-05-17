@@ -1,5 +1,6 @@
 using UnityEngine;
 using Util;
+using Util.Var;
 
 namespace LDJam48.PlayerState
 {
@@ -10,11 +11,13 @@ namespace LDJam48.PlayerState
         [SerializeField] private float duration = .3f;
         [SerializeField] private string anim = "player_slam";
         [SerializeField] private AudioClipAsset sound;
+        [SerializeField] private Vector2Reference maxVelocity;
 
 
 
         public override PlayerState OnEnter()
         {
+            maxVelocity.Value = new Vector2(maxVelocity.Value.x, speed);
             _machine.Context.Rigidbody2D.velocity = new Vector2(0, -speed);
             _machine.Context.Animator.Play(anim);
 

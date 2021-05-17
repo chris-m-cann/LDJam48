@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Bounce
   m_EditorClassIdentifier: 
   bounceVel: 5
-  bounceTime: 0.1
+  bounceTime: 0.01

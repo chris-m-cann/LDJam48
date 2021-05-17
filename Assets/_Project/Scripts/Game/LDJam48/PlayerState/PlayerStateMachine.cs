@@ -21,6 +21,7 @@ namespace LDJam48.PlayerState
         public Collider2D MainCollider;
         public Collider2D SlashCollider;
         public Collider2D SlamCollider;
+        public float CarriedYVel;
 
         public event Action<Vector2> OnDashInput;
         public event Action OnSlamInput;

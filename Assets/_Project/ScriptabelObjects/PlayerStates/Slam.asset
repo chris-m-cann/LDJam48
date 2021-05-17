@@ -16,3 +16,8 @@ MonoBehaviour:
   duration: 0.3
   anim: player_slam
   sound: {fileID: 11400000, guid: 20fb2f936932dd641808f4c7636a2cb5, type: 2}
+  maxVelocity:
+    Delimeter: 0
+    Variable: {fileID: 11400000, guid: 3bd77d1494521424f90a0af57fd9941f, type: 2}
+    Observable: {fileID: 0}
+    Constant: {x: 0, y: 0}

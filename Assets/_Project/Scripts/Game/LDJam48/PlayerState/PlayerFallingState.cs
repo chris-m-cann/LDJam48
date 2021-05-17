@@ -1,4 +1,5 @@
 using UnityEngine;
+using Util.Var;
 
 namespace LDJam48.PlayerState
 {
@@ -9,11 +10,16 @@ namespace LDJam48.PlayerState
 
         [SerializeField] private string anim = "player_fall";
 
+        [SerializeField] private Vector2Reference maxVelocity;
+
+
         public override PlayerState OnEnter()
         {
             _machine.Context.Animator.Play(anim);
 
-            _machine.Context.Rigidbody2D.velocity = new Vector2(_machine.Context.Rigidbody2D.velocity.x, -fallSpeed);
+            maxVelocity.Value = new Vector2(maxVelocity.Value.x, fallSpeed);
+
+            // _machine.Context.Rigidbody2D.velocity = new Vector2(_machine.Context.Rigidbody2D.velocity.x, -fallSpeed);
 
             _machine.Context.OnDashInput += OnDash;
 
@@ -24,6 +30,8 @@ namespace LDJam48.PlayerState
         {
             base.OnExit();
             _machine.Context.OnDashInput -= OnDash;
+
+            _machine.Context.CarriedYVel = _machine.Context.Rigidbody2D.velocity.y;
         }
 
         private void OnDash(Vector2 dir) => _machine.CurrentState = _machine.States.Dashing.Init(dir);

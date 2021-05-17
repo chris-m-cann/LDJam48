@@ -1,10 +1,12 @@
 using UnityEngine;
+using Util.Var;
 
 namespace LDJam48
 {
+    [RequireComponent(typeof(Rigidbody2D))]
     public class TerminalVelocity : MonoBehaviour
     {
-        [SerializeField] private Vector2 max;
+        [SerializeField] private Vector2Reference max;
 
         private Rigidbody2D _rb;
 
@@ -16,8 +18,8 @@ namespace LDJam48
         private void FixedUpdate()
         {
             var vel = _rb.velocity;
-            vel.x = Mathf.Clamp(vel.x, -max.x, max.x);
-            vel.y = Mathf.Clamp(vel.y, -max.y, max.y);
+            vel.x = Mathf.Clamp(vel.x, -max.Value.x, max.Value.x);
+            vel.y = Mathf.Clamp(vel.y, -max.Value.y, max.Value.y);
 
             _rb.velocity = vel;
         }

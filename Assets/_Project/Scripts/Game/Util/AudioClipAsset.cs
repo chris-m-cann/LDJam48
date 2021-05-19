@@ -20,6 +20,10 @@ namespace Util
         public bool VaryPitch;
         [RangeSlider(-3, 3)]
         public Range PitchFactor;
+        public AudioTransition Transition = new AudioTransition
+        {
+            TransitionType = AudioTransition.Type.PopIn
+        };
 
 
         public void SetSourceDetails(AudioSource source)
@@ -38,5 +42,20 @@ namespace Util
                 source.pitch = 1;
             }
         }
+    }
+
+    [Serializable]
+    public struct AudioTransition
+    {
+        public enum Type
+        {
+            PopIn,
+            FadeIn,
+            CrossFade
+        }
+
+        public Type TransitionType;
+        public float DurationIn;
+        public float DurationOut;
     }
 }

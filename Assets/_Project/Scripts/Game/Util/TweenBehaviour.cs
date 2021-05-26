@@ -70,6 +70,7 @@ namespace Util
 
         private void OnEnable()
         {
+            OnValidate();
             for (int i = 0; i < tweens.Length; i++)
             {
                 if (tweens[i].PlayOnEnable)

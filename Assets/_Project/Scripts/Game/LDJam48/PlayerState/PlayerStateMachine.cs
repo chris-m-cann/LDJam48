@@ -56,7 +56,7 @@ namespace LDJam48.PlayerState
 
         private void OnStateChanged(Pair<PlayerState, PlayerState> state)
         {
-            Debug.Log($"Player State change {state.First.Name} -> {state.Second.Name}");
+            // Debug.Log($"Player State change {state.First.Name} -> {state.Second.Name}");
             activeState = state.Second.Name;
         }
 

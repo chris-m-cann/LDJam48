@@ -6,7 +6,7 @@ using UnityEngine.InputSystem.Controls;
 
 namespace Util
 {
-    public class OnKeyPressEvent : MonoBehaviour
+    public class OnActionPerformed : MonoBehaviour
     {
         [SerializeField] private InputActionReference[] actions;
         [SerializeField] private UnityEvent onKeyDown;

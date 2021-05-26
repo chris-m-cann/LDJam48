@@ -16,5 +16,5 @@ MonoBehaviour:
   colour: {r: 1, g: 1, b: 1, a: 1}
   Spawnables:
   - Object: {fileID: 5521815750464696714, guid: b31a899eb9c57664b883824df7367ab6, type: 3}
-    Probability: 0.1
+    Probability: 0.05
     Type: 1

@@ -133,11 +133,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4538026430102126512, guid: 28eadf832ca75e643b6be126d95d87b4, type: 3}
       propertyPath: worth.x
-      value: 10
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4538026430102126512, guid: 28eadf832ca75e643b6be126d95d87b4, type: 3}
       propertyPath: worth.y
-      value: 25
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1422691526355482861, guid: 28eadf832ca75e643b6be126d95d87b4, type: 3}

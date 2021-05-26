@@ -59,7 +59,7 @@ namespace LDJam48.PlayerState
             _machine.Context.MainCollider.enabled = true;
             _machine.Context.SlashCollider.enabled = false;
             _machine.Context.OnSlamInput -= OnSlam;
-            Debug.Log($"On Exit Setting actionMap = {onExitActionMap}");
+
             activeActionMap.Value = onExitActionMap;
 
             _machine.Context.Rigidbody2D.gravityScale = _prevGravity;

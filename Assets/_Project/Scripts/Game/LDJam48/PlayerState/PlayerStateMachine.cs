@@ -89,7 +89,6 @@ namespace LDJam48.PlayerState
 
         public void Slam()
         {
-            Debug.Log("Slam done called");
             OnSlamInput?.Invoke();
         }
     }

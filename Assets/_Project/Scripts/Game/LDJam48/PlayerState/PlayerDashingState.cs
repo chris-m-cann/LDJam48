@@ -46,7 +46,7 @@ namespace LDJam48.PlayerState
 
             _machine.Context.OnSlamInput += OnSlam;
 
-            Debug.Log($"OnEnter Setting actionMap = {actionMap}");
+            // Debug.Log($"OnEnter Setting actionMap = {actionMap}");
             activeActionMap.Value = actionMap;
 
             return null;

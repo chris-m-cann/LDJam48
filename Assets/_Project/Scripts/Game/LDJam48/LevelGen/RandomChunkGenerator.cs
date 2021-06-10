@@ -8,9 +8,14 @@ namespace LDJam48.LevelGen
     {
         [SerializeField] private ChunkGroup chunks;
 
-        public override LevelChunk GenerateNext()
+        public override LevelChunk GenerateNext(GenerationData data)
         {
             return chunks.Chunks.RandomElement();
+        }
+
+        public override void Init(GenerationData data)
+        {
+            HasNext = true;
         }
     }
 }

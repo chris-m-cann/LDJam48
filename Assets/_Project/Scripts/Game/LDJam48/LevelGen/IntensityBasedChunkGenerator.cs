@@ -4,22 +4,24 @@ using Util;
 
 namespace LDJam48.LevelGen
 {
+    /*
+     * Requires:
+     *  - ChunkIntensity
+     */
+
     [CreateAssetMenu(menuName = "Custom/Level/IntensityBasedChunkGenerator")]
     public class IntensityBasedChunkGenerator: ChunkGenerator
     {
-        public float Intensity;
         public ChunkGroup Group;
         public int IntensityFuzz;
 
-        public override LevelChunk GenerateNext()
+        public override LevelChunk GenerateNext(GenerationData data)
         {
             Range allowed = new Range{
-                Start = Intensity - IntensityFuzz,
-                End = Intensity + IntensityFuzz
+                Start = data.Intensity - IntensityFuzz,
+                End = data.Intensity + IntensityFuzz
 
             };
-
-            Debug.Log($"Picking Chunk between {allowed.Start} and {allowed.End}");
 
             var candidates = Group.Chunks.Where(it => allowed.Contains(it.Intensity)).ToArray();
 
@@ -64,6 +66,11 @@ namespace LDJam48.LevelGen
             var max = chunks.First().Intensity;
             return chunks.TakeWhile(it => it.Intensity > max - IntensityFuzz).ToArray();
 
+        }
+
+        public override void Init(GenerationData data)
+        {
+            HasNext = true;
         }
     }
 }

@@ -24,6 +24,8 @@ namespace LDJam48.LevelGen
         private Queue<LevelChunk> _activeChunks = new Queue<LevelChunk>();
 
 
+        private GenerationData _generationData = new GenerationData();
+
 
         private void Start()
         {
@@ -31,6 +33,7 @@ namespace LDJam48.LevelGen
 
             _nextChunkStart = startChunk.Bottom;
             _topChunkEnd = _nextChunkStart;
+            chunkGenerator.Init(_generationData);
         }
 
         private void OnDrawGizmosSelected()
@@ -79,7 +82,7 @@ namespace LDJam48.LevelGen
 
             if (_nextChunkStart > bottom)
             {
-                var prefab = chunkGenerator.GenerateNext();
+                var prefab = chunkGenerator.GenerateNext(_generationData);
                 var instance = BuildChunk(prefab);
                 AppendChunk(instance);
             }

@@ -57,7 +57,9 @@ namespace LDJam48.PlayerState
 
         public override PlayerState TransitionChecks()
         {
-            if (_machine.Context.Contacts.LeftLeftWallThisTurn || _machine.Context.Contacts.LeftRightWallThisTurn)
+            // todo(chris) need to handle the case where we were on both walls but the one we were up against left
+            // perhaps turn off the oposing walls detection collider whensliding? that way we will go into falling for a frame before "catching" the other wall?
+            if (!_machine.Context.Contacts.IsOnLeftWall && !_machine.Context.Contacts.IsOnRightWall)
             {
                 return _machine.States.Falling;
             }

@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a33527bb5d764aada9c8a4ce9a5ba681, type: 3}
+  m_Name: RunGenerator
+  m_EditorClassIdentifier: 
+  AreaGenerators:
+  - {fileID: 11400000, guid: 28835fa7a775ffe43b8a8d72ebc3a00d, type: 2}
+  AreasToMaxIntensity: 2
+  IntensityStart: 0
+  IntensityMax: 10
+  AreasToMaxSprintsPerArea: 3
+  SprintsPerAreaStart: 1
+  SprintsPerAreaMax: 3
+  AreasToMaxChunksPerSprint: 3
+  ChunksPerSprintStart: 2
+  ChunksPerSprintMax: 2

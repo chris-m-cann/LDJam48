@@ -1,8 +1,12 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Transactions;
+using Unity.VisualScripting;
 using Unity.VisualScripting.FullSerializer;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 using Util.Var;
 
 namespace LDJam48.LevelGen
@@ -88,6 +92,46 @@ namespace LDJam48.LevelGen
             }
         }
 
+        private IEnumerator SpawnThings(LevelChunk chunk, Vector3 p)
+        {
+            chunk.SpawnTiles.gameObject.SetActive(true);
+
+            var startPos = p + new Vector3(-4, -.5f);
+            var startCell = chunk.SpawnTiles.WorldToCell(startPos);
+            var width = 9;
+            var height = chunk.Height;
+            var cell = new Vector3Int(startCell.x, startCell.y, startCell.z);
+
+            Debug.DrawLine(startPos, startPos + new Vector3(width, -height), Color.red, 1);
+            Debug.DrawLine(startPos + Vector3.right * width, startPos + new Vector3(0, -height), Color.red, 1);
+
+            for (int x = 0; x < width; ++x)
+            {
+                for (int y = 0; y < height; ++y)
+                {
+                    cell.x = x + startCell.x;
+                    cell.y = startCell.y - y;
+                    var tile = chunk.SpawnTiles.GetTile(cell);
+                    if (tile is PrefabHolderTile holder)
+                    {
+                        var worldPos = chunk.SpawnTiles.CellToWorld(cell) + new Vector3(.5f, .5f);
+                        Instantiate(holder.Prefab, worldPos,
+                        chunk.SpawnTiles.GetTransformMatrix(cell).rotation);
+                    }
+                }
+            }
+
+            chunk.SpawnTiles.gameObject.SetActive(false);
+            yield break;
+        }
+
+        private LevelChunk BuildChunk(LevelChunk prefab)
+        {
+            var chunk = Instantiate(prefab, Vector3.zero, Quaternion.identity);
+
+            return chunk;
+        }
+
         private void AppendChunk(LevelChunk chunk)
         {
             var t = chunk.transform;
@@ -105,11 +149,9 @@ namespace LDJam48.LevelGen
             {
                 _topChunkEnd = _nextChunkStart;
             }
-        }
 
-        private LevelChunk BuildChunk(LevelChunk prefab)
-        {
-            return Instantiate(prefab, Vector3.zero, Quaternion.identity);
+
+            StartCoroutine(SpawnThings(chunk, p));
         }
 
         private void DestroyChunk(LevelChunk chunk)

@@ -16,10 +16,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 28835fa7a775ffe43b8a8d72ebc3a00d, type: 2}
   AreasToMaxIntensity: 2
   IntensityStart: 0
-  IntensityMax: 10
+  IntensityMax: 5
   AreasToMaxSprintsPerArea: 3
-  SprintsPerAreaStart: 1
-  SprintsPerAreaMax: 3
+  SprintsPerAreaStart: 5
+  SprintsPerAreaMax: 10
   AreasToMaxChunksPerSprint: 3
-  ChunksPerSprintStart: 2
-  ChunksPerSprintMax: 2
+  ChunksPerSprintStart: 5
+  ChunksPerSprintMax: 10

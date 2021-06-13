@@ -15,5 +15,5 @@ MonoBehaviour:
   ChunkGenerators:
   - {fileID: 11400000, guid: 403385bbb72c5334aa8e330682064fad, type: 2}
   RestGenerator: {fileID: 11400000, guid: 13cd700f76db467439416184304b9eb8, type: 2}
-  NumChunksFuzz: 0
-  IntensityWindow: 10
+  NumChunksFuzz: 1
+  IntensityWindow: 2

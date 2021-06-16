@@ -1,3 +1,4 @@
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using Util;
@@ -29,7 +30,8 @@ namespace LDJam48.PlayerState
 
         public override PlayerState OnEnter()
         {
-            _machine.Context.Sprite.flipX = _direction. x < 0;
+            var isLeft = _direction.x < 0;
+            _machine.Context.Sprite.flipX = isLeft;
 
             _machine.Context.CarriedYVel = _machine.Context.Rigidbody2D.velocity.y;
 
@@ -42,6 +44,20 @@ namespace LDJam48.PlayerState
             _machine.Context.SlashCollider.enabled = true;
 
             _machine.Context.SfxChannel.Raise(sound);
+
+
+            if (_machine.Context.Contacts.IsOnLeftWall || _machine.Context.Contacts.IsOnRightWall)
+            {
+
+                var effectTransform = isLeft ? _machine.Context.RightEffectPoint : _machine.Context.LeftEffectPoint;
+                _machine.Context.DashEffectEvent.Raise(new ParticleEffectRequest
+                {
+                    Position = effectTransform.position,
+                    Rotation = effectTransform.rotation,
+                    Scale = effectTransform.localScale
+                });
+            }
+
 
 
             _machine.Context.OnSlamInput += OnSlam;
@@ -72,6 +88,15 @@ namespace LDJam48.PlayerState
             if (_machine.Context.Contacts.HitLeftWallThisTurn ||
                 _machine.Context.Contacts.HitRightWallThisTurn)
             {
+                // kick off the on a wall puff
+                var t = _direction.x < 0 ? _machine.Context.LeftEffectPoint : _machine.Context.RightEffectPoint;
+                _machine.Context.WallImpactEffectEvent.Raise(new ParticleEffectRequest
+                {
+                    Position = t.position,
+                    Rotation = t.rotation,
+                    Scale = t.localScale
+                });
+
                 return _machine.States.OnWall;
             }
 

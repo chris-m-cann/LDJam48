@@ -13,6 +13,7 @@ namespace LDJam48.PlayerState
 
 
         // todo(chris) refactor this into a Context class so these arnt public to just anyone
+        // also needs splitting into state specific stuff?? move states to components maybe?
         public ContactDetails Contacts;
         public Rigidbody2D Rigidbody2D;
         public Animator Animator;
@@ -22,6 +23,13 @@ namespace LDJam48.PlayerState
         public Collider2D SlashCollider;
         public Collider2D SlamCollider;
         public float CarriedYVel;
+        public Transform LeftEffectPoint;
+        public Transform RightEffectPoint;
+        public Transform BottomEffectPoint;
+        public ParticleEffectRequestEventReference DashEffectEvent;
+        public ParticleEffectRequestEventReference WallImpactEffectEvent;
+        public ParticleEffectRequestEventReference FloorImpactEffectEvent;
+        public ParticleSystem WallSlideParticles;
 
         public event Action<Vector2> OnDashInput;
         public event Action OnSlamInput;

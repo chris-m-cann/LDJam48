@@ -27,10 +27,21 @@ namespace LDJam48.PlayerState
             _isLeft = _machine.Context.Contacts.IsOnLeftWall;
             _machine.Context.Sprite.flipX = !_isLeft;
 
+            EnableWallParticles(_machine.Context.WallSlideParticles);
 
             _machine.Context.OnDashInput += OnDash;
 
             return null;
+        }
+
+        private void EnableWallParticles(ParticleSystem wallSlideParticles)
+        {
+            var tform = wallSlideParticles.transform;
+            tform.parent =
+                _isLeft ? _machine.Context.LeftEffectPoint : _machine.Context.RightEffectPoint;
+            tform.localPosition = Vector3.zero;
+            tform.localScale = _isLeft ? Vector3.one : new Vector3(-1, 1, 1);
+            wallSlideParticles.gameObject.SetActive(true);
         }
 
         public override void OnExit()
@@ -39,6 +50,8 @@ namespace LDJam48.PlayerState
 
             _machine.Context.OnDashInput -= OnDash;
             _machine.Context.CarriedYVel = _machine.Context.Rigidbody2D.velocity.y;
+
+            _machine.Context.WallSlideParticles.gameObject.SetActive(false);
 
             maxVelocity.Value = new Vector2(100, maxWallSpeed);
         }

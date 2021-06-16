@@ -19,6 +19,13 @@ namespace LDJam48.PlayerState
 
             _machine.Context.OnDashInput += OnDash;
 
+            _machine.Context.FloorImpactEffectEvent.Raise(new ParticleEffectRequest
+            {
+                Position = _machine.Context.BottomEffectPoint.position,
+                Rotation = _machine.Context.BottomEffectPoint.rotation,
+                Scale = _machine.Context.BottomEffectPoint.localScale
+            });
+
             return null;
         }
 

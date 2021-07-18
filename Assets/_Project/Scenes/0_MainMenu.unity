@@ -1099,7 +1099,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.1137255, g: 0.20784315, b: 0.34117648, a: 1}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 1}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -1427,7 +1427,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d52432677b346c99131cc8d0ccd1aaf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mat: {fileID: 2100000, guid: fc19902f22ef861469149340a28bda64, type: 2}
+  mats: []
   palette: {fileID: 11400000, guid: 6b00a330c865904409f9fe572680299e, type: 2}
 --- !u!114 &786991304
 MonoBehaviour:
@@ -7176,7 +7176,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 0.5626204, y: 1}
+    m_SensorSize: {x: 0.5627451, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -8270,7 +8270,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 332942842045552082, guid: 3deb15416b140934d86e40682c80e30f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: 2_Run
+      value: 1_Run
       objectReference: {fileID: 0}
     - target: {fileID: 332942842045552082, guid: 3deb15416b140934d86e40682c80e30f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -9158,6 +9158,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Offset: {x: 0, y: 0}
   Height: 10
+  Intensity: 0
+  GeometryTiles: {fileID: 0}
+  SpawnTiles: {fileID: 0}
 --- !u!4 &8461882099086255711
 Transform:
   m_ObjectHideFlags: 0

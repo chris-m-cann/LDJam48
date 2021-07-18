@@ -16,6 +16,7 @@ namespace LDJam48
             for (int i = 0; i < poolSize; i++)
             {
                 _particles[i] = Instantiate(effectPrefab, transform);
+                _particles[i].gameObject.SetActive(false);
             }
         }
 

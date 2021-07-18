@@ -21,3 +21,12 @@ MonoBehaviour:
     Variable: {fileID: 11400000, guid: 3bd77d1494521424f90a0af57fd9941f, type: 2}
     Observable: {fileID: 0}
     Constant: {x: 0, y: 0}
+  onLandShake: {fileID: 11400000, guid: c8130f7b299584a40a8c5c9dcc8e41ce, type: 2}
+  onLandEffect:
+    Delimeter: 0
+    Event: {fileID: 11400000, guid: 4fbbd69e6f730a74998e35f621e80401, type: 2}
+    Variable: {fileID: 0}
+  slamEffect:
+    Delimeter: 0
+    Event: {fileID: 11400000, guid: f67774f628b58cc419a0232367ff422a, type: 2}
+    Variable: {fileID: 0}

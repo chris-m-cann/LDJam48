@@ -18,3 +18,8 @@ MonoBehaviour:
   onExitActionMap: NotDashing
   sound: {fileID: 11400000, guid: dd98a0c71c9d46f4ea8bb602f722934d, type: 2}
   activeActionMap: {fileID: 11400000, guid: 20f83fa3bf05ef744a919e80263dcdc8, type: 2}
+  onDashShake: {fileID: 11400000, guid: 67f42c91219f8424ea687a8dacd4432a, type: 2}
+  onWallLandShake: {fileID: 11400000, guid: 0aa528058b161e3459e1641507806beb, type: 2}
+  trailOffset: {x: 1, y: -0.2, z: 0}
+  displayTrail: 1
+  dashAnimEvent: {fileID: 11400000, guid: 9600b44369da12a4ea242970738a18b7, type: 2}

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minWallSpeed: 5
   maxWallSpeed: 10
-  anim: player_slide
+  anim: player_wall_land
   maxVelocity:
     Delimeter: 0
     Variable: {fileID: 11400000, guid: 3bd77d1494521424f90a0af57fd9941f, type: 2}

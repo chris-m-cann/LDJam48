@@ -11,5 +11,12 @@ namespace Util
                 self[i] = v;
             }
         }
+
+        public static void Swap<T>(this T[] self, int i, int j)
+        {
+            var tmp = self[i];
+            self[i] = self[j];
+            self[j] = tmp;
+        }
     }
 }

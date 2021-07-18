@@ -76,7 +76,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4292409591
-  m_fontColor: {r: 0.96958613, g: 0.972549, b: 0.8451451, a: 1}
+  m_fontColor: {r: 0.8980393, g: 0.8980393, b: 0.8980393, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -257,7 +257,7 @@ MonoBehaviour:
     m_FadeDuration: 0.1
   m_SpriteState:
     m_HighlightedSprite: {fileID: 21300000, guid: 36a53466e28c69644a48e18e0ba72166, type: 3}
-    m_PressedSprite: {fileID: 21300000, guid: 4d295ff02e4881e418fc92cd6390ce7a, type: 3}
+    m_PressedSprite: {fileID: 21300000, guid: 36a53466e28c69644a48e18e0ba72166, type: 3}
     m_SelectedSprite: {fileID: 21300000, guid: 4d295ff02e4881e418fc92cd6390ce7a, type: 3}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:

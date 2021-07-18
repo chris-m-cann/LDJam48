@@ -1,5 +1,6 @@
 using LDJam48.PlayerState;
 using UnityEngine;
+using UnityEngine.Events;
 using Util;
 using Util.Var.Events;
 
@@ -12,8 +13,12 @@ namespace LDJam48
 
         [SerializeField] private AudioClipAssetGameEvent sfxChannel;
         [SerializeField] private AudioClipAsset dieClip;
-
         [SerializeField]private string playerTag = "Player";
+
+        [SerializeField] private ParticleEffectRequestEventReference deathEffect;
+
+        [SerializeField] private UnityEvent onDeath;
+
 
 
         private SpawnOnDeath _spawner;
@@ -85,8 +90,17 @@ namespace LDJam48
 
         private void Die()
         {
+
+            deathEffect.Raise(new ParticleEffectRequest
+            {
+                Position = transform.position,
+                Rotation = transform.rotation,
+                Scale = transform.localScale
+            });
+
             sfxChannel.Raise(dieClip);
             _spawner.SpawnObjects();
+            onDeath?.Invoke();
             Destroy(gameObject);
         }
     }

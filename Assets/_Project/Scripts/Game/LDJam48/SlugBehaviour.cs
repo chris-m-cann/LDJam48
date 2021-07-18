@@ -46,8 +46,9 @@ namespace LDJam48
 
             _dir = transform.right * facing;
 
-            if (facing < 0)
+            if (facing > 0)
             {
+                // todo(chris) this makes no sense to me why this is this way round on mobile?
                 _sprite.flipX = true;
             }
         }

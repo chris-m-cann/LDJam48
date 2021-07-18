@@ -9,7 +9,7 @@ namespace LDJam48
     [ExecuteAlways]
     public class PaletteSwapper : MonoBehaviour
     {
-        [SerializeField] private Material mat;
+        [SerializeField] private Material[] mats;
         [SerializeField] private ObservableColourPaletteVariable palette;
 
         private void Start()
@@ -29,8 +29,11 @@ namespace LDJam48
 
         private void SwapPalette(ColourPalette newPalette)
         {
-            mat.SetColor("Replacement1", newPalette.GetColour(2));
-            mat.SetColor("Replacement2", newPalette.GetColour(1));
+            foreach (var mat in mats)
+            {
+                mat.SetColor("Replacement1", newPalette.GetColour(2));
+                mat.SetColor("Replacement2", newPalette.GetColour(1));
+            }
         }
 
     }

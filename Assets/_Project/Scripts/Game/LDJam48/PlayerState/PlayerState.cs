@@ -13,9 +13,11 @@ namespace LDJam48.PlayerState
             _machine = machine;
         }
 
-        public virtual PlayerState OnEnter() => null;
+        public virtual void OnEnter(PlayerState previous)
+        {
+        }
 
-        public virtual void OnExit()
+        public virtual void OnExit(PlayerState next)
         {
 
         }

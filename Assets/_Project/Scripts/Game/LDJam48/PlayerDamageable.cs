@@ -14,15 +14,17 @@ namespace LDJam48
         [SerializeField] private float invincibleTime;
         [SerializeField] private float invincibleFlashFreq;
 
+        [SerializeField] private UnityEvent onHurt;
         [SerializeField] private UnityEvent onZeroHealth;
 
         [SerializeField] private AudioClipAssetGameEvent sfxChannel;
         [SerializeField] private AudioClipAsset hitClip;
         [SerializeField] private AudioClipAsset dieClip;
 
+        [SerializeField] private ParticleEffectRequestEventReference hurtEffect;
+
 
         [SerializeField] private bool godmode;
-        
 
         private SpriteRenderer _sprite;
 
@@ -54,7 +56,14 @@ namespace LDJam48
                 }
                 else
                 {
+                    hurtEffect.Raise(new ParticleEffectRequest
+                    {
+                        Position = transform.position,
+                        Rotation = transform.rotation,
+                        Scale = transform.localScale
+                    });
                     sfxChannel.Raise(hitClip);
+                    onHurt?.Invoke();
                 }
             }
 

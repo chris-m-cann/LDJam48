@@ -107,6 +107,26 @@ MonoBehaviour:
   sfxChannel: {fileID: 11400000, guid: fe62c46c8f30fda40800c60b8eede838, type: 2}
   dieClip: {fileID: 11400000, guid: a2a4aa7bdad84dd4bb4817469e1d0e5e, type: 2}
   playerTag: Player
+  deathEffect:
+    Delimeter: 0
+    Event: {fileID: 11400000, guid: 280f09846efbdd849b35abb6f9f6738e, type: 2}
+    Variable: {fileID: 0}
+  onDeath:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: fb8425c3033483247b75c8ae4603e756, type: 2}
+        m_TargetAssemblyTypeName: Util.Var.Events.GameEvent`1[[LDJam48.ShakeDefinition,
+          Assembly-CSharp
+        m_MethodName: Raise
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: 5e46c35697527a04b8381b87e3fa51df, type: 2}
+          m_ObjectArgumentAssemblyTypeName: LDJam48.ShakeDefinition, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!61 &1422691526355482860
 BoxCollider2D:
   m_ObjectHideFlags: 0

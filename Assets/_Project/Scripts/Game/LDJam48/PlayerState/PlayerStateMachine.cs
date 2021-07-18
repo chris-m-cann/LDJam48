@@ -26,10 +26,16 @@ namespace LDJam48.PlayerState
         public Transform LeftEffectPoint;
         public Transform RightEffectPoint;
         public Transform BottomEffectPoint;
+        public Transform SlamEffectPoint;
         public ParticleEffectRequestEventReference DashEffectEvent;
         public ParticleEffectRequestEventReference WallImpactEffectEvent;
         public ParticleEffectRequestEventReference FloorImpactEffectEvent;
         public ParticleSystem WallSlideParticles;
+        public ShakeDefinitionEventReference ShakeEvent;
+
+
+        public ParticleSystem DashTrailEffect;
+        public ParticleSystem SlamParticles;
 
         public event Action<Vector2> OnDashInput;
         public event Action OnSlamInput;

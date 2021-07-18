@@ -19,3 +19,4 @@ MonoBehaviour:
     Variable: {fileID: 11400000, guid: 3bd77d1494521424f90a0af57fd9941f, type: 2}
     Observable: {fileID: 0}
     Constant: {x: 0, y: 0}
+  onLandShake: {fileID: 11400000, guid: e478662a96b567846b5fd9e8bce08caa, type: 2}

@@ -9,7 +9,7 @@ namespace LDJam48.PlayerState
         [SerializeField] private float bounceVel = 5;
         [SerializeField] private float bounceTime = 0.1f;
 
-        public override PlayerState OnEnter()
+        public override void OnEnter(PlayerState previous)
         {
             _machine.Context.Rigidbody2D.velocity = new Vector2(_machine.Context.Rigidbody2D.velocity.x, bounceVel);
 
@@ -17,8 +17,6 @@ namespace LDJam48.PlayerState
             {
                 _machine.CurrentState = _machine.States.Falling;
             });
-
-            return null;
         }
     }
 }

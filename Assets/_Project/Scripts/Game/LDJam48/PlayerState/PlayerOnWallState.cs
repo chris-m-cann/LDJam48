@@ -8,13 +8,13 @@ namespace LDJam48.PlayerState
     {
         [SerializeField] private float minWallSpeed = 5;
         [SerializeField] private float maxWallSpeed = 10;
-        [SerializeField] private string anim = "player_slide";
+        [SerializeField] private string anim = "player_wall_land";
         [SerializeField] private Vector2Reference maxVelocity;
 
 
         private bool _isLeft = false;
 
-        public override PlayerState OnEnter()
+        public override void OnEnter(PlayerState previous)
         {
 
             maxVelocity.Value = new Vector2(0, maxWallSpeed);
@@ -30,8 +30,6 @@ namespace LDJam48.PlayerState
             EnableWallParticles(_machine.Context.WallSlideParticles);
 
             _machine.Context.OnDashInput += OnDash;
-
-            return null;
         }
 
         private void EnableWallParticles(ParticleSystem wallSlideParticles)
@@ -44,9 +42,9 @@ namespace LDJam48.PlayerState
             wallSlideParticles.gameObject.SetActive(true);
         }
 
-        public override void OnExit()
+        public override void OnExit(PlayerState next)
         {
-            base.OnExit();
+            base.OnExit(next);
 
             _machine.Context.OnDashInput -= OnDash;
             _machine.Context.CarriedYVel = _machine.Context.Rigidbody2D.velocity.y;

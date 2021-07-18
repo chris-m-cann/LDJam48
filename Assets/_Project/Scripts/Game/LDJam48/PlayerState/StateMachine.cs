@@ -29,9 +29,10 @@ namespace LDJam48.PlayerState
                 // eg if this is called in update and the fixed update runs
                 _currentState = _nullState;
 
-                prev.OnExit();
-
                 _currentState = SetState(prev, value);
+
+                prev.OnExit(_currentState);
+                _currentState.OnEnter(prev);
             }
         }
 
@@ -49,15 +50,6 @@ namespace LDJam48.PlayerState
             if (checks != null && checks != next)
             {
                 return SetState(next, checks);
-            }
-
-            // if entering the state switches us again then exit that state and swap to new one
-            var entered = next.OnEnter();
-            if (entered != null && entered != next)
-            {
-                next.OnExit();
-
-                return  SetState(next, entered);;
             }
 
             // made it passed initialisation and entering so we are the final choice!!
@@ -80,12 +72,12 @@ namespace LDJam48.PlayerState
 
         public void OnStart()
         {
-            CurrentState = _currentState.OnEnter();
+            _currentState.OnEnter(_currentState);
         }
 
         public void OnDestroy()
         {
-            _currentState.OnExit();
+            _currentState.OnExit(_currentState);
         }
 
         public void OnUpdate()

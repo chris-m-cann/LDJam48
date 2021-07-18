@@ -35,20 +35,20 @@ public class RuntimeRandomRuleTile : RuleTile<RuntimeRandomRuleTile.Neighbor>
 
     public override void RefreshTile(Vector3Int position, ITilemap tilemap)
     {
-        Debug.Log("Refreshing tile");
+        // Debug.Log("Refreshing tile");
         base.RefreshTile(position, tilemap);
     }
 
     public override bool StartUp(Vector3Int position, ITilemap tilemap, GameObject instantiatedGameObject)
     {
-        Debug.Log("StartUp called");
+        // Debug.Log("StartUp called");
         return base.StartUp(position, tilemap, instantiatedGameObject);
     }
 
 
     public override void GetTileData(Vector3Int position, ITilemap tilemap, ref TileData tileData)
     {
-        Debug.Log("GetTileData called");
+        // Debug.Log("GetTileData called");
 
         base.GetTileData(position, tilemap, ref tileData);
 

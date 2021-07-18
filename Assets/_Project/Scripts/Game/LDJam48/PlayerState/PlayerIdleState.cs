@@ -7,10 +7,11 @@ namespace LDJam48.PlayerState
     public class PlayerIdleState : PlayerState
     {
         [SerializeField] private string anim = "player_idle";
+        [SerializeField] private string slamLandAnim = "player_slam_land";
         [SerializeField] private AudioClipAsset sound;
 
 
-        public override PlayerState OnEnter()
+        public override void OnEnter(PlayerState previous)
         {
             _machine.Context.Animator.Play(anim);
             _machine.Context.Rigidbody2D.velocity = Vector2.zero;
@@ -18,20 +19,11 @@ namespace LDJam48.PlayerState
             _machine.Context.SfxChannel.Raise(sound);
 
             _machine.Context.OnDashInput += OnDash;
-
-            _machine.Context.FloorImpactEffectEvent.Raise(new ParticleEffectRequest
-            {
-                Position = _machine.Context.BottomEffectPoint.position,
-                Rotation = _machine.Context.BottomEffectPoint.rotation,
-                Scale = _machine.Context.BottomEffectPoint.localScale
-            });
-
-            return null;
         }
 
-        public override void OnExit()
+        public override void OnExit(PlayerState next)
         {
-            base.OnExit();
+            base.OnExit(next);
 
             _machine.Context.OnDashInput -= OnDash;
         }

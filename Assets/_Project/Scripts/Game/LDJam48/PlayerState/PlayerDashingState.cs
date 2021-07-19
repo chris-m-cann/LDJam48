@@ -1,3 +1,4 @@
+using System.Collections;
 using DG.Tweening;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -21,6 +22,9 @@ namespace LDJam48.PlayerState
         [SerializeField] private Vector3 trailOffset;
         [SerializeField] private Vector3 frontTrailOffset;
         [SerializeField] private float frontTrailDelay;
+        [SerializeField] private SpriteRenderer ghostPrefab;
+        [SerializeField] private float[] ghostDelays;
+        
 
         [SerializeField] private bool displayTrail = true;
         [SerializeField] private VoidGameEvent dashAnimEvent;
@@ -32,6 +36,7 @@ namespace LDJam48.PlayerState
         private float _prevGravity = 1f;
         private bool _wasOnWall = false;
         private Vector2 _startPos;
+        private Coroutine _coroutine;
 
         public PlayerDashingState Init(Vector2 direction)
         {
@@ -64,6 +69,9 @@ namespace LDJam48.PlayerState
 
             // Debug.Log($"OnEnter Setting actionMap = {actionMap}");
             activeActionMap.Value = actionMap;
+            
+            
+            _coroutine = _machine.Context.StartCoroutine(ShowGhosts());
         }
 
         private void StartDash(Void v)
@@ -101,11 +109,13 @@ namespace LDJam48.PlayerState
                 _machine.Context.DashTrailEffect.gameObject.SetActive(true);
                 _machine.Context.DashTrailEffect.Play(true);
             }
+
         }
 
         public override void OnExit(PlayerState next)
         {
             base.OnExit(next);
+            _machine.Context.StopCoroutine(_coroutine);
 
             dashAnimEvent.OnEventTrigger -= StartDash;
             _machine.Context.DashTrailEffect.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
@@ -143,6 +153,18 @@ namespace LDJam48.PlayerState
             }
 
             return null;
+        }
+
+        IEnumerator ShowGhosts()
+        {
+            foreach (var delay in ghostDelays)
+            {
+                yield return new WaitForSeconds(delay);
+                var ghost = Instantiate(ghostPrefab, _machine.Context.transform.position, Quaternion.identity);
+                var playerSprite = _machine.Context.Sprite;
+                ghost.sprite = playerSprite.sprite;
+                ghost.flipX = playerSprite.flipX;
+            }
         }
     }
 }

@@ -23,6 +23,7 @@ namespace Util
             var propUseCustomCurve = property.FindPropertyRelative("UseCustomCurve");
             var propCustomCurve = property.FindPropertyRelative("CustomCurve");
             var propProperty = property.FindPropertyRelative("Property");
+            var propPropertyName = property.FindPropertyRelative("PropertyName");
             var propDuration = property.FindPropertyRelative("Duration");
             var propRelativeToCurrent = property.FindPropertyRelative("RelativeToCurrent");
             var propStart = property.FindPropertyRelative("Start");
@@ -53,6 +54,11 @@ namespace Util
                 }
 
                 rect = PropertyOnNextLine(rect, propProperty);
+                if (propProperty.enumValueIndex == IndexOf(TweenBehaviour.Property.SpriteShaderFloat))
+                {
+                    rect = PropertyOnNextLine(rect, propPropertyName);
+                }
+                
                 rect = PropertyOnNextLine(rect, propDuration);
                 rect = PropertyOnNextLine(rect, propRelativeToCurrent);
 
@@ -85,6 +91,19 @@ namespace Util
                 rect = PropertyOnNextLine(rect, propTimeScaleDependent);
                 rect = PropertyOnNextLine(rect, propOnComplete);
             }
+        }
+
+        int IndexOf(TweenBehaviour.Property p)
+        {
+            int i = 0;
+            
+            foreach (TweenBehaviour.Property e in typeof(TweenBehaviour.Property).GetEnumValues())
+            {
+                if (e == p) return i;
+                i++;
+            }
+
+            return -1;
         }
 
 
@@ -162,6 +181,10 @@ namespace Util
                     rect = PropertyOnNextLine(rect, propStart);
                     rect = PropertyOnNextLine(rect, propEnd);
                     break;
+                case TweenBehaviour.Property.SpriteShaderFloat:
+                    rect = FloatFieldOnNextLine3(rect, propStart);
+                    rect = FloatFieldOnNextLine3(rect, propEnd);
+                    break;
                 default:
                     rect = PropertyOnNextLine(rect, propStart);
                     rect = PropertyOnNextLine(rect, propEnd);
@@ -201,6 +224,7 @@ namespace Util
                     "ObjectToAnimate",
                     "Ease",
                     "Property",
+                    "PropertyName",
                     "Duration",
                     "RelativeToCurrent",
                     "Start",
@@ -209,6 +233,7 @@ namespace Util
                     "PlayOnEnable",
                     "RandomDelay",
                     "DefaultDelay",
+                    "TimeScaleDependent",
                     "OnComplete"
                 });
             }

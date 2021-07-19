@@ -23,7 +23,8 @@ namespace Util
             Scale,
             Position,
             RectPosition,
-            Rotation
+            Rotation,
+            SpriteShaderFloat
         }
 
         public enum PlayType
@@ -43,6 +44,7 @@ namespace Util
             public bool UseCustomCurve;
             public AnimationCurve CustomCurve;
             public Property Property;
+            public string PropertyName;
             public float Duration;
             public bool RelativeToCurrent;
             public Vector3 Start;
@@ -184,6 +186,7 @@ namespace Util
                 case Property.Position: return BuildPositionTweener(tween);
                 case Property.RectPosition: return BuildRectPositionTweener(tween);
                 case Property.Rotation: return BuildRotationTweener(tween);
+                case Property.SpriteShaderFloat: return BuildShaderFloatTweener(tween);
                 default:
                 {
                     Debug.LogError($"Attempting to tween invalid property = {tween.Property}");
@@ -277,6 +280,36 @@ namespace Util
             return tween.ObjectToAnimate.transform.DORotate(tweenEnd, tween.Duration).From(tweenStart);
         }
 
+        private Tweener BuildShaderFloatTweener(TweenDescription tween)
+        {
+            var material = tween.ObjectToAnimate.GetComponent<SpriteRenderer>().material;
+
+            DOGetter<float> getter;
+            float tweenStart;
+            float tweenEnd;
+            if (tween.RelativeToCurrent)
+            {
+                var initial = material.GetFloat(tween.PropertyName);
+                getter = () => material.GetFloat(tween.PropertyName) + initial;
+                tweenStart = tween.Start.x + initial;
+                tweenEnd = tween.End.y + initial;
+            }
+            else
+            {
+                getter = () => material.GetFloat(tween.PropertyName);
+                tweenStart = tween.Start.x;
+                tweenEnd = tween.End.y;
+            }
+
+            SetShaderProperty(material, tween.PropertyName, tweenStart);
+
+            return DOTween.To(getter, it => SetShaderProperty(material, tween.PropertyName, it), tweenEnd, tween.Duration).From(tweenStart);
+        }
+
+        private void SetShaderProperty(Material material, string propertyName, float value)
+        {
+            material.SetFloat(propertyName, value);
+        }
 
         private void OnComplete(int idx)
         {

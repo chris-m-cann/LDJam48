@@ -21,5 +21,14 @@ MonoBehaviour:
   onDashShake: {fileID: 11400000, guid: 67f42c91219f8424ea687a8dacd4432a, type: 2}
   onWallLandShake: {fileID: 11400000, guid: 0aa528058b161e3459e1641507806beb, type: 2}
   trailOffset: {x: 1, y: -0.2, z: 0}
-  displayTrail: 1
+  frontTrailOffset: {x: 0, y: 0, z: 0}
+  frontTrailDelay: 0
+  ghostPrefab: {fileID: 8384205595809998767, guid: 3af876b1bce20ea498a45d7cbf0a5db6, type: 3}
+  ghostDelays:
+  - 0
+  - 0.1
+  - 0.07
+  - 0.06
+  - 0.05
+  displayTrail: 0
   dashAnimEvent: {fileID: 11400000, guid: 9600b44369da12a4ea242970738a18b7, type: 2}

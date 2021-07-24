@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Runtime.InteropServices.WindowsRuntime;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -11,67 +13,44 @@ namespace LDJam48
 
         [SerializeField] private LayerMask blockers;
         [SerializeField] private float castDistance = .75f;
-
-
+        [SerializeField] private float forwardCastOffset = .2f;
+        
         private SpriteRenderer _sprite;
 
         private RaycastHit2D[] _hits = new RaycastHit2D[1];
-        private Vector2 _dir;
+        private Vector2 _dir = Vector2.right;
 
         private void Awake()
         {
             _sprite = GetComponent<SpriteRenderer>();
         }
 
-        private void Start()
+        private void OnEnable()
         {
-            // pick starting orientation
-            if (AnyBlockers(transform.position, Vector2.left))
-            {
-                transform.rotation = Quaternion.Euler(new Vector3(0, 0, -90));
-            } else if (AnyBlockers(transform.position, Vector2.right))
-            {
-                transform.rotation = Quaternion.Euler(new Vector3(0, 0, 90));
-            } else if (AnyBlockers(transform.position, Vector2.up))
-            {
-                transform.rotation = Quaternion.Euler(new Vector3(0, 0, 180));
-            } else if (AnyBlockers(transform.position, Vector2.down))
-            {
-                Destroy(gameObject);
-                return;
-            }
-
-            // pick a random dir to start off in
-            var facing =Mathf.Sign(Random.value - .5f);
-
+            var facing = Mathf.Sign(Random.value - .5f);
             _dir = transform.right * facing;
+            _sprite.flipX = facing <= 0;
+        }
 
-            if (facing > 0)
-            {
-                // todo(chris) this makes no sense to me why this is this way round on mobile?
-                _sprite.flipX = true;
-            }
+        private void OnDrawGizmosSelected()
+        {
+            var forwardCastOrigin = transform.position - (forwardCastOffset * transform.up);
+            Gizmos.color = Color.red;
+            Gizmos.DrawRay(forwardCastOrigin, castDistance * _dir);
+
+            var downCastOrigin = forwardCastOrigin + (Vector3) (castDistance * _dir);
+            Gizmos.color = Color.green;
+            Gizmos.DrawRay(downCastOrigin, castDistance * -transform.up);
         }
 
         private void FixedUpdate()
         {
-            var blockerInFront = AnyBlockers(transform.position, _dir);
-
-            var runOutOfGround =
-                !AnyBlockers((Vector2) transform.position + _dir * castDistance, -transform.up);
-
-            if (blockerInFront || runOutOfGround)
+            if (AnyBlockersInFront() || !IsFloorInFront())
             {
-
                 _dir *= -1;
-
-                blockerInFront = AnyBlockers(transform.position, _dir);
-
-                runOutOfGround =
-                    !AnyBlockers((Vector2) transform.position + _dir * castDistance, -transform.up);
-
-                // make sure we arnt just turning every round if nowhere to go
-                if (!runOutOfGround && !blockerInFront)
+                
+                // make sure we arnt just turning every update with nowhere to go
+                if (!AnyBlockersInFront() && IsFloorInFront())
                 {
                     _sprite.flipX = !_sprite.flipX;
                 }
@@ -83,9 +62,20 @@ namespace LDJam48
             transform.Translate(_dir * (speed * Time.fixedDeltaTime), Space.World);
         }
 
+        private bool AnyBlockersInFront()
+        {
+            var forwardCastOrigin = transform.position + (forwardCastOffset * -transform.up);
+            return AnyBlockers(forwardCastOrigin, castDistance * _dir);
+        }
+        
+        private bool IsFloorInFront()
+        {
+            var castOrigin = transform.position + (forwardCastOffset * -transform.up) + (Vector3)(castDistance * _dir);
+            return AnyBlockers(castOrigin, castDistance * -transform.up);
+        }
+        
         private bool AnyBlockers(Vector2 castFrom, Vector2 castDir)
         {
-            castFrom -= (Vector2)transform.up * .3f; // correct for being so low
             return Physics2D.RaycastNonAlloc(castFrom, castDir, _hits,
                 castDistance, blockers) > 0;
         }

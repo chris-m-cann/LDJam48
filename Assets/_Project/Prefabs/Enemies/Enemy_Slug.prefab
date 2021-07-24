@@ -36,6 +36,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4224
   castDistance: 0.6
+  forwardCastOffset: 0.35
 --- !u!1001 &1286979970747798843
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -51,6 +52,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: -6360969036190984606, guid: 2b330de089c1ef148b95c32c4b53d615, type: 3}
+    - target: {fileID: 1422691526355482849, guid: 28eadf832ca75e643b6be126d95d87b4, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: fc19902f22ef861469149340a28bda64, type: 2}
     - target: {fileID: 1422691526355482850, guid: 28eadf832ca75e643b6be126d95d87b4, type: 3}
       propertyPath: m_RootOrder
       value: 0

@@ -96,6 +96,9 @@ namespace LDJam48.LevelGen
         {
             chunk.SpawnTiles.gameObject.SetActive(true);
 
+            // need to yeild here to give the world a chance to spawn so the things on our spawn layer can then interact with it
+            yield return new WaitForFixedUpdate(); 
+
             var startPos = p + new Vector3(-4, -.5f);
             var startCell = chunk.SpawnTiles.WorldToCell(startPos);
             var width = 9;

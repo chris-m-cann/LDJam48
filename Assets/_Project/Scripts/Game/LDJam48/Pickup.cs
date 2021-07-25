@@ -16,7 +16,7 @@ namespace LDJam48
         [SerializeField] private AudioClipAssetGameEvent sfxChannel;
         [SerializeField] private AudioClipAsset clip;
 
-        [SerializeField] private IntGameEventReference onPickupEvent;
+        [SerializeField] private IntEventReference onPickupEvent;
 
         private Collider2D _col;
         private void Start()

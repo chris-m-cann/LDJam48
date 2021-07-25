@@ -8,12 +8,17 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Util.Var.Observe
+namespace Util.Var
 {
     using UnityEngine;
+    using Util.Var.Observe;
     
-    [CreateAssetMenu(menuName = "Custom/Observable/int")]
-    public sealed class ObservableIntVariable : ObservableVariable<int>
+    [CreateAssetMenu(menuName = "Custom/Variable/int")]
+    public sealed class IntVariable : Variable<int>
+    {
+    }
+    [System.Serializable()]
+    public sealed class IntReference : VariableReference<IntVariable, ObservableIntVariable, int>
     {
     }
 }

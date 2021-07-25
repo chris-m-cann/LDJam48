@@ -8,12 +8,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Util.Var.Observe
+namespace Util.Var.Events
 {
     using UnityEngine;
     
-    [CreateAssetMenu(menuName = "Custom/Observable/int")]
-    public sealed class ObservableIntVariable : ObservableVariable<int>
+    public sealed class IntGameEventListenerBehaviour : GameEventListenerBehaviour<int, IntEventReference>
     {
     }
 }

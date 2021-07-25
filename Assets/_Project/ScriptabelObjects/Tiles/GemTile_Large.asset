@@ -9,9 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4518d8e880de4dafadc81d641fbb7455, type: 3}
-  m_Name: SpawnTest
+  m_Script: {fileID: 11500000, guid: b5ba0a5cc0f94e6899fd69ce6ed8310f, type: 3}
+  m_Name: GemTile_Large
   m_EditorClassIdentifier: 
-  Description: 
-  Chunks:
-  - {fileID: 7965636448107021769, guid: 4c80be96dda01f64aa45b4e46a94a1ac, type: 3}
+  Prefab: {fileID: 4300535198514291665, guid: c8bde547065ede443b85cbba2d444321, type: 3}

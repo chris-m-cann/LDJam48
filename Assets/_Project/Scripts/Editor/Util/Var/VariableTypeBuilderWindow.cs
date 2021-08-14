@@ -112,14 +112,8 @@ namespace Util.Var
                     }
                 }
             }
-
-
-            // if left mouse clicked then remove focus from our properties
-            if (Event.current.type == EventType.MouseDown && Event.current.button == 0)
-            {
-                GUI.FocusControl(null);
-                Repaint();
-            }
+            
+            this.RemoveFocusOnMouseDown();
         }
 
         private void LayoutBrowseButton(SerializedProperty prop)

@@ -1,4 +1,6 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
+using LDJam48.Stats;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -29,5 +31,15 @@ namespace Util
             action();
         }
 
+        public static void ExecuteNextFrame(this MonoBehaviour self, UnityAction action)
+        {
+            self.StartCoroutine(CoExecuteNextFrame(action));
+        }
+
+        private static IEnumerator CoExecuteNextFrame(UnityAction action)
+        {
+            yield return null;
+            action();
+        }
     }
 }

@@ -1,3 +1,4 @@
+using System;
 using TMPro;
 using UnityEngine;
 
@@ -7,7 +8,6 @@ namespace Util.UI
     {
         [SerializeField] private TMPro.TMP_Text[] texts;
         [SerializeField] private bool allChildren = true;
-
 
         [ContextMenu("ClampSize")]
         public void ClampSize()
@@ -40,7 +40,7 @@ namespace Util.UI
                 ts[i].fontSize = textSize;
             }
         }
-
+        
         [ContextMenu("ResetAutoSizing")]
         public void ResetAutoSizing()
         {

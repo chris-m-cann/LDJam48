@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-5225368018065313745
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84b9e436ecab47918204d75ad09406a4, type: 3}
+  m_Name: TotalDistance_stat-Current
+  m_EditorClassIdentifier: 
+  value: 0
+  persistValue: 1
+  resetValue: 0
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ca3d6df2e2c43fdb1366126635779b4, type: 3}
+  m_Name: TotalDistance_stat
+  m_EditorClassIdentifier: 
+  DisplayName: Total Distance
+  event:
+    Delimeter: 1
+    Event: {fileID: 0}
+    Variable: {fileID: 11400000, guid: d3999c1d53f938f4089596258980cec2, type: 2}
+  Current: {fileID: -5225368018065313745}
+  resetValue: 0

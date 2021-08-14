@@ -1,6 +1,7 @@
 using System;
 using TMPro;
 using UnityEditor;
+using UnityEngine;
 
 namespace Util
 {
@@ -42,6 +43,17 @@ namespace Util
         public static IDisposable UpdateScope(this SerializedObject self)
         {
             return new ModifyObjectScope(self);
+        }
+
+        
+        // if left mouse clicked then remove focus from our properties
+        public static void RemoveFocusOnMouseDown(this EditorWindow self)
+        {
+            if (Event.current.type == EventType.MouseDown && Event.current.button == 0)
+            {
+                GUI.FocusControl(null);
+                self.Repaint();
+            }
         }
     }
 }

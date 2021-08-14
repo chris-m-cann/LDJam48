@@ -86,7 +86,6 @@ namespace LDJam48.PlayerState
 
             if (_wasOnWall)
             {
-                Debug.Log("Firing of dash effect");
                 _machine.Context.DashEffectEvent.Raise(new ParticleEffectRequest
                 {
                     Position = _startPos,

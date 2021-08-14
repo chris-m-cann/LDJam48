@@ -18,5 +18,5 @@ MonoBehaviour:
   distanceTravelled:
     Delimeter: 1
     Variable: {fileID: 0}
-    Observable: {fileID: 11400000, guid: dd551e3d2f493a245928763480e70376, type: 2}
+    Observable: {fileID: -1599132557422162609, guid: e201c8275f194c446ad0082f3536a809, type: 2}
     Constant: 0

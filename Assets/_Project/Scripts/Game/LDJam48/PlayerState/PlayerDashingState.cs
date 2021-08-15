@@ -117,7 +117,10 @@ namespace LDJam48.PlayerState
             _machine.Context.StopCoroutine(_coroutine);
 
             dashAnimEvent.OnEventTrigger -= StartDash;
-            _machine.Context.DashTrailEffect.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
+            if (displayTrail)
+            {
+                _machine.Context.DashTrailEffect.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
+            }
 
             _machine.Context.MainCollider.enabled = true;
             _machine.Context.SlashCollider.enabled = false;

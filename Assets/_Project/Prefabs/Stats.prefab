@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4264363208395371921}
   - component: {fileID: 7034045441774759671}
+  - component: {fileID: 2859979921666248971}
   m_Layer: 0
   m_Name: Stats
   m_TagString: Untagged
@@ -46,3 +47,34 @@ MonoBehaviour:
   stats:
   - {fileID: 11400000, guid: 7dac869b5c0cf99448f25bbfcc69e919, type: 2}
   - {fileID: 11400000, guid: bb22c1c5c818017468089a937a07364c, type: 2}
+--- !u!114 &2859979921666248971
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7228862006802501412}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 184f7bc09ebc8ce4bb071db37411b719, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent:
+    Delimeter: 0
+    Event: {fileID: 11400000, guid: e79d99697b54b274bab2916f86f2f207, type: 2}
+    Variable: {fileID: 0}
+  onEventRaised:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: d3999c1d53f938f4089596258980cec2, type: 2}
+        m_TargetAssemblyTypeName: Util.Var.Variable`1[[System.Int32, mscorlib
+        m_MethodName: CopyValue
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: -1599132557422162609, guid: e201c8275f194c446ad0082f3536a809, type: 2}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.ScriptableObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2

@@ -185,6 +185,10 @@ namespace Util
                     rect = FloatFieldOnNextLine3(rect, propStart);
                     rect = FloatFieldOnNextLine3(rect, propEnd);
                     break;
+                case TweenBehaviour.Property.SpriteAlpha:
+                    rect = FloatFieldOnNextLine3(rect, propStart);
+                    rect = FloatFieldOnNextLine3(rect, propEnd);
+                    break;
                 default:
                     rect = PropertyOnNextLine(rect, propStart);
                     rect = PropertyOnNextLine(rect, propEnd);

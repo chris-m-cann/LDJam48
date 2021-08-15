@@ -24,7 +24,8 @@ namespace Util
             Position,
             RectPosition,
             Rotation,
-            SpriteShaderFloat
+            SpriteShaderFloat,
+            SpriteAlpha
         }
 
         public enum PlayType
@@ -187,6 +188,7 @@ namespace Util
                 case Property.RectPosition: return BuildRectPositionTweener(tween);
                 case Property.Rotation: return BuildRotationTweener(tween);
                 case Property.SpriteShaderFloat: return BuildShaderFloatTweener(tween);
+                case Property.SpriteAlpha: return BuildSpriteAlphaTweener(tween);
                 default:
                 {
                     Debug.LogError($"Attempting to tween invalid property = {tween.Property}");
@@ -310,6 +312,24 @@ namespace Util
         {
             material.SetFloat(propertyName, value);
         }
+
+        private Tweener BuildSpriteAlphaTweener(TweenDescription tween)
+        {
+            var sr = tween.ObjectToAnimate.GetComponent<SpriteRenderer>();
+            var tweenStart = tween.Start.x;
+            var tweenEnd = tween.End.x;
+            if (tween.RelativeToCurrent)
+            {
+                tweenStart += sr.color.a;
+                tweenEnd += sr.color.a;
+            }
+
+            var c = sr.color;
+            c.a = tweenStart;
+            sr.color = c;
+            return sr.DOFade(tweenEnd, tween.Duration).From(tweenStart);
+        }
+        
 
         private void OnComplete(int idx)
         {

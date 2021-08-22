@@ -196,6 +196,7 @@ GameObject:
   - component: {fileID: 8389851465421259406}
   - component: {fileID: 8389851465421259407}
   - component: {fileID: 8389851465421259404}
+  - component: {fileID: 925511622003709231}
   m_Layer: 0
   m_Name: Particles
   m_TagString: Untagged
@@ -430,6 +431,37 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 8389851464546614213}
+        m_TargetAssemblyTypeName: LDJam48.ParticleEffectPool, Assembly-CSharp
+        m_MethodName: Play
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &925511622003709231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8389851465421259393}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11b7f86f3584f554387ffc259f7803c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent:
+    Delimeter: 0
+    Event: {fileID: 11400000, guid: 5208dc600faeed64faab2b58e45a02fc, type: 2}
+    Variable: {fileID: 0}
+  onEventRaised:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8389851464338065402}
         m_TargetAssemblyTypeName: LDJam48.ParticleEffectPool, Assembly-CSharp
         m_MethodName: Play
         m_Mode: 0

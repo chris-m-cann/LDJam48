@@ -41,15 +41,11 @@ namespace LDJam48
         private void TrySpawnMarker(int distance)
         {
             var v = Math.Abs(placementPoint.Value - distance);
-            Debug.Log($"TrySpawnMarker, v = {v}");
-            
                 
             if (Math.Abs(placementPoint.Value - distance) < spawnDistance)
             {
                 var position = new Vector3(spawnPointX, offsetY - placementPoint.Value, 0f);
                 _marker = Instantiate(markerPrefab, position, Quaternion.identity);
-                
-                Debug.Log($"TrySpawnMarker, spawning at = {position}");
                 
 
                 _onDistanceChanged = CheckIfPassedMarker;

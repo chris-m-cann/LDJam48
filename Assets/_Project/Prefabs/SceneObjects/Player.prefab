@@ -10279,7 +10279,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: {fileID: 11400000, guid: 177353dd7b20d9746a226f30ed2fb049, type: 2}
   invincibleTime: 1
-  invincibleFlashFreq: 3
+  invincibleFlashFreq: 8
   onHurt:
     m_PersistentCalls:
       m_Calls:
@@ -10291,6 +10291,19 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 11400000, guid: 27309e785355f4e4ea930592a94a7385, type: 2}
           m_ObjectArgumentAssemblyTypeName: LDJam48.ShakeDefinition, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 11400000, guid: 5709785ceee7ffe4e8666e9fe7083e6f, type: 2}
+        m_TargetAssemblyTypeName: Util.Var.Events.GameEvent`1[[UnityEngine.Vector2,
+          UnityEngine
+        m_MethodName: Raise
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -10356,6 +10369,11 @@ MonoBehaviour:
     Delimeter: 0
     Event: {fileID: 11400000, guid: 5208dc600faeed64faab2b58e45a02fc, type: 2}
     Variable: {fileID: 0}
+  volume: {fileID: 0}
+  on: 1
+  vignetteTime: 0.1
+  hurtMaterial: {fileID: 2100000, guid: 1cc0e5a992f494943966267d5acf4500, type: 2}
+  hurtTime: 0.5
   godmode: 0
 --- !u!114 &2064680037061477148
 MonoBehaviour:

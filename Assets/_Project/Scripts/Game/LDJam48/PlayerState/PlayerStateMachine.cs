@@ -98,6 +98,7 @@ namespace LDJam48.PlayerState
         {
             _machine.CurrentState = _machine.States.Bounce;
         }
+        
 
         public void Dash(Vector2 direction) => OnDashInput?.Invoke(direction);
 

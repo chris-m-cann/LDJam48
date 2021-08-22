@@ -1,6 +1,7 @@
 using System;
 using Unity.VisualScripting;
 using UnityEngine;
+using Util;
 using Util.Var;
 using Util.Var.Observe;
 
@@ -46,5 +47,14 @@ namespace LDJam48
                 Time.timeScale = _oldTime;
             }
         }
+
+        public void SetTimeScale(float scale, float duration)
+        {
+            var before = Time.timeScale;
+            Time.timeScale = scale;
+            this.ExecuteAfterUnscaled(duration, () => Time.timeScale = before);
+        }
+
+        public void SetTimeScale(Vector2 request) => SetTimeScale(request.x, request.y);
     }
 }

@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 
@@ -11,35 +12,36 @@ namespace Util
         public override void OnGUI(Rect position, SerializedProperty property,
             GUIContent label)
         {
-                EditorGUI.BeginProperty(position, label, property);
+            EditorGUI.BeginProperty(position, label, property);
 
-                var delimeter = property.FindPropertyRelative("Delimeter");
+            var delimeter = property.FindPropertyRelative("Delimeter");
 
-                var list = GetPropertyNames(property);
-
-                var properties = list.Select(property.FindPropertyRelative).ToArray();
-
-
-
-                EditorGUI.LabelField(position, label);
+            var properties = property.GetChildren().Where(it => !SerializedProperty.EqualContents(it, delimeter))
+                .ToArray();
+            var list = properties.Select(it => it.displayName);
 
 
-                var fieldPos = position;
-                fieldPos.x += EditorGUIUtility.labelWidth;
-                fieldPos.width -= EditorGUIUtility.labelWidth;
+            EditorGUI.LabelField(position, label);
 
-                var popUpPos = fieldPos;
-                popUpPos.width = 15;
 
-                var popupStyle = new GUIStyle(GUI.skin.GetStyle("PaneOptions"));
-                popupStyle.imagePosition = ImagePosition.ImageOnly;
-                delimeter.intValue = EditorGUI.Popup(popUpPos, delimeter.intValue, list.ToArray(), popupStyle);
+            var fieldPos = position;
+            fieldPos.x += EditorGUIUtility.labelWidth;
+            fieldPos.width -= EditorGUIUtility.labelWidth;
 
-                fieldPos.x += popUpPos.width;
-                fieldPos.width -= popUpPos.width;
-                EditorGUI.PropertyField(fieldPos, properties[delimeter.intValue], GUIContent.none);
+            var popUpPos = fieldPos;
+            popUpPos.width = 15;
 
-                EditorGUI.EndProperty();
+            var popupStyle = new GUIStyle(GUI.skin.GetStyle("PaneOptions"));
+            popupStyle.imagePosition = ImagePosition.ImageOnly;
+            delimeter.intValue = EditorGUI.Popup(popUpPos, delimeter.intValue, list.ToArray(), popupStyle);
+
+            fieldPos.x += popUpPos.width + 15;
+            fieldPos.width -= popUpPos.width + 15;
+            fieldPos.height = EditorGUI.GetPropertyHeight(properties[delimeter.intValue], true);
+
+            EditorGUI.PropertyField(fieldPos, properties[delimeter.intValue], GUIContent.none);
+
+            EditorGUI.EndProperty();
         }
 
         private static List<string> GetPropertyNames(SerializedProperty property)
@@ -64,7 +66,11 @@ namespace Util
 
         public override float GetPropertyHeight(SerializedProperty property, GUIContent label)
         {
-            return base.GetPropertyHeight(property, label);
+            var delimeter = property.FindPropertyRelative("Delimeter");
+
+            var properties = property.GetChildren().Where(it => !SerializedProperty.EqualContents(it, delimeter))
+                .ToArray();
+            return EditorGUI.GetPropertyHeight(properties[delimeter.intValue], true);
         }
     }
 }

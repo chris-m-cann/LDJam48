@@ -17,6 +17,7 @@ namespace LDJam48
         {
             onGemPickup.OnEventTrigger += AddGems;
             displayGems.Reset();
+            totalGems.Reset();
         }
 
         private void OnDisable()

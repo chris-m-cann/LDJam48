@@ -1,0 +1,182 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2780589682603227574
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2780589682603227571}
+  - component: {fileID: 2780589682603227570}
+  - component: {fileID: 2780589682603227582}
+  - component: {fileID: 2780589682603227581}
+  m_Layer: 0
+  m_Name: PaletteManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2780589682603227571
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2780589682603227574}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2780589682603227570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2780589682603227574}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d52432677b346c99131cc8d0ccd1aaf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  swaps:
+  - Material: {fileID: 2100000, guid: fc19902f22ef861469149340a28bda64, type: 2}
+    Replacements:
+    - Item1: Replacement1
+      Item2: 2
+    - Item1: Replacement2
+      Item2: 1
+  - Material: {fileID: 2100000, guid: 3a255811ac53a7a44925c345cd46d697, type: 2}
+    Replacements:
+    - Item1: Replacement1
+      Item2: 2
+    - Item1: Replacement2
+      Item2: 1
+  - Material: {fileID: 2100000, guid: 1cc0e5a992f494943966267d5acf4500, type: 2}
+    Replacements:
+    - Item1: Replacement1
+      Item2: 2
+    - Item1: Replacement2
+      Item2: 1
+  - Material: {fileID: 2100000, guid: dfc14a5e2a2b46d4b879c761e1ff7f1f, type: 2}
+    Replacements:
+    - Item1: Replacement1
+      Item2: 2
+    - Item1: Replacement2
+      Item2: 1
+  - Material: {fileID: 2100000, guid: b4ea0ecf742cd1840be60f6c62f66261, type: 2}
+    Replacements:
+    - Item1: Replacement1
+      Item2: 2
+    - Item1: Replacement2
+      Item2: 0
+  - Material: {fileID: 2100000, guid: 184db8f120ce7e04089f357a689844a3, type: 2}
+    Replacements:
+    - Item1: Replacement1
+      Item2: 2
+    - Item1: Replacement2
+      Item2: 0
+  - Material: {fileID: -5383020986872669095, guid: 05de4d0a9dbd1274a855b6eef55806d4, type: 2}
+    Replacements:
+    - Item1: _FaceColor
+      Item2: 1
+    - Item1: _UnderlayColor
+      Item2: 2
+    - Item1: _OutlineColor
+      Item2: 0
+  - Material: {fileID: -4208079703141082703, guid: a94234c0fbbcb91459c089080da41759, type: 2}
+    Replacements:
+    - Item1: _FaceColor
+      Item2: 0
+  - Material: {fileID: -4208079703141082703, guid: a94234c0fbbcb91459c089080da41759, type: 2}
+    Replacements:
+    - Item1: _FaceColor
+      Item2: 1
+  - Material: {fileID: -5383020986872669095, guid: ad8a91cc2125f6a468f0459606414b2e, type: 2}
+    Replacements:
+    - Item1: _FaceColor
+      Item2: 2
+    - Item1: _UnderlayColor
+      Item2: 1
+    - Item1: _OutlineColor
+      Item2: 0
+  - Material: {fileID: 2100000, guid: 2f232ee13a3f3ab4e98c1aaf4d9b5290, type: 2}
+    Replacements:
+    - Item1: Replacement1
+      Item2: 2
+    - Item1: Replacement2
+      Item2: 0
+  - Material: {fileID: 2100000, guid: f8a708955f610874b9f9b25463445c03, type: 2}
+    Replacements:
+    - Item1: Replacement1
+      Item2: 2
+    - Item1: Replacement2
+      Item2: 1
+  palette: {fileID: 11400000, guid: 6b00a330c865904409f9fe572680299e, type: 2}
+--- !u!114 &2780589682603227582
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2780589682603227574}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d27e35283e784b0bb543391ded032747, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activePalette: {fileID: 11400000, guid: 6b00a330c865904409f9fe572680299e, type: 2}
+  palettes:
+  - {fileID: 11400000, guid: 89b42cc21f7ddce4e9967dddc96b70d3, type: 2}
+  - {fileID: 11400000, guid: dca3e28c66666614b9c8bb984abb11b1, type: 2}
+  - {fileID: 11400000, guid: e8000f173acf5b9468332bd741fcdd3b, type: 2}
+  - {fileID: 11400000, guid: 63e36ed85954dd34da970467e2b49028, type: 2}
+  randomizeOnStart: 0
+--- !u!114 &2780589682603227581
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2780589682603227574}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbf4727a5eba41a5af6295604583363e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onAwake:
+    m_PersistentCalls:
+      m_Calls: []
+  onEnable:
+    m_PersistentCalls:
+      m_Calls: []
+  onStart:
+    m_PersistentCalls:
+      m_Calls: []
+  onApplicationQuit:
+    m_PersistentCalls:
+      m_Calls: []
+  onDisable:
+    m_PersistentCalls:
+      m_Calls: []
+  onDestroy:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2780589682603227582}
+        m_TargetAssemblyTypeName: LDJam48.RandomPalette, Assembly-CSharp
+        m_MethodName: RandomizePalette
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2

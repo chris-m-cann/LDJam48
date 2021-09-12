@@ -1,10 +1,12 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
+using System.Text;
 using DG.Tweening;
 using DG.Tweening.Core;
 using UnityEngine;
 using UnityEngine.Assertions;
-using UnityEngine.Events;
+using UnityEngine.UI;
 using Debug = UnityEngine.Debug;
 using Random = UnityEngine.Random;
 
@@ -36,44 +38,15 @@ namespace Util
             ThereAndBack
         }
 
-        [System.Serializable]
-        public struct TweenDescription
-        {
-            [Tooltip("If null, object this component is attached to will be used")]
-            public GameObject ObjectToAnimate;
-            public Ease Ease;
-            public bool UseCustomCurve;
-            public AnimationCurve CustomCurve;
-            public Property Property;
-            public string PropertyName;
-            public float Duration;
-            public bool RelativeToCurrent;
-            public Vector3 Start;
-            public Vector3 End;
-            public PlayType PlayType;
-            public bool PlayOnEnable;
-            public bool RandomDelay;
-            public Vector2 DefaultDelay;
-            public bool TimeScaleDependent;
-            public UnityEvent OnComplete;
-        }
 
         [SerializeField] private TweenDescription[] tweens;
 
 
         private int _runningTweenId = 42;
-        private Tweener[] _tweeners = new Tweener[1];
-
-        private void OnValidate()
-        {
-            if (tweens.Length == _tweeners.Length) return;
-
-            Array.Resize(ref _tweeners, tweens.Length);
-        }
-
+        private Dictionary<int, Tweener> _tweeners = new Dictionary<int, Tweener>();
+        
         private void OnEnable()
         {
-            OnValidate();
             for (int i = 0; i < tweens.Length; i++)
             {
                 if (tweens[i].PlayOnEnable)
@@ -87,7 +60,7 @@ namespace Util
         {
             foreach (var tweener in _tweeners)
             {
-                tweener?.Kill();
+                tweener.Value?.Kill();
             }
         }
 
@@ -95,27 +68,17 @@ namespace Util
         {
             Assert.IsTrue(idx > -1 && idx < tweens.Length, $"idx = {idx} not in range");
 
-            StartCoroutine(CoPlay(idx));
-        }
-
-
-
-        private IEnumerator CoPlayFromOnEnable(int idx)
-        {
-            TweenDescription tween = tweens[idx];
-
-            // if we arent going to delay anyway then need to wait until any parent layouts are done
-            if (!tween.RandomDelay && Mathf.Approximately(tween.DefaultDelay.x, 0))
+            if (isActiveAndEnabled && gameObject.activeInHierarchy)
             {
-                yield return new WaitForEndOfFrame();
+                StartCoroutine(CoPlay(tweens[idx]));
             }
-
-            yield return StartCoroutine(CoPlay(idx));
         }
 
-        private IEnumerator CoPlay(int idx)
+        public IEnumerator CoPlay(TweenDescription tween)
         {
-            TweenDescription tween = tweens[idx];
+            bool running = true;
+            if (tween.ObjectToAnimate != null && !tween.ObjectToAnimate.activeSelf) yield break;
+
 
             float delay = tween.DefaultDelay.x;
             if (tween.RandomDelay)
@@ -123,19 +86,26 @@ namespace Util
                 delay = Random.Range(tween.DefaultDelay.x, tween.DefaultDelay.y);
             }
 
+            var tweenHash = tween.GetHashCode();
 
-            if (_tweeners[idx] != null)
+            if (_tweeners.ContainsKey(tweenHash))
             {
-                _tweeners[idx].Kill();
+                _tweeners[tweenHash].Kill();
             }
 
-            var tweener = BuildTweener(tween)
-                .SetDelay(delay)
-                .SetUpdate(UpdateType.Normal, !tween.TimeScaleDependent)
-                .OnComplete(() => OnComplete(idx));
-
-            _tweeners[idx] = tweener;
+            var tweener = BuildTweener(tween);
             if (tweener == null) yield break;
+
+            tweener.SetDelay(delay)
+                .SetUpdate(UpdateType.Normal, !tween.TimeScaleDependent)
+                .OnComplete(() =>
+                {
+                    tween.OnComplete?.Invoke();
+                    _tweeners.Remove(tweenHash);
+                    running = false;
+                });
+
+            _tweeners[tweenHash] = tweener;
 
             tweener.SetId(_runningTweenId);
             tweener.SetAutoKill(false);
@@ -145,9 +115,11 @@ namespace Util
                 case PlayType.Once:
                     break;
                 case PlayType.PingPong:
+                    running = false;
                     tweener.SetLoops(-1, LoopType.Yoyo);
                     break;
                 case PlayType.Loop:
+                    running = false;
                     tweener.SetLoops(-1);
                     break;
                 case PlayType.ThereAndBack:
@@ -168,6 +140,56 @@ namespace Util
             }
 
             DOTween.Play(tweener);
+
+            while (running)
+            {
+                yield return null;
+            }
+        }
+
+        public void Stop(int idx)
+        {
+            Assert.IsTrue(idx > -1 && idx < tweens.Length, $"idx = {idx} not in range");
+
+            var hash = tweens[idx].GetHashCode();
+            if (_tweeners.ContainsKey(hash))
+            {
+                _tweeners[hash]?.Kill();
+                _tweeners.Remove(hash);
+            }
+        }
+        
+        public TweenDescription GetTween(int index)
+        {
+            return tweens[index];
+        }
+        
+        
+        public void SetTween(int index, TweenDescription tween)
+        {
+            tweens[index] = tween;
+        }
+
+        [ContextMenu("PlayAll")]
+        public void PlayAll()
+        {
+            foreach (var tween in tweens)
+            {
+                StartCoroutine(CoPlay(tween));
+            }
+        }
+
+        private IEnumerator CoPlayFromOnEnable(int idx)
+        {
+            TweenDescription tween = tweens[idx];
+
+            // if we arent going to delay anyway then need to wait until any parent layouts are done
+            if (!tween.RandomDelay && Mathf.Approximately(tween.DefaultDelay.x, 0))
+            {
+                yield return new WaitForEndOfFrame();
+            }
+
+            yield return StartCoroutine(CoPlay(tweens[idx]));
         }
 
         private Tweener BuildTweener(TweenDescription tween)
@@ -284,7 +306,28 @@ namespace Util
 
         private Tweener BuildShaderFloatTweener(TweenDescription tween)
         {
-            var material = tween.ObjectToAnimate.GetComponent<SpriteRenderer>().material;
+            Material material;
+
+            var sr = tween.ObjectToAnimate.GetComponent<SpriteRenderer>();
+            if (sr != null)
+            {
+                material = sr.material;
+            }
+            else
+            {
+                var img = tween.ObjectToAnimate.GetComponent<Image>();
+
+                if (img != null)
+                {
+                    material = img.material;
+                }
+                else
+                {
+                    Debug.LogError(
+                        $"Object {tween.ObjectToAnimate.name} doesnt have a SpriteRenderer or an Image component");
+                    return null;
+                }
+            }
 
             DOGetter<float> getter;
             float tweenStart;
@@ -294,18 +337,22 @@ namespace Util
                 var initial = material.GetFloat(tween.PropertyName);
                 getter = () => material.GetFloat(tween.PropertyName) + initial;
                 tweenStart = tween.Start.x + initial;
-                tweenEnd = tween.End.y + initial;
+                tweenEnd = tween.End.x + initial;
             }
             else
             {
                 getter = () => material.GetFloat(tween.PropertyName);
                 tweenStart = tween.Start.x;
-                tweenEnd = tween.End.y;
+                tweenEnd = tween.End.x;
             }
 
             SetShaderProperty(material, tween.PropertyName, tweenStart);
 
-            return DOTween.To(getter, it => SetShaderProperty(material, tween.PropertyName, it), tweenEnd, tween.Duration).From(tweenStart);
+            // theres a weird bug where the property isnt being updated smoothly when timescale independant
+            // it seems to jump frames ahead to nealy being done. cant see why though
+            return DOTween
+                .To(getter, it => SetShaderProperty(material, tween.PropertyName, it), tweenEnd, tween.Duration)
+                .From(tweenStart);
         }
 
         private void SetShaderProperty(Material material, string propertyName, float value)
@@ -329,11 +376,36 @@ namespace Util
             sr.color = c;
             return sr.DOFade(tweenEnd, tween.Duration).From(tweenStart);
         }
-        
 
-        private void OnComplete(int idx)
+        #region debug extras
+        private string TweenName(TweenDescription tween)
         {
-            tweens[idx].OnComplete.Invoke();
+            if (tween.ObjectToAnimate != null)
+            {
+                return tween.ObjectToAnimate.name;
+            }
+            else
+            {
+                return name;
+            }
         }
+        
+        private string TweenToString(TweenDescription tween)
+        {
+            var sb = new StringBuilder();
+            sb.AppendLine("TweenDescription:");
+            sb.AppendLine($"ObjectToAimate: {TweenName(tween)}");
+            sb.AppendLine($"Property: {tween.Property}");
+            sb.AppendLine($"PropertyName: {tween.PropertyName}");
+            sb.AppendLine($"Duration: {tween.Duration}");
+            sb.AppendLine($"Start: {tween.Start}");
+            sb.AppendLine($"End: {tween.End}");
+            sb.AppendLine($"Ease: {tween.Ease}");
+            sb.AppendLine($"PlayType: {tween.PlayType}");
+
+            return sb.ToString();
+        }
+        #endregion
     }
+    
 }

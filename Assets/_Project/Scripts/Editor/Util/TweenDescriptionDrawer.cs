@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Util
 {
-    [CustomPropertyDrawer(typeof(TweenBehaviour.TweenDescription))]
+    [CustomPropertyDrawer(typeof(TweenDescription))]
     public class TweenDescriptionDrawer : PropertyDrawer
     {
         private const int PADDING = 2;
@@ -18,6 +18,7 @@ namespace Util
 
             if (!property.isExpanded) return;
 
+            var propName = property.FindPropertyRelative("Name");
             var propObj = property.FindPropertyRelative("ObjectToAnimate");
             var propEase = property.FindPropertyRelative("Ease");
             var propUseCustomCurve = property.FindPropertyRelative("UseCustomCurve");
@@ -43,6 +44,7 @@ namespace Util
 
             using (new EditorGUI.IndentLevelScope(1))
             {
+                rect = PropertyOnNextLine(rect, propName);
                 rect = PropertyOnNextLine(rect, propObj);
                 rect = PropertyOnNextLine(rect, propEase);
 
@@ -225,6 +227,7 @@ namespace Util
 
                 height += TotalHeight(property, new[]
                 {
+                    "Name",
                     "ObjectToAnimate",
                     "Ease",
                     "Property",

@@ -51,6 +51,7 @@ Material:
     - AlphaColour: {r: 0, g: 0, b: 0, a: 1}
     - ColourToReplace1: {r: 1, g: 0, b: 1, a: 1}
     - ColourToReplace2: {r: 1, g: 1, b: 1, a: 1}
-    - Replacement1: {r: 0.98823535, g: 0.6392157, b: 0.06666667, a: 0}
-    - Replacement2: {r: 0.8980393, g: 0.8980393, b: 0.8980393, a: 0}
+    - MaskColour: {r: 1, g: 0, b: 1, a: 1}
+    - Replacement1: {r: 0.98823535, g: 0.6392157, b: 0.06666667, a: 1}
+    - Replacement2: {r: 0.8980393, g: 0.8980393, b: 0.8980393, a: 1}
   m_BuildTextureStacks: []

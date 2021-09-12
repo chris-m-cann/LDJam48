@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
 using LDJam48.Stats;
 using UnityEngine;
 using UnityEngine.Events;
@@ -8,7 +9,6 @@ namespace Util
 {
     public static class CoroutinesEx
     {
-
         public static void ExecuteAfter(this MonoBehaviour self, float delay, UnityAction action) {
             self.StartCoroutine(CoExecuteAfter(delay, action, true));
         }
@@ -41,5 +41,20 @@ namespace Util
             yield return null;
             action();
         }
+        
+        public static Coroutine WaitForAll(this MonoBehaviour self, IEnumerable<Coroutine> coroutines)
+        {
+            return self.StartCoroutine(CoWaitForAll(coroutines));
+        }
+
+        private static IEnumerator CoWaitForAll(IEnumerable<Coroutine> coroutines)
+        {
+            foreach (var coroutine in coroutines)
+            {
+                yield return coroutine;
+            }
+        }
     }
+    
+    
 }

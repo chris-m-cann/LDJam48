@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
+using Util;
 using Util.Colour;
-using Util.Var;
 using Util.Var.Observe;
 
 namespace LDJam48
@@ -9,7 +9,14 @@ namespace LDJam48
     [ExecuteAlways]
     public class PaletteSwapper : MonoBehaviour
     {
-        [SerializeField] private Material[] mats;
+        [Serializable]
+        public struct SwapParams
+        {
+            public Material Material;
+            public Pair<string, int>[] Replacements;
+        }
+
+        [SerializeField] private SwapParams[] swaps;
         [SerializeField] private ObservableColourPaletteVariable palette;
 
         private void Start()
@@ -29,10 +36,12 @@ namespace LDJam48
 
         private void SwapPalette(ColourPalette newPalette)
         {
-            foreach (var mat in mats)
+            foreach (var swap in swaps)
             {
-                mat.SetColor("Replacement1", newPalette.GetColour(2));
-                mat.SetColor("Replacement2", newPalette.GetColour(1));
+                foreach (var replacement in swap.Replacements)
+                {
+                    swap.Material.SetColor(replacement.First, newPalette.GetColour(replacement.Second));
+                }
             }
         }
 

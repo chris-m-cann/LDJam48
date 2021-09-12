@@ -11,7 +11,7 @@ namespace Util.Var
         [SerializeField] private TObVar Observable;
         [SerializeField] private T Constant;
 
-        public T Value
+        public virtual T Value
         {
             get
             {

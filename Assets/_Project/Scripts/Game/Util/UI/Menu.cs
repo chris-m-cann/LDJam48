@@ -1,88 +1,103 @@
 using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 
 namespace Util.UI
 {
+    [RequireComponent(typeof(TweenBehaviour))]
     public class Menu : MonoBehaviour
     {
-        [SerializeField] private UnityEvent onMenuEnabled;
-        [SerializeField] private UnityEvent onMenuDisabled;
-        [SerializeField] private UnityEvent onSwitchedTo;
-        [SerializeField] private UnityEvent onSwitchedFrom;
+        public bool WaitForOpen = false;
+        public bool WaitForClose = true;
 
-        private Action _onMenuEnabledComplete;
-        private Action _onMenuDisabledComplete;
-        private Action _onSwitchedToComplete;
-        private Action _onSwitchedFromComplete;
+        [SerializeField] private Transition onMenuEnabledTransition;
+        [SerializeField] private Transition onMenuDisabledTransition;
+        [SerializeField] private Transition onSwitchedToTransition;
+        [SerializeField] private Transition onSwitchedFromTransition;
+        
+        
+        [SerializeField] private Transition onEnter;
+        [SerializeField] private Transition onExit;
+        [SerializeField] private Transition onPoppedTo;
+        [SerializeField] private Transition onPoppedFrom;
 
-        public void OnMenuEnabled(Action onComplete)
+        [SerializeField] private Transition[] transitions;
+        [SerializeField] private SwapMenuAction[] actions;
+        
+        
+        
+        private TweenBehaviour _tweenBehaviour;
+        private IMenuManager _manager;
+        private int _menuIndex;
+
+        private void Awake()
         {
-            OnCall(onMenuEnabled, onComplete, ref _onMenuEnabledComplete);
+            _tweenBehaviour = GetComponent<TweenBehaviour>();
         }
 
-        public void CompleteOnMenuEnabled()
+        public void CloseParent() => _manager?.CloseMenu();
+
+        public void SwitchToMenu(int actionIndex)
         {
-            _onMenuEnabledComplete?.Invoke();
-            ResetActions();
+            var action = actions[actionIndex];
+            action.SourceMenu = _menuIndex;
+            _manager?.SwitchMenu(action);
         }
 
-        public void OnMenuDisabled(Action onComplete)
+        public void PopBackstack()
         {
-            OnCall(onMenuDisabled, onComplete, ref _onMenuDisabledComplete);
+            _manager?.PopBackstack();
         }
 
-        public void CompleteOnMenuDisabled()
+        public void Attach(IMenuManager menuManager, int menuIndex)
         {
-            _onMenuDisabledComplete?.Invoke();
-            ResetActions();
+            _manager = menuManager;
+            _menuIndex = menuIndex;
+        }
+        public IEnumerator CoOnMenuEnabled()
+        {
+            yield return StartCoroutine(CoRunTransition(onMenuEnabledTransition));
+        }
+        
+        public IEnumerator CoOnMenuDisabled()
+        {
+            yield return StartCoroutine(CoRunTransition(onMenuDisabledTransition));
         }
 
-        public void OnSwitchedTo(Action onComplete)
+        public IEnumerator CoRunTransition(int transitionIdx)
         {
-            OnCall(onSwitchedTo, onComplete, ref _onSwitchedToComplete);
+            yield return StartCoroutine(CoRunTransition(transitions[transitionIdx]));
         }
 
-        public void CompleteOnSwitchedTo()
+        public IEnumerator CoOnEnter()
         {
-            _onSwitchedToComplete?.Invoke();
-            ResetActions();
+            yield return StartCoroutine(CoRunTransition(onEnter));
         }
 
-        public void OnSwitchedFrom(Action onComplete)
+        public IEnumerator CoOnExit()
         {
-            OnCall(onSwitchedFrom, onComplete, ref _onSwitchedFromComplete);
+            yield return StartCoroutine(CoRunTransition(onExit));
         }
 
-        public void CompleteOnSwitchedFrom()
+        
+        public IEnumerator CoPoppedTo()
         {
-            _onSwitchedFromComplete?.Invoke();
-            ResetActions();
+            yield return StartCoroutine(CoRunTransition(onPoppedTo));
         }
 
-        private void OnCall(UnityEvent @event, Action onComplete, ref Action cache)
+        public IEnumerator CoPoppedFrom()
         {
-            ResetActions();
-
-            if (onComplete == null) return;
-
-            if (@event.GetPersistentEventCount() == 0)
-            {
-                onComplete();
-                return;
-            }
-
-            cache = onComplete;
-            @event.Invoke();
+            yield return StartCoroutine(CoRunTransition(onPoppedFrom));
         }
 
-        private void ResetActions()
+        private IEnumerator CoRunTransition(Transition transition)
         {
-            _onMenuEnabledComplete = null;
-            _onMenuDisabledComplete = null;
-            _onSwitchedToComplete = null;
-            _onSwitchedFromComplete = null;
-        }
+            transition.OnTransitionStart?.Invoke();
 
+            yield return StartCoroutine(transition.CoTween(this, _tweenBehaviour));
+            
+            transition.OnTransitionComplete?.Invoke();
+        }
     }
 }

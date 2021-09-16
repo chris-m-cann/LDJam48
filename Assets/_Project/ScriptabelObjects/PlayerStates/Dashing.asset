@@ -32,3 +32,53 @@ MonoBehaviour:
   - 0.05
   displayTrail: 0
   dashAnimEvent: {fileID: 11400000, guid: 9600b44369da12a4ea242970738a18b7, type: 2}
+  wallMask:
+    serializedVersion: 2
+    m_Bits: 1152
+  dashCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0.008333334
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.25
+      value: 1
+      inSlope: -0.010414984
+      outSlope: -0.010414984
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.8107262
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.25001
+      value: 0
+      inSlope: -0.012141008
+      outSlope: -0.012141008
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.6238897
+      outWeight: 0.27375585
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.2687676
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  dashSpeedMax: 40
+  dashSpeedMin: 5
+  leftWallX: -4.5
+  rightWallX: 4.5
+  boxcastSize: 0.5

@@ -33,6 +33,8 @@ namespace LDJam48.PlayerState
         public ParticleSystem WallSlideParticles;
         public ShakeDefinitionEventReference ShakeEvent;
 
+        public Transform LeftProjectionPoint;
+        public Transform RightProjectionPoint;
 
         public ParticleSystem DashTrailEffect;
         public ParticleSystem SlamParticles;
@@ -44,6 +46,8 @@ namespace LDJam48.PlayerState
       [SerializeField] private BoolReference isPaused;
 
       [SerializeField] private string activeState;
+      [SerializeField] private bool logStateChanges;
+      
 
 
 
@@ -70,7 +74,11 @@ namespace LDJam48.PlayerState
 
         private void OnStateChanged(Pair<PlayerState, PlayerState> state)
         {
-            // Debug.Log($"Player State change {state.First.Name} -> {state.Second.Name}");
+            if (logStateChanges)
+            {
+                Debug.Log($"Player State change {state.First.Name} -> {state.Second.Name}");
+            }
+
             activeState = state.Second.Name;
         }
 

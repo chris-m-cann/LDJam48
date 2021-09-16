@@ -41,7 +41,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - Disolve: 0.19171675
+    - Disolve: 1
     m_Colors:
     - AlphaColour: {r: 0, g: 0, b: 1, a: 1}
     - ColourToReplace1: {r: 1, g: 0, b: 1, a: 1}

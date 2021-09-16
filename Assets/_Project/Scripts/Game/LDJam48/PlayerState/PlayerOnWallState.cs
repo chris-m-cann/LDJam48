@@ -11,6 +11,10 @@ namespace LDJam48.PlayerState
         [SerializeField] private string anim = "player_wall_land";
         [SerializeField] private Vector2Reference maxVelocity;
 
+        [SerializeField] private LayerMask wallMask;
+        [SerializeField] private float boxcastSize = .5f;
+        
+        
 
         private bool _isLeft = false;
 
@@ -27,9 +31,34 @@ namespace LDJam48.PlayerState
             _isLeft = _machine.Context.Contacts.IsOnLeftWall;
             _machine.Context.Sprite.flipX = !_isLeft;
 
+            StickToWall();
+
             EnableWallParticles(_machine.Context.WallSlideParticles);
 
             _machine.Context.OnDashInput += OnDash;
+        }
+
+        private void StickToWall()
+        {
+            // cast from farthest point toward wall
+            var direction = Vector2.left;
+            var projectionPoint = _machine.Context.RightProjectionPoint;
+            var offset = .5f;
+
+            if (!_isLeft)
+            {
+                direction.x += -1;
+                projectionPoint = _machine.Context.LeftProjectionPoint;
+                offset *= -1;
+            }
+            var hit = Physics2D.BoxCast(projectionPoint.position, boxcastSize * Vector2.one, 0f, direction, 10f, wallMask);
+
+            if (hit.collider != null)
+            {
+                var pos = _machine.Context.transform.position;
+                pos.x = hit.point.x + offset;
+            }
+
         }
 
         private void EnableWallParticles(ParticleSystem wallSlideParticles)

@@ -20,3 +20,7 @@ MonoBehaviour:
     Variable: {fileID: 11400000, guid: 3bd77d1494521424f90a0af57fd9941f, type: 2}
     Observable: {fileID: 0}
     Constant: {x: 0, y: 0}
+  wallMask:
+    serializedVersion: 2
+    m_Bits: 128
+  boxcastSize: 0.5

@@ -9722,6 +9722,8 @@ Transform:
   - {fileID: 2064680036478976596}
   - {fileID: 2064680035997849746}
   - {fileID: 2064680036351985489}
+  - {fileID: 7346769351060134738}
+  - {fileID: 5523645072563094732}
   m_Father: {fileID: 2064680037061477151}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -10607,6 +10609,8 @@ MonoBehaviour:
     Delimeter: 0
     Event: {fileID: 11400000, guid: fb8425c3033483247b75c8ae4603e756, type: 2}
     Variable: {fileID: 0}
+  LeftProjectionPoint: {fileID: 7346769351060134738}
+  RightProjectionPoint: {fileID: 5523645072563094732}
   DashTrailEffect: {fileID: 0}
   SlamParticles: {fileID: 6013771848235733429}
   isPaused:
@@ -10934,6 +10938,66 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c80a5cd49e64047af432f7c09f9aff7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &3874050118759405744
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5523645072563094732}
+  m_Layer: 6
+  m_Name: RightProjectionPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5523645072563094732
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3874050118759405744}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.416, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2064680035951693564}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &4469982364225745046
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7346769351060134738}
+  m_Layer: 6
+  m_Name: LeftProjectionPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7346769351060134738
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4469982364225745046}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.497, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2064680035951693564}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2064680035449093895
 PrefabInstance:
   m_ObjectHideFlags: 0

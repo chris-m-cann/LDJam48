@@ -78,7 +78,11 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   dashSpeedMax: 40
-  dashSpeedMin: 5
+  dashSpeedMin: 20
   leftWallX: -4.5
   rightWallX: 4.5
   boxcastSize: 0.5
+  onWalHit:
+    Delimeter: 0
+    Event: {fileID: 11400000, guid: 3b38bd5e807f9dd4ca6600dccdafc0f6, type: 2}
+    Variable: {fileID: 0}

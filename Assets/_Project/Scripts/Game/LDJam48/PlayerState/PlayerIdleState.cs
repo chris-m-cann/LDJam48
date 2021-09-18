@@ -1,5 +1,6 @@
 using UnityEngine;
 using Util;
+using Util.Var.Events;
 
 namespace LDJam48.PlayerState
 {
@@ -9,14 +10,23 @@ namespace LDJam48.PlayerState
         [SerializeField] private string anim = "player_idle";
         [SerializeField] private string slamLandAnim = "player_slam_land";
         [SerializeField] private AudioClipAsset sound;
+        [SerializeField] private ParticleEffectRequestEventReference regularLandEffect;
 
 
         public override void OnEnter(PlayerState previous)
         {
-            _machine.Context.Animator.Play(anim);
+           
             _machine.Context.Rigidbody2D.velocity = Vector2.zero;
 
+            _machine.Context.Animator.Play(anim);
+
             _machine.Context.SfxChannel.Raise(sound);
+            regularLandEffect.Raise(new ParticleEffectRequest
+            {
+                Position = _machine.Context.BottomEffectPoint.position,
+                Rotation = Quaternion.identity,
+                Scale = Vector3.one
+            });
 
             _machine.Context.OnDashInput += OnDash;
         }

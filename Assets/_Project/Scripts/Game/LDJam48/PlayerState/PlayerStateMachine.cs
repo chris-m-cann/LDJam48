@@ -98,8 +98,13 @@ namespace LDJam48.PlayerState
         private void FixedUpdate()
         {
             if (isPaused.Value) return;
-            Contacts = _playerContacts.DetectContacts(Contacts);
+            UpdateContacts();
             _machine.OnFixedUpdate();
+        }
+
+        public void UpdateContacts()
+        {
+            Contacts = _playerContacts.DetectContacts(Contacts);
         }
 
         public void Bounce()

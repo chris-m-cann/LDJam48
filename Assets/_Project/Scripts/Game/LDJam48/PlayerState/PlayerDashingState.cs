@@ -5,6 +5,7 @@ using LDJam48.LevelGen;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using Util;
+using Util.Var;
 using Util.Var.Events;
 using Util.Var.Observe;
 using Void = Util.Void;
@@ -38,8 +39,8 @@ namespace LDJam48.PlayerState
         [SerializeField] private float leftWallX;
         [SerializeField] private float rightWallX;
         [SerializeField] private float boxcastSize = .5f;
-        
-        
+
+        [SerializeField] private ParticleEffectRequestEventReference onWalHit;
         
         private Vector2 _direction;
         private float _prevGravity = 1f;
@@ -151,7 +152,6 @@ namespace LDJam48.PlayerState
 
         private IEnumerator CoDash(float finalX)
         {
-            Debug.Log($"Dashing from {_machine.Context.transform.position.x} to {finalX}");
             var rb = _machine.Context.Rigidbody2D;
             var vel = rb.velocity;
 
@@ -213,12 +213,14 @@ namespace LDJam48.PlayerState
             {
                 // kick off the on a wall puff
                 var t = _direction.x < 0 ? _machine.Context.LeftEffectPoint : _machine.Context.RightEffectPoint;
-                _machine.Context.WallImpactEffectEvent.Raise(new ParticleEffectRequest
+                var onWallRequest = new ParticleEffectRequest
                 {
                     Position = t.position,
-                    Rotation = t.rotation,
+                    Rotation = t.localRotation,
                     Scale = t.localScale
-                });
+                };
+                _machine.Context.WallImpactEffectEvent.Raise(onWallRequest);
+                onWalHit.Raise(onWallRequest);
                 _machine.Context.ShakeEvent.Raise(onWallLandShake);
             }
         }

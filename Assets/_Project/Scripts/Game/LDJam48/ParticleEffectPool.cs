@@ -1,22 +1,29 @@
 using System;
 using UnityEngine;
+using Util;
 
 namespace LDJam48
 {
+    // next thing to do is have parent objects to the particle system so that they can have their own rotations and offsets
     public class ParticleEffectPool : MonoBehaviour
     {
         [SerializeField] private ParticleSystem effectPrefab;
         [SerializeField] private int poolSize = 3;
 
-        private ParticleSystem[] _particles;
+        private Pair<Transform, ParticleSystem>[] _particles;
 
         private void Start()
         {
-            _particles = new ParticleSystem[poolSize];
+            _particles = new Pair<Transform, ParticleSystem>[poolSize];
             for (int i = 0; i < poolSize; i++)
             {
-                _particles[i] = Instantiate(effectPrefab, transform);
-                _particles[i].gameObject.SetActive(false);
+                var parent = new GameObject($"{effectPrefab.name} Parent {i}");
+                parent.transform.SetParent(transform);
+                
+                var particles = Instantiate(effectPrefab, parent.transform);
+                particles.gameObject.SetActive(false);
+
+                _particles[i] = new Pair<Transform, ParticleSystem>(parent.transform, particles);
             }
         }
 
@@ -25,7 +32,7 @@ namespace LDJam48
         {
             foreach (var particles in _particles)
             {
-                if (particles.gameObject.activeSelf) continue;
+                if (particles.Second.gameObject.activeSelf) continue;
 
                 Play(request, particles);
                 return;
@@ -34,14 +41,14 @@ namespace LDJam48
             Play(request, _particles[0]);
         }
 
-        private void Play(ParticleEffectRequest request, ParticleSystem particles)
+        private void Play(ParticleEffectRequest request, Pair<Transform, ParticleSystem> particles)
         {
-            particles.transform.position = request.Position;
-            particles.transform.rotation = request.Rotation;
-            particles.transform.localScale = request.Scale;
+            particles.First.position = request.Position;
+            particles.First.rotation =  request.Rotation;
+            particles.First.localScale = request.Scale;
 
-            particles.gameObject.SetActive(true);
-            particles.Play();
+            particles.Second.gameObject.SetActive(true);
+            particles.Second.Play();
         }
     }
 

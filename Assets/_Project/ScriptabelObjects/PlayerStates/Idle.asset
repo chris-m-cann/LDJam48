@@ -13,4 +13,9 @@ MonoBehaviour:
   m_Name: Idle
   m_EditorClassIdentifier: 
   anim: player_idle
+  slamLandAnim: player_slam_land
   sound: {fileID: 11400000, guid: 46d12b6b9f148ec488d48442c8653ba6, type: 2}
+  regularLandEffect:
+    Delimeter: 0
+    Event: {fileID: 11400000, guid: 3b38bd5e807f9dd4ca6600dccdafc0f6, type: 2}
+    Variable: {fileID: 0}

@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using Util.Var;
 
@@ -13,8 +14,8 @@ namespace LDJam48.PlayerState
 
         [SerializeField] private LayerMask wallMask;
         [SerializeField] private float boxcastSize = .5f;
-        
-        
+
+
 
         private bool _isLeft = false;
 
@@ -97,6 +98,7 @@ namespace LDJam48.PlayerState
 
         public override PlayerState TransitionChecks()
         {
+            _machine.Context.UpdateContacts();
             // todo(chris) need to handle the case where we were on both walls but the one we were up against left
             // perhaps turn off the oposing walls detection collider whensliding? that way we will go into falling for a frame before "catching" the other wall?
             if (!_machine.Context.Contacts.IsOnLeftWall && !_machine.Context.Contacts.IsOnRightWall)

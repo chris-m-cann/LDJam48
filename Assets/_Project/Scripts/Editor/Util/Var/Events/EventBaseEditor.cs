@@ -9,19 +9,22 @@ namespace Util.Var.Events
         public override void OnInspectorGUI()
         {
 
-            EditorGUILayout.PropertyField(serializedObject.FindProperty("Value"));
-            var prev = GUI.enabled;
-            try
+            using (new EditorEx.ModifyObjectScope(serializedObject))
             {
-                GUI.enabled = EditorApplication.isPlaying;
-                if (GUILayout.Button("Raise"))
+                EditorGUILayout.PropertyField(serializedObject.FindProperty("Value"));
+                var prev = GUI.enabled;
+                try
                 {
-                    ((IEvent) target).Raise();
+                    GUI.enabled = EditorApplication.isPlaying;
+                    if (GUILayout.Button("Raise"))
+                    {
+                        ((IEvent) target).Raise();
+                    }
                 }
-            }
-            finally
-            {
-                GUI.enabled = prev;
+                finally
+                {
+                    GUI.enabled = prev;
+                }
             }
         }
     }

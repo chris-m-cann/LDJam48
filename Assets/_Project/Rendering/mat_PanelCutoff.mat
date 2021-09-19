@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: mat_ReplacementInverted
-  m_Shader: {fileID: -6465566751694194690, guid: a1cc51a87fe960f44ba2463da947028a, type: 3}
+  m_Name: mat_PanelCutoff
+  m_Shader: {fileID: -6465566751694194690, guid: c6b9d79a29a97bc4e9e33494d2ea2668, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -20,7 +20,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _MainTex:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 3e3f1a30419c37b4f9024ed2156013b8, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
@@ -36,11 +36,8 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Ints: []
-    m_Floats: []
+    m_Floats:
+    - Cutoff: 1
     m_Colors:
-    - AlphaColour: {r: 0, g: 0, b: 0, a: 1}
-    - Replaced1: {r: 1, g: 0, b: 1, a: 1}
-    - Replaced2: {r: 1, g: 1, b: 1, a: 1}
-    - Replacement1: {r: 0.90196085, g: 0.22352943, b: 0.27450982, a: 1}
-    - Replacement2: {r: 0.1137255, g: 0.20784315, b: 0.34117648, a: 1}
+    - _Color: {r: 0.1137255, g: 0.20784315, b: 0.34117648, a: 1}
   m_BuildTextureStacks: []

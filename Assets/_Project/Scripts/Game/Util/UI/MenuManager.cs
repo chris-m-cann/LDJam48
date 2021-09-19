@@ -118,6 +118,8 @@ namespace Util.UI
                 return;
             }
             
+            Debug.Log($"MenuManager, switching to {action.Destination}");
+            
             _backstack.Push(action);
             StartCoroutine(CoSwitchMenu(action));
         }

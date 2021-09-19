@@ -108,7 +108,7 @@ namespace Util
             _tweeners[tweenHash] = tweener;
 
             tweener.SetId(_runningTweenId);
-            tweener.SetAutoKill(false);
+            tweener.SetAutoKill(true);
 
             switch (tween.PlayType)
             {

@@ -118,6 +118,12 @@ MonoBehaviour:
       Item2: 2
     - Item1: Replacement2
       Item2: 1
+  - Material: {fileID: 2100000, guid: 70fd31bc6b16f5543bdd791841d1677e, type: 2}
+    Replacements:
+    - Item1: Replacement1
+      Item2: 2
+    - Item1: Replacement2
+      Item2: 1
   palette: {fileID: 11400000, guid: 6b00a330c865904409f9fe572680299e, type: 2}
 --- !u!114 &2780589682603227582
 MonoBehaviour:

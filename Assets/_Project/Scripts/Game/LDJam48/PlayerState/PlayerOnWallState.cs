@@ -65,10 +65,7 @@ namespace LDJam48.PlayerState
         private void EnableWallParticles(ParticleSystem wallSlideParticles)
         {
             var tform = wallSlideParticles.transform;
-            tform.parent =
-                _isLeft ? _machine.Context.LeftEffectPoint : _machine.Context.RightEffectPoint;
-            tform.localPosition = Vector3.zero;
-            tform.localScale = _isLeft ? Vector3.one : new Vector3(-1, 1, 1);
+            tform.SetParent(_isLeft ? _machine.Context.LeftEffectPoint : _machine.Context.RightEffectPoint, false);
             wallSlideParticles.gameObject.SetActive(true);
         }
 

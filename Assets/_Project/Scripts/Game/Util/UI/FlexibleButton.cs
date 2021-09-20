@@ -74,36 +74,29 @@ namespace Util.UI
 
         private void OnEvent(ButtonEvent e)
         {
-            Debug.Log($"ButtonEvent = {e}");
             if (_current.Tranisitions.ContainsKey(e))
             {
                 
-                Debug.Log($"ButtonEvent = {e} found");
                 _prev = _current;
                 _current = _current.Tranisitions[e];
                 
                 _prev.OnStateExit?.Invoke(e);
                 _current.OnStateEnter?.Invoke(e);
-                Debug.Log($"ButtonEvent = {e} _prev = {_prev?.Type} current = {_current.Type}");
             }
         }
 
 
         public void OnPointerDown(PointerEventData eventData)
         {
-            Debug.Log($"{gameObject.name}: OnPointerDown");
             OnEvent(ButtonEvent.PointerDown);
         }
 
         public void OnPointerUp(PointerEventData eventData)
         {
-            Debug.Log($"{gameObject.name}: OnPointerUp");
             var wasDown = _current.Type == ButtonStateType.Down;
             var exitWasWithinWindow = Mathf.Abs(Time.unscaledTime - _exitTime) < _exitWindow;
-            Debug.Log($"Maybe click? prev type = {_prev?.Type}, current type = {_current.Type}, _exitTime = {_exitTime}, _exitWindow = {_exitWindow}, time = {Time.unscaledTime}, diff = {Time.unscaledTime - _exitTime}, wasDown = {wasDown}, exitWasWithinWindow = {exitWasWithinWindow}");
             if ((wasDown ||exitWasWithinWindow))
             {
-                Debug.Log($"On click occurred for button {gameObject.name}");
                 onClick?.Invoke();
             }
             
@@ -113,13 +106,11 @@ namespace Util.UI
 
         public void OnPointerEnter(PointerEventData eventData)
         {
-            Debug.Log($"{gameObject.name}: OnPointerEnter");
             OnEvent(ButtonEvent.PointerEnter);
         }
 
         public void OnPointerExit(PointerEventData eventData)
         {
-            Debug.Log($"{gameObject.name}: OnPointerExit");
             _exitTime = Time.unscaledTime;
             OnEvent(ButtonEvent.PointerExit);
         }

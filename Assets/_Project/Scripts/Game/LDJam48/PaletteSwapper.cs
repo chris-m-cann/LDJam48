@@ -9,14 +9,7 @@ namespace LDJam48
     [ExecuteAlways]
     public class PaletteSwapper : MonoBehaviour
     {
-        [Serializable]
-        public struct SwapParams
-        {
-            public Material Material;
-            public Pair<string, int>[] Replacements;
-        }
-
-        [SerializeField] private SwapParams[] swaps;
+        [SerializeField] private MaterialColourReplacements[] swaps;
         [SerializeField] private ObservableColourPaletteVariable palette;
 
         private void Start()
@@ -38,10 +31,7 @@ namespace LDJam48
         {
             foreach (var swap in swaps)
             {
-                foreach (var replacement in swap.Replacements)
-                {
-                    swap.Material.SetColor(replacement.First, newPalette.GetColour(replacement.Second));
-                }
+                swap.ReplaceColours(newPalette);
             }
         }
 

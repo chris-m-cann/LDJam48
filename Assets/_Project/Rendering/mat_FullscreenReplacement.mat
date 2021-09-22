@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: mat_ReplacementInverted
+  m_Name: mat_FullscreenReplacement
   m_Shader: {fileID: -6465566751694194690, guid: a1cc51a87fe960f44ba2463da947028a, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
@@ -20,7 +20,11 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _MainTex:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: d42d4e0cf190f494bbcc8f37fb7fadd2, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_7825f47933a04426ad09fe5e2cf82bfe_Texture_1:
+        m_Texture: {fileID: 2800000, guid: d42d4e0cf190f494bbcc8f37fb7fadd2, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
@@ -36,11 +40,16 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Ints: []
-    m_Floats: []
+    m_Floats:
+    - ConvertColorToAlpha0: 0
+    - Fuzziness: 0.2
+    - _Range: 0.2
     m_Colors:
     - AlphaColour: {r: 0, g: 0, b: 0, a: 1}
     - Replaced1: {r: 1, g: 0, b: 1, a: 1}
     - Replaced2: {r: 1, g: 1, b: 1, a: 1}
+    - Replaced3: {r: 0, g: 0, b: 0, a: 1}
     - Replacement1: {r: 0.98823535, g: 0.6392157, b: 0.06666667, a: 1}
-    - Replacement2: {r: 0, g: 0, b: 0, a: 1}
+    - Replacement2: {r: 0.8980393, g: 0.8980393, b: 0.8980393, a: 1}
+    - Replacement3: {r: 0, g: 0, b: 0, a: 1}
   m_BuildTextureStacks: []

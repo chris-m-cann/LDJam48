@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4e70b36f99047ff8e636884f809be81, type: 3}
+  m_Name: TMPReplacements
+  m_EditorClassIdentifier: 
+  materials:
+  - {fileID: -4208079703141082703, guid: 7e85307991b6a0f4d98903b226b2c87b, type: 2}
+  - {fileID: -4208079703141082703, guid: a94234c0fbbcb91459c089080da41759, type: 2}
+  - {fileID: -5383020986872669095, guid: 05de4d0a9dbd1274a855b6eef55806d4, type: 2}
+  replacements:
+  - Item1: _OutlineColor
+    Item2: 0
+  - Item1: _FaceColor
+    Item2: 1
+  - Item1: _UnderlayColor
+    Item2: 2

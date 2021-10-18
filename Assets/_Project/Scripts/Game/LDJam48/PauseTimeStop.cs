@@ -11,8 +11,15 @@ namespace LDJam48
     {
         [SerializeField] private ObservableBoolVariable isPaused;
 
-
+        [Range(0, 1)] [SerializeField] private float timeScale = 1;
+        
+        
         private float _oldTime = 1f;
+
+        private void OnValidate()
+        {
+            Time.timeScale = timeScale;
+        }
 
         private void OnEnable()
         {

@@ -15,6 +15,10 @@ PrefabInstance:
       propertyPath: speed.y
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 747512516, guid: 5368e7e86809f7a4d922b2bc834ad0ab, type: 3}
+      propertyPath: blockers.m_Bits
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6737717202193106152, guid: 5368e7e86809f7a4d922b2bc834ad0ab, type: 3}
       propertyPath: m_Sprite
       value: 

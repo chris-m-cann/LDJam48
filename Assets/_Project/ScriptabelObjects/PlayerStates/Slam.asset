@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af81c93ecfc944e581458dc55071574c, type: 3}
   m_Name: Slam
   m_EditorClassIdentifier: 
-  speed: 10
-  duration: 0.3
+  speed: 16
+  duration: 0.25
   anim: player_slam
   sound: {fileID: 11400000, guid: 20fb2f936932dd641808f4c7636a2cb5, type: 2}
   maxVelocity:

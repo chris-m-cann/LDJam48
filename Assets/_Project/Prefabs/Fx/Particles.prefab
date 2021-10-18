@@ -29,7 +29,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8389851465421259392}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2063171472050837498
 MonoBehaviour:
@@ -74,7 +74,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8389851465421259392}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8389851464338065402
 MonoBehaviour:
@@ -238,7 +238,6 @@ GameObject:
   - component: {fileID: 8389851465421259394}
   - component: {fileID: 8389851465421259405}
   - component: {fileID: 8389851465421259401}
-  - component: {fileID: 8389851465421259406}
   - component: {fileID: 8389851465421259407}
   - component: {fileID: 8389851465421259404}
   - component: {fileID: 925511622003709231}
@@ -265,7 +264,6 @@ Transform:
   - {fileID: 8389851464801636058}
   - {fileID: 8389851465796614033}
   - {fileID: 8389851464546614212}
-  - {fileID: 8389851465564646480}
   - {fileID: 8389851464338065403}
   - {fileID: 8389851465807560490}
   - {fileID: 6726187002555761615}
@@ -385,37 +383,6 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 8389851464546614213}
-        m_TargetAssemblyTypeName: LDJam48.ParticleEffectPool, Assembly-CSharp
-        m_MethodName: Play
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &8389851465421259406
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8389851465421259393}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 11b7f86f3584f554387ffc259f7803c0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameEvent:
-    Delimeter: 0
-    Event: {fileID: 11400000, guid: f67774f628b58cc419a0232367ff422a, type: 2}
-    Variable: {fileID: 0}
-  onEventRaised:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 8389851465564646481}
         m_TargetAssemblyTypeName: LDJam48.ParticleEffectPool, Assembly-CSharp
         m_MethodName: Play
         m_Mode: 0
@@ -551,51 +518,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!1 &8389851465564646486
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 8389851465564646480}
-  - component: {fileID: 8389851465564646481}
-  m_Layer: 0
-  m_Name: Slam
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &8389851465564646480
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8389851465564646486}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 8389851465421259392}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8389851465564646481
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8389851465564646486}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 03b1421383374dd99a8441f2a124354c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  effectPrefab: {fileID: 5751662077703712434, guid: e3fadadd418b65a42a8b0fb2d4c27cd2, type: 3}
-  poolSize: 3
 --- !u!1 &8389851465796614039
 GameObject:
   m_ObjectHideFlags: 0
@@ -670,7 +592,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8389851465421259392}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8389851465807560491
 MonoBehaviour:

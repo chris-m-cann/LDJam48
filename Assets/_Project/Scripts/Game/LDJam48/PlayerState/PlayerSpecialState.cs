@@ -69,6 +69,8 @@ namespace LDJam48.PlayerState
             base.OnExit(next);
 
             _machine.Context.SlamParticles.GameObject().SetActive(false);
+            _machine.Context.Rigidbody2D.velocity = new Vector2(0, _machine.Context.CarriedYVel);
+            _machine.Context.SlamParticles.GameObject().SetActive(false);
 
             if (next == _machine.States.Idle)
             {

@@ -48,7 +48,6 @@ MonoBehaviour:
   swaps:
   - {fileID: 11400000, guid: bb14bcf6697c74e48b38ccf52c15cc67, type: 2}
   - {fileID: 11400000, guid: 73503f667385fea43bf5f9bd3fee3cdf, type: 2}
-  - {fileID: 11400000, guid: 0927d249dac62f444877f1d54f6c872b, type: 2}
   palette: {fileID: 11400000, guid: 6b00a330c865904409f9fe572680299e, type: 2}
 --- !u!114 &2780589682603227582
 MonoBehaviour:
@@ -64,10 +63,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   activePalette: {fileID: 11400000, guid: 6b00a330c865904409f9fe572680299e, type: 2}
   palettes:
-  - {fileID: 11400000, guid: 89b42cc21f7ddce4e9967dddc96b70d3, type: 2}
-  - {fileID: 11400000, guid: dca3e28c66666614b9c8bb984abb11b1, type: 2}
-  - {fileID: 11400000, guid: e8000f173acf5b9468332bd741fcdd3b, type: 2}
   - {fileID: 11400000, guid: 63e36ed85954dd34da970467e2b49028, type: 2}
+  - {fileID: 11400000, guid: 2d2977c553b48d740aa6e85bbeb1032c, type: 2}
+  - {fileID: 11400000, guid: 3f4d9002633e633409fa1cff27c91f5e, type: 2}
+  - {fileID: 11400000, guid: 3d05b4139fe6adc49bd0bff8fc8c38c7, type: 2}
+  - {fileID: 11400000, guid: ea4ea1faae75a7f4a86e4ba77ebecd1f, type: 2}
+  - {fileID: 11400000, guid: 7495a41e40f6dfe408c5c8e0a46dfe54, type: 2}
+  - {fileID: 11400000, guid: b81119f99c67ab249ae0880ee18ae680, type: 2}
+  - {fileID: 11400000, guid: a02d207af79d31747ad175204090ba08, type: 2}
+  - {fileID: 11400000, guid: 516f5e04051f4e74181a73665459548c, type: 2}
+  - {fileID: 11400000, guid: be58ce9f0591db24e8f1471b433a9f1d, type: 2}
   randomizeOnStart: 0
 --- !u!114 &2780589682603227581
 MonoBehaviour:

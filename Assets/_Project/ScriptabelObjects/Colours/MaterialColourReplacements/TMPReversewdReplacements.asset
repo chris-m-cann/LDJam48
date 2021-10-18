@@ -16,8 +16,8 @@ MonoBehaviour:
   - {fileID: -5383020986872669095, guid: ad8a91cc2125f6a468f0459606414b2e, type: 2}
   replacements:
   - Item1: _OutlineColor
-    Item2: 0
-  - Item1: _FaceColor
     Item2: 2
+  - Item1: _FaceColor
+    Item2: 3
   - Item1: _UnderlayColor
     Item2: 1

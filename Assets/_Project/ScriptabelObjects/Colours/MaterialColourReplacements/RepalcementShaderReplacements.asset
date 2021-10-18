@@ -16,8 +16,10 @@ MonoBehaviour:
   - {fileID: 2100000, guid: a79293b58bc304f4e9a8ed59b5d96f08, type: 2}
   replacements:
   - Item1: Replacement1
-    Item2: 2
+    Item2: 0
   - Item1: Replacement2
     Item2: 1
   - Item1: Replacement3
-    Item2: 0
+    Item2: 2
+  - Item1: Replacement4
+    Item2: 3

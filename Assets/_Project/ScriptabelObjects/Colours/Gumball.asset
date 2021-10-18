@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0fd4710cb40049969d12c1e5e8990472, type: 3}
-  m_Name: BasePallete
+  m_Name: Gumball
   m_EditorClassIdentifier: 
   colours:
-  - {r: 0.9150943, g: 0.4963955, b: 0.76139486, a: 1}
-  - {r: 0.96958613, g: 0.972549, b: 0.8451451, a: 1}
-  - {r: 0.1155, g: 0.15118292, b: 0.22, a: 1}
-  - {r: 0.49803922, g: 0.9137255, b: 0.876256, a: 1}
-  NotFound: {r: 0.07075471, g: 1, b: 0.25056592, a: 1}
-  url: my own nonsense
+  - {r: 1, g: 0, b: 0.26666668, a: 1}
+  - {r: 1, g: 1, b: 1, a: 1}
+  - {r: 0.098039225, g: 0.23529413, b: 0.24313727, a: 1}
+  - {r: 0.17254902, g: 0.909804, b: 0.9607844, a: 1}
+  NotFound: {r: 0.44717497, g: 0.8301887, b: 0.3250267, a: 0}
+  url: https://lospec.com/palette-list/gumball-boy-gb

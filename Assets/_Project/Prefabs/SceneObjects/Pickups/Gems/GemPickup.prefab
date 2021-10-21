@@ -11,8 +11,12 @@ GameObject:
   - component: {fileID: 5521815750464696718}
   - component: {fileID: 5521815750464696713}
   - component: {fileID: 5521815750464696712}
-  - component: {fileID: 5521815750464696715}
   - component: {fileID: -6168884340559660904}
+  - component: {fileID: 615444561998497609}
+  - component: {fileID: 1371081298181747492}
+  - component: {fileID: -526301539128864939}
+  - component: {fileID: 2822859626596728064}
+  - component: {fileID: 8477218447647806642}
   m_Layer: 0
   m_Name: GemPickup
   m_TagString: Untagged
@@ -75,7 +79,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -3801659598776713178, guid: bf1d539a0fe25aa429dc2a6602fbbf13, type: 3}
+  m_Sprite: {fileID: -8139085181470653520, guid: b6b3a533371fe57468e7351719fe37ea, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -102,27 +106,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
---- !u!114 &5521815750464696715
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5521815750464696714}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f7f1157d3b794d7a9d9d89337dbb9d86, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Value: 20
-  inactiveTime: 0.5
-  targetTag: Player
-  sfxChannel: {fileID: 11400000, guid: fe62c46c8f30fda40800c60b8eede838, type: 2}
-  clip: {fileID: 11400000, guid: 99085aa03d50d204ca14e63b3b0fc0a7, type: 2}
-  onPickupEvent:
-    Delimeter: 0
-    Event: {fileID: 11400000, guid: 41328ce113e941b49b7b00d8a8cd57c6, type: 2}
-    Variable: {fileID: 0}
 --- !u!114 &-6168884340559660904
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -137,3 +120,132 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 11400000, guid: 5f460cec9e88ae844ad9d902d4fae17b, type: 2}
   killDistance: 30
+--- !u!114 &615444561998497609
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5521815750464696714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b79285c88f24040814d8f5d65bb2bb5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  worth: {x: 1, y: 1}
+  gems:
+  - {fileID: 4019505570478468711, guid: bf258c1a659006148b1b223bc6c78492, type: 3}
+  offsetMax: 1
+--- !u!114 &1371081298181747492
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5521815750464696714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a74252ff38834f64800706db7021e1e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ThingsToSpawn: []
+--- !u!114 &-526301539128864939
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5521815750464696714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2896d262ea9456abc91c53077fb49f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2822859626596728064
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5521815750464696714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2cd38463aa0430e84ae19c761e89ed4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  layers:
+    serializedVersion: 2
+    m_Bits: 64
+  onTriggerEnter:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1371081298181747492}
+        m_TargetAssemblyTypeName: LDJam48.SpawnOnDeath, Assembly-CSharp
+        m_MethodName: SpawnObjects
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: -526301539128864939}
+        m_TargetAssemblyTypeName: Util.DestroyBehaviour, Assembly-CSharp
+        m_MethodName: DestroyGameObject
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onTriggerExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onCollisionEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  onCollisionExit:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &8477218447647806642
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5521815750464696714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80bff3e49246b4c4a9acbeada9480be4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tweens:
+  - Name: 
+    ObjectToAnimate: {fileID: 0}
+    Ease: 28
+    UseCustomCurve: 0
+    CustomCurve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 0
+      m_PostInfinity: 0
+      m_RotationOrder: 0
+    Property: 4
+    PropertyName: 
+    Duration: 0.5
+    RelativeToCurrent: 0
+    Start: {x: 0, y: 0, z: 20}
+    End: {x: 0, y: 0, z: -20}
+    PlayType: 1
+    PlayOnEnable: 1
+    RandomDelay: 0
+    DefaultDelay: {x: 0, y: 0.5}
+    TimeScaleDependent: 0
+    OnComplete:
+      m_PersistentCalls:
+        m_Calls: []

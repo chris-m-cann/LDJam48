@@ -7,6 +7,7 @@ using Random = UnityEngine.Random;
 
 namespace LDJam48
 {
+    [RequireComponent(typeof(SpawnOnDeath))]
     public class GemWorth : MonoBehaviour
     {
         [SerializeField] private Vector2Int worth;

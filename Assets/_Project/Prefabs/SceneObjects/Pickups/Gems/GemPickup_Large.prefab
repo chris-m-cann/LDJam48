@@ -7,6 +7,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 615444561998497609, guid: b31a899eb9c57664b883824df7367ab6, type: 3}
+      propertyPath: worth.x
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 615444561998497609, guid: b31a899eb9c57664b883824df7367ab6, type: 3}
+      propertyPath: worth.y
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 5521815750464696714, guid: b31a899eb9c57664b883824df7367ab6, type: 3}
       propertyPath: m_Name
       value: GemPickup_Large

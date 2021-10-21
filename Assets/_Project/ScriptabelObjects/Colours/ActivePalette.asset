@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 759433f84efc4db88afe917f1f285a68, type: 3}
   m_Name: ActivePalette
   m_EditorClassIdentifier: 
-  value: {fileID: 11400000, guid: a02d207af79d31747ad175204090ba08, type: 2}
+  value: {fileID: 11400000, guid: 7495a41e40f6dfe408c5c8e0a46dfe54, type: 2}
   persistValue: 0
-  resetValue: {fileID: 11400000, guid: be58ce9f0591db24e8f1471b433a9f1d, type: 2}
+  resetValue: {fileID: 11400000, guid: dca3e28c66666614b9c8bb984abb11b1, type: 2}

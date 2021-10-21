@@ -218,6 +218,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   worth: {x: 5, y: 15}
   gems:
-  - {fileID: 6737717202193106154, guid: 5368e7e86809f7a4d922b2bc834ad0ab, type: 3}
-  - {fileID: 2218758482675028310, guid: 4adab116c44defb4f989c000a87b5a26, type: 3}
+  - {fileID: 4019505570478468711, guid: bf258c1a659006148b1b223bc6c78492, type: 3}
   offsetMax: 1

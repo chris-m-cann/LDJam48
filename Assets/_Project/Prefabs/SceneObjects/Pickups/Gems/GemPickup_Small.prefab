@@ -7,10 +7,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 615444561998497609, guid: b31a899eb9c57664b883824df7367ab6, type: 3}
+      propertyPath: worth.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 615444561998497609, guid: b31a899eb9c57664b883824df7367ab6, type: 3}
+      propertyPath: worth.y
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5521815750464696713, guid: b31a899eb9c57664b883824df7367ab6, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 4734412225147998427, guid: bf1d539a0fe25aa429dc2a6602fbbf13, type: 3}
+      objectReference: {fileID: -5795914289438478423, guid: b6b3a533371fe57468e7351719fe37ea, type: 3}
     - target: {fileID: 5521815750464696714, guid: b31a899eb9c57664b883824df7367ab6, type: 3}
       propertyPath: m_Name
       value: GemPickup_Small

@@ -10369,7 +10369,7 @@ MonoBehaviour:
   dieClip: {fileID: 11400000, guid: a9216ff05f165b5438ddda2c97742880, type: 2}
   hurtEffect:
     Delimeter: 0
-    Event: {fileID: 11400000, guid: 5208dc600faeed64faab2b58e45a02fc, type: 2}
+    Event: {fileID: 11400000, guid: af2afee91577a6e408759c776ad75695, type: 2}
     Variable: {fileID: 0}
   volume: {fileID: 0}
   on: 1

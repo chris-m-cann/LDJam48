@@ -242,6 +242,7 @@ GameObject:
   - component: {fileID: 8389851465421259404}
   - component: {fileID: 925511622003709231}
   - component: {fileID: 6588526958530823722}
+  - component: {fileID: 2080383598711162482}
   m_Layer: 0
   m_Name: Particles
   m_TagString: Untagged
@@ -267,6 +268,7 @@ Transform:
   - {fileID: 8389851464338065403}
   - {fileID: 8389851465807560490}
   - {fileID: 6726187002555761615}
+  - {fileID: 1160451808848837921}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -475,7 +477,7 @@ MonoBehaviour:
   onEventRaised:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8389851464338065402}
+      - m_Target: {fileID: 2830189880544643870}
         m_TargetAssemblyTypeName: LDJam48.ParticleEffectPool, Assembly-CSharp
         m_MethodName: Play
         m_Mode: 0
@@ -507,6 +509,37 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2063171472050837498}
+        m_TargetAssemblyTypeName: LDJam48.ParticleEffectPool, Assembly-CSharp
+        m_MethodName: Play
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &2080383598711162482
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8389851465421259393}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11b7f86f3584f554387ffc259f7803c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent:
+    Delimeter: 0
+    Event: {fileID: 11400000, guid: af2afee91577a6e408759c776ad75695, type: 2}
+    Variable: {fileID: 0}
+  onEventRaised:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8389851464338065402}
         m_TargetAssemblyTypeName: LDJam48.ParticleEffectPool, Assembly-CSharp
         m_MethodName: Play
         m_Mode: 0
@@ -607,4 +640,49 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effectPrefab: {fileID: 5751662077703712434, guid: 7b2b2c7eb9e9b1048a886855a47b93f8, type: 3}
+  poolSize: 3
+--- !u!1 &8500822590620624105
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1160451808848837921}
+  - component: {fileID: 2830189880544643870}
+  m_Layer: 0
+  m_Name: EnemyHit
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1160451808848837921
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8500822590620624105}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8389851465421259392}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2830189880544643870
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8500822590620624105}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03b1421383374dd99a8441f2a124354c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  effectPrefab: {fileID: 9150637837339221503, guid: 0f31898cc69a00744821885b3322c82b, type: 3}
   poolSize: 3

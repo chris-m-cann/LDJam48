@@ -16,6 +16,8 @@ namespace LDJam48
         [SerializeField] private Vector2 initialDelayRange;
         [SerializeField] private float lerpUpTime = 1;
         [SerializeField] private float closeDistance = 3;
+        [SerializeField] private bool rightIsForward;
+        
         
         
 
@@ -36,6 +38,12 @@ namespace LDJam48
             });
         }
 
+        private void OnDisable()
+        {
+            _began = false;
+            StopAllCoroutines();
+        }
+
         private void FixedUpdate()
         {
             if (!_began) return;
@@ -44,23 +52,33 @@ namespace LDJam48
 
             if (dir.magnitude < closeDistance)
             {
-                transform.up = dir.normalized;
+                if (rightIsForward)
+                {
+                    transform.right = dir.normalized;
+                }
+                else
+                {
+                    transform.up = dir.normalized;
+                }
                 
-                _rb.velocity = transform.up * speed;
+
+                _rb.velocity = dir.normalized * speed;
             }
             else
             {
 
                 dir.Normalize();
+                
+                var v = rightIsForward ? transform.right : transform.up;
 
-                float rotAmount = Vector3.Cross(dir, transform.up).z;
+                float rotAmount = Vector3.Cross(dir, v).z;
 
                 _rb.angularVelocity = -rotAmount * rotationalSpeed;
 
                 var diff = (Time.time - _beganTime) / lerpUpTime;
                 var s = Mathf.Lerp(0, speed, diff);
 
-                _rb.velocity = transform.up * s;
+                _rb.velocity = v* s;
             }
         }
     }

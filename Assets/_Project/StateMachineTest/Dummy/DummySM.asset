@@ -19,12 +19,12 @@ MonoBehaviour:
     Description:
       Conditions:
       - Condition: {fileID: 11400000, guid: dbd46fd66e1d44945a984751316751fd, type: 2}
-        Operator: 0
+        Operator: 1
       OnTransitionActions: []
   - From: {fileID: 11400000, guid: 75f8a2d52b733464abd10840b0bfe12a, type: 2}
     To: {fileID: 11400000, guid: 430c5c6398c66d94c82b47f805538a0b, type: 2}
     Description:
       Conditions:
       - Condition: {fileID: 11400000, guid: ab23c17c092ed0249be1433f0cb8d0d5, type: 2}
-        Operator: 0
+        Operator: 1
       OnTransitionActions: []

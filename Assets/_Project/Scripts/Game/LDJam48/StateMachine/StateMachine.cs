@@ -9,7 +9,6 @@ namespace LDJam48.StateMachine
     {
         public State InitialState;
         public StateTransition[] Transitions;
-
         public StateRuntime BuildRuntime(StateMachineBehaviour stateMachineBehaviour)
         {
             // todo check not empty
@@ -27,7 +26,7 @@ namespace LDJam48.StateMachine
             var stateMappings = new Dictionary<State, StateRuntime>();
             foreach (var stateSo in stateSos)
             {
-                stateMappings.Add(stateSo, new StateRuntime());
+                stateMappings.Add(stateSo, new StateRuntime(stateSo.name, stateSo.BuildActions()));
             }
             
             // group all Transitions by from state
@@ -37,9 +36,6 @@ namespace LDJam48.StateMachine
             {
                 // todo add null check
                 var stateSo = fromState.Key;
-
-                // build all actions for that state
-                var actions = stateSo.BuildActions();
 
                 // convert the transitions of that state to runtime instances
                 var transitions = fromState.Select(trans =>
@@ -60,12 +56,13 @@ namespace LDJam48.StateMachine
                     };
                 }).ToArray();
 
-                // init the runtime state with this data
-                stateMappings[stateSo].Init(actions, transitions);
+                // init the runtime state with this dat
+                stateMappings[stateSo].SetTransitions(transitions);
             }
             
             // propogate awake to all states
             stateMappings.Values.OnAwake(stateMachineBehaviour);
+            
 
             return stateMappings[InitialState];
         }
@@ -81,6 +78,13 @@ namespace LDJam48.StateMachine
     public static class StateMachineRuntimeComponents
     {
         public static void OnAwake(this IEnumerable<IStateMachineRuntimeComponent> components, StateMachineBehaviour machineBehaviour)
+        {
+            foreach (var component in components)
+            {
+                component.OnAwake(machineBehaviour);
+            }
+        }
+        public static void OnAwake(this IEnumerable<IOneShotAction> components, StateMachineBehaviour machineBehaviour)
         {
             foreach (var component in components)
             {

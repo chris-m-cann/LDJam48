@@ -17,14 +17,25 @@ namespace LDJam48.StateMachine
 
     public class StateRuntime : IStateMachineRuntimeComponent
     {
+        public string Name;
         private IStateAction[] _actions;
-        private TransitionRuntime[] _transitions;
+        private TransitionRuntime[] _transitions = Array.Empty<TransitionRuntime>();
 
 
-        public void Init(IStateAction[] actions, TransitionRuntime[] transitions)
+        public StateRuntime(string name, IStateAction[] actions)
         {
-            _actions = actions;
-            _transitions = transitions;
+            Name = name;
+            _actions = actions ?? Array.Empty<IStateAction>();
+        }
+
+        public void SetTransitions(TransitionRuntime[] transitions)
+        {
+            _transitions = transitions ?? Array.Empty<TransitionRuntime>();
+
+            for (var i = 0; i < _transitions.Length; i++)
+            {
+                _transitions[i].OnTransitionActions ??= Array.Empty<IOneShotAction>();
+            }
         }
 
         public void OnAwake(StateMachineBehaviour machine)
@@ -45,7 +56,6 @@ namespace LDJam48.StateMachine
             foreach (var transition in _transitions)
             {
                 transition.Conditions.OnStateEnter();
-                transition.OnTransitionActions.OnStateEnter();
             }
         }
 
@@ -56,7 +66,6 @@ namespace LDJam48.StateMachine
             foreach (var transition in _transitions)
             {
                 transition.Conditions.OnStateExit();
-                transition.OnTransitionActions.OnStateExit();
             }
         }
 
@@ -102,8 +111,7 @@ namespace LDJam48.StateMachine
                 {
                     foreach (var action in transition.OnTransitionActions)
                     {
-                        action.OnUpdate();
-                        action.OnFixedUpdate();
+                        action.Execute();
                     }
 
                     return transition.To;

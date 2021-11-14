@@ -8,14 +8,24 @@ namespace LDJam48.StateMachine
         {
             var runtime = BuildRuntimeImpl();
             runtime.SetSource(this);
+            runtime.Name = name;
             
             return runtime;
         }
-        public abstract IStateAction BuildRuntimeImpl();
+
+        protected abstract IStateAction BuildRuntimeImpl();
+        
+        
+        public const string MENU_FOLDER = "Custom/StateMachine/Action/";
     }
     
     public interface IStateAction: IStateMachineRuntimeComponent
     {
+        public string Name
+        {
+            get;
+            set;
+        }
         void OnUpdate();
         void OnFixedUpdate();
         
@@ -45,6 +55,8 @@ namespace LDJam48.StateMachine
         public virtual void OnStateExit()
         {
         }
+
+        public string Name { get; set; }
 
         public virtual void OnUpdate()
         {

@@ -14,9 +14,12 @@ namespace Util
 
         public static void Swap<T>(this T[] self, int i, int j)
         {
-            var tmp = self[i];
-            self[i] = self[j];
-            self[j] = tmp;
+            (self[i], self[j]) = (self[j], self[i]);
+        }
+
+        public static bool HasIndex<T>(this T[] self, int idx)
+        {
+            return idx > -1 && idx < self.Length;
         }
     }
 }

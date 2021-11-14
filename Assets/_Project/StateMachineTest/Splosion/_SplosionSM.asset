@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b82033b2861d4b3faf9469136528367a, type: 3}
+  m_Name: _SplosionSM
+  m_EditorClassIdentifier: 
+  InitialState: {fileID: 11400000, guid: 631044f9a29665b4bb73ec03ed2c95ad, type: 2}
+  Transitions:
+  - From: {fileID: 11400000, guid: 631044f9a29665b4bb73ec03ed2c95ad, type: 2}
+    To: {fileID: 11400000, guid: 32869b25a08a61f489924bdd2b2c5778, type: 2}
+    Description:
+      Conditions:
+      - Condition: {fileID: 11400000, guid: 65069615bacda744f9cd77f495be335a, type: 2}
+        Operator: 0
+      OnTransitionActions: []
+  - From: {fileID: 11400000, guid: 32869b25a08a61f489924bdd2b2c5778, type: 2}
+    To: {fileID: 11400000, guid: 8da89291bdd81604b91157aa2760c2a5, type: 2}
+    Description:
+      Conditions:
+      - Condition: {fileID: 11400000, guid: 477e52b5b019d164ca8a9c2193a5d0e7, type: 2}
+        Operator: 0
+      OnTransitionActions: []

@@ -9,7 +9,8 @@ namespace LDJam48.StateMachine
         [SerializeField] private StateMachine stateMachine;
         [SerializeField] private bool transitionOnUpdate = true;
         [SerializeField] private bool transitionOnFixedUpdate = true;
-        
+        public bool debugLogs = false;
+
 
         private StateRuntime _state;
 
@@ -20,11 +21,21 @@ namespace LDJam48.StateMachine
 
         private void OnEnable()
         {
+            if (debugLogs)
+            {
+                Debug.Log($"{name}: entering initial state: {_state.Name}");
+            }
+
             _state.OnStateEnter();
         }
 
         private void OnDisable()
         {
+            if (debugLogs)
+            {
+                Debug.Log($"{name}: exit state: {_state.Name}");
+            }
+
             _state.OnStateExit();
         }
 
@@ -34,6 +45,7 @@ namespace LDJam48.StateMachine
             {
                 CheckTransitions();
             }
+
             _state.OnUpdate();
         }
 
@@ -43,7 +55,7 @@ namespace LDJam48.StateMachine
             {
                 CheckTransitions();
             }
-            
+
             _state.OnFixedUpdate();
         }
 
@@ -52,6 +64,11 @@ namespace LDJam48.StateMachine
             var next = _state.CheckTransitions();
             if (next != null)
             {
+                if (debugLogs)
+                {
+                    Debug.Log($"{name}: state: {_state.Name} -> {next.Name}");
+                }
+
                 _state.OnStateExit();
                 _state = next;
                 _state.OnStateEnter();

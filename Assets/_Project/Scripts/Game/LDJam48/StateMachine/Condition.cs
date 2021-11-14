@@ -9,14 +9,18 @@ namespace LDJam48.StateMachine
         {
             var runtime = BuildRuntimeImpl();
             runtime.SetSource(this);
+            runtime.Name = name;
             return runtime;
         }
 
         protected abstract ICondition BuildRuntimeImpl();
+        
+        public const string MENU_FOLDER = "Custom/StateMachine/Condition/";
     }
 
     public interface ICondition: IStateMachineRuntimeComponent
     {
+        string Name { get; set; }
         bool Evaluate();
         void SetSource(Condition condition);
     }
@@ -86,6 +90,7 @@ namespace LDJam48.StateMachine
         {
         }
 
+        public string Name { get; set; }
         public abstract bool Evaluate();
     }
 }

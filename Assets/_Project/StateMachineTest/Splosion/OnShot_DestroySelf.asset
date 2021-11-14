@@ -9,8 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b1b602cb401d4ba6910a2322241e3b8e, type: 3}
-  m_Name: State_Slam
+  m_Script: {fileID: 11500000, guid: 477842fc7b1f4db597fb97993bf6cc24, type: 3}
+  m_Name: OnShot_DestroySelf
   m_EditorClassIdentifier: 
-  Actions:
-  - {fileID: 11400000, guid: 69fde2bf781dfd14a84cefc9fe156237, type: 2}

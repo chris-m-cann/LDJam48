@@ -16,7 +16,7 @@ namespace LDJam48.StateMachine
     public struct TransitionDesc
     {
         public ConditionPair[] Conditions;
-        public StateAction[] OnTransitionActions;
+        public OneShotAction[] OnTransitionActions;
     }
     
     
@@ -25,7 +25,7 @@ namespace LDJam48.StateMachine
     {
         public StateRuntime To;
         public ConditionPairRuntime[] Conditions;
-        public IStateAction[] OnTransitionActions;
+        public IOneShotAction[] OnTransitionActions;
     }
     
     

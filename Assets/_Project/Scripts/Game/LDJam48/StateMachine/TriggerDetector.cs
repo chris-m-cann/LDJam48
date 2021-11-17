@@ -10,7 +10,7 @@ namespace LDJam48.StateMachine
         
         private void OnTriggerEnter2D(Collider2D other)
         {
-            if (mask.Contains(other.gameObject.layer))
+            if (enabled && mask.Contains(other.gameObject.layer))
             {
                 WasDetected = true;
             }

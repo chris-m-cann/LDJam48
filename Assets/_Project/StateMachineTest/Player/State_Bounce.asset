@@ -9,8 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8d8128d0ae3a436bbddfa289ca9c3fbb, type: 3}
-  m_Name: Action_OnEnter_Destroy
+  m_Script: {fileID: 11500000, guid: b1b602cb401d4ba6910a2322241e3b8e, type: 3}
+  m_Name: State_Bounce
   m_EditorClassIdentifier: 
-  When: 1
-  Action: {fileID: 11400000, guid: c74c281fcbe464545b1d3de70b240a05, type: 2}
+  Actions: []
+  OnEnterActions:
+  - {fileID: 11400000, guid: a04d7814aa8781d41bcaa5bbcf9cb960, type: 2}
+  OnExitActions: []
+  OnUpdateActions: []
+  OnFixedUpdateActions: []

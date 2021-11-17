@@ -10,13 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b1b602cb401d4ba6910a2322241e3b8e, type: 3}
-  m_Name: State_Splosion_Explode
+  m_Name: State_Idle
   m_EditorClassIdentifier: 
   Actions: []
   OnEnterActions:
-  - {fileID: 11400000, guid: 3997ff42362c89d4fa42061215f68843, type: 2}
-  - {fileID: 11400000, guid: 66cb1860a6b86cf4ba1193eea692fe3b, type: 2}
-  - {fileID: 11400000, guid: c74c281fcbe464545b1d3de70b240a05, type: 2}
+  - {fileID: 11400000, guid: 8f621337d85f4b84fb765f0f104538e1, type: 2}
   OnExitActions: []
   OnUpdateActions: []
   OnFixedUpdateActions: []

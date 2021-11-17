@@ -9,8 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8d8128d0ae3a436bbddfa289ca9c3fbb, type: 3}
-  m_Name: Action_OnEnter_PlayExplosionFx
+  m_Script: {fileID: 11500000, guid: f1e26541aae540e3a5a873e351687502, type: 3}
+  m_Name: Condition_DashPressed
   m_EditorClassIdentifier: 
-  When: 1
-  Action: {fileID: 11400000, guid: 66cb1860a6b86cf4ba1193eea692fe3b, type: 2}
+  Trigger: {fileID: 11400000, guid: 995318c72cfc65944884c48912e82794, type: 2}

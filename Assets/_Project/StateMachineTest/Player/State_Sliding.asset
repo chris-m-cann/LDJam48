@@ -9,8 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8d8128d0ae3a436bbddfa289ca9c3fbb, type: 3}
-  m_Name: Action_OnEnter_PlayExplosionSound
+  m_Script: {fileID: 11500000, guid: b1b602cb401d4ba6910a2322241e3b8e, type: 3}
+  m_Name: State_Sliding
   m_EditorClassIdentifier: 
-  When: 1
-  Action: {fileID: 11400000, guid: 3997ff42362c89d4fa42061215f68843, type: 2}
+  Actions: []
+  OnEnterActions:
+  - {fileID: 11400000, guid: 7a0b5719981e97a4a8f90c93433eda7a, type: 2}
+  OnExitActions: []
+  OnUpdateActions: []
+  OnFixedUpdateActions: []

@@ -10,10 +10,19 @@ namespace LDJam48
 
         [SerializeField] private LayerMask blockers;
         [SerializeField] private float castDistance = .75f;
+        [SerializeField] private bool faceTravel;
+        
 
 
         private RaycastHit2D[] _hits = new RaycastHit2D[1];
         private Vector2 _dir;
+        private SpriteRenderer _sprite;
+
+        private void Awake()
+        {
+            _sprite = GetComponent<SpriteRenderer>();
+        }
+
         private void Start()
         {
             // pick a random dir to start off in
@@ -32,6 +41,11 @@ namespace LDJam48
             }
 
             transform.Translate(_dir * (speed * Time.deltaTime), Space.World);
+
+            if (faceTravel && _sprite != null)
+            {
+                _sprite.flipX = _dir.x < 0;
+            }
         }
 
         private bool AnyBlockers(Vector2 castFrom, Vector2 castDir)

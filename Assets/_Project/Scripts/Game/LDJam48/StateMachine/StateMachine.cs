@@ -26,7 +26,7 @@ namespace LDJam48.StateMachine
             var stateMappings = new Dictionary<State, StateRuntime>();
             foreach (var stateSo in stateSos)
             {
-                stateMappings.Add(stateSo, new StateRuntime(stateSo.name, stateSo.BuildActions()));
+                stateMappings.Add(stateSo, stateSo.BuildRuntime());
             }
             
             // group all Transitions by from state

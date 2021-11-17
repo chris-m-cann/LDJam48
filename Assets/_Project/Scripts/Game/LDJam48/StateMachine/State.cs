@@ -8,24 +8,52 @@ namespace LDJam48.StateMachine
     public class State : ScriptableObject
     {
         public StateAction[] Actions;
+        public OneShotAction[] OnEnterActions;
+        public OneShotAction[] OnExitActions;
+        public OneShotAction[] OnUpdateActions;
+        public OneShotAction[] OnFixedUpdateActions;
+        
 
-        public IStateAction[] BuildActions()
+        public StateRuntime BuildRuntime()
         {
-            return Actions.Select(it => it.BuildRuntime()).ToArray();
+            return new StateRuntime(
+                this,
+                Actions.Select(it => it.BuildRuntime()).ToArray(),
+                OnEnterActions.Select(it => it.BuildRuntime()).ToArray(),
+                OnExitActions.Select(it => it.BuildRuntime()).ToArray(),
+                OnUpdateActions.Select(it => it.BuildRuntime()).ToArray(),
+                OnFixedUpdateActions.Select(it => it.BuildRuntime()).ToArray()
+            );
         }
     }
 
     public class StateRuntime : IStateMachineRuntimeComponent
     {
-        public string Name;
-        private IStateAction[] _actions;
+        public string Name => _source.name;
+        private readonly State _source;
+        private readonly IStateAction[] _actions;
+        private readonly IOneShotAction[] _onEnterActions;
+        private readonly IOneShotAction[] _onExitActions;
+        private readonly IOneShotAction[] _onUpdateActions;
+        private readonly IOneShotAction[] _onFixedUpdateActions;
         private TransitionRuntime[] _transitions = Array.Empty<TransitionRuntime>();
 
 
-        public StateRuntime(string name, IStateAction[] actions)
+        public StateRuntime(
+            State source,
+            IStateAction[] actions,
+            IOneShotAction[] onEnterActions,
+            IOneShotAction[] onExitActions,
+            IOneShotAction[] onUpdateActions,
+            IOneShotAction[] onFixedUpdateActions
+        )
         {
-            Name = name;
+            _source = source;
             _actions = actions ?? Array.Empty<IStateAction>();
+            _onEnterActions = onEnterActions ?? Array.Empty<IOneShotAction>();
+            _onExitActions = onExitActions ?? Array.Empty<IOneShotAction>();
+            _onUpdateActions = onUpdateActions ?? Array.Empty<IOneShotAction>();
+            _onFixedUpdateActions = onFixedUpdateActions ?? Array.Empty<IOneShotAction>();
         }
 
         public void SetTransitions(TransitionRuntime[] transitions)
@@ -41,6 +69,10 @@ namespace LDJam48.StateMachine
         public void OnAwake(StateMachineBehaviour machine)
         {
             _actions.OnAwake(machine);
+            _onEnterActions.OnAwake(machine);
+            _onExitActions.OnAwake(machine);
+            _onUpdateActions.OnAwake(machine);
+            _onFixedUpdateActions.OnAwake(machine);
 
             foreach (var transition in _transitions)
             {
@@ -52,10 +84,15 @@ namespace LDJam48.StateMachine
         public void OnStateEnter()
         {
             _actions.OnStateEnter();
-
+            
             foreach (var transition in _transitions)
             {
                 transition.Conditions.OnStateEnter();
+            }
+
+            foreach (var action in _onEnterActions)
+            {
+                action.Execute();
             }
         }
 
@@ -67,6 +104,11 @@ namespace LDJam48.StateMachine
             {
                 transition.Conditions.OnStateExit();
             }
+            
+            foreach (var action in _onExitActions)
+            {
+                action.Execute();
+            }
         }
 
         public void OnUpdate()
@@ -74,6 +116,11 @@ namespace LDJam48.StateMachine
             foreach (var action in _actions)
             {
                 action.OnUpdate();
+            }
+            
+            foreach (var action in _onUpdateActions)
+            {
+                action.Execute();
             }
         }
 
@@ -83,6 +130,11 @@ namespace LDJam48.StateMachine
             {
                 action.OnFixedUpdate();
             }
+            
+            foreach (var action in _onFixedUpdateActions)
+            {
+                action.Execute();
+            }
         }
 
         public StateRuntime CheckTransitions()
@@ -90,7 +142,7 @@ namespace LDJam48.StateMachine
             foreach (var transition in _transitions)
             {
                 bool doTransition = false;
-                
+
                 foreach (var condition in transition.Conditions)
                 {
                     var r = condition.Condition.Evaluate();
@@ -117,7 +169,7 @@ namespace LDJam48.StateMachine
                     return transition.To;
                 }
             }
-            
+
             return null;
         }
     }

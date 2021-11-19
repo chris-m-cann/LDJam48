@@ -1,8 +1,9 @@
+using System;
 using UnityEngine;
 
 namespace LDJam48.StateMachine.Action
 {
-    [CreateAssetMenu(menuName = OneShotAction.MENU_FOLDER + "ChangeAnimState")]
+    [Serializable]
     public class ChangeAnimStateAction : OneShotAction
     {
         public string AnimState;

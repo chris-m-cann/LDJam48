@@ -1,8 +1,9 @@
+using System;
 using UnityEngine;
 
 namespace LDJam48.StateMachine.Action
 {
-    [CreateAssetMenu(menuName = MENU_FOLDER + "PlayerOneShotParticle")]
+    [Serializable]
     public class PlayOneShotParticleAction : OneShotAction
     {
         [SerializeField] private int effectIdx;

@@ -1,10 +1,11 @@
+using System;
 using UnityEngine;
-using Util;
 using Util.Var.Events;
+using Void = Util.Void;
 
 namespace LDJam48.StateMachine.Conditions
 {
-    [CreateAssetMenu(menuName = "Custom/StateMachine/Condition/OnTrigger")]
+    [Serializable]
     public class OnTriggerCondition : Condition
     {
         public VoidGameEvent Trigger;

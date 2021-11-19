@@ -1,10 +1,15 @@
+using System;
 using UnityEngine;
 
 namespace LDJam48
 {
     public abstract class Detector: MonoBehaviour
     {
-        // todo more complex? maybe return the target GameObject?
-        public bool WasDetected { get; protected set; }
+        public event Action<GameObject> OnDetected;
+
+        protected virtual void InvokeOnDetected(GameObject obj)
+        {
+            OnDetected?.Invoke(obj);
+        }
     }
 }

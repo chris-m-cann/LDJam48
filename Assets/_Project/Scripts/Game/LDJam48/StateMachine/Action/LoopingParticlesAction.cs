@@ -1,8 +1,9 @@
+using System;
 using UnityEngine;
 
 namespace LDJam48.StateMachine.Action
 {
-    [CreateAssetMenu(menuName = MENU_FOLDER + "LoopingParticles")]
+    [Serializable]
     public class LoopingParticlesAction : StateAction
     {
         [SerializeField] private int effectIdx;

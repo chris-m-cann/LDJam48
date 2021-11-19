@@ -1,14 +1,18 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using Sirenix.OdinInspector;
+using Sirenix.Serialization;
 using UnityEngine;
 
 namespace LDJam48.StateMachine
 {
     [CreateAssetMenu(menuName = "Custom/StateMachine/Machine")]
-    public class StateMachine : ScriptableObject
+    public class StateMachine : SerializedScriptableObject
     {
         public State InitialState;
-        public StateTransition[] Transitions;
+        [OdinSerialize, NonSerialized]
+        public StateTransition[] Transitions = Array.Empty<StateTransition>();
         public StateRuntime BuildRuntime(StateMachineBehaviour stateMachineBehaviour)
         {
             // todo check not empty

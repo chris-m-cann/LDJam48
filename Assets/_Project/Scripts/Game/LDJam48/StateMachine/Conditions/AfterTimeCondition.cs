@@ -1,9 +1,10 @@
+using System;
 using UnityEngine;
 
 namespace LDJam48.StateMachine.Conditions
 {
     
-    [CreateAssetMenu(menuName = "Custom/StateMachine/Condition/AfterTime")]
+    [Serializable]
     public class AfterTimeCondition : Condition
     {
         public float timeout = 1f;

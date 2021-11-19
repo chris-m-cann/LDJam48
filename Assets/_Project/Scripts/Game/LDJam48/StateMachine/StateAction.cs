@@ -1,31 +1,26 @@
+using System;
 using UnityEngine;
 
 namespace LDJam48.StateMachine
 {
-    public abstract class StateAction : ScriptableObject
+    [Serializable]
+    public abstract class StateAction
     {
+        public string Name => GetType().Name;
         public IStateAction BuildRuntime()
         {
             var runtime = BuildRuntimeImpl();
             runtime.SetSource(this);
-            runtime.Name = name;
             
             return runtime;
         }
 
         protected abstract IStateAction BuildRuntimeImpl();
-        
-        
-        public const string MENU_FOLDER = "Custom/StateMachine/Action/";
     }
     
     public interface IStateAction: IStateMachineRuntimeComponent
     {
-        public string Name
-        {
-            get;
-            set;
-        }
+        string Name { get; }
         void OnUpdate();
         void OnFixedUpdate();
         
@@ -36,6 +31,11 @@ namespace LDJam48.StateMachine
     {
         protected SO _source;
         protected StateMachineBehaviour _machine;
+
+        public string Name
+        {
+            get => _source.Name;
+        }
 
 
         public void SetSource(StateAction so)
@@ -55,8 +55,6 @@ namespace LDJam48.StateMachine
         public virtual void OnStateExit()
         {
         }
-
-        public string Name { get; set; }
 
         public virtual void OnUpdate()
         {

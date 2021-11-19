@@ -12,5 +12,55 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1b602cb401d4ba6910a2322241e3b8e, type: 3}
   m_Name: State_Idle
   m_EditorClassIdentifier: 
-  Actions:
-  - {fileID: 11400000, guid: 09b0cf1dbe0132f44bf613260e683d85, type: 2}
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: Actions
+      Entry: 7
+      Data: 0|LDJam48.StateMachine.StateAction[], Assembly-CSharp
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 1|LDJam48.StateMachine.Action.ChargeAtTargetAction, Assembly-CSharp
+    - Name: Target
+      Entry: 7
+      Data: 2|Util.Var.GameObjectReference, Assembly-CSharp
+    - Name: Delimeter
+      Entry: 3
+      Data: 0
+    - Name: Variable
+      Entry: 6
+      Data: 
+    - Name: Observable
+      Entry: 6
+      Data: 
+    - Name: Constant
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: SpeedX
+      Entry: 4
+      Data: 10
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+  OnEnterActions: []
+  OnExitActions: []
+  OnUpdateActions: []
+  OnFixedUpdateActions: []

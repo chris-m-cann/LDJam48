@@ -1,4 +1,6 @@
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using Util.Var.Observe;
 
 namespace Util
@@ -21,6 +23,14 @@ namespace Util
 
 
             return false;
+        }
+        
+        public static IEnumerable<Type> GetTypeList<T>()
+        {
+            return typeof(T).Assembly.GetTypes()
+                .Where(it => !it.IsAbstract)
+                .Where(it => !it.IsGenericTypeDefinition)
+                .Where(it => typeof(T).IsAssignableFrom(it));
         }
     }
 }

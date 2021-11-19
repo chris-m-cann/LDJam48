@@ -1,4 +1,7 @@
 using System;
+using System.Collections.Generic;
+using Sirenix.OdinInspector;
+using Util;
 
 namespace LDJam48.StateMachine
 {
@@ -13,10 +16,13 @@ namespace LDJam48.StateMachine
     }
     
     [Serializable]
-    public struct TransitionDesc
+    public class TransitionDesc
     {
         public ConditionPair[] Conditions;
+        [TypeFilter("GetOneShotActionTypeList")]
         public OneShotAction[] OnTransitionActions;
+        
+        public IEnumerable<Type> GetOneShotActionTypeList() => TypeEx.GetTypeList<OneShotAction>();
     }
     
     

@@ -1,26 +1,28 @@
 using System;
+using System.Collections.Generic;
+using Sirenix.OdinInspector;
 using UnityEngine;
+using Util;
 
 namespace LDJam48.StateMachine
 {
-    public abstract class Condition : ScriptableObject
+    [Serializable]
+    public abstract class Condition
     {
+        public string Name => GetType().Name;
         public ICondition BuildRuntime()
         {
             var runtime = BuildRuntimeImpl();
             runtime.SetSource(this);
-            runtime.Name = name;
             return runtime;
         }
 
         protected abstract ICondition BuildRuntimeImpl();
-        
-        public const string MENU_FOLDER = "Custom/StateMachine/Condition/";
     }
 
     public interface ICondition: IStateMachineRuntimeComponent
     {
-        string Name { get; set; }
+        string Name { get; }
         bool Evaluate();
         void SetSource(Condition condition);
     }
@@ -28,6 +30,7 @@ namespace LDJam48.StateMachine
     [Serializable]
     public struct ConditionPair
     {
+        [TypeFilter("GetConditionTypeList")]
         public Condition Condition;
         public LogicalOperator Operator;
 
@@ -39,6 +42,9 @@ namespace LDJam48.StateMachine
                 Operator = Operator
             };
         }
+        
+        
+        public IEnumerable<Type> GetConditionTypeList() => TypeEx.GetTypeList<Condition>();
     }
 
     public class ConditionPairRuntime : IStateMachineRuntimeComponent
@@ -71,6 +77,7 @@ namespace LDJam48.StateMachine
         protected SO _source;
         protected StateMachineBehaviour _machine;
 
+        public string Name => _source.Name;
 
         public void SetSource(Condition so)
         {
@@ -90,7 +97,6 @@ namespace LDJam48.StateMachine
         {
         }
 
-        public string Name { get; set; }
         public abstract bool Evaluate();
     }
 }

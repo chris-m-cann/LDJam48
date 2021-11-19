@@ -1,8 +1,9 @@
+using System;
 using UnityEngine;
 
 namespace LDJam48.StateMachine.Action
 {
-    [CreateAssetMenu(menuName = MENU_FOLDER + "OnCallback")]
+    [Serializable]
     public class OnCallbackStateAction : StateAction
     {
         public StateMachineCallback When = StateMachineCallback.StateEnter;

@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace LDJam48.StateMachine.Conditions
 {
-    [CreateAssetMenu(menuName = "Custom/StateMachine/Condition/DetectorTriggered")]
+    [Serializable]
     public class WasDetectorTriggered : Condition
     {
         public int DetectorIndex = 0;
@@ -15,38 +15,58 @@ namespace LDJam48.StateMachine.Conditions
     
     public class WasDetectorTriggeredRuntime: BaseConditionRuntime<WasDetectorTriggered>
     {
-        private Func<bool> _wasTriggered;
+        private Detector _detector;
+        private bool _wasTriggered;
         public override void OnAwake(StateMachineBehaviour machine)
         {
             base.OnAwake(machine);
             var detectors = machine.GetComponent<Detectors>();
-            Detector detector = null;
             if (detectors == null)
             {
                 if (_source.DetectorIndex == 0)
                 {
-                    detector = machine.GetComponent<Detector>();
+                    _detector = machine.GetComponent<Detector>();
                 }
             }
             else
             {
-                detector = detectors.GetDetector(_source.DetectorIndex);
+                _detector = detectors.GetDetector(_source.DetectorIndex);
             }
 
-            if (detector != null)
-            {
-                _wasTriggered = () => detector.WasDetected;
-            }
-            else
+            if (_detector != null)
             {
                 Debug.LogError($"{_machine.name} : {Name} : No Detector found!");
-                _wasTriggered = () => false;
             }
+        }
+
+        public override void OnStateEnter()
+        {
+            base.OnStateEnter();
+            if (_detector != null)
+            {
+                _detector.OnDetected += OnDetected;
+            }
+        }
+
+        public override void OnStateExit()
+        {
+            base.OnStateExit();
+            if (_detector != null)
+            {
+                _detector.OnDetected -= OnDetected;
+            }
+        }
+
+        private void OnDetected(GameObject o)
+        {
+            _wasTriggered = true;
         }
 
         public override bool Evaluate()
         {
-            return _wasTriggered.Invoke();
+            var tmp = _wasTriggered;
+            _wasTriggered = false;
+            return tmp;
         }
     }
 }

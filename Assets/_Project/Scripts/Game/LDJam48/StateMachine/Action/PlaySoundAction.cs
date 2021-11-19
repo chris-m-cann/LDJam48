@@ -1,8 +1,9 @@
+using System;
 using UnityEngine;
 
 namespace LDJam48.StateMachine.Action
 {
-    [CreateAssetMenu(menuName = MENU_FOLDER + "PlaySound")]
+    [Serializable]
     public class PlaySoundAction : OneShotAction
     {
         [SerializeField] private int soundIdx;

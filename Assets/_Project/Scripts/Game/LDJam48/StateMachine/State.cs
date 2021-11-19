@@ -1,18 +1,29 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
+using Sirenix.OdinInspector;
 using UnityEngine;
+using Util;
 
 namespace LDJam48.StateMachine
 {
     [CreateAssetMenu(menuName = "Custom/StateMachine/State")]
-    public class State : ScriptableObject
+    public class State : SerializedScriptableObject
     {
-        public StateAction[] Actions;
-        public OneShotAction[] OnEnterActions;
-        public OneShotAction[] OnExitActions;
-        public OneShotAction[] OnUpdateActions;
-        public OneShotAction[] OnFixedUpdateActions;
-        
+        [TypeFilter("GetActionTypeList")]
+        public StateAction[] Actions = Array.Empty<StateAction>();
+        [TypeFilter("GetOneShotActionTypeList")]
+        public OneShotAction[] OnEnterActions = Array.Empty<OneShotAction>();
+        [TypeFilter("GetOneShotActionTypeList")]
+        public OneShotAction[] OnExitActions = Array.Empty<OneShotAction>();
+        [TypeFilter("GetOneShotActionTypeList")]
+        public OneShotAction[] OnUpdateActions = Array.Empty<OneShotAction>();
+        [TypeFilter("GetOneShotActionTypeList")]
+        public OneShotAction[] OnFixedUpdateActions = Array.Empty<OneShotAction>();
+
+        public IEnumerable<Type> GetActionTypeList() => TypeEx.GetTypeList<StateAction>();
+
+        public IEnumerable<Type> GetOneShotActionTypeList() => TypeEx.GetTypeList<OneShotAction>();
 
         public StateRuntime BuildRuntime()
         {

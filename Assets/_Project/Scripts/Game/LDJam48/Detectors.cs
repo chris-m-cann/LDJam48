@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using Util;
 
@@ -5,7 +6,19 @@ namespace LDJam48
 {
     public class Detectors : MonoBehaviour
     {
+        [SerializeField] private bool disableAllOnStartUp = true;
         [SerializeField] private Detector[] detectors;
+
+        private void Awake()
+        {
+            if (disableAllOnStartUp)
+            {
+                foreach (var detector in detectors)
+                {
+                    detector.enabled = false;
+                }
+            }
+        }
 
         public Detector GetDetector(int idx)
         {

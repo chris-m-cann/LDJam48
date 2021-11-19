@@ -4,8 +4,9 @@ using UnityEngine;
 
 namespace LDJam48.StateMachine
 {
-    public abstract class OneShotAction : ScriptableObject
+    public abstract class OneShotAction
     {
+        public string Name => GetType().Name;
         public IOneShotAction BuildRuntime()
         {
             var runtime = BuildRuntimeImpl();
@@ -14,12 +15,11 @@ namespace LDJam48.StateMachine
         }
         
         protected abstract IOneShotAction BuildRuntimeImpl();
-
-        public const string MENU_FOLDER = "Custom/StateMachine/OneShotAction/";
     }
 
     public interface IOneShotAction
     {
+        public string Name { get; }
         public void OnAwake(StateMachineBehaviour machine);
 
         public void Execute();
@@ -31,6 +31,8 @@ namespace LDJam48.StateMachine
     {
         protected SO _source;
         protected StateMachineBehaviour _machine;
+
+        public string Name => _source.Name;
 
         public virtual void OnAwake(StateMachineBehaviour machine)
         {

@@ -1,8 +1,10 @@
+using System;
 using UnityEngine;
+using Object = UnityEngine.Object;
 
 namespace LDJam48.StateMachine.Action
 {
-    [CreateAssetMenu(menuName = MENU_FOLDER + "SpawnObject")]
+    [Serializable]
     public class SpawnObjectAction : OneShotAction
     {
         public GameObject prefab;

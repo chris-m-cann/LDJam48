@@ -12,5 +12,63 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1b602cb401d4ba6910a2322241e3b8e, type: 3}
   m_Name: State_Splosion_Idle
   m_EditorClassIdentifier: 
-  Actions:
-  - {fileID: 11400000, guid: 9a00c2698cb7196488aed0ba53a38ddf, type: 2}
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: Actions
+      Entry: 7
+      Data: 0|LDJam48.StateMachine.StateAction[], Assembly-CSharp
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 1|LDJam48.StateMachine.Action.EnableBehaviourStateAction, Assembly-CSharp
+    - Name: Behaviour
+      Entry: 1
+      Data: ToAndFroBehaviour
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 2|LDJam48.StateMachine.Action.EnableDetectorStateAction, Assembly-CSharp
+    - Name: DetectorIdx
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: OnEnterActions
+      Entry: 7
+      Data: 3|LDJam48.StateMachine.OneShotAction[], Assembly-CSharp
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: OnExitActions
+      Entry: 9
+      Data: 3
+    - Name: OnUpdateActions
+      Entry: 9
+      Data: 3
+    - Name: OnFixedUpdateActions
+      Entry: 9
+      Data: 3

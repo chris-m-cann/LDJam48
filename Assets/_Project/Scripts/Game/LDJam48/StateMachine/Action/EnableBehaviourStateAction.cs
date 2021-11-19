@@ -1,8 +1,9 @@
+using System;
 using UnityEngine;
 
 namespace LDJam48.StateMachine.Action
 {
-    [CreateAssetMenu(menuName = MENU_FOLDER + "/EnableBehaviour")]
+    [Serializable]
     public class EnableBehaviourStateAction : StateAction
     {
         public string Behaviour;

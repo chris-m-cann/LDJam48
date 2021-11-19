@@ -17,6 +17,7 @@ namespace LDJam48
         private RaycastHit2D[] _hits = new RaycastHit2D[1];
         private Vector2 _dir;
         private SpriteRenderer _sprite;
+        private float _actualCastDistance;
 
         private void Awake()
         {
@@ -31,6 +32,8 @@ namespace LDJam48
 
         private void Update()
         {
+            var distance = (speed * Time.deltaTime);
+            _actualCastDistance = Mathf.Max(castDistance, 2 * distance);
             Debug.DrawRay(transform.position, _dir, Color.red, 1f);
             var blockerInFront = AnyBlockers(transform.position, _dir);
 
@@ -40,7 +43,7 @@ namespace LDJam48
                 return;
             }
 
-            transform.Translate(_dir * (speed * Time.deltaTime), Space.World);
+            transform.Translate(_dir * distance, Space.World);
 
             if (faceTravel && _sprite != null)
             {
@@ -51,7 +54,7 @@ namespace LDJam48
         private bool AnyBlockers(Vector2 castFrom, Vector2 castDir)
         {
             return Physics2D.RaycastNonAlloc(castFrom, castDir, _hits,
-                castDistance, blockers) > 0;
+                _actualCastDistance, blockers) > 0;
         }
     }
 }

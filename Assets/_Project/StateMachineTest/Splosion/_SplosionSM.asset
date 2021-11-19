@@ -12,19 +12,148 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b82033b2861d4b3faf9469136528367a, type: 3}
   m_Name: _SplosionSM
   m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects:
+    - {fileID: 11400000, guid: 631044f9a29665b4bb73ec03ed2c95ad, type: 2}
+    - {fileID: 11400000, guid: 32869b25a08a61f489924bdd2b2c5778, type: 2}
+    - {fileID: 11400000, guid: 8da89291bdd81604b91157aa2760c2a5, type: 2}
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: Transitions
+      Entry: 7
+      Data: 0|LDJam48.StateMachine.StateTransition[], Assembly-CSharp
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: LDJam48.StateMachine.StateTransition, Assembly-CSharp
+    - Name: From
+      Entry: 10
+      Data: 0
+    - Name: To
+      Entry: 10
+      Data: 1
+    - Name: Description
+      Entry: 7
+      Data: 1|LDJam48.StateMachine.TransitionDesc, Assembly-CSharp
+    - Name: Conditions
+      Entry: 7
+      Data: 2|LDJam48.StateMachine.ConditionPair[], Assembly-CSharp
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: LDJam48.StateMachine.ConditionPair, Assembly-CSharp
+    - Name: Condition
+      Entry: 7
+      Data: 3|LDJam48.StateMachine.Conditions.WasDetectorTriggered, Assembly-CSharp
+    - Name: DetectorIndex
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: Operator
+      Entry: 3
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: OnTransitionActions
+      Entry: 7
+      Data: 4|LDJam48.StateMachine.OneShotAction[], Assembly-CSharp
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: LDJam48.StateMachine.StateTransition, Assembly-CSharp
+    - Name: From
+      Entry: 10
+      Data: 1
+    - Name: To
+      Entry: 10
+      Data: 2
+    - Name: Description
+      Entry: 7
+      Data: 5|LDJam48.StateMachine.TransitionDesc, Assembly-CSharp
+    - Name: Conditions
+      Entry: 7
+      Data: 6|LDJam48.StateMachine.ConditionPair[], Assembly-CSharp
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: LDJam48.StateMachine.ConditionPair, Assembly-CSharp
+    - Name: Condition
+      Entry: 7
+      Data: 7|LDJam48.StateMachine.Conditions.WasDetectorTriggered, Assembly-CSharp
+    - Name: DetectorIndex
+      Entry: 3
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: Operator
+      Entry: 3
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: OnTransitionActions
+      Entry: 7
+      Data: 8|LDJam48.StateMachine.OneShotAction[], Assembly-CSharp
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
   InitialState: {fileID: 11400000, guid: 631044f9a29665b4bb73ec03ed2c95ad, type: 2}
-  Transitions:
-  - From: {fileID: 11400000, guid: 631044f9a29665b4bb73ec03ed2c95ad, type: 2}
-    To: {fileID: 11400000, guid: 32869b25a08a61f489924bdd2b2c5778, type: 2}
-    Description:
-      Conditions:
-      - Condition: {fileID: 11400000, guid: 65069615bacda744f9cd77f495be335a, type: 2}
-        Operator: 0
-      OnTransitionActions: []
-  - From: {fileID: 11400000, guid: 32869b25a08a61f489924bdd2b2c5778, type: 2}
-    To: {fileID: 11400000, guid: 8da89291bdd81604b91157aa2760c2a5, type: 2}
-    Description:
-      Conditions:
-      - Condition: {fileID: 11400000, guid: 477e52b5b019d164ca8a9c2193a5d0e7, type: 2}
-        Operator: 0
-      OnTransitionActions: []

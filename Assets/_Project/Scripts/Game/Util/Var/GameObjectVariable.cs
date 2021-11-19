@@ -8,6 +8,8 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using Sirenix.OdinInspector;
+
 namespace Util.Var
 {
     using UnityEngine;

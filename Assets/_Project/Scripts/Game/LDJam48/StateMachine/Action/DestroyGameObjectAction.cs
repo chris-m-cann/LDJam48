@@ -1,8 +1,9 @@
-using UnityEngine;
+using System;
+using Object = UnityEngine.Object;
 
 namespace LDJam48.StateMachine.Action
 {
-    [CreateAssetMenu(menuName = MENU_FOLDER + "DestroyGameObject")]
+    [Serializable]
     public class DestroyGameObjectAction : OneShotAction
     {
         protected override IOneShotAction BuildRuntimeImpl()

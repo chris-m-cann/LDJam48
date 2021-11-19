@@ -1,9 +1,10 @@
+using System;
+using Sirenix.OdinInspector;
 using UnityEngine;
 using Util.Var;
 
 namespace LDJam48.StateMachine.Action
 {
-    [CreateAssetMenu(menuName = StateAction.MENU_FOLDER + "ChargeAtTarget")]
     public class ChargeAtTargetAction : StateAction
     {
         public GameObjectReference Target;

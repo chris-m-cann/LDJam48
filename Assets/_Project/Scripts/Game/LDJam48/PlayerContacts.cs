@@ -1,4 +1,5 @@
 using System;
+using UnityEditor;
 using UnityEngine;
 
 namespace LDJam48
@@ -11,8 +12,22 @@ namespace LDJam48
         [SerializeField] private BoxCollider2D floorCollider;
         [SerializeField] private LayerMask floorLayer;
 
+        [SerializeField] private bool trackYourself;
 
+        public ContactDetails ContactDetails;
 
+        private void FixedUpdate()
+        {
+            if (!trackYourself) return;
+            ContactDetails = DetectContacts(ContactDetails);
+        }
+
+        private void OnDrawGizmos()
+        {
+            Gizmos.DrawWireCube((Vector2) transform.position + leftCollider.offset, leftCollider.size);
+            Gizmos.DrawWireCube((Vector2) transform.position + rightCollider.offset, rightCollider.size);
+        }
+        
         public ContactDetails DetectContacts(ContactDetails contact)
         {
             contact.WasOnLeftWall = contact.IsOnLeftWall;
@@ -26,9 +41,14 @@ namespace LDJam48
                 rightCollider.size, 0, wallLayer);
 
             contact.IsOnFloor = Physics2D.OverlapBox((Vector2) transform.position + floorCollider.offset,
-                floorCollider.size, 0, wallLayer);
+                floorCollider.size, 0, floorLayer);
 
             return contact;
+        }
+
+        public void UpdateContactDetails()
+        {
+            ContactDetails = DetectContacts(ContactDetails);
         }
     }
     [Serializable]

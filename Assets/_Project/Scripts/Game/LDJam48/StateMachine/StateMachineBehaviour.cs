@@ -12,11 +12,16 @@ namespace LDJam48.StateMachine
         public bool debugLogs = false;
 
 
+        public StateRuntime PrevState;
         private StateRuntime _state;
 
         private void Awake()
         {
+            Debug.Log($"Building state machine");
+        
+            Debug.Log($"Building state machine, transitions = {stateMachine.Transitions.Length}");
             _state = stateMachine.BuildRuntime(this);
+            Debug.Log($"Built state machine, initial state = {_state.Name}");
         }
 
         private void OnEnable()
@@ -58,6 +63,7 @@ namespace LDJam48.StateMachine
 
             _state.OnFixedUpdate();
         }
+        
 
         private void CheckTransitions()
         {
@@ -70,6 +76,7 @@ namespace LDJam48.StateMachine
                 }
 
                 _state.OnStateExit();
+                PrevState = _state;
                 _state = next;
                 _state.OnStateEnter();
             }

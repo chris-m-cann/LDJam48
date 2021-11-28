@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.LowLevel;
 using Util.Var.Events;
@@ -11,8 +12,8 @@ namespace LDJam48
     {
         public bool isLeft = true;
         [SerializeField] private ObservableStringVariable actionMap;
-        [SerializeField] private Vector2EventReference onDashingPress;
-        [SerializeField] private VoidGameEvent onSlamPress;
+        [SerializeField] private UnityEvent<Vector2> onDashingPress;
+        [SerializeField] private UnityEvent onSlamPress;
 
 
         private InputControl _control;
@@ -41,12 +42,12 @@ namespace LDJam48
         {
             if (value != "Dashing")
             {
-                _oneToTrigger = () => onDashingPress.Raise(_direction);
+                _oneToTrigger = () => onDashingPress?.Invoke(_direction);
             }
 
             else
             {
-                _oneToTrigger = () => onSlamPress.Raise();
+                _oneToTrigger = () => onSlamPress?.Invoke();
             }
         }
 

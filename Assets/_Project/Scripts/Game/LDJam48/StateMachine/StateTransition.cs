@@ -11,17 +11,27 @@ namespace LDJam48.StateMachine
     public struct StateTransition
     {
         public State From;
-        public State To;
-        public TransitionDesc Description;
+        [ListDrawerSettings(CustomAddFunction = "AddDefault")]
+        public TransitionDesc[] Descriptions;
+
+        private TransitionDesc AddDefault() => new TransitionDesc
+        {
+            Conditions = new ConditionPair[0],
+            OnTransitionActions = new OneShotAction[0]
+        };
     }
     
     [Serializable]
-    public class TransitionDesc
+    public struct TransitionDesc
     {
+        public State To;
         public ConditionPair[] Conditions;
+
         [TypeFilter("GetOneShotActionTypeList")]
         public OneShotAction[] OnTransitionActions;
         
+   
+        private TransitionDesc AddDefault() => new TransitionDesc();
         public IEnumerable<Type> GetOneShotActionTypeList() => TypeEx.GetTypeList<OneShotAction>();
     }
     

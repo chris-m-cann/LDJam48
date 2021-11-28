@@ -33,7 +33,7 @@ namespace LDJam48.StateMachine.Conditions
                 _detector = detectors.GetDetector(_source.DetectorIndex);
             }
 
-            if (_detector != null)
+            if (_detector == null)
             {
                 Debug.LogError($"{_machine.name} : {Name} : No Detector found!");
             }

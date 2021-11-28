@@ -12,9 +12,435 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1b602cb401d4ba6910a2322241e3b8e, type: 3}
   m_Name: State_Dashing
   m_EditorClassIdentifier: 
-  Actions: []
-  OnEnterActions:
-  - {fileID: 11400000, guid: 9e4c9eeda17ea914690d25c3b1b3631d, type: 2}
-  OnExitActions: []
-  OnUpdateActions: []
-  OnFixedUpdateActions: []
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects:
+    - {fileID: 11400000, guid: dd98a0c71c9d46f4ea8bb602f722934d, type: 2}
+    - {fileID: 11400000, guid: 20f83fa3bf05ef744a919e80263dcdc8, type: 2}
+    - {fileID: 11400000, guid: 67f42c91219f8424ea687a8dacd4432a, type: 2}
+    - {fileID: 11400000, guid: 0aa528058b161e3459e1641507806beb, type: 2}
+    - {fileID: 8384205595809998767, guid: 3af876b1bce20ea498a45d7cbf0a5db6, type: 3}
+    - {fileID: 11400000, guid: 9600b44369da12a4ea242970738a18b7, type: 2}
+    - {fileID: 11400000, guid: 3b38bd5e807f9dd4ca6600dccdafc0f6, type: 2}
+    - {fileID: 11400000, guid: 0e30357abe1a10f42986b6147f009b6d, type: 2}
+    - {fileID: 11400000, guid: bd744feb1185d614ebfdd71b038a2d88, type: 2}
+    - {fileID: 11400000, guid: fb8425c3033483247b75c8ae4603e756, type: 2}
+    - {fileID: 11400000, guid: 2a59b742c7732a54fbe50f57d60d07f4, type: 2}
+    - {fileID: 11400000, guid: 00d51c26a5c6faa418893feaa926c2f0, type: 2}
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: Actions
+      Entry: 7
+      Data: 0|LDJam48.StateMachine.StateAction[], Assembly-CSharp
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 1|LDJam48.StateMachine.Player.Action.PlayerDashingStateAction, Assembly-CSharp
+    - Name: dashSpeed
+      Entry: 4
+      Data: 15
+    - Name: anim
+      Entry: 1
+      Data: player_slice
+    - Name: actionMap
+      Entry: 1
+      Data: Dashing
+    - Name: onExitActionMap
+      Entry: 1
+      Data: NotDashing
+    - Name: sound
+      Entry: 10
+      Data: 0
+    - Name: activeActionMap
+      Entry: 10
+      Data: 1
+    - Name: onDashShake
+      Entry: 10
+      Data: 2
+    - Name: onWallLandShake
+      Entry: 10
+      Data: 3
+    - Name: trailOffset
+      Entry: 7
+      Data: UnityEngine.Vector3, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: -0.2
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: frontTrailOffset
+      Entry: 7
+      Data: UnityEngine.Vector3, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: frontTrailDelay
+      Entry: 4
+      Data: 0
+    - Name: ghostPrefab
+      Entry: 10
+      Data: 4
+    - Name: ghostDelays
+      Entry: 7
+      Data: 2|System.Single[], mscorlib
+    - Name: 
+      Entry: 14
+      Data: 5
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0.1
+    - Name: 
+      Entry: 4
+      Data: 0.07
+    - Name: 
+      Entry: 4
+      Data: 0.06
+    - Name: 
+      Entry: 4
+      Data: 0.05
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: displayTrail
+      Entry: 5
+      Data: true
+    - Name: dashAnimEvent
+      Entry: 10
+      Data: 5
+    - Name: wallMask
+      Entry: 7
+      Data: UnityEngine.LayerMask, UnityEngine.CoreModule
+    - Name: 
+      Entry: 3
+      Data: 1152
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: dashCurve
+      Entry: 7
+      Data: 3|UnityEngine.AnimationCurve, UnityEngine.CoreModule
+    - Name: 
+      Entry: 7
+      Data: 4|UnityEngine.Keyframe[], UnityEngine.CoreModule
+    - Name: 
+      Entry: 12
+      Data: 4
+    - Name: 
+      Entry: 7
+      Data: UnityEngine.Keyframe, UnityEngine.CoreModule
+    - Name: ver
+      Entry: 3
+      Data: 1
+    - Name: m_Time
+      Entry: 4
+      Data: 0.008333334
+    - Name: m_Value
+      Entry: 4
+      Data: 1
+    - Name: m_InTangent
+      Entry: 4
+      Data: 0
+    - Name: m_OutTangent
+      Entry: 4
+      Data: 0
+    - Name: m_TangentMode
+      Entry: 3
+      Data: 34
+    - Name: m_WeightedMode
+      Entry: 3
+      Data: 0
+    - Name: m_InWeight
+      Entry: 4
+      Data: 0
+    - Name: m_OutWeight
+      Entry: 4
+      Data: 0.333333343
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: UnityEngine.Keyframe, UnityEngine.CoreModule
+    - Name: ver
+      Entry: 3
+      Data: 1
+    - Name: m_Time
+      Entry: 4
+      Data: 0.25
+    - Name: m_Value
+      Entry: 4
+      Data: 1
+    - Name: m_InTangent
+      Entry: 4
+      Data: -0.0104149841
+    - Name: m_OutTangent
+      Entry: 4
+      Data: -0.0104149841
+    - Name: m_TangentMode
+      Entry: 3
+      Data: 0
+    - Name: m_WeightedMode
+      Entry: 3
+      Data: 0
+    - Name: m_InWeight
+      Entry: 4
+      Data: 0.8107262
+    - Name: m_OutWeight
+      Entry: 4
+      Data: 0.333333343
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: UnityEngine.Keyframe, UnityEngine.CoreModule
+    - Name: ver
+      Entry: 3
+      Data: 1
+    - Name: m_Time
+      Entry: 4
+      Data: 0.25001
+    - Name: m_Value
+      Entry: 4
+      Data: 0
+    - Name: m_InTangent
+      Entry: 4
+      Data: -0.0121410079
+    - Name: m_OutTangent
+      Entry: 4
+      Data: -0.0121410079
+    - Name: m_TangentMode
+      Entry: 3
+      Data: 0
+    - Name: m_WeightedMode
+      Entry: 3
+      Data: 0
+    - Name: m_InWeight
+      Entry: 4
+      Data: 0.6238897
+    - Name: m_OutWeight
+      Entry: 4
+      Data: 0.273755848
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: UnityEngine.Keyframe, UnityEngine.CoreModule
+    - Name: ver
+      Entry: 3
+      Data: 1
+    - Name: m_Time
+      Entry: 4
+      Data: 1
+    - Name: m_Value
+      Entry: 4
+      Data: 0
+    - Name: m_InTangent
+      Entry: 4
+      Data: 0
+    - Name: m_OutTangent
+      Entry: 4
+      Data: 0
+    - Name: m_TangentMode
+      Entry: 3
+      Data: 0
+    - Name: m_WeightedMode
+      Entry: 3
+      Data: 0
+    - Name: m_InWeight
+      Entry: 4
+      Data: 0.2687676
+    - Name: m_OutWeight
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 3
+      Data: 8
+    - Name: 
+      Entry: 3
+      Data: 8
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: dashSpeedMax
+      Entry: 4
+      Data: 40
+    - Name: dashSpeedMin
+      Entry: 4
+      Data: 20
+    - Name: leftWallX
+      Entry: 4
+      Data: -4.5
+    - Name: rightWallX
+      Entry: 4
+      Data: 4.5
+    - Name: boxcastSize
+      Entry: 4
+      Data: 0.5
+    - Name: onWalHit
+      Entry: 7
+      Data: 5|Util.Var.Events.ParticleEffectRequestEventReference, Assembly-CSharp
+    - Name: Delimeter
+      Entry: 3
+      Data: 0
+    - Name: Event
+      Entry: 10
+      Data: 6
+    - Name: Variable
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: OnDashInput
+      Entry: 10
+      Data: 7
+    - Name: CarriedYVel
+      Entry: 10
+      Data: 8
+    - Name: SoundId
+      Entry: 3
+      Data: 1
+    - Name: LeftEffectId
+      Entry: 3
+      Data: 4
+    - Name: RightEffectId
+      Entry: 3
+      Data: 5
+    - Name: ShakeChannel
+      Entry: 7
+      Data: 6|Util.Var.Events.ShakeDefinitionEventReference, Assembly-CSharp
+    - Name: Delimeter
+      Entry: 3
+      Data: 0
+    - Name: Event
+      Entry: 10
+      Data: 9
+    - Name: Variable
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: WasOnWall
+      Entry: 10
+      Data: 10
+    - Name: ToOnWallEvent
+      Entry: 10
+      Data: 11
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: OnEnterActions
+      Entry: 7
+      Data: 7|LDJam48.StateMachine.OneShotAction[], Assembly-CSharp
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 8|LDJam48.StateMachine.Action.ChangeAnimStateAction, Assembly-CSharp
+    - Name: AnimState
+      Entry: 1
+      Data: player_slice
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: OnExitActions
+      Entry: 7
+      Data: 9|LDJam48.StateMachine.OneShotAction[], Assembly-CSharp
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 10|LDJam48.StateMachine.Player.Action.SetBooleanAction, Assembly-CSharp
+    - Name: Var
+      Entry: 10
+      Data: 10
+    - Name: Value
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: OnUpdateActions
+      Entry: 7
+      Data: 11|LDJam48.StateMachine.OneShotAction[], Assembly-CSharp
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: OnFixedUpdateActions
+      Entry: 7
+      Data: 12|LDJam48.StateMachine.OneShotAction[], Assembly-CSharp
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 

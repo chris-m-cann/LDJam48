@@ -1,4 +1,5 @@
 using System;
+using Sirenix.OdinInspector;
 using UnityEngine;
 using Util;
 using Util.Var.Events;
@@ -10,15 +11,19 @@ namespace LDJam48
         [Serializable]
         public struct ParticleEffectData
         {
+            [Tooltip("name just used for you to tell them apart")]
+            public string Name;
             public bool IsLoopingEffect;
-            [Header("One Shot Effect Parameters")]
+            [ShowIf("@!IsLoopingEffect")]
             public ParticleEffectRequestGameEvent Channel;
             [Tooltip("position to spawn the effect, will default to gameObject.transform if null")]
+            [ShowIf("@!IsLoopingEffect")]
             public Transform Position;
-            [Header("Looping Effect Parameters")]
+            [ShowIf("@IsLoopingEffect")]
             public ParticleSystem LoopingParticles;
         }
 
+        [ListDrawerSettings(ShowIndexLabels = true, Expanded = true)]
         [SerializeField] private ParticleEffectData[] effects;
 
         public void PlayEffect(int idx)
@@ -47,8 +52,8 @@ namespace LDJam48
             effect.Channel.Raise(new ParticleEffectRequest
             {
                 Position = t.position,
-                Rotation = Quaternion.identity,
-                Scale = Vector3.one
+                Rotation = t.rotation,
+                Scale = t.localScale
             });
         }
 
@@ -56,6 +61,7 @@ namespace LDJam48
         {
             if (effect.LoopingParticles != null)
             {
+                effect.LoopingParticles.gameObject.SetActive(true);
                 effect.LoopingParticles.Play();
             }
         }
@@ -73,6 +79,7 @@ namespace LDJam48
             if (effect.IsLoopingEffect && effect.LoopingParticles != null)
             {
                 effect.LoopingParticles.Stop();
+                effect.LoopingParticles.gameObject.SetActive(false);
             }
         }
     }

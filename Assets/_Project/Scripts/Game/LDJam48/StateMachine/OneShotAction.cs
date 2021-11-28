@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -45,5 +46,16 @@ namespace LDJam48.StateMachine
         }
 
         public abstract void Execute();
+    }
+
+    public static class OneShotActions
+    {
+        public static void Execute(this IEnumerable<IOneShotAction> self)
+        {
+            foreach (var action in self)
+            {
+                action.Execute();
+            }
+        }
     }
 }

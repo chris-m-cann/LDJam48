@@ -12,9 +12,146 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1b602cb401d4ba6910a2322241e3b8e, type: 3}
   m_Name: State_Sliding
   m_EditorClassIdentifier: 
-  Actions: []
-  OnEnterActions:
-  - {fileID: 11400000, guid: 7a0b5719981e97a4a8f90c93433eda7a, type: 2}
-  OnExitActions: []
-  OnUpdateActions: []
-  OnFixedUpdateActions: []
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects:
+    - {fileID: 11400000, guid: 3bd77d1494521424f90a0af57fd9941f, type: 2}
+    - {fileID: 11400000, guid: bd744feb1185d614ebfdd71b038a2d88, type: 2}
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: Actions
+      Entry: 7
+      Data: 0|LDJam48.StateMachine.StateAction[], Assembly-CSharp
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 1|LDJam48.StateMachine.Player.Action.PlayerOnWallStateAction, Assembly-CSharp
+    - Name: minWallSpeed
+      Entry: 4
+      Data: 5
+    - Name: maxWallSpeed
+      Entry: 4
+      Data: 10
+    - Name: anim
+      Entry: 1
+      Data: player_wall_land
+    - Name: maxVelocity
+      Entry: 7
+      Data: 2|Util.Var.Vector2Reference, Assembly-CSharp
+    - Name: Delimeter
+      Entry: 3
+      Data: 0
+    - Name: Variable
+      Entry: 10
+      Data: 0
+    - Name: Observable
+      Entry: 6
+      Data: 
+    - Name: Constant
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: wallMask
+      Entry: 7
+      Data: UnityEngine.LayerMask, UnityEngine.CoreModule
+    - Name: 
+      Entry: 3
+      Data: 128
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: boxcastSize
+      Entry: 4
+      Data: 0.5
+    - Name: CarriedYVel
+      Entry: 10
+      Data: 1
+    - Name: LeftWallEffectIndex
+      Entry: 3
+      Data: 6
+    - Name: RightWallEffectIndex
+      Entry: 3
+      Data: 7
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: OnEnterActions
+      Entry: 7
+      Data: 3|LDJam48.StateMachine.OneShotAction[], Assembly-CSharp
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 4|LDJam48.StateMachine.Action.ChangeAnimStateAction, Assembly-CSharp
+    - Name: AnimState
+      Entry: 1
+      Data: player_wall_land
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: OnExitActions
+      Entry: 7
+      Data: 5|LDJam48.StateMachine.OneShotAction[], Assembly-CSharp
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: OnUpdateActions
+      Entry: 7
+      Data: 6|LDJam48.StateMachine.OneShotAction[], Assembly-CSharp
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: OnFixedUpdateActions
+      Entry: 7
+      Data: 7|LDJam48.StateMachine.OneShotAction[], Assembly-CSharp
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 

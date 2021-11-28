@@ -11,15 +11,15 @@ namespace LDJam48.StateMachine
     public class State : SerializedScriptableObject
     {
         [TypeFilter("GetActionTypeList")]
-        public StateAction[] Actions = Array.Empty<StateAction>();
+        public StateAction[] Actions = new StateAction[0];
         [TypeFilter("GetOneShotActionTypeList")]
-        public OneShotAction[] OnEnterActions = Array.Empty<OneShotAction>();
+        public OneShotAction[] OnEnterActions = new OneShotAction[0];
         [TypeFilter("GetOneShotActionTypeList")]
-        public OneShotAction[] OnExitActions = Array.Empty<OneShotAction>();
+        public OneShotAction[] OnExitActions = new OneShotAction[0];
         [TypeFilter("GetOneShotActionTypeList")]
-        public OneShotAction[] OnUpdateActions = Array.Empty<OneShotAction>();
+        public OneShotAction[] OnUpdateActions = new OneShotAction[0];
         [TypeFilter("GetOneShotActionTypeList")]
-        public OneShotAction[] OnFixedUpdateActions = Array.Empty<OneShotAction>();
+        public OneShotAction[] OnFixedUpdateActions = new OneShotAction[0];
 
         public IEnumerable<Type> GetActionTypeList() => TypeEx.GetTypeList<StateAction>();
 
@@ -157,6 +157,11 @@ namespace LDJam48.StateMachine
                 foreach (var condition in transition.Conditions)
                 {
                     var r = condition.Condition.Evaluate();
+                    if (r)
+                    {
+                        Debug.Log($"Condition true: {Name}->{transition.To.Name}: {condition.Condition.Name}");
+                    }
+                    
                     switch (condition.Operator)
                     {
                         case LogicalOperator.And:

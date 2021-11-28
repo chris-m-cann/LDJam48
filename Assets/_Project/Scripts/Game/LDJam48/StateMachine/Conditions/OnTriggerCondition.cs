@@ -20,7 +20,9 @@ namespace LDJam48.StateMachine.Conditions
         private bool _triggered;
         public override bool Evaluate()
         {
-            return _triggered;
+            var tmp = _triggered;
+            _triggered = false;
+            return tmp;
         }
 
         private void SetTrigger(Void v)

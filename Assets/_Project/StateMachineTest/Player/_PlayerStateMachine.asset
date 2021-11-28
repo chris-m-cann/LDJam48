@@ -12,26 +12,1337 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b82033b2861d4b3faf9469136528367a, type: 3}
   m_Name: _PlayerStateMachine
   m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects:
+    - {fileID: 11400000, guid: 34adc51edefdc184385eb5709e199817, type: 2}
+    - {fileID: 11400000, guid: 5a8dc297a93ef524da446fa885d9433e, type: 2}
+    - {fileID: 11400000, guid: fb8425c3033483247b75c8ae4603e756, type: 2}
+    - {fileID: 11400000, guid: e478662a96b567846b5fd9e8bce08caa, type: 2}
+    - {fileID: 11400000, guid: 0afb0288d1517be4e801ec81f1e896bd, type: 2}
+    - {fileID: 11400000, guid: 995318c72cfc65944884c48912e82794, type: 2}
+    - {fileID: 11400000, guid: e2c6d7464b99a5f478b847b69eff3a8c, type: 2}
+    - {fileID: 11400000, guid: d25ce7dbe74303a40bf033b6ce5339c4, type: 2}
+    - {fileID: 11400000, guid: 3ce49becb6d82e945a05a637bcba6d72, type: 2}
+    - {fileID: 11400000, guid: 2a59b742c7732a54fbe50f57d60d07f4, type: 2}
+    - {fileID: 11400000, guid: 19283166766cf6b4988aac2126317343, type: 2}
+    - {fileID: 11400000, guid: ce8fb39d47fee584cb77a119c9a27b01, type: 2}
+    - {fileID: 11400000, guid: 00d51c26a5c6faa418893feaa926c2f0, type: 2}
+    - {fileID: 11400000, guid: 0e30357abe1a10f42986b6147f009b6d, type: 2}
+    - {fileID: 11400000, guid: 0aa528058b161e3459e1641507806beb, type: 2}
+    - {fileID: 11400000, guid: c8130f7b299584a40a8c5c9dcc8e41ce, type: 2}
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: Transitions
+      Entry: 7
+      Data: 0|LDJam48.StateMachine.StateTransition[], Assembly-CSharp
+    - Name: 
+      Entry: 12
+      Data: 6
+    - Name: 
+      Entry: 7
+      Data: LDJam48.StateMachine.StateTransition, Assembly-CSharp
+    - Name: From
+      Entry: 10
+      Data: 0
+    - Name: Descriptions
+      Entry: 7
+      Data: 1|LDJam48.StateMachine.TransitionDesc[], Assembly-CSharp
+    - Name: 
+      Entry: 12
+      Data: 4
+    - Name: 
+      Entry: 7
+      Data: LDJam48.StateMachine.TransitionDesc, Assembly-CSharp
+    - Name: To
+      Entry: 10
+      Data: 1
+    - Name: Conditions
+      Entry: 7
+      Data: 2|LDJam48.StateMachine.ConditionPair[], Assembly-CSharp
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: LDJam48.StateMachine.ConditionPair, Assembly-CSharp
+    - Name: Condition
+      Entry: 7
+      Data: 3|LDJam48.StateMachine.Player.Conditions.PlayerIsOnFloorCondition, Assembly-CSharp
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: Operator
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: OnTransitionActions
+      Entry: 7
+      Data: 4|LDJam48.StateMachine.OneShotAction[], Assembly-CSharp
+    - Name: 
+      Entry: 12
+      Data: 4
+    - Name: 
+      Entry: 7
+      Data: 5|LDJam48.StateMachine.Action.PlayOneShotParticleAction, Assembly-CSharp
+    - Name: effectIdx
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 6|LDJam48.StateMachine.Action.PlayOneShotParticleAction, Assembly-CSharp
+    - Name: effectIdx
+      Entry: 3
+      Data: 3
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 7|LDJam48.StateMachine.Action.PlaySoundAction, Assembly-CSharp
+    - Name: soundIdx
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 8|LDJam48.StateMachine.Player.Action.RaiseShakeEventAction, Assembly-CSharp
+    - Name: EventReference
+      Entry: 7
+      Data: 9|Util.Var.Events.ShakeDefinitionEventReference, Assembly-CSharp
+    - Name: Delimeter
+      Entry: 3
+      Data: 0
+    - Name: Event
+      Entry: 10
+      Data: 2
+    - Name: Variable
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: ValueToRaise
+      Entry: 10
+      Data: 3
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: LDJam48.StateMachine.TransitionDesc, Assembly-CSharp
+    - Name: To
+      Entry: 10
+      Data: 4
+    - Name: Conditions
+      Entry: 7
+      Data: 10|LDJam48.StateMachine.ConditionPair[], Assembly-CSharp
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: LDJam48.StateMachine.ConditionPair, Assembly-CSharp
+    - Name: Condition
+      Entry: 7
+      Data: 11|LDJam48.StateMachine.Conditions.OnTriggerCondition, Assembly-CSharp
+    - Name: Trigger
+      Entry: 10
+      Data: 5
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: Operator
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: OnTransitionActions
+      Entry: 7
+      Data: 12|LDJam48.StateMachine.OneShotAction[], Assembly-CSharp
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: LDJam48.StateMachine.TransitionDesc, Assembly-CSharp
+    - Name: To
+      Entry: 10
+      Data: 6
+    - Name: Conditions
+      Entry: 7
+      Data: 13|LDJam48.StateMachine.ConditionPair[], Assembly-CSharp
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: LDJam48.StateMachine.ConditionPair, Assembly-CSharp
+    - Name: Condition
+      Entry: 7
+      Data: 14|LDJam48.StateMachine.Player.Conditions.PlayerIsOnWallCondition, Assembly-CSharp
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: Operator
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: OnTransitionActions
+      Entry: 7
+      Data: 15|LDJam48.StateMachine.OneShotAction[], Assembly-CSharp
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: LDJam48.StateMachine.TransitionDesc, Assembly-CSharp
+    - Name: To
+      Entry: 10
+      Data: 7
+    - Name: Conditions
+      Entry: 7
+      Data: 16|LDJam48.StateMachine.ConditionPair[], Assembly-CSharp
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: LDJam48.StateMachine.ConditionPair, Assembly-CSharp
+    - Name: Condition
+      Entry: 7
+      Data: 17|LDJam48.StateMachine.Conditions.OnTriggerCondition, Assembly-CSharp
+    - Name: Trigger
+      Entry: 10
+      Data: 8
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: Operator
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: OnTransitionActions
+      Entry: 7
+      Data: 18|LDJam48.StateMachine.OneShotAction[], Assembly-CSharp
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: LDJam48.StateMachine.StateTransition, Assembly-CSharp
+    - Name: From
+      Entry: 10
+      Data: 1
+    - Name: Descriptions
+      Entry: 7
+      Data: 19|LDJam48.StateMachine.TransitionDesc[], Assembly-CSharp
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: LDJam48.StateMachine.TransitionDesc, Assembly-CSharp
+    - Name: To
+      Entry: 10
+      Data: 4
+    - Name: Conditions
+      Entry: 7
+      Data: 20|LDJam48.StateMachine.ConditionPair[], Assembly-CSharp
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: LDJam48.StateMachine.ConditionPair, Assembly-CSharp
+    - Name: Condition
+      Entry: 7
+      Data: 21|LDJam48.StateMachine.Conditions.OnTriggerCondition, Assembly-CSharp
+    - Name: Trigger
+      Entry: 10
+      Data: 5
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: Operator
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: OnTransitionActions
+      Entry: 7
+      Data: 22|LDJam48.StateMachine.OneShotAction[], Assembly-CSharp
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 23|LDJam48.StateMachine.Action.PlayOneShotParticleAction, Assembly-CSharp
+    - Name: effectIdx
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: LDJam48.StateMachine.StateTransition, Assembly-CSharp
+    - Name: From
+      Entry: 10
+      Data: 6
+    - Name: Descriptions
+      Entry: 7
+      Data: 24|LDJam48.StateMachine.TransitionDesc[], Assembly-CSharp
+    - Name: 
+      Entry: 12
+      Data: 4
+    - Name: 
+      Entry: 7
+      Data: LDJam48.StateMachine.TransitionDesc, Assembly-CSharp
+    - Name: To
+      Entry: 10
+      Data: 4
+    - Name: Conditions
+      Entry: 7
+      Data: 25|LDJam48.StateMachine.ConditionPair[], Assembly-CSharp
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: LDJam48.StateMachine.ConditionPair, Assembly-CSharp
+    - Name: Condition
+      Entry: 7
+      Data: 26|LDJam48.StateMachine.Conditions.OnTriggerCondition, Assembly-CSharp
+    - Name: Trigger
+      Entry: 10
+      Data: 5
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: Operator
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: OnTransitionActions
+      Entry: 7
+      Data: 27|LDJam48.StateMachine.OneShotAction[], Assembly-CSharp
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 28|LDJam48.StateMachine.Player.Action.SetBooleanAction, Assembly-CSharp
+    - Name: Var
+      Entry: 10
+      Data: 9
+    - Name: Value
+      Entry: 5
+      Data: true
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: LDJam48.StateMachine.TransitionDesc, Assembly-CSharp
+    - Name: To
+      Entry: 10
+      Data: 7
+    - Name: Conditions
+      Entry: 7
+      Data: 29|LDJam48.StateMachine.ConditionPair[], Assembly-CSharp
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: LDJam48.StateMachine.ConditionPair, Assembly-CSharp
+    - Name: Condition
+      Entry: 7
+      Data: 30|LDJam48.StateMachine.Conditions.OnTriggerCondition, Assembly-CSharp
+    - Name: Trigger
+      Entry: 10
+      Data: 8
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: Operator
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: OnTransitionActions
+      Entry: 7
+      Data: 31|LDJam48.StateMachine.OneShotAction[], Assembly-CSharp
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: LDJam48.StateMachine.TransitionDesc, Assembly-CSharp
+    - Name: To
+      Entry: 10
+      Data: 1
+    - Name: Conditions
+      Entry: 7
+      Data: 32|LDJam48.StateMachine.ConditionPair[], Assembly-CSharp
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: LDJam48.StateMachine.ConditionPair, Assembly-CSharp
+    - Name: Condition
+      Entry: 7
+      Data: 33|LDJam48.StateMachine.Player.Conditions.PlayerIsOnFloorCondition, Assembly-CSharp
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: Operator
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: OnTransitionActions
+      Entry: 7
+      Data: 34|LDJam48.StateMachine.OneShotAction[], Assembly-CSharp
+    - Name: 
+      Entry: 12
+      Data: 3
+    - Name: 
+      Entry: 7
+      Data: 35|LDJam48.StateMachine.Action.PlayOneShotParticleAction, Assembly-CSharp
+    - Name: effectIdx
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 36|LDJam48.StateMachine.Action.PlaySoundAction, Assembly-CSharp
+    - Name: soundIdx
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 37|LDJam48.StateMachine.Player.Action.RaiseShakeEventAction, Assembly-CSharp
+    - Name: EventReference
+      Entry: 7
+      Data: 38|Util.Var.Events.ShakeDefinitionEventReference, Assembly-CSharp
+    - Name: Delimeter
+      Entry: 3
+      Data: 0
+    - Name: Event
+      Entry: 10
+      Data: 2
+    - Name: Variable
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: ValueToRaise
+      Entry: 10
+      Data: 3
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: LDJam48.StateMachine.TransitionDesc, Assembly-CSharp
+    - Name: To
+      Entry: 10
+      Data: 0
+    - Name: Conditions
+      Entry: 7
+      Data: 39|LDJam48.StateMachine.ConditionPair[], Assembly-CSharp
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: LDJam48.StateMachine.ConditionPair, Assembly-CSharp
+    - Name: Condition
+      Entry: 7
+      Data: 40|LDJam48.StateMachine.Player.Conditions.PlayerHasNoContactsCondition,
+        Assembly-CSharp
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: Operator
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: OnTransitionActions
+      Entry: 7
+      Data: 41|LDJam48.StateMachine.OneShotAction[], Assembly-CSharp
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: LDJam48.StateMachine.StateTransition, Assembly-CSharp
+    - Name: From
+      Entry: 10
+      Data: 4
+    - Name: Descriptions
+      Entry: 7
+      Data: 42|LDJam48.StateMachine.TransitionDesc[], Assembly-CSharp
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: LDJam48.StateMachine.TransitionDesc, Assembly-CSharp
+    - Name: To
+      Entry: 10
+      Data: 10
+    - Name: Conditions
+      Entry: 7
+      Data: 43|LDJam48.StateMachine.ConditionPair[], Assembly-CSharp
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: LDJam48.StateMachine.ConditionPair, Assembly-CSharp
+    - Name: Condition
+      Entry: 7
+      Data: 44|LDJam48.StateMachine.Conditions.OnTriggerCondition, Assembly-CSharp
+    - Name: Trigger
+      Entry: 10
+      Data: 11
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: Operator
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: OnTransitionActions
+      Entry: 7
+      Data: 45|LDJam48.StateMachine.OneShotAction[], Assembly-CSharp
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: LDJam48.StateMachine.TransitionDesc, Assembly-CSharp
+    - Name: To
+      Entry: 10
+      Data: 6
+    - Name: Conditions
+      Entry: 7
+      Data: 46|LDJam48.StateMachine.ConditionPair[], Assembly-CSharp
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: LDJam48.StateMachine.ConditionPair, Assembly-CSharp
+    - Name: Condition
+      Entry: 7
+      Data: 47|LDJam48.StateMachine.Conditions.OnTriggerCondition, Assembly-CSharp
+    - Name: Trigger
+      Entry: 10
+      Data: 12
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: Operator
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: OnTransitionActions
+      Entry: 7
+      Data: 48|LDJam48.StateMachine.OneShotAction[], Assembly-CSharp
+    - Name: 
+      Entry: 12
+      Data: 3
+    - Name: 
+      Entry: 7
+      Data: 49|LDJam48.StateMachine.Player.Action.PerformActionBasedOnDirection,
+        Assembly-CSharp
+    - Name: Direction
+      Entry: 10
+      Data: 13
+    - Name: LeftActions
+      Entry: 7
+      Data: 50|LDJam48.StateMachine.OneShotAction[], Assembly-CSharp
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 51|LDJam48.StateMachine.Action.PlayOneShotParticleAction, Assembly-CSharp
+    - Name: effectIdx
+      Entry: 3
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 52|LDJam48.StateMachine.Action.PlayOneShotParticleAction, Assembly-CSharp
+    - Name: effectIdx
+      Entry: 3
+      Data: 8
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: RightAction
+      Entry: 7
+      Data: 53|LDJam48.StateMachine.OneShotAction[], Assembly-CSharp
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 54|LDJam48.StateMachine.Action.PlayOneShotParticleAction, Assembly-CSharp
+    - Name: effectIdx
+      Entry: 3
+      Data: 2
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 55|LDJam48.StateMachine.Action.PlayOneShotParticleAction, Assembly-CSharp
+    - Name: effectIdx
+      Entry: 3
+      Data: 9
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: ZeroAction
+      Entry: 7
+      Data: 56|LDJam48.StateMachine.OneShotAction[], Assembly-CSharp
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 57|LDJam48.StateMachine.Action.PlaySoundAction, Assembly-CSharp
+    - Name: soundIdx
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 58|LDJam48.StateMachine.Player.Action.RaiseShakeEventAction, Assembly-CSharp
+    - Name: EventReference
+      Entry: 7
+      Data: 59|Util.Var.Events.ShakeDefinitionEventReference, Assembly-CSharp
+    - Name: Delimeter
+      Entry: 3
+      Data: 0
+    - Name: Event
+      Entry: 10
+      Data: 2
+    - Name: Variable
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: ValueToRaise
+      Entry: 10
+      Data: 14
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: LDJam48.StateMachine.StateTransition, Assembly-CSharp
+    - Name: From
+      Entry: 10
+      Data: 10
+    - Name: Descriptions
+      Entry: 7
+      Data: 60|LDJam48.StateMachine.TransitionDesc[], Assembly-CSharp
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: LDJam48.StateMachine.TransitionDesc, Assembly-CSharp
+    - Name: To
+      Entry: 10
+      Data: 0
+    - Name: Conditions
+      Entry: 7
+      Data: 61|LDJam48.StateMachine.ConditionPair[], Assembly-CSharp
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: LDJam48.StateMachine.ConditionPair, Assembly-CSharp
+    - Name: Condition
+      Entry: 7
+      Data: 62|LDJam48.StateMachine.Conditions.AfterTimeCondition, Assembly-CSharp
+    - Name: timeout
+      Entry: 4
+      Data: 0.25
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: Operator
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: OnTransitionActions
+      Entry: 7
+      Data: 63|LDJam48.StateMachine.OneShotAction[], Assembly-CSharp
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: LDJam48.StateMachine.TransitionDesc, Assembly-CSharp
+    - Name: To
+      Entry: 10
+      Data: 1
+    - Name: Conditions
+      Entry: 7
+      Data: 64|LDJam48.StateMachine.ConditionPair[], Assembly-CSharp
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: LDJam48.StateMachine.ConditionPair, Assembly-CSharp
+    - Name: Condition
+      Entry: 7
+      Data: 65|LDJam48.StateMachine.Player.Conditions.PlayerIsOnFloorCondition, Assembly-CSharp
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: Operator
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: OnTransitionActions
+      Entry: 7
+      Data: 66|LDJam48.StateMachine.OneShotAction[], Assembly-CSharp
+    - Name: 
+      Entry: 12
+      Data: 3
+    - Name: 
+      Entry: 7
+      Data: 67|LDJam48.StateMachine.Action.PlayOneShotParticleAction, Assembly-CSharp
+    - Name: effectIdx
+      Entry: 3
+      Data: 12
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 68|LDJam48.StateMachine.Action.PlaySoundAction, Assembly-CSharp
+    - Name: soundIdx
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 69|LDJam48.StateMachine.Player.Action.RaiseShakeEventAction, Assembly-CSharp
+    - Name: EventReference
+      Entry: 7
+      Data: 70|Util.Var.Events.ShakeDefinitionEventReference, Assembly-CSharp
+    - Name: Delimeter
+      Entry: 3
+      Data: 0
+    - Name: Event
+      Entry: 10
+      Data: 2
+    - Name: Variable
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: ValueToRaise
+      Entry: 10
+      Data: 15
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: LDJam48.StateMachine.StateTransition, Assembly-CSharp
+    - Name: From
+      Entry: 10
+      Data: 7
+    - Name: Descriptions
+      Entry: 7
+      Data: 71|LDJam48.StateMachine.TransitionDesc[], Assembly-CSharp
+    - Name: 
+      Entry: 12
+      Data: 3
+    - Name: 
+      Entry: 7
+      Data: LDJam48.StateMachine.TransitionDesc, Assembly-CSharp
+    - Name: To
+      Entry: 10
+      Data: 0
+    - Name: Conditions
+      Entry: 7
+      Data: 72|LDJam48.StateMachine.ConditionPair[], Assembly-CSharp
+    - Name: 
+      Entry: 12
+      Data: 3
+    - Name: 
+      Entry: 7
+      Data: LDJam48.StateMachine.ConditionPair, Assembly-CSharp
+    - Name: Condition
+      Entry: 7
+      Data: 73|LDJam48.StateMachine.Player.Conditions.CompareVelocityCondition, Assembly-CSharp
+    - Name: CompareX
+      Entry: 5
+      Data: false
+    - Name: XOp
+      Entry: 3
+      Data: 0
+    - Name: CompareXTo
+      Entry: 4
+      Data: 0
+    - Name: CompareY
+      Entry: 5
+      Data: true
+    - Name: YOp
+      Entry: 3
+      Data: 18446744073709551615
+    - Name: CompareYTo
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: Operator
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: LDJam48.StateMachine.ConditionPair, Assembly-CSharp
+    - Name: Condition
+      Entry: 7
+      Data: 74|LDJam48.StateMachine.Conditions.AfterTimeCondition, Assembly-CSharp
+    - Name: timeout
+      Entry: 4
+      Data: 0.2
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: Operator
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: LDJam48.StateMachine.ConditionPair, Assembly-CSharp
+    - Name: Condition
+      Entry: 7
+      Data: 75|LDJam48.StateMachine.Player.Conditions.PlayerHasNoContactsCondition,
+        Assembly-CSharp
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: Operator
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: OnTransitionActions
+      Entry: 7
+      Data: 76|LDJam48.StateMachine.OneShotAction[], Assembly-CSharp
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: LDJam48.StateMachine.TransitionDesc, Assembly-CSharp
+    - Name: To
+      Entry: 10
+      Data: 6
+    - Name: Conditions
+      Entry: 7
+      Data: 77|LDJam48.StateMachine.ConditionPair[], Assembly-CSharp
+    - Name: 
+      Entry: 12
+      Data: 3
+    - Name: 
+      Entry: 7
+      Data: LDJam48.StateMachine.ConditionPair, Assembly-CSharp
+    - Name: Condition
+      Entry: 7
+      Data: 78|LDJam48.StateMachine.Player.Conditions.CompareVelocityCondition, Assembly-CSharp
+    - Name: CompareX
+      Entry: 5
+      Data: false
+    - Name: XOp
+      Entry: 3
+      Data: 0
+    - Name: CompareXTo
+      Entry: 4
+      Data: 0
+    - Name: CompareY
+      Entry: 5
+      Data: true
+    - Name: YOp
+      Entry: 3
+      Data: 18446744073709551615
+    - Name: CompareYTo
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: Operator
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: LDJam48.StateMachine.ConditionPair, Assembly-CSharp
+    - Name: Condition
+      Entry: 7
+      Data: 79|LDJam48.StateMachine.Conditions.AfterTimeCondition, Assembly-CSharp
+    - Name: timeout
+      Entry: 4
+      Data: 0.2
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: Operator
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: LDJam48.StateMachine.ConditionPair, Assembly-CSharp
+    - Name: Condition
+      Entry: 7
+      Data: 80|LDJam48.StateMachine.Player.Conditions.PlayerIsOnWallCondition, Assembly-CSharp
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: Operator
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: OnTransitionActions
+      Entry: 7
+      Data: 81|LDJam48.StateMachine.OneShotAction[], Assembly-CSharp
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: LDJam48.StateMachine.TransitionDesc, Assembly-CSharp
+    - Name: To
+      Entry: 10
+      Data: 4
+    - Name: Conditions
+      Entry: 7
+      Data: 82|LDJam48.StateMachine.ConditionPair[], Assembly-CSharp
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: LDJam48.StateMachine.ConditionPair, Assembly-CSharp
+    - Name: Condition
+      Entry: 7
+      Data: 83|LDJam48.StateMachine.Conditions.OnTriggerCondition, Assembly-CSharp
+    - Name: Trigger
+      Entry: 10
+      Data: 5
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: Operator
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: OnTransitionActions
+      Entry: 7
+      Data: 84|LDJam48.StateMachine.OneShotAction[], Assembly-CSharp
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
   InitialState: {fileID: 11400000, guid: 34adc51edefdc184385eb5709e199817, type: 2}
-  Transitions:
-  - From: {fileID: 11400000, guid: 34adc51edefdc184385eb5709e199817, type: 2}
-    To: {fileID: 11400000, guid: 0afb0288d1517be4e801ec81f1e896bd, type: 2}
-    Description:
-      Conditions:
-      - Condition: {fileID: 11400000, guid: ad9e229459036054796310fe4bce9371, type: 2}
-        Operator: 0
-      OnTransitionActions: []
-  - From: {fileID: 11400000, guid: 0afb0288d1517be4e801ec81f1e896bd, type: 2}
-    To: {fileID: 11400000, guid: 19283166766cf6b4988aac2126317343, type: 2}
-    Description:
-      Conditions:
-      - Condition: {fileID: 11400000, guid: 3a10806fc942d584fbe92009fb7658e8, type: 2}
-        Operator: 0
-      OnTransitionActions: []
-  - From: {fileID: 11400000, guid: 19283166766cf6b4988aac2126317343, type: 2}
-    To: {fileID: 11400000, guid: 34adc51edefdc184385eb5709e199817, type: 2}
-    Description:
-      Conditions:
-      - Condition: {fileID: 11400000, guid: 58c37d9bb1f4c4a4cb95c0987aa4d1ea, type: 2}
-        Operator: 0
-      OnTransitionActions: []

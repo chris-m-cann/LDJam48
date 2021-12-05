@@ -191,7 +191,7 @@ namespace LDJam48.StateMachine.Player.Action
             _source.dashAnimEvent.OnEventTrigger -= StartDash;
 
             _colliders.Main.enabled = true;
-            _colliders.Slash.enabled = true;
+            _colliders.Slash.enabled = false;
 
             _source.activeActionMap.Value = _source.onExitActionMap;
 

@@ -78,7 +78,7 @@ namespace LDJam48
             if (isSafe)
             {
                 // head bounce
-                other.GetComponent<PlayerStateMachine>()?.Bounce();
+                other.GetComponent<Bounceable>()?.Bounce();
                 Die();
             }
             else

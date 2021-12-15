@@ -1,19 +1,39 @@
 using System;
+using Sirenix.OdinInspector;
 using UnityEngine;
+using Util;
 
 namespace LDJam48
 {
     public class DamageOnContact : MonoBehaviour
     {
         [SerializeField] private int amount = 1;
-        [SerializeField] private string tagToDamage = "Player";
+
+        [HideIf("$isLayerBased"), SerializeField]
+        private string tagToDamage = "Player";
+
+        [SerializeField] private bool isLayerBased;
+
+        [ShowIf("$isLayerBased"), SerializeField]
+        private LayerMask layersToDamage;
 
 
         private void OnTriggerEnter2D(Collider2D other)
         {
-            if (other.CompareTag(tagToDamage))
+            if (!isActiveAndEnabled) return;
+            if (isLayerBased)
             {
-                other.GetComponent<IDamageable>()?.Damage(amount);
+                if (layersToDamage.Contains(other.gameObject.layer))
+                {
+                    other.GetComponent<IDamageable>()?.Damage(amount, gameObject);
+                }
+            }
+            else
+            {
+                if (other.CompareTag(tagToDamage))
+                {
+                    other.GetComponent<IDamageable>()?.Damage(amount, gameObject);
+                }
             }
         }
     }

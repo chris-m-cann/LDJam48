@@ -84,7 +84,7 @@ namespace LDJam48
             else
             {
                 // damage player
-                other.GetComponent<IDamageable>()?.Damage(1);
+                other.GetComponent<IDamageable>()?.Damage(1, gameObject);
             }
         }
 

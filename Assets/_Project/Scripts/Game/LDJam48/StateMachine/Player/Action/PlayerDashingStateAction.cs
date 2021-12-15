@@ -96,8 +96,6 @@ namespace LDJam48.StateMachine.Player.Action
             base.OnStateEnter();
             _direction = _source.OnDashInput.Value.normalized;
 
-            Debug.Log($"Entering dash at x pos = {_machine.transform.position.x}");
-            
             _source.CarriedYVel.Value = _rigidbody.velocity.y;
             _prevGravity = _rigidbody.gravityScale;
             
@@ -123,7 +121,6 @@ namespace LDJam48.StateMachine.Player.Action
 
         private void StartDash(Void v)
         {
-            Debug.Log($"Starting dash at x pos = {_machine.transform.position.x}");
             _sounds.PlaySound(_source.SoundId);
 
             var end = _raycasts.FindDashLandPoint(_direction, rightWallX:_source.rightWallX, leftWallX:_source.leftWallX);
@@ -172,6 +169,7 @@ namespace LDJam48.StateMachine.Player.Action
 
             yield return new WaitForFixedUpdate();
             yield return new WaitForFixedUpdate();
+            
             _source.ToOnWallEvent.Raise();
         }
 
@@ -196,6 +194,7 @@ namespace LDJam48.StateMachine.Player.Action
             _source.activeActionMap.Value = _source.onExitActionMap;
 
             _rigidbody.gravityScale = _prevGravity;
+            
         }
         
 

@@ -4,7 +4,8 @@ namespace LDJam48.StateMachine.Player.Action
 {
     public class PlayerRaycastsBehaviour : MonoBehaviour
     {
-        [SerializeField] private  LayerMask wallMask;
+        [SerializeField] private  LayerMask dashWallMask;
+        [SerializeField] private  LayerMask stickWallMask;
         [SerializeField] private  float boxcastSize = .5f;
         [SerializeField] private Transform leftProjectionPoint;
         [SerializeField] private Transform rightProjectionPoint;
@@ -12,6 +13,7 @@ namespace LDJam48.StateMachine.Player.Action
 
         public void StickToWall(bool isLeftWall)
         {
+
             // cast from farthest point toward wall
             var direction = Vector2.left;
             var projectionPoint = rightProjectionPoint;
@@ -24,7 +26,7 @@ namespace LDJam48.StateMachine.Player.Action
                 offset *= -1;
             }
             
-            var hit = Physics2D.BoxCast(projectionPoint.position, boxcastSize * Vector2.one, 0f, direction, 10f, wallMask);
+            var hit = Physics2D.BoxCast(projectionPoint.position, boxcastSize * Vector2.one, 0f, direction, 10f, stickWallMask);
 
             if (hit.collider != null)
             {
@@ -46,19 +48,18 @@ namespace LDJam48.StateMachine.Player.Action
                 offset *= -1;
             }
 
-            var hit = Physics2D.BoxCast(castPoint.position, boxcastSize * Vector2.one, 0f, direction, rightWallX - leftWallX, wallMask);
+            var hit = Physics2D.BoxCast(castPoint.position, boxcastSize * Vector2.one, 0f, direction, rightWallX - leftWallX, dashWallMask);
             var hitX = finalX;
 
             if (hit.collider)
             {
                 hitX = hit.point.x;
             }
-            Debug.DrawLine(castPoint.position, new Vector3(hitX, castPoint.position.y), Color.red, 1f);
+            Debug.DrawLine(castPoint.position, new Vector3(hitX + offset, castPoint.position.y), Color.red, 1f);
 
             
             var r = new Vector2(hitX + offset, castPoint.position.y);
             
-            Debug.Log($"Dashing from {castPoint.position.x} to {r.x}");
             return r;
         }
     }

@@ -21,8 +21,6 @@ namespace LDJam48.StateMachine.Player.Action
         public override void OnStateEnter()
         {
             base.OnStateEnter();
-            
-            Debug.Log("Entering Falling state Action");
 
             _source.maxVelocity.Value = new Vector2(_source.maxVelocity.Value.x, _source.fallSpeed);
         }
@@ -30,9 +28,6 @@ namespace LDJam48.StateMachine.Player.Action
         public override void OnStateExit()
         {
             base.OnStateExit();
-            
-            
-            Debug.Log("Entering Exiting falling state action");
             
             _source.CarriedYVel.Value = _machine.GetComponent<Rigidbody2D>().velocity.y;
         }

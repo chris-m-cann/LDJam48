@@ -52,7 +52,7 @@ namespace LDJam48
             health.Reset();
         }
 
-        public void Damage(int amount)
+        public void Damage(int amount, GameObject damager)
         {
             if (_isInvincible) return;
 

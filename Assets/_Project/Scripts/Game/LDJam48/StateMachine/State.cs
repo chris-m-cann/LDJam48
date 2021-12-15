@@ -157,10 +157,10 @@ namespace LDJam48.StateMachine
                 foreach (var condition in transition.Conditions)
                 {
                     var r = condition.Condition.Evaluate();
-                    if (r)
-                    {
-                        Debug.Log($"Condition true: {Name}->{transition.To.Name}: {condition.Condition.Name}");
-                    }
+                    // if (r)
+                    // {
+                    //     Debug.Log($"Condition true: {Name}->{transition.To.Name}: {condition.Condition.Name}");
+                    // }
                     
                     switch (condition.Operator)
                     {

@@ -60,8 +60,6 @@ namespace LDJam48.PlayerState
 
         public override void OnEnter(PlayerState previous)
         {
-            Debug.Log($"Entering dash at x pos = {_machine.Context.transform.position.x}");
-            
             _machine.Context.CarriedYVel = _machine.Context.Rigidbody2D.velocity.y;
             _prevGravity = _machine.Context.Rigidbody2D.gravityScale;
             
@@ -96,7 +94,6 @@ namespace LDJam48.PlayerState
 
         private void StartDash(Void v)
         {
-            Debug.Log($"Starting dash at x pos = {_machine.Context.transform.position.x}");
             var isLeft = _direction.x < 0;
 
 

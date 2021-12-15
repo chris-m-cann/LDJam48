@@ -37,5 +37,29 @@ namespace Util.Var
                 }
             }
         }
+
+        public VariableReference()
+        {
+            
+        }
+
+        public VariableReference(TVar variable)
+        {
+            Delimeter = 0;
+            Variable = variable;
+        }
+        
+        
+        public VariableReference(TObVar observable)
+        {
+            Delimeter = 1;
+            Observable = observable;
+        }
+        
+        public VariableReference(T constant)
+        {
+            Delimeter = 2;
+            Constant = constant;
+        }
     }
 }

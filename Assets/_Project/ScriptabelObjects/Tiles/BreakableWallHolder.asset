@@ -9,9 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4518d8e880de4dafadc81d641fbb7455, type: 3}
-  m_Name: SpawnTest
+  m_Script: {fileID: 11500000, guid: b5ba0a5cc0f94e6899fd69ce6ed8310f, type: 3}
+  m_Name: BreakableWallHolder
   m_EditorClassIdentifier: 
-  Description: 
-  Chunks:
-  - {fileID: 7965636448107021769, guid: 75085f37bf3e8ab41bda7f5f12f9c99a, type: 3}
+  Prefab: {fileID: 9077482022088278768, guid: 9bfb3767e9ff44140867c701ae5098af, type: 3}

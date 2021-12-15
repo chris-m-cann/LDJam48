@@ -30,7 +30,6 @@ namespace LDJam48.StateMachine.Player.Conditions
 
             if (Time.time > _nextT)
             {
-                Debug.Log($"Player on Floor = {ponf}");
                 _nextT = Time.time + 500;
             }
 

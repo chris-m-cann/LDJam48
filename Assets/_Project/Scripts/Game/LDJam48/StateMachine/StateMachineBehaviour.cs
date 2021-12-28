@@ -1,6 +1,7 @@
 using System;
 using Unity.VisualScripting;
 using UnityEngine;
+using Util.Var.Events;
 
 namespace LDJam48.StateMachine
 {
@@ -9,6 +10,8 @@ namespace LDJam48.StateMachine
         [SerializeField] private StateMachine stateMachine;
         [SerializeField] private bool transitionOnUpdate = true;
         [SerializeField] private bool transitionOnFixedUpdate = true;
+        public event Action<int> StateCompletedItself;
+        
         public bool debugLogs = false;
 
 
@@ -81,5 +84,11 @@ namespace LDJam48.StateMachine
                 _state.OnStateEnter();
             }
         }
+
+        public void StateComplete(int exitCode)
+        {
+            StateCompletedItself?.Invoke(exitCode);
+        }
+
     }
 }

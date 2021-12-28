@@ -9,6 +9,7 @@ namespace LDJam48.StateMachine.Player.Action
         [SerializeField] private  float boxcastSize = .5f;
         [SerializeField] private Transform leftProjectionPoint;
         [SerializeField] private Transform rightProjectionPoint;
+        [SerializeField] private Transform bottomProjectionPoint;
 
 
         public void StickToWall(bool isLeftWall)
@@ -60,6 +61,29 @@ namespace LDJam48.StateMachine.Player.Action
             
             var r = new Vector2(hitX + offset, castPoint.position.y);
             
+            return r;
+        }
+        
+        public Vector2 FindSlamLandPoint(float maxDistance)
+        {
+            var castPoint = bottomProjectionPoint;
+            var direction = Vector2.down;
+            
+            var finalY = castPoint.position.y - maxDistance;
+            var offset = .5f;
+
+            var hit = Physics2D.BoxCast(castPoint.position, boxcastSize * Vector2.one, 0f, direction, maxDistance, dashWallMask);
+            var hitY = finalY;
+
+            if (hit.collider)
+            {
+                hitY = hit.point.y;
+            }
+
+            var r = new Vector2(castPoint.position.x, hitY + offset);
+            
+            Debug.DrawLine(castPoint.position, r, Color.blue, 1f);
+
             return r;
         }
     }

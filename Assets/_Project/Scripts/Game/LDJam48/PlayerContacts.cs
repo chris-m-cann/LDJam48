@@ -1,6 +1,7 @@
 using System;
 using UnityEditor;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace LDJam48
 {
@@ -13,6 +14,8 @@ namespace LDJam48
         [SerializeField] private LayerMask floorLayer;
 
         [SerializeField] private bool trackYourself;
+        [SerializeField] private bool normalRay;
+        
 
         public ContactDetails ContactDetails;
 
@@ -40,9 +43,27 @@ namespace LDJam48
             contact.IsOnRightWall = Physics2D.OverlapBox((Vector2) transform.position + rightCollider.offset,
                 rightCollider.size, 0, wallLayer);
 
-            contact.IsOnFloor = Physics2D.OverlapBox((Vector2) transform.position + floorCollider.offset,
+            var floorCollision = Physics2D.OverlapBox((Vector2) transform.position + floorCollider.offset,
                 floorCollider.size, 0, floorLayer);
 
+            contact.IsOnFloor = false;
+            if (floorCollision != null)
+            {
+                var contacts = new ContactPoint2D[1];
+                if (floorCollision.GetContacts(contacts) > 0)
+                {
+                    var item = contacts[0];
+
+                    contact.IsOnFloor = item.normal.y < -.5;
+                    
+                    if (normalRay)
+                    {
+                        Debug.Log($"Ray normal = {item.normal}");
+                        Debug.DrawRay(item.point, item.normal * 100, Random.ColorHSV(0f, 1f, 1f, 1f, 0.5f, 1f), 10f);
+                    }
+                }
+            }
+            
             return contact;
         }
 

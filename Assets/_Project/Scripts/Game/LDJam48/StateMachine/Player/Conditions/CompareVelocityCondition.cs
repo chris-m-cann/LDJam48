@@ -1,6 +1,7 @@
 using System;
 using Sirenix.OdinInspector;
 using UnityEngine;
+using Util;
 
 namespace LDJam48.StateMachine.Player.Conditions
 {
@@ -22,11 +23,6 @@ namespace LDJam48.StateMachine.Player.Conditions
         {
             return new CompareVelocityConditionRuntime();
         }
-    }
-
-    public enum CompareOp
-    {
-        LessThan = -1, Equals = 0, GreaterThan = 1
     }
 
     public class CompareVelocityConditionRuntime : BaseConditionRuntime<CompareVelocityCondition>

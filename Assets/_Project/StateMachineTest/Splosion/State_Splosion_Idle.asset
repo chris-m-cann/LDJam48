@@ -33,6 +33,12 @@ MonoBehaviour:
     - Name: Behaviour
       Entry: 1
       Data: ToAndFroBehaviour
+    - Name: enabledOnEnter
+      Entry: 5
+      Data: true
+    - Name: enabledOnExit
+      Entry: 5
+      Data: false
     - Name: 
       Entry: 8
       Data: 

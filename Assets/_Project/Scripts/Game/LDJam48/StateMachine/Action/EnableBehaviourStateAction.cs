@@ -7,6 +7,10 @@ namespace LDJam48.StateMachine.Action
     public class EnableBehaviourStateAction : StateAction
     {
         public string Behaviour;
+        [Tooltip("on enter Behaviour.enabled = enabledOnEnter")]
+        public bool enabledOnEnter = true;
+        [Tooltip("on exit Behaviour.enabled = enabledOnExit")]
+        public bool enabledOnExit = false;
 
         protected override IStateAction BuildRuntimeImpl()
         {
@@ -34,7 +38,7 @@ namespace LDJam48.StateMachine.Action
             base.OnStateEnter();
             if (_behaviour != null)
             {
-                _behaviour.enabled = true;
+                _behaviour.enabled = _source.enabledOnEnter;
             }
         }
 
@@ -43,7 +47,7 @@ namespace LDJam48.StateMachine.Action
             base.OnStateExit();
             if (_behaviour != null)
             {
-                _behaviour.enabled = false;
+                _behaviour.enabled = _source.enabledOnExit;
             }
         }
     }

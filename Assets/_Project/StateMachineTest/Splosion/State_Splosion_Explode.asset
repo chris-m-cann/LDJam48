@@ -15,7 +15,8 @@ MonoBehaviour:
   serializationData:
     SerializedFormat: 2
     SerializedBytes: 
-    ReferencedUnityObjects: []
+    ReferencedUnityObjects:
+    - {fileID: 7171770694907118712, guid: 4d9147b3ee1133d4695f913b06160396, type: 3}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -38,28 +39,19 @@ MonoBehaviour:
       Data: 1|LDJam48.StateMachine.OneShotAction[], Assembly-CSharp
     - Name: 
       Entry: 12
-      Data: 3
+      Data: 2
     - Name: 
       Entry: 7
-      Data: 2|LDJam48.StateMachine.Action.PlayOneShotParticleAction, Assembly-CSharp
-    - Name: effectIdx
-      Entry: 3
+      Data: 2|LDJam48.StateMachine.Action.SpawnObjectAction, Assembly-CSharp
+    - Name: prefab
+      Entry: 10
       Data: 0
     - Name: 
       Entry: 8
       Data: 
     - Name: 
       Entry: 7
-      Data: 3|LDJam48.StateMachine.Action.PlaySoundAction, Assembly-CSharp
-    - Name: soundIdx
-      Entry: 3
-      Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 4|LDJam48.StateMachine.Action.DestroyGameObjectAction, Assembly-CSharp
+      Data: 3|LDJam48.StateMachine.Action.DestroyGameObjectAction, Assembly-CSharp
     - Name: 
       Entry: 8
       Data: 
@@ -70,11 +62,38 @@ MonoBehaviour:
       Entry: 8
       Data: 
     - Name: OnExitActions
-      Entry: 9
-      Data: 1
+      Entry: 7
+      Data: 4|LDJam48.StateMachine.OneShotAction[], Assembly-CSharp
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: OnUpdateActions
-      Entry: 9
-      Data: 1
+      Entry: 7
+      Data: 5|LDJam48.StateMachine.OneShotAction[], Assembly-CSharp
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: OnFixedUpdateActions
-      Entry: 9
-      Data: 1
+      Entry: 7
+      Data: 6|LDJam48.StateMachine.OneShotAction[], Assembly-CSharp
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 

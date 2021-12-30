@@ -1,6 +1,7 @@
 using System;
 using Sirenix.OdinInspector;
 using UnityEngine;
+using UnityEngine.Events;
 using Util;
 
 namespace LDJam48
@@ -18,6 +19,7 @@ namespace LDJam48
         private LayerMask layersToDamage;
 
 
+        [SerializeField] private UnityEvent afterCollision;
         private void OnTriggerEnter2D(Collider2D other)
         {
             if (!isActiveAndEnabled) return;
@@ -35,6 +37,8 @@ namespace LDJam48
                     other.GetComponent<IDamageable>()?.Damage(amount, gameObject);
                 }
             }
+            
+            afterCollision?.Invoke();
         }
     }
 }

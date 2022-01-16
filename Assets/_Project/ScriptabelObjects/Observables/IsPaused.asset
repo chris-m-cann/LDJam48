@@ -12,4 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4565a6fb7797480f985bcc5966dce25e, type: 3}
   m_Name: IsPaused
   m_EditorClassIdentifier: 
+  value: 0
+  persistValue: 0
   resetValue: 0

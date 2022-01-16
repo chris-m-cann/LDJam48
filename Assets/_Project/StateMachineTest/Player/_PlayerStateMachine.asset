@@ -21,13 +21,13 @@ MonoBehaviour:
     - {fileID: 11400000, guid: fb8425c3033483247b75c8ae4603e756, type: 2}
     - {fileID: 11400000, guid: e478662a96b567846b5fd9e8bce08caa, type: 2}
     - {fileID: 11400000, guid: 0afb0288d1517be4e801ec81f1e896bd, type: 2}
-    - {fileID: 11400000, guid: 995318c72cfc65944884c48912e82794, type: 2}
+    - {fileID: 11400000, guid: 2f1e59297dc27934db03e1744e6ceb4a, type: 2}
     - {fileID: 11400000, guid: e2c6d7464b99a5f478b847b69eff3a8c, type: 2}
     - {fileID: 11400000, guid: d25ce7dbe74303a40bf033b6ce5339c4, type: 2}
     - {fileID: 11400000, guid: 3ce49becb6d82e945a05a637bcba6d72, type: 2}
     - {fileID: 11400000, guid: 2a59b742c7732a54fbe50f57d60d07f4, type: 2}
     - {fileID: 11400000, guid: 19283166766cf6b4988aac2126317343, type: 2}
-    - {fileID: 11400000, guid: ce8fb39d47fee584cb77a119c9a27b01, type: 2}
+    - {fileID: 11400000, guid: 5c4f9ba9186d84246a3f2ed2308e6cc0, type: 2}
     - {fileID: 11400000, guid: 00d51c26a5c6faa418893feaa926c2f0, type: 2}
     - {fileID: 11400000, guid: 0e30357abe1a10f42986b6147f009b6d, type: 2}
     - {fileID: 11400000, guid: 0aa528058b161e3459e1641507806beb, type: 2}
@@ -171,7 +171,7 @@ MonoBehaviour:
       Data: LDJam48.StateMachine.ConditionPair, Assembly-CSharp
     - Name: Condition
       Entry: 7
-      Data: 11|LDJam48.StateMachine.Conditions.OnTriggerCondition, Assembly-CSharp
+      Data: 11|LDJam48.StateMachine.Conditions.OnVector2TriggerCondition, Assembly-CSharp
     - Name: Trigger
       Entry: 10
       Data: 5
@@ -270,7 +270,7 @@ MonoBehaviour:
       Data: LDJam48.StateMachine.ConditionPair, Assembly-CSharp
     - Name: Condition
       Entry: 7
-      Data: 17|LDJam48.StateMachine.Conditions.OnTriggerCondition, Assembly-CSharp
+      Data: 17|LDJam48.StateMachine.Conditions.OnVoidTriggerCondition, Assembly-CSharp
     - Name: Trigger
       Entry: 10
       Data: 8
@@ -342,7 +342,7 @@ MonoBehaviour:
       Data: LDJam48.StateMachine.ConditionPair, Assembly-CSharp
     - Name: Condition
       Entry: 7
-      Data: 21|LDJam48.StateMachine.Conditions.OnTriggerCondition, Assembly-CSharp
+      Data: 21|LDJam48.StateMachine.Conditions.OnVector2TriggerCondition, Assembly-CSharp
     - Name: Trigger
       Entry: 10
       Data: 5
@@ -351,7 +351,7 @@ MonoBehaviour:
       Data: 
     - Name: Operator
       Entry: 3
-      Data: 0
+      Data: 1
     - Name: 
       Entry: 8
       Data: 
@@ -489,7 +489,7 @@ MonoBehaviour:
       Data: LDJam48.StateMachine.ConditionPair, Assembly-CSharp
     - Name: Condition
       Entry: 7
-      Data: 29|LDJam48.StateMachine.Conditions.OnTriggerCondition, Assembly-CSharp
+      Data: 29|LDJam48.StateMachine.Conditions.OnVector2TriggerCondition, Assembly-CSharp
     - Name: Trigger
       Entry: 10
       Data: 5
@@ -552,7 +552,7 @@ MonoBehaviour:
       Data: LDJam48.StateMachine.ConditionPair, Assembly-CSharp
     - Name: Condition
       Entry: 7
-      Data: 33|LDJam48.StateMachine.Conditions.OnTriggerCondition, Assembly-CSharp
+      Data: 33|LDJam48.StateMachine.Conditions.OnVoidTriggerCondition, Assembly-CSharp
     - Name: Trigger
       Entry: 10
       Data: 8
@@ -763,7 +763,7 @@ MonoBehaviour:
       Data: LDJam48.StateMachine.ConditionPair, Assembly-CSharp
     - Name: Condition
       Entry: 7
-      Data: 47|LDJam48.StateMachine.Conditions.OnTriggerCondition, Assembly-CSharp
+      Data: 47|LDJam48.StateMachine.Conditions.OnVoidTriggerCondition, Assembly-CSharp
     - Name: Trigger
       Entry: 10
       Data: 11
@@ -814,7 +814,7 @@ MonoBehaviour:
       Data: LDJam48.StateMachine.ConditionPair, Assembly-CSharp
     - Name: Condition
       Entry: 7
-      Data: 50|LDJam48.StateMachine.Conditions.OnTriggerCondition, Assembly-CSharp
+      Data: 50|LDJam48.StateMachine.Conditions.OnVoidTriggerCondition, Assembly-CSharp
     - Name: Trigger
       Entry: 10
       Data: 12
@@ -1392,7 +1392,7 @@ MonoBehaviour:
       Data: LDJam48.StateMachine.ConditionPair, Assembly-CSharp
     - Name: Condition
       Entry: 7
-      Data: 87|LDJam48.StateMachine.Conditions.OnTriggerCondition, Assembly-CSharp
+      Data: 87|LDJam48.StateMachine.Conditions.OnVector2TriggerCondition, Assembly-CSharp
     - Name: Trigger
       Entry: 10
       Data: 5

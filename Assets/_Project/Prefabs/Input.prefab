@@ -11,6 +11,10 @@ GameObject:
   - component: {fileID: 1613489901544062284}
   - component: {fileID: 1613489901544062285}
   - component: {fileID: 1613489901544062283}
+  - component: {fileID: 1613489902227506810}
+  - component: {fileID: 1613489902227506811}
+  - component: {fileID: 1613489902227506812}
+  - component: {fileID: 1613489902227506813}
   m_Layer: 0
   m_Name: Input
   m_TagString: Untagged
@@ -125,3 +129,214 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1613489902227506810
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1613489901544062281}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 550952711ff846f0930ac0b6b779d00a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dashAction: {fileID: 11400000, guid: 2f1e59297dc27934db03e1744e6ceb4a, type: 2}
+  dashLeftAction: {fileID: 11400000, guid: d569e6d01a946a445badb545ebd2cd34, type: 2}
+  dashRightAction: {fileID: 11400000, guid: a7240e5a07528eb4eb5cb8325fa32277, type: 2}
+  slamAction: {fileID: 11400000, guid: 5c4f9ba9186d84246a3f2ed2308e6cc0, type: 2}
+--- !u!114 &1613489902227506811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1613489901544062281}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1e130bf99aff3749ab2be5f786aee3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent:
+    Delimeter: 0
+    Event: {fileID: 11400000, guid: 782dc70ecd2ad2e40b7468bd19e60a7f, type: 2}
+    Variable: {fileID: 0}
+  onEventRaised:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 0e30357abe1a10f42986b6147f009b6d, type: 2}
+        m_TargetAssemblyTypeName: Util.Var.Variable`1[[UnityEngine.Vector2, UnityEngine
+        m_MethodName: Set
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1613489902227506810}
+        m_TargetAssemblyTypeName: LDJam48.PlayerInputController, Assembly-CSharp
+        m_MethodName: OnDash
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1613489902227506812
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1613489901544062281}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a4a3e39143b4ffa9a2ed9b21c7d92fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: ce8fb39d47fee584cb77a119c9a27b01, type: 2}
+  onEventRaised:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1613489902227506810}
+        m_TargetAssemblyTypeName: LDJam48.PlayerInputController, Assembly-CSharp
+        m_MethodName: OnSlam
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1613489902227506813
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1613489901544062281}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08b06a9ef3d24ca588e3c09da786311a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonActions:
+  - Phase: 3
+    Action: {fileID: 6516727628504968077, guid: 4ae9e70a4fe18824c8ec18962a585fc5, type: 3}
+    FollowOn:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 11400000, guid: ce8fb39d47fee584cb77a119c9a27b01, type: 2}
+          m_TargetAssemblyTypeName: Util.Var.Events.VoidGameEvent, Assembly-CSharp
+          m_MethodName: Raise
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - Phase: 3
+    Action: {fileID: 6072547665848448461, guid: 4ae9e70a4fe18824c8ec18962a585fc5, type: 3}
+    FollowOn:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 11400000, guid: f850bcf88bf5fbe46987b502b5ad5822, type: 2}
+          m_TargetAssemblyTypeName: Util.LoggerAsset, Assembly-CSharp
+          m_MethodName: Log
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: dashing pause input
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 11400000, guid: fc899d30f2b1a50478a9bf73879d6d41, type: 2}
+          m_TargetAssemblyTypeName: Util.Var.Events.VoidGameEvent, Assembly-CSharp
+          m_MethodName: Raise
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - Phase: 3
+    Action: {fileID: 7863384395864276203, guid: 4ae9e70a4fe18824c8ec18962a585fc5, type: 3}
+    FollowOn:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 11400000, guid: f850bcf88bf5fbe46987b502b5ad5822, type: 2}
+          m_TargetAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_MethodName: set_name
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: not dashing pause input
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 11400000, guid: fc899d30f2b1a50478a9bf73879d6d41, type: 2}
+          m_TargetAssemblyTypeName: Util.Var.Events.VoidGameEvent, Assembly-CSharp
+          m_MethodName: Raise
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - Phase: 3
+    Action: {fileID: -4427415846563057194, guid: 4ae9e70a4fe18824c8ec18962a585fc5, type: 3}
+    FollowOn:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 11400000, guid: fc899d30f2b1a50478a9bf73879d6d41, type: 2}
+          m_TargetAssemblyTypeName: Util.Var.Events.VoidGameEvent, Assembly-CSharp
+          m_MethodName: Raise
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  vec2Actions:
+  - Phase: 3
+    Action: {fileID: -4239285882476611521, guid: 4ae9e70a4fe18824c8ec18962a585fc5, type: 3}
+    FollowOn:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 11400000, guid: 684413faa454a45409b4ac34ef869222, type: 2}
+          m_TargetAssemblyTypeName: Util.Var.Events.GameEvent`1[[UnityEngine.Vector2,
+            UnityEngine
+          m_MethodName: Raise
+          m_Mode: 0
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2

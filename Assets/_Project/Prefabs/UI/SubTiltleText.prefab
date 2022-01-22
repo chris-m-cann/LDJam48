@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 2929919447804263500}
   - component: {fileID: 9037318101719414297}
   - component: {fileID: 7361138347777251078}
-  - component: {fileID: 3210462492799070358}
   m_Layer: 5
   m_Name: SubTiltleText
   m_TagString: Untagged
@@ -75,8 +74,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4293256677
-  m_fontColor: {r: 0.8980393, g: 0.8980393, b: 0.8980393, a: 1}
+    rgba: 4293783027
+  m_fontColor: {r: 0.9528302, g: 0.9303578, b: 0.9303578, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -135,18 +134,3 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!114 &3210462492799070358
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6953537258690232707}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b972daa291e4f1682d7e0acddcca4fc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  colours: {fileID: 11400000, guid: 6b00a330c865904409f9fe572680299e, type: 2}
-  colourIndex: 1
-  alphaOverride: 1

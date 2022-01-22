@@ -22,7 +22,10 @@ namespace LDJam48.Tut
         public PlayerInputController.PlayerInputs AllowedInputsDuring;
         [EnumToggleButtons]
         public PlayerInputController.PlayerInputs AllowedInputsAfter;
-        [TextArea] public string Message;
+        // perhaps a more extensible way to do this would be to have an id that does a lookup based on enabled
+        // control scheme but as we only have 2 that might be overkill
+        [TextArea] public string TouchMessage;
+        [TextArea] public string KeyboardMessage;
         [HideInInspector] public bool IsComplete;
     }
 }

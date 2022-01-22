@@ -30,13 +30,16 @@ namespace LDJam48.Tut
         {
             if (tutorialSaveData.Data.TutorialRequired)
             {
-                return tutorialChunks.GenerateNext(data);   
+                var chunk = tutorialChunks.GenerateNext(data);
+
+                if (chunk != null)
+                {
+                    return chunk;
+                }
             }
-            else
-            {
-                _generator = GenerateNextRun;
-                return GenerateNextRun(data);
-            }
+
+            _generator = GenerateNextRun;
+            return GenerateNextRun(data);
         }
         
         private LevelChunk GenerateNextRun(GenerationData data)

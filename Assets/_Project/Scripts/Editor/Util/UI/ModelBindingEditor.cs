@@ -16,9 +16,11 @@ namespace Util.UI
     {
         private SerializedProperty _propScript;
         private SerializedProperty _propModel;
+        private SerializedProperty _propSaveable;
         private SerializedProperty _propIntEvent;
         private SerializedProperty _propStringEvent;
         private SerializedProperty _propSpriteEvent;
+        private SerializedProperty _propBoolEvent;
         private SerializedProperty _propFieldIndex;
         private SerializedProperty _propFieldName;
 
@@ -26,9 +28,11 @@ namespace Util.UI
         {
             _propScript = serializedObject.FindProperty("m_Script");
             _propModel = serializedObject.FindProperty(nameof(ModelBinding.modelProvider));
+            _propSaveable = serializedObject.FindProperty(nameof(ModelBinding.saveable));
             _propIntEvent = serializedObject.FindProperty(nameof(ModelBinding.intBinding)).FindPropertyRelative(nameof(ModelBinding.Binding<int>.OnValueChanged));
             _propStringEvent = serializedObject.FindProperty(nameof(ModelBinding.stringBinding)).FindPropertyRelative(nameof(ModelBinding.Binding<int>.OnValueChanged));
             _propSpriteEvent = serializedObject.FindProperty(nameof(ModelBinding.spriteBinding)).FindPropertyRelative(nameof(ModelBinding.Binding<int>.OnValueChanged));
+            _propBoolEvent = serializedObject.FindProperty(nameof(ModelBinding.boolBinding)).FindPropertyRelative(nameof(ModelBinding.Binding<int>.OnValueChanged));
             _propFieldIndex = serializedObject.FindProperty("fieldIndex");
             _propFieldName = serializedObject.FindProperty("fieldName");
         }
@@ -41,6 +45,7 @@ namespace Util.UI
                 DisplayScriptField();
                 
                 EditorGUILayout.PropertyField(_propModel);
+                EditorGUILayout.PropertyField(_propSaveable);
                 
                 var field = DisplayPropertyPopup();
                 
@@ -49,6 +54,7 @@ namespace Util.UI
                 DisplayEventIfRequired<int>(field, _propIntEvent);
                 DisplayEventIfRequired<string>(field, _propStringEvent);
                 DisplayEventIfRequired<Sprite>(field, _propSpriteEvent);
+                DisplayEventIfRequired<bool>(field, _propBoolEvent);
             }
         }
 
@@ -69,10 +75,8 @@ namespace Util.UI
 
         private FieldInfo DisplayPropertyPopup()
         {
-            var t = (ModelBinding) target;
-            var model = t.modelProvider.Model;
-
-            var fields = model.Fields.Value;
+            var t = (ModelBinding)target;
+            var fields = t.GetFeilds();
             var options = fields.Select(it => it.Name).ToArray();
 
             var propIdx = t.FindProperty(fields);
@@ -94,6 +98,8 @@ namespace Util.UI
 
             return field;
         }
+
+        
 
         private void DisplayEventIfRequired<T>(FieldInfo field, SerializedProperty property)
         {

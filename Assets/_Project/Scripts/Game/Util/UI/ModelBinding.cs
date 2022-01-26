@@ -1,19 +1,25 @@
 using System;
 using System.Linq;
 using System.Reflection;
+using LDJam48.Save;
 using UnityEngine;
 using UnityEngine.Events;
 using Util.Var.Observe;
 
 namespace Util.UI
 {
+    // this needs unifying with the saveable system so Model and Saveable are one thing "DataSource" or something
+    // or making it able to take any SO and subscribe if it has a subscribable field or subscribable interface 
+    // (similar to saveable)
     public class ModelBinding : MonoBehaviour
     {
         public ModelProvider modelProvider;
+        public SaveableSO saveable;
 
         public Binding<int> intBinding;
         public Binding<string> stringBinding;
         public Binding<Sprite> spriteBinding;
+        public Binding<bool> boolBinding;
 
         [Serializable]
         public struct Binding<T>
@@ -21,7 +27,11 @@ namespace Util.UI
             public UnityEvent<T> OnValueChanged;
             public ObservableVariable<T> Observable;
 
+            private FieldInfo _field;
+            private SaveableSO _saveable;
+
             void Update(T value) => OnValueChanged?.Invoke(value);
+            void UpdateSaveable() => Update((T)_field.GetValue(_saveable.GetSaveable()));
 
             public void Bind(FieldInfo field, Model model)
             {
@@ -36,12 +46,34 @@ namespace Util.UI
                     Update(Observable.Value);
                 }
             }
+            
+            public void Bind(FieldInfo field, SaveableSO saveable)
+            {
+                _field = field;
+                _saveable = saveable;
+                if (field.FieldType.HasBase<T>())
+                {
+                    saveable.OnLoadComplete += UpdateSaveable;
+                    UpdateSaveable();
+                }
+                else if (field.FieldType.HasBase<ObservableVariable<T>>())
+                {
+                    Observable = (ObservableVariable<T>) field.GetValue(saveable);
+                    Observable.OnValueChanged += Update;
+                    Update(Observable.Value);
+                }
+            }
 
             public void UnBind()
             {
                 if (Observable != null)
                 {
                     Observable.OnValueChanged -= Update;
+                }
+
+                if (_saveable != null)
+                {
+                    _saveable.OnLoadComplete -= UpdateSaveable;
                 }
             }
         }
@@ -51,19 +83,31 @@ namespace Util.UI
         [SerializeField] private string fieldName;
         private void OnEnable()
         {
-            modelProvider.OnModelChanged += BindUp;
-            if (modelProvider.Model != null)
+            if (modelProvider != null)
             {
-                BindUp(modelProvider.Model);
+                modelProvider.OnModelChanged += BindUp;
+                if (modelProvider.Model != null)
+                {
+                    BindUp(modelProvider.Model);
+                }
+            }
+            else if (saveable != null)
+            {
+                BindUpSaveable();
             }
         }
 
         private void OnDisable()
         {
-            modelProvider.OnModelChanged -= BindUp;
+            if (modelProvider != null)
+            {
+                modelProvider.OnModelChanged -= BindUp;
+            }
+
             intBinding.UnBind();
             stringBinding.UnBind();
             spriteBinding.UnBind();
+            boolBinding.UnBind();
         }
 
         private void BindUp(Model model)
@@ -80,7 +124,38 @@ namespace Util.UI
             intBinding.Bind(field, model);
             stringBinding.Bind(field, model);
             spriteBinding.Bind(field, model);
+            boolBinding.Bind(field, model);
         }
+        private void BindUpSaveable()
+        {
+            // make this look up be a one time thing for each type?
+            var fields = GetBindableFields(saveable.GetSaveable().GetType());
+
+            int fieldIdx = FindProperty(fields);
+            
+            if (fieldIdx == -1) return;
+
+
+            var field = fields[fieldIdx];
+
+            intBinding.Bind(field, saveable);
+            stringBinding.Bind(field, saveable);
+            spriteBinding.Bind(field, saveable);
+            boolBinding.Bind(field, saveable);
+        }
+
+            public FieldInfo[] GetFeilds()
+            {
+                if (modelProvider != null)
+                {
+                    return modelProvider.Model.Fields.Value;
+                } else if (saveable != null)
+                {
+                    return GetBindableFields(saveable.GetSaveable().GetType());
+                }
+
+                return new FieldInfo[0];
+            }
 
 
         public int FindProperty(FieldInfo[] fields)
@@ -131,7 +206,8 @@ namespace Util.UI
             typeof(string),
             typeof(Sprite),
             typeof(ObservableIntVariable),
-            typeof(ObservableStringVariable)
+            typeof(ObservableStringVariable),
+            typeof(bool)
         };
     }
 }

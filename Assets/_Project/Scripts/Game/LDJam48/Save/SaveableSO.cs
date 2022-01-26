@@ -14,6 +14,7 @@ namespace LDJam48.Save
         public event Action OnLoadComplete;
 
         public abstract ISaveable GetSaveable();
+        public abstract Type GetSaveableType();
         public abstract void SetSaveable(ISaveable other);
 
         [HorizontalGroup("Buttons"), Button("Save")]
@@ -45,6 +46,10 @@ namespace LDJam48.Save
     {
         [InlineProperty] public T Data;
 
+        public override Type GetSaveableType()
+        {
+            return Data.GetType();
+        }
 
         public override ISaveable GetSaveable()
         {

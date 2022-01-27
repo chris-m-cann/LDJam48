@@ -20,11 +20,7 @@ namespace LDJam48.StateMachine
 
         private void Awake()
         {
-            Debug.Log($"Building state machine");
-        
-            Debug.Log($"Building state machine, transitions = {stateMachine.Transitions.Length}");
             _state = stateMachine.BuildRuntime(this);
-            Debug.Log($"Built state machine, initial state = {_state.Name}");
         }
 
         private void OnEnable()

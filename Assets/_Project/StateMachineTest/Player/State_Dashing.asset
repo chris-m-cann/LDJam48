@@ -444,3 +444,4 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+  LogTrueConditions: 1

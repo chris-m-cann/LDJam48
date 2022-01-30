@@ -8,6 +8,7 @@ namespace LDJam48.StateMachine.Conditions
     public class AfterTimeCondition : Condition
     {
         public float timeout = 1f;
+        public bool debug;
         protected override ICondition BuildRuntimeImpl()
         {
             return new AfterTimeConditionRuntime();
@@ -22,11 +23,22 @@ namespace LDJam48.StateMachine.Conditions
         {
             base.OnStateEnter();
             _timeoutTime = Time.time + _source.timeout;
+            if (_source.debug)
+            {
+                Debug.Log($"AfterTimeConditionRuntime: time = {Time.time}, _timeoutTime = {_timeoutTime}");
+            }
         }
 
         public override bool Evaluate()
         {
-            return Time.time > _timeoutTime;
+            var r = Time.time > _timeoutTime;
+            
+            if (_source.debug)
+            {
+                Debug.Log($"AfterTimeConditionRuntime: time = {Time.time}, _timeoutTime = {_timeoutTime}, eval = {r}");
+            }
+
+            return r;
         }
     }
 }

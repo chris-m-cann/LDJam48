@@ -7,6 +7,7 @@ namespace LDJam48.LevelGen
     [CreateAssetMenu(menuName = "Custom/Level/RunGenerator")]
     public class RunGenerator : ChunkGenerator
     {
+        public ChunkGenerator StartChunkGenerator;
         public ChunkGenerator[] AreaGenerators;
         [SerializeField] private float AreasToMaxIntensity;
         [SerializeField] private float IntensityStart;
@@ -23,8 +24,22 @@ namespace LDJam48.LevelGen
         [NonSerialized] private Curve _sprintsPerAreaCurve;
         [NonSerialized] private Curve _chunksPerSprintCurve;
         [NonSerialized] private int _areasComplete;
-
+        [NonSerialized] private Func<GenerationData, LevelChunk> _generate;
+        
         public override LevelChunk GenerateNext(GenerationData data)
+        {
+            return _generate(data);
+        }
+
+        private LevelChunk GenerateStart(GenerationData data)
+        {
+            LevelChunk start = StartChunkGenerator.GenerateNext(data);
+            _generate = GenerateNextAreaChunk;
+            NextGenerator(data);
+            return start;
+        }
+        
+        public LevelChunk GenerateNextAreaChunk(GenerationData data)
         {
             if (_currentGenerator == null) Init(data);
 
@@ -38,6 +53,7 @@ namespace LDJam48.LevelGen
 
             return _currentGenerator.GenerateNext(data);
         }
+        
 
         private GenerationData UpdateBaseValues(GenerationData data)
         {
@@ -82,7 +98,7 @@ namespace LDJam48.LevelGen
 
             UpdateBaseValues(data);
 
-            NextGenerator(data);
+            _generate = GenerateStart;
         }
     }
 }

@@ -21,6 +21,7 @@ namespace LDJam48.StateMachine
         [TypeFilter("GetOneShotActionTypeList")]
         public OneShotAction[] OnFixedUpdateActions = new OneShotAction[0];
 
+        public bool LogTrueConditions;
         public IEnumerable<Type> GetActionTypeList() => TypeEx.GetTypeList<StateAction>();
 
         public IEnumerable<Type> GetOneShotActionTypeList() => TypeEx.GetTypeList<OneShotAction>();
@@ -157,11 +158,7 @@ namespace LDJam48.StateMachine
                 foreach (var condition in transition.Conditions)
                 {
                     var r = condition.Condition.Evaluate();
-                    // if (r)
-                    // {
-                    //     Debug.Log($"Condition true: {Name}->{transition.To.Name}: {condition.Condition.Name}");
-                    // }
-                    
+
                     switch (condition.Operator)
                     {
                         case LogicalOperator.And:

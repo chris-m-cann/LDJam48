@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a33527bb5d764aada9c8a4ce9a5ba681, type: 3}
   m_Name: RunGenerator
   m_EditorClassIdentifier: 
+  StartChunkGenerator: {fileID: 11400000, guid: 06c909eeb0a914242945baf2313c4778, type: 2}
   AreaGenerators:
   - {fileID: 11400000, guid: 28835fa7a775ffe43b8a8d72ebc3a00d, type: 2}
   AreasToMaxIntensity: 2

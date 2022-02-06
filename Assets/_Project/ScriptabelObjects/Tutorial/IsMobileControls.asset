@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7543a3dbee9647d88b418fb3e309ddf4, type: 3}
   m_Name: IsMobileControls
   m_EditorClassIdentifier: 
-  value: 0
+  value: 1
   persistValue: 1
   resetValue: 0

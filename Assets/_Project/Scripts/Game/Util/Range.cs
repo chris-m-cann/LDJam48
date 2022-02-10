@@ -12,5 +12,10 @@ namespace Util
             Start = start;
             End = end;
         }
+
+        public bool Contains(float f)
+        {
+            return f >= Start && f < End;
+        }
     }
 }

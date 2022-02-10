@@ -42,6 +42,7 @@ namespace LDJam48.StateMachine.Player.Action
         private ParticlesBehaviour _particles;
         private SoundsBehaviour _sounds;
         private PlayerRaycastsBehaviour _raycasts;
+        private PlayerContacts _contacts;
 
         private const int EXIT_CODE_FALLING = 0;
         private const int EXIT_CODE_IDLE = 0;
@@ -55,6 +56,7 @@ namespace LDJam48.StateMachine.Player.Action
             _particles = machine.GetComponent<ParticlesBehaviour>();
             _sounds = machine.GetComponent<SoundsBehaviour>();
             _raycasts = machine.GetComponent<PlayerRaycastsBehaviour>();
+            machine.TryGetComponent(out _contacts);
         }
 
         public override void OnStateEnter()
@@ -86,6 +88,8 @@ namespace LDJam48.StateMachine.Player.Action
             _particles.StopEffect(_source.OngoingSlamEffectId);
             
             _rigidbody.velocity = new Vector2(0, _source.CarriedYVel.Value);
+            
+            Debug.Log($"Slam on state exit, pos = {_machine.transform.position}, vel = {_rigidbody.velocity}");
         }
 
         private IEnumerator CoSlam(float finalY)
@@ -110,9 +114,11 @@ namespace LDJam48.StateMachine.Player.Action
             pos.y = finalY;
             _machine.transform.position = pos;
             
+            
             yield return new WaitForFixedUpdate();
+            _contacts.UpdateContactDetails();
 
-            bool isInAir = Mathf.Abs((startY - finalY) - _source.maxDistance) < .5f;
+            bool isInAir = _contacts.ContactDetails.IsOnFloor;
             int exitCode = isInAir ? EXIT_CODE_FALLING : EXIT_CODE_IDLE;
             _machine.StateComplete(exitCode);
         }

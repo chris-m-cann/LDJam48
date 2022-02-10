@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1842833750
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1842833751}
+  m_Layer: 6
+  m_Name: SlamCastPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1842833751
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1842833750}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 606575477889178585}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &606575476218526538
 GameObject:
   m_ObjectHideFlags: 0
@@ -5367,6 +5397,8 @@ Transform:
   - {fileID: 606575477231863969}
   - {fileID: 606575477934226358}
   - {fileID: 606575478002881770}
+  - {fileID: 1842833751}
+  - {fileID: 494312875600730064}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5550,7 +5582,7 @@ MonoBehaviour:
   stateMachine: {fileID: 11400000, guid: 64dc12f184969854bb1c898edeb582ed, type: 2}
   transitionOnUpdate: 0
   transitionOnFixedUpdate: 1
-  debugLogs: 0
+  debugLogs: 1
 --- !u!114 &606575477889178579
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5669,7 +5701,11 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 17536
   trackYourself: 1
-  normalRay: 0
+  normalRay: 1
+  horizontalDetectorOffset: {x: 0, y: 0}
+  horizontalDetectorSize: {x: 1.2, y: 0.8}
+  verticalDetectorOffset: {x: 0, y: 0}
+  verticalDetectorSize: {x: 0.47, y: 1.22}
   ContactDetails:
     WasOnLeftWall: 0
     IsOnLeftWall: 0
@@ -5695,10 +5731,10 @@ MonoBehaviour:
   stickWallMask:
     serializedVersion: 2
     m_Bits: 17536
-  boxcastSize: 0.5
+  boxcastSize: 1
   leftProjectionPoint: {fileID: 606575476534786368}
   rightProjectionPoint: {fileID: 606575476572798142}
-  bottomProjectionPoint: {fileID: 606575477614598296}
+  bottomProjectionPoint: {fileID: 1842833751}
 --- !u!61 &606575477889178591
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6145,6 +6181,36 @@ MonoBehaviour:
   afterCollision:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1 &7520348250504805289
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 494312875600730064}
+  m_Layer: 6
+  m_Name: SlamCastPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &494312875600730064
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7520348250504805289}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 606575477889178585}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &606575476605420471
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6222,14 +6288,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b1afc58885b055d42a94f1a4bdd3ee5d, type: 3}
---- !u!198 &716388964183316864 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 115935637192809015, guid: b1afc58885b055d42a94f1a4bdd3ee5d, type: 3}
-  m_PrefabInstance: {fileID: 606575476605420471}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4685348765719883158 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5291534735884676641, guid: b1afc58885b055d42a94f1a4bdd3ee5d, type: 3}
+  m_PrefabInstance: {fileID: 606575476605420471}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &716388964183316864 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 115935637192809015, guid: b1afc58885b055d42a94f1a4bdd3ee5d, type: 3}
   m_PrefabInstance: {fileID: 606575476605420471}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &606575477092797341

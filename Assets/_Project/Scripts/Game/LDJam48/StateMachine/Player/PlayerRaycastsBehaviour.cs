@@ -33,11 +33,6 @@ namespace LDJam48.StateMachine.Player.Action
             {
                 Debug.DrawLine(projectionPoint.position, hit.point);
 
-                if (Mathf.Abs(hit.point.x - transform.position.x) > 1)
-                {
-                    Debug.Break();
-                }
-
                 var pos = transform.position;
                 pos.x = hit.point.x + offset;
                 transform.position = pos;

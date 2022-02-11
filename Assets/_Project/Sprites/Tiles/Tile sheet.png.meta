@@ -189,6 +189,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -1444,6 +1445,62 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      Tile sheet_22: 2785707938049495200
+      Tile sheet_16: 7987475488794459448
+      Tile sheet_12: -6138089707174972277
+      Tile sheet_0: -1260267859289782878
+      Tile sheet_51: 507113682956585213
+      Tile sheet_38: 8152811867840358225
+      Tile sheet_10: -8721719475674921947
+      Tile sheet_14: 4785846652837958349
+      Tile sheet_15: -4886788613685320074
+      Tile sheet_20: -7391041513650920807
+      Tile sheet_6: 4431981936420214049
+      Tile sheet_49: 8166062692653893884
+      Tile sheet_3: 4731878185708402168
+      Tile sheet_28: 6213786257301719048
+      Tile sheet_4: 1413287180345819896
+      Tile sheet_24: -2790172561583408981
+      Tile sheet_19: -605810249483400470
+      Tile sheet_47: -1216147781778616223
+      Tile sheet_39: -6972818463088264983
+      Tile sheet_31: 5998663683021459874
+      Tile sheet_8: -5053608251637002577
+      Tile sheet_21: -5839477370763666958
+      Tile sheet_18: -4732172088773409423
+      Tile sheet_46: 152991374951397777
+      Tile sheet_1: 3547393426838524066
+      Tile sheet_30: -8871249372525292853
+      Tile sheet_35: -6790843371215616013
+      Tile sheet_5: 6497392212323844879
+      Tile sheet_42: 3982586640376248517
+      Tile sheet_50: 7178347539114018028
+      Tile sheet_52: -4551254263109433519
+      Tile sheet_27: 3792648412488405872
+      Tile sheet_2: 7508703027950784113
+      Tile sheet_29: -354985100298079770
+      Tile sheet_25: -792687001717195330
+      Tile sheet_17: 944718326840085228
+      Tile sheet_7: 5516937635264934227
+      Tile sheet_48: 8734910128301520267
+      Tile sheet_32: 25566013484290460
+      Tile sheet_33: -8200302801939342832
+      Tile sheet_44: -2790633098749618979
+      Tile sheet_26: -8567759920218483538
+      Tile sheet_45: -7519538384391840142
+      Tile sheet_23: -7929657948450325042
+      Tile sheet_43: 7370128655715585517
+      Tile sheet_13: 7697769561645012324
+      Tile sheet_36: 7585708341086113649
+      Tile sheet_53: -2493097196848427136
+      Tile sheet_9: -4041074988054778203
+      Tile sheet_34: 4169831204559110403
+      Tile sheet_40: -1505917655872423066
+      Tile sheet_11: -8529714481344228936
+      Tile sheet_41: 5720752988505676755
+      Tile sheet_54: -1942217750981218878
+      Tile sheet_37: 6009797351453488683
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

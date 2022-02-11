@@ -4,6 +4,7 @@ using System.Linq;
 using Unity.Mathematics;
 using UnityEngine;
 using Util;
+using Range = Util.Range;
 
 namespace LDJam48.LevelGen
 {

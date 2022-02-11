@@ -2,6 +2,7 @@ using System;
 using System.Linq;
 using UnityEngine;
 using Util;
+using Range = Util.Range;
 
 namespace LDJam48.LevelGen
 {

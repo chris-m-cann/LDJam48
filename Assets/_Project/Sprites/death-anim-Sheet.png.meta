@@ -48,6 +48,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -316,6 +317,15 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      death-anim-Sheet_3: -9185484121098131920
+      death-anim-Sheet_6: -7892397228395420209
+      death-anim-Sheet_2: -1618578734906096748
+      death-anim-Sheet_1: 2199083890035866049
+      death-anim-Sheet_7: 8406242110925488399
+      death-anim-Sheet_0: -6591280082541093036
+      death-anim-Sheet_4: -7190489164306005431
+      death-anim-Sheet_5: -1519075012639793861
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

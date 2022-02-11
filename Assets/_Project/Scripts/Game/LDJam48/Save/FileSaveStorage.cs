@@ -8,6 +8,7 @@ using Sirenix.Serialization;
 using UnityEditor;
 using UnityEngine;
 using Object = UnityEngine.Object;
+using SerializationUtility = Sirenix.Serialization.SerializationUtility;
 
 namespace LDJam48.Save
 {

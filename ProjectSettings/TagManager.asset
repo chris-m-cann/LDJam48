@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Sfx
   - Music
+  - Save
   layers:
   - Default
   - TransparentFX

@@ -66,6 +66,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -460,6 +461,21 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      player-death2-Sheet_5: 3334280512906847222
+      player-death2-Sheet_4: -5355858897367691326
+      player-death2-Sheet_11: -5597653577750553076
+      player-death2-Sheet_10: 7683228754541891626
+      player-death2-Sheet_0: -8746316362194811886
+      player-death2-Sheet_6: -4657893623210501209
+      player-death2-Sheet_7: 8185312639300182006
+      player-death2-Sheet_2: -121200768114938912
+      player-death2-Sheet_13: -5058391297106895051
+      player-death2-Sheet_3: 7638890652691646423
+      player-death2-Sheet_1: 5005421728820368694
+      player-death2-Sheet_9: -4210848357354826659
+      player-death2-Sheet_8: -7000078064100557768
+      player-death2-Sheet_12: 6988587356116236414
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

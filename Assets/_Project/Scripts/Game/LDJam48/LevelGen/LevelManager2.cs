@@ -88,8 +88,7 @@ namespace LDJam48.LevelGen
             if (_nextChunkStart > bottom)
             {
                 var prefab = chunkGenerator.GenerateNext(_generationData);
-                var instance = BuildChunk(prefab);
-                AppendChunk(instance);
+                AppendChunk(prefab);
             }
         }
 
@@ -128,21 +127,11 @@ namespace LDJam48.LevelGen
                 }
             }
         }
-        
 
-        private LevelChunk BuildChunk(LevelChunk prefab)
+        private void AppendChunk(LevelChunk prefab)
         {
-            var chunk = Instantiate(prefab, Vector3.zero, Quaternion.identity);
-
-            return chunk;
-        }
-
-        private void AppendChunk(LevelChunk chunk)
-        {
-            var t = chunk.transform;
-            var p = t.position;
-            p.y = _nextChunkStart;
-            t.position = p;
+            
+            var chunk = Instantiate(prefab, new Vector3(0, _nextChunkStart, 0), Quaternion.identity);
 
             _activeChunks.Enqueue(chunk);
             _nextChunkStart = chunk.Bottom;
@@ -156,7 +145,7 @@ namespace LDJam48.LevelGen
             }
 
 
-            StartCoroutine(SpawnThings(chunk, p));
+            StartCoroutine(SpawnThings(chunk, chunk.transform.position));
         }
 
         private void DestroyChunk(LevelChunk chunk)

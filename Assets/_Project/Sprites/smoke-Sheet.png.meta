@@ -129,6 +129,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -964,6 +965,42 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      smoke-Sheet_16: 2304763764979648203
+      smoke-Sheet_27: 4584981073400052485
+      smoke-Sheet_29: 2220162178670724552
+      smoke-Sheet_3: 3706316279051819933
+      smoke-Sheet_19: 7794807798892300318
+      smoke-Sheet_30: -7037715531154968403
+      smoke-Sheet_32: 1103607157318756665
+      smoke-Sheet_9: 1646809526752229699
+      smoke-Sheet_20: 5144479121529733439
+      smoke-Sheet_5: -2306740612657698682
+      smoke-Sheet_33: -6223438888100902907
+      smoke-Sheet_6: -1454248640146977503
+      smoke-Sheet_25: 6889064550341184311
+      smoke-Sheet_15: -2286876278591337549
+      smoke-Sheet_7: -340890770936850850
+      smoke-Sheet_2: 2871649648816872375
+      smoke-Sheet_34: 3133631771804829421
+      smoke-Sheet_12: 5918347384624050541
+      smoke-Sheet_28: 588023869828655896
+      smoke-Sheet_26: -3325471180909611383
+      smoke-Sheet_0: -6263406393262513435
+      smoke-Sheet_10: -4401290359113424131
+      smoke-Sheet_13: 297216170994225718
+      smoke-Sheet_17: -7346471911091558833
+      smoke-Sheet_23: 1787623774914860490
+      smoke-Sheet_21: 4603934272996752571
+      smoke-Sheet_11: -3186969854348011660
+      smoke-Sheet_31: -3673124335518730140
+      smoke-Sheet_8: -2135018190928345608
+      smoke-Sheet_14: 1039334069769088000
+      smoke-Sheet_18: -2663803176219407097
+      smoke-Sheet_24: -958957506005704066
+      smoke-Sheet_4: 2530955873956837493
+      smoke-Sheet_22: 7458832774749165333
+      smoke-Sheet_1: -7998501789705523354
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

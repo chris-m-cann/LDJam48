@@ -21,6 +21,7 @@ namespace LDJam48.StateMachine.Player.Action
     {
         private Rigidbody2D _rigidbody;
         private Animator _animator;
+        private HealthRush _healthRush;
 
         private float _g;
 
@@ -30,6 +31,7 @@ namespace LDJam48.StateMachine.Player.Action
 
             _rigidbody = machine.GetComponent<Rigidbody2D>();
             _animator= machine.GetComponent<Animator>();
+            machine.TryGetComponent(out _healthRush);
         }
 
         public override void OnStateEnter()
@@ -39,6 +41,7 @@ namespace LDJam48.StateMachine.Player.Action
             _animator.Play(_source.Anim);
             _g = _rigidbody.gravityScale;
             _rigidbody.gravityScale = 0;
+            _healthRush.Reset();
         }
 
         public override void OnStateExit()

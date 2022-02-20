@@ -14,7 +14,7 @@ namespace LDJam48.PlayerState
 
         // todo(chris) refactor this into a Context class so these arnt public to just anyone
         // also needs splitting into state specific stuff?? move states to components maybe?
-        public ContactDetails Contacts;
+        public ContactDetails Contacts => _playerContacts.ContactDetails;
         public Rigidbody2D Rigidbody2D;
         public Animator Animator;
         public SpriteRenderer Sprite;
@@ -104,7 +104,7 @@ namespace LDJam48.PlayerState
 
         public void UpdateContacts()
         {
-            Contacts = _playerContacts.DetectContacts(Contacts);
+            _playerContacts.UpdateContactDetails();
         }
 
         public void Bounce()

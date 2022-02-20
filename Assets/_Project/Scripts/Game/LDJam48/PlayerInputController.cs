@@ -5,6 +5,7 @@ using UnityEngine.InputSystem;
 using Util;
 using Util.Var;
 using Util.Var.Events;
+using Util.Var.Observe;
 
 namespace LDJam48
 {
@@ -24,6 +25,9 @@ namespace LDJam48
         [SerializeField] private VoidGameEvent dashLeftAction;
         [SerializeField] private VoidGameEvent dashRightAction;
         [SerializeField] private VoidGameEvent slamAction;
+        [SerializeField] private FloatReference dashPressTime;
+        [SerializeField] private FloatReference slamPressTime;
+        
 
         public event Action<PlayerInputs> OnPlayerInput;
 
@@ -37,6 +41,7 @@ namespace LDJam48
                 { 
                     _onDashLeft = () =>
                     {
+                        dashPressTime.Value = Time.time;
                         OnPlayerInput?.Invoke(PlayerInputs.DashLeft);
                         dashAction?.Raise(Vector2.left);
                         dashLeftAction?.Raise();
@@ -51,6 +56,7 @@ namespace LDJam48
                 { 
                     _onDashRight = () =>
                     {
+                        dashPressTime.Value = Time.time;
                         OnPlayerInput?.Invoke(PlayerInputs.DashRight);
                         dashAction?.Raise(Vector2.right);
                         dashRightAction?.Raise();
@@ -65,6 +71,7 @@ namespace LDJam48
                 { 
                     _onSlam = () =>
                     {
+                        slamPressTime.Value = Time.time;
                         OnPlayerInput?.Invoke(PlayerInputs.Slam);
                         slamAction?.Raise();
                     };

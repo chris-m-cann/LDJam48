@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using Util;
@@ -49,6 +50,7 @@ namespace LDJam48.StateMachine
         private readonly IOneShotAction[] _onUpdateActions;
         private readonly IOneShotAction[] _onFixedUpdateActions;
         private TransitionRuntime[] _transitions = Array.Empty<TransitionRuntime>();
+        private StateMachineBehaviour _machine;
 
 
         public StateRuntime(
@@ -80,6 +82,7 @@ namespace LDJam48.StateMachine
 
         public void OnAwake(StateMachineBehaviour machine)
         {
+            _machine = machine;
             _actions.OnAwake(machine);
             _onEnterActions.OnAwake(machine);
             _onExitActions.OnAwake(machine);
@@ -149,14 +152,18 @@ namespace LDJam48.StateMachine
             }
         }
 
+        private Pair<string, bool>[] results = new Pair<string, bool>[10];
+
         public StateRuntime CheckTransitions()
         {
-            foreach (var transition in _transitions)
+            for (var i = 0; i < _transitions.Length; i++)
             {
+                var transition = _transitions[i];
                 bool doTransition = false;
 
-                foreach (var condition in transition.Conditions)
+                for (var j = 0; j < transition.Conditions.Length; j++)
                 {
+                    var condition = transition.Conditions[j];
                     var r = condition.Condition.Evaluate();
 
                     switch (condition.Operator)
@@ -170,10 +177,25 @@ namespace LDJam48.StateMachine
                         default:
                             throw new ArgumentOutOfRangeException(nameof(condition.Operator));
                     }
+
+                    results[j] = new Pair<string, bool>(condition.Condition.Name, r);
                 }
 
                 if (doTransition)
                 {
+                    if (_machine.debugLogs)
+                    {
+                        var sb = new StringBuilder();
+                        for (var j = 0; j < transition.Conditions.Length; j++)
+                        {
+                            var result = results[j];
+                            sb.Append($"{result.First}={result.Second}, ");
+                        }
+
+                        Debug.Log($"{Name}->{transition.To.Name}. because: {sb}");
+                    }
+
+
                     foreach (var action in transition.OnTransitionActions)
                     {
                         action.Execute();

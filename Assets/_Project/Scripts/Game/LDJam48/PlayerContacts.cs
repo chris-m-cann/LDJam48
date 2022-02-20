@@ -1,4 +1,5 @@
 using System;
+using LDJam48.StateMachine.Player;
 using UnityEditor;
 using UnityEngine;
 using Util;
@@ -6,80 +7,47 @@ using Random = UnityEngine.Random;
 
 namespace LDJam48
 {
+    [RequireComponent(typeof(PlayerColliders))]
     public class PlayerContacts : MonoBehaviour
     {
-        [SerializeField] private BoxCollider2D leftCollider;
-        [SerializeField] private BoxCollider2D rightCollider;
         [SerializeField] private LayerMask wallLayer;
-        [SerializeField] private BoxCollider2D floorCollider;
-        [SerializeField] private LayerMask floorLayer;
 
         [SerializeField] private bool trackYourself;
-        [SerializeField] private bool normalRay;
-
-
-        [SerializeField] private Vector2 horizontalDetectorOffset;
-        [SerializeField] private Vector2 horizontalDetectorSize;
-        [SerializeField] private Vector2 verticalDetectorOffset;
-        [SerializeField] private Vector2 verticalDetectorSize;
+        [SerializeField] private bool debug;
 
         public ContactDetails ContactDetails;
 
+        private PlayerColliders _colliders;
+        
+        private bool _updatedThisFrame;
+
+        private void Awake()
+        {
+            _colliders = GetComponent<PlayerColliders>();
+        }
+
         private void FixedUpdate()
         {
+            _updatedThisFrame = false;
             if (!trackYourself) return;
-            ContactDetails = DetectContacts(ContactDetails);
+            UpdateContactDetails();
         }
+        
 
-        private void OnDrawGizmosSelected()
+        private ContactDetails DetectContacts(ContactDetails contact)
         {
-            Gizmos.color = Color.red;
-            Gizmos.DrawWireCube((Vector2)transform.position + horizontalDetectorOffset, horizontalDetectorSize);
-            Gizmos.color = Color.blue;
-            Gizmos.DrawWireCube((Vector2)transform.position + verticalDetectorOffset, verticalDetectorSize);
-        }
-
-        public ContactDetails DetectContacts(ContactDetails contact)
-        {
-            return DetectContactsNew(contact);
-        }
-
-        public ContactDetails DetectContactsOld(ContactDetails contact)
-        {
-            contact.WasOnLeftWall = contact.IsOnLeftWall;
-            contact.WasOnRightWall = contact.IsOnRightWall;
-            contact.WasOnFloor = contact.IsOnFloor;
-
-            contact.IsOnLeftWall = Physics2D.OverlapBox((Vector2)transform.position + leftCollider.offset,
-                leftCollider.size, 0, wallLayer);
-
-            contact.IsOnRightWall = Physics2D.OverlapBox((Vector2)transform.position + rightCollider.offset,
-                rightCollider.size, 0, wallLayer);
-
-            var floorCollision = Physics2D.OverlapBox((Vector2)transform.position + floorCollider.offset,
-                floorCollider.size, 0, floorLayer);
-
-            contact.IsOnFloor = false;
-            if (floorCollision != null)
+            if (_updatedThisFrame)
             {
-                var contacts = new ContactPoint2D[1];
-                if (floorCollision.GetContacts(contacts) > 0)
-                {
-                    var item = contacts[0];
-
-                    contact.IsOnFloor = item.normal.y < -.5;
-
-                    if (normalRay)
-                    {
-                        Debug.Log($"Ray normal = {item.normal}");
-                        Debug.DrawRay(item.point, item.normal * 100, Random.ColorHSV(0f, 1f, 1f, 1f, 0.5f, 1f), 10f);
-                    }
-                }
+                return contact;
+            }
+            else
+            {
+                var next = DetectContactsNew(contact);
+                _updatedThisFrame = true;
+                return next;
             }
 
-            return contact;
         }
-
         public ContactDetails DetectContactsNew(ContactDetails contact)
         {
             contact.WasOnLeftWall = contact.IsOnLeftWall;
@@ -95,8 +63,8 @@ namespace LDJam48
             var overlaps = new RaycastHit2D[4];
 
             int results = Physics2D.BoxCastNonAlloc(
-                (Vector2)transform.position + verticalDetectorOffset,
-                verticalDetectorSize,
+                (Vector2)transform.position + _colliders.verticalDetectorOffset,
+                _colliders.verticalDetectorSize,
                 0,
                 Vector2.down,
                 overlaps,
@@ -114,17 +82,17 @@ namespace LDJam48
                 if (hit.normal.y > .5f)
                 {
                     contact.IsOnFloor = true;
-                    if (normalRay)
+                    if (debug && !contact.WasOnFloor)
                     {
-                        Debug.LogWarning($"Ray normal = {hit.normal}");
+                        Debug.LogWarning($"Ray normal = {hit.normal}, hit p={hit.point}");
                         Debug.DrawRay(hit.point, hit.normal * 3, Random.ColorHSV(0f, 1f, 1f, 1f, 0.5f, 1f), 2f);
                     }
                 }
             }
 
             results = Physics2D.BoxCastNonAlloc(
-                (Vector2)transform.position + horizontalDetectorOffset,
-                horizontalDetectorSize,
+                (Vector2)transform.position + _colliders.horizontalDetectorOffset,
+                _colliders.horizontalDetectorSize,
                 0,
                 Vector2.down,
                 overlaps,
@@ -140,9 +108,9 @@ namespace LDJam48
                 {
                     contact.IsOnLeftWall = true;
 
-                    if (normalRay)
+                    if (debug && !contact.WasOnLeftWall)
                     {
-                        Debug.LogWarning($"Ray normal = {hit.normal}, collider name = {hit.collider.name}, in {hit.collider.transform.parent.parent.gameObject.name}");
+                        Debug.LogWarning($"Ray normal = {hit.normal}, hit p={hit.point}, collider name = {hit.collider.name}, in {hit.collider.transform.parent.parent.gameObject.name}");
                         Debug.DrawRay(hit.point, hit.normal * 3, Random.ColorHSV(0f, 1f, 1f, 1f, 0.5f, 1f), 2f);
                     }
                 }
@@ -151,20 +119,42 @@ namespace LDJam48
                 {
                     contact.IsOnRightWall = true;
 
-                    if (normalRay)
+                    if (debug && !contact.WasOnRightWall)
                     {
-                        Debug.LogWarning($"Ray normal = {hit.normal}, collider name = {hit.collider.name}, in {hit.collider.transform.parent.parent.gameObject.name}");
+                        Debug.LogWarning($"Ray normal = {hit.normal}, hit p={hit.point}, collider name = {hit.collider.name}, in {hit.collider.transform.parent.parent.gameObject.name}");
                         Debug.DrawRay(hit.point, hit.normal * 3, Random.ColorHSV(0f, 1f, 1f, 1f, 0.5f, 1f), 2f);
                     }
+                }
+            }
+
+            if (debug)
+            {
+                if (contact.WasOnFloor && !contact.IsOnFloor)
+                {
+                    Debug.Log("Contacts no longer on floor");
+                }
+                if (contact.WasOnLeftWall && !contact.IsOnLeftWall)
+                {
+                    Debug.Log("Contacts no longer on LeftWall");
+                }
+                if (contact.WasOnRightWall && !contact.IsOnRightWall)
+                {
+                    Debug.Log("Contacts no longer on RightWall");
                 }
             }
 
             return contact;
         }
 
-        public void UpdateContactDetails()
+        public ContactDetails UpdateContactDetails()
         {
             ContactDetails = DetectContacts(ContactDetails);
+            return ContactDetails;
+        }
+
+        public void DLog(string source)
+        {
+            Debug.Log($"{source}: contacts -> wf({ContactDetails.WasOnFloor}), wl({ContactDetails.WasOnLeftWall}, wr({ContactDetails.WasOnRightWall}), if({ContactDetails.IsOnFloor}), il({ContactDetails.IsOnLeftWall}, ir({ContactDetails.IsOnRightWall})");
         }
     }
 

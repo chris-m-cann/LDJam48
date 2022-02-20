@@ -43,6 +43,7 @@ namespace LDJam48.StateMachine.Player.Action
         private SoundsBehaviour _sounds;
         private PlayerRaycastsBehaviour _raycasts;
         private PlayerContacts _contacts;
+        private Vector2 _finalPos;
 
         private const int EXIT_CODE_FALLING = 0;
         private const int EXIT_CODE_IDLE = 0;
@@ -74,8 +75,8 @@ namespace LDJam48.StateMachine.Player.Action
 
             _sounds.PlaySound(_source.SlamSoundId);
 
-            var finalPos = _raycasts.FindSlamLandPoint(_source.maxDistance);
-            _machine.StartCoroutine(CoSlam(finalPos.y));
+            _finalPos = _raycasts.FindSlamLandPoint(_source.maxDistance);
+            _machine.StartCoroutine(CoSlam(_finalPos.y));
         }
 
 
@@ -86,10 +87,15 @@ namespace LDJam48.StateMachine.Player.Action
             _colliders.Slam.enabled = false;
             _colliders.Main.enabled = true;
             _particles.StopEffect(_source.OngoingSlamEffectId);
-            
             _rigidbody.velocity = new Vector2(0, _source.CarriedYVel.Value);
             
-            Debug.Log($"Slam on state exit, pos = {_machine.transform.position}, vel = {_rigidbody.velocity}");
+            // correct if went past final point but floor collider caught it first
+            if (_machine.transform.position.y < _finalPos.y)
+            {
+                var p = _machine.transform.position;
+                p.y = _finalPos.y;
+                _machine.transform.position = p;
+            }
         }
 
         private IEnumerator CoSlam(float finalY)
@@ -118,7 +124,7 @@ namespace LDJam48.StateMachine.Player.Action
             yield return new WaitForFixedUpdate();
             _contacts.UpdateContactDetails();
 
-            bool isInAir = _contacts.ContactDetails.IsOnFloor;
+            bool isInAir = !_contacts.ContactDetails.IsOnFloor;
             int exitCode = isInAir ? EXIT_CODE_FALLING : EXIT_CODE_IDLE;
             _machine.StateComplete(exitCode);
         }

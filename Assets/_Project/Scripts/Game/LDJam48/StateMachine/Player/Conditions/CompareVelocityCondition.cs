@@ -49,6 +49,11 @@ namespace LDJam48.StateMachine.Player.Conditions
                 r = r && (_rigidbody.velocity.y.CompareTo(_source.CompareYTo) == (int)_source.YOp);
             }
 
+            if (r && _machine.debugLogs)
+            {
+                Debug.Log($"CompareVelocityConditionRuntime(true), v={_rigidbody.velocity}");
+            }
+
             return r;
         }
     }

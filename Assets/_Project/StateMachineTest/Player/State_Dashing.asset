@@ -28,6 +28,7 @@ MonoBehaviour:
     - {fileID: 11400000, guid: fb8425c3033483247b75c8ae4603e756, type: 2}
     - {fileID: 11400000, guid: 2a59b742c7732a54fbe50f57d60d07f4, type: 2}
     - {fileID: 11400000, guid: 00d51c26a5c6faa418893feaa926c2f0, type: 2}
+    - {fileID: 11400000, guid: 7ad2494979fe8f04996c802f7bf69b9b, type: 2}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -380,13 +381,26 @@ MonoBehaviour:
       Data: 7|LDJam48.StateMachine.OneShotAction[], Assembly-CSharp
     - Name: 
       Entry: 12
-      Data: 1
+      Data: 2
     - Name: 
       Entry: 7
       Data: 8|LDJam48.StateMachine.Action.ChangeAnimStateAction, Assembly-CSharp
     - Name: AnimState
       Entry: 1
       Data: player_slice
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 9|LDJam48.StateMachine.Player.Action.LDJam48.StateMachine.Player.Action.SetFloatAction,
+        Assembly-CSharp
+    - Name: Var
+      Entry: 10
+      Data: 12
+    - Name: Value
+      Entry: 4
+      Data: -1
     - Name: 
       Entry: 8
       Data: 
@@ -398,13 +412,13 @@ MonoBehaviour:
       Data: 
     - Name: OnExitActions
       Entry: 7
-      Data: 9|LDJam48.StateMachine.OneShotAction[], Assembly-CSharp
+      Data: 10|LDJam48.StateMachine.OneShotAction[], Assembly-CSharp
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 10|LDJam48.StateMachine.Player.Action.SetBooleanAction, Assembly-CSharp
+      Data: 11|LDJam48.StateMachine.Player.Action.SetBooleanAction, Assembly-CSharp
     - Name: Var
       Entry: 10
       Data: 10
@@ -422,7 +436,7 @@ MonoBehaviour:
       Data: 
     - Name: OnUpdateActions
       Entry: 7
-      Data: 11|LDJam48.StateMachine.OneShotAction[], Assembly-CSharp
+      Data: 12|LDJam48.StateMachine.OneShotAction[], Assembly-CSharp
     - Name: 
       Entry: 12
       Data: 0
@@ -434,7 +448,7 @@ MonoBehaviour:
       Data: 
     - Name: OnFixedUpdateActions
       Entry: 7
-      Data: 12|LDJam48.StateMachine.OneShotAction[], Assembly-CSharp
+      Data: 13|LDJam48.StateMachine.OneShotAction[], Assembly-CSharp
     - Name: 
       Entry: 12
       Data: 0

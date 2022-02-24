@@ -9,9 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1c2bf933894e4fb28a0278968bbdbd1b, type: 3}
-  m_Name: TutorialSaveData
+  m_Script: {fileID: 11500000, guid: 991f83ff294e4f61b36f88a4ebdf84da, type: 3}
+  m_Name: TestTaggedTile
   m_EditorClassIdentifier: 
-  Key: TutorialSaveData
-  Data:
-    TutorialRequired: 0
+  Sprite: {fileID: -2346177918198386837, guid: a6d3d653e3aa4ca4bbde029d97a44dd8, type: 3}
+  Colour: {r: 1, g: 1, b: 1, a: 1}
+  HideAtRuntime: 1
+  TileTag: End

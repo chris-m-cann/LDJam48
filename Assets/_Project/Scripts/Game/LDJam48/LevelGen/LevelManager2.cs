@@ -92,14 +92,14 @@ namespace LDJam48.LevelGen
             }
         }
 
-        private IEnumerator SpawnThings(LevelChunk chunk,  Vector3 pos)
+        private IEnumerator RunOnBuiltProcessors(LevelChunk chunk,  Vector3 pos)
         {
             // need to yeild here to give the world a chance to spawn so the things on our spawn layer can then interact with it
             yield return new WaitForFixedUpdate();
 
-            foreach (var layer in chunk.SpawningLayers)
+            foreach (var layer in chunk.OnBuildProcessors)
             {
-                yield return StartCoroutine(layer.Spawn(new SpawningLayer.SpawnParameters{ Chunk = chunk, ChunkStartPos = pos}));
+                yield return StartCoroutine(layer.OnBuilt(new OnChunkBuilt.Parameters{ Chunk = chunk, ChunkStartPos = pos}));
             }
         }
 
@@ -145,7 +145,7 @@ namespace LDJam48.LevelGen
             }
 
 
-            StartCoroutine(SpawnThings(chunk, chunk.transform.position));
+            StartCoroutine(RunOnBuiltProcessors(chunk, chunk.transform.position));
         }
 
         private void DestroyChunk(LevelChunk chunk)

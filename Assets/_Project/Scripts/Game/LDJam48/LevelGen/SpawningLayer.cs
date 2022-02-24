@@ -5,14 +5,8 @@ using UnityEngine.Tilemaps;
 namespace LDJam48.LevelGen
 {
     [RequireComponent(typeof(Tilemap))]
-    public class SpawningLayer : MonoBehaviour
+    public class SpawningLayer : OnChunkBuilt
     {
-        public struct SpawnParameters
-        {
-            public LevelChunk Chunk;
-            public Vector3 ChunkStartPos;
-            // todo(chris) add in stuff like intensity requested or whatever
-        }
 
         protected Tilemap _tilemap;
 
@@ -21,7 +15,8 @@ namespace LDJam48.LevelGen
             _tilemap = GetComponent<Tilemap>();
         }
 
-        public IEnumerator Spawn(SpawnParameters spawn)
+        
+        public override IEnumerator OnBuilt(Parameters spawn)
         {
             yield return null;
             try
@@ -34,7 +29,7 @@ namespace LDJam48.LevelGen
             }
         }
 
-        protected virtual void SpawnImpl(SpawnParameters spawn)
+        protected virtual void SpawnImpl(Parameters spawn)
         {
             var height = spawn.Chunk.Height;
             var width = spawn.Chunk.Width;

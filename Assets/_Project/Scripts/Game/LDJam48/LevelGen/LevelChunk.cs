@@ -17,7 +17,7 @@ namespace LDJam48
         [Range(0, 1)]
         public float PickupTilesSpawnProbablity = 1f;
 
-        public SpawningLayer[] SpawningLayers => GetComponentsInChildren<SpawningLayer>();
+        public OnChunkBuilt[] OnBuildProcessors => GetComponentsInChildren<OnChunkBuilt>();
 
         public float Bottom => transform.position.y - Height;
     }

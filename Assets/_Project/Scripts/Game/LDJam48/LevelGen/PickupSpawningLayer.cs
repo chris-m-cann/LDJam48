@@ -9,15 +9,15 @@ namespace LDJam48.LevelGen
         [SerializeField] private SpawnBudget budget;
         [SerializeField] [Range(0, 1)] private float spawnProbablity = 1;
 
-        protected override void SpawnImpl(SpawnParameters spawn)
+        public override IEnumerator OnBuilt(Parameters spawn)
         {
-            if (Random.value > spawnProbablity) return;
-            if (budget != null && !budget.AllocateBudget(CalculateCost(spawn))) return;
+            if (Random.value > spawnProbablity) yield break;
+            if (budget != null && !budget.AllocateBudget(CalculateCost(spawn))) yield break;;
 
-            base.SpawnImpl(spawn);
+            yield return StartCoroutine(base.OnBuilt(spawn));
         }
 
-        private float CalculateCost(SpawnParameters spawn)
+        private float CalculateCost(Parameters spawn)
         {
             var height = spawn.Chunk.Height;
             var width = spawn.Chunk.Width;

@@ -14,7 +14,8 @@ namespace LDJam48.LevelGen
         private void Awake()
         {
             _tilemap = GetComponent<Tilemap>();
-            RefreshTiles();
+            _tilemap.RefreshAllTiles();
+            // RefreshTiles();
         }
 
         private void RefreshTiles()

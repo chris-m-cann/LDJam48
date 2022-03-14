@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using Util;
 
 namespace LDJam48.StateMachine.Action
 {
@@ -12,6 +13,7 @@ namespace LDJam48.StateMachine.Action
         [Tooltip("on exit Behaviour.enabled = enabledOnExit")]
         public bool enabledOnExit = false;
 
+        public bool checkInChildren;
         protected override IStateAction BuildRuntimeImpl()
         {
             return new EnableBehaviourStateActionRuntime();
@@ -25,7 +27,14 @@ namespace LDJam48.StateMachine.Action
         public override void OnAwake(StateMachineBehaviour machine)
         {
             base.OnAwake(machine);
-            _behaviour = (MonoBehaviour)machine.GetComponent(_source.Behaviour);
+            if (_source.checkInChildren)
+            {
+                _behaviour = (MonoBehaviour)machine.GetComponentInChildren(_source.Behaviour);
+            }
+            else
+            {
+                _behaviour = (MonoBehaviour)machine.GetComponent(_source.Behaviour);
+            }
 
             if (_behaviour == null)
             {

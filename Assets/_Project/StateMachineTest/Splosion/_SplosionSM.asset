@@ -16,9 +16,9 @@ MonoBehaviour:
     SerializedFormat: 2
     SerializedBytes: 
     ReferencedUnityObjects:
-    - {fileID: 11400000, guid: 631044f9a29665b4bb73ec03ed2c95ad, type: 2}
+    - {fileID: 11400000, guid: 97fb2baecb135554181751005945fa09, type: 2}
     - {fileID: 11400000, guid: 061a1ddf888f45c43a472c972579e8be, type: 2}
-    - {fileID: 11400000, guid: 32869b25a08a61f489924bdd2b2c5778, type: 2}
+    - {fileID: 11400000, guid: be2f66d625d178048b73a6bad61552ea, type: 2}
     - {fileID: 11400000, guid: dae56dd2ffb01cf4d8581989e7602d22, type: 2}
     SerializedBytesString: 
     Prefab: {fileID: 0}
@@ -136,6 +136,9 @@ MonoBehaviour:
     - Name: timeout
       Entry: 4
       Data: 0.5
+    - Name: debug
+      Entry: 5
+      Data: false
     - Name: 
       Entry: 8
       Data: 
@@ -253,4 +256,4 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-  InitialState: {fileID: 11400000, guid: 631044f9a29665b4bb73ec03ed2c95ad, type: 2}
+  InitialState: {fileID: 11400000, guid: 97fb2baecb135554181751005945fa09, type: 2}

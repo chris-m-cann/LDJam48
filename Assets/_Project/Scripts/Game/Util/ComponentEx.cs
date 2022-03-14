@@ -1,4 +1,5 @@
 using LDJam48.StateMachine;
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace Util
@@ -26,6 +27,23 @@ namespace Util
         {
             self.SetComponent(ref component1);
             self.SetComponent(ref component2, ref component3, ref component4);
+        }
+
+        public static Component GetComponentInChildren(this Component self, string typename)
+        {
+            var component = self.GetComponent(typename);
+            if (component != null) return component;
+
+            for (int i = 0, childcount = self.transform.childCount; i < childcount; i++)
+            {
+                var child = self.transform.GetChild(i);
+
+                component = child.GetComponentInChildren(typename);
+                
+                if (component != null) return component;
+            }
+
+            return null;
         }
     }
 }

@@ -1,0 +1,110 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b82033b2861d4b3faf9469136528367a, type: 3}
+  m_Name: _MimicStateMachine
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects:
+    - {fileID: 11400000, guid: e545d8b52ad79cc48b863f4dd8c38005, type: 2}
+    - {fileID: 11400000, guid: 212758d4db4270c4bb0a761a11aebb3a, type: 2}
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: Transitions
+      Entry: 7
+      Data: 0|LDJam48.StateMachine.StateTransition[], Assembly-CSharp
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: LDJam48.StateMachine.StateTransition, Assembly-CSharp
+    - Name: From
+      Entry: 10
+      Data: 0
+    - Name: Descriptions
+      Entry: 7
+      Data: 1|LDJam48.StateMachine.TransitionDesc[], Assembly-CSharp
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: LDJam48.StateMachine.TransitionDesc, Assembly-CSharp
+    - Name: To
+      Entry: 10
+      Data: 1
+    - Name: Conditions
+      Entry: 7
+      Data: 2|LDJam48.StateMachine.ConditionPair[], Assembly-CSharp
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: LDJam48.StateMachine.ConditionPair, Assembly-CSharp
+    - Name: Condition
+      Entry: 7
+      Data: 3|LDJam48.StateMachine.Conditions.WasDetectorTriggered, Assembly-CSharp
+    - Name: DetectorIndex
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: Operator
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: OnTransitionActions
+      Entry: 7
+      Data: 4|LDJam48.StateMachine.OneShotAction[], Assembly-CSharp
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+  InitialState: {fileID: 11400000, guid: e545d8b52ad79cc48b863f4dd8c38005, type: 2}

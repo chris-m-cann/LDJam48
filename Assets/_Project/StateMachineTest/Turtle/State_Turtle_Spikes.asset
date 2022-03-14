@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b1b602cb401d4ba6910a2322241e3b8e, type: 3}
-  m_Name: State_Splosion_Idle
+  m_Name: State_Turtle_Spikes
   m_EditorClassIdentifier: 
   serializationData:
     SerializedFormat: 2
@@ -26,28 +26,22 @@ MonoBehaviour:
       Data: 0|LDJam48.StateMachine.StateAction[], Assembly-CSharp
     - Name: 
       Entry: 12
-      Data: 2
+      Data: 1
     - Name: 
       Entry: 7
       Data: 1|LDJam48.StateMachine.Action.EnableBehaviourStateAction, Assembly-CSharp
     - Name: Behaviour
       Entry: 1
-      Data: ToAndFroBehaviour
+      Data: MoveAlongWalls
     - Name: enabledOnEnter
       Entry: 5
-      Data: true
+      Data: false
     - Name: enabledOnExit
       Entry: 5
+      Data: true
+    - Name: checkInChildren
+      Entry: 5
       Data: false
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 2|LDJam48.StateMachine.Action.EnableDetectorStateAction, Assembly-CSharp
-    - Name: DetectorIdx
-      Entry: 3
-      Data: 0
     - Name: 
       Entry: 8
       Data: 
@@ -59,7 +53,28 @@ MonoBehaviour:
       Data: 
     - Name: OnEnterActions
       Entry: 7
-      Data: 3|LDJam48.StateMachine.OneShotAction[], Assembly-CSharp
+      Data: 2|LDJam48.StateMachine.OneShotAction[], Assembly-CSharp
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 3|LDJam48.StateMachine.Action.ChangeAnimStateAction, Assembly-CSharp
+    - Name: AnimState
+      Entry: 1
+      Data: turtle_spikes
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: OnExitActions
+      Entry: 7
+      Data: 4|LDJam48.StateMachine.OneShotAction[], Assembly-CSharp
     - Name: 
       Entry: 12
       Data: 0
@@ -69,12 +84,28 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: OnExitActions
-      Entry: 9
-      Data: 3
     - Name: OnUpdateActions
-      Entry: 9
-      Data: 3
+      Entry: 7
+      Data: 5|LDJam48.StateMachine.OneShotAction[], Assembly-CSharp
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: OnFixedUpdateActions
-      Entry: 9
-      Data: 3
+      Entry: 7
+      Data: 6|LDJam48.StateMachine.OneShotAction[], Assembly-CSharp
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+  LogTrueConditions: 0

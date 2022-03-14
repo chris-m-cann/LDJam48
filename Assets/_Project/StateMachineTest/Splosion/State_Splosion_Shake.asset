@@ -26,7 +26,7 @@ MonoBehaviour:
       Data: 0|LDJam48.StateMachine.StateAction[], Assembly-CSharp
     - Name: 
       Entry: 12
-      Data: 3
+      Data: 4
     - Name: 
       Entry: 7
       Data: 1|LDJam48.StateMachine.Action.ShakeAction, Assembly-CSharp
@@ -60,6 +60,9 @@ MonoBehaviour:
     - Name: enabledOnExit
       Entry: 5
       Data: false
+    - Name: checkInChildren
+      Entry: 5
+      Data: false
     - Name: 
       Entry: 8
       Data: 
@@ -75,6 +78,42 @@ MonoBehaviour:
     - Name: enabledOnExit
       Entry: 5
       Data: true
+    - Name: checkInChildren
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 4|LDJam48.StateMachine.Action.EnableGameObjectsStateAction, Assembly-CSharp
+    - Name: objects
+      Entry: 7
+      Data: 5|LDJam48.StateMachine.Action.EnableGameObject[], Assembly-CSharp
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: LDJam48.StateMachine.Action.EnableGameObject, Assembly-CSharp
+    - Name: GameObjectName
+      Entry: 1
+      Data: BounceDetector
+    - Name: enabledOnEnter
+      Entry: 5
+      Data: true
+    - Name: enabledOnExit
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -86,7 +125,7 @@ MonoBehaviour:
       Data: 
     - Name: OnEnterActions
       Entry: 7
-      Data: 4|LDJam48.StateMachine.OneShotAction[], Assembly-CSharp
+      Data: 6|LDJam48.StateMachine.OneShotAction[], Assembly-CSharp
     - Name: 
       Entry: 12
       Data: 0
@@ -98,7 +137,7 @@ MonoBehaviour:
       Data: 
     - Name: OnExitActions
       Entry: 7
-      Data: 5|LDJam48.StateMachine.OneShotAction[], Assembly-CSharp
+      Data: 7|LDJam48.StateMachine.OneShotAction[], Assembly-CSharp
     - Name: 
       Entry: 12
       Data: 0
@@ -110,7 +149,7 @@ MonoBehaviour:
       Data: 
     - Name: OnUpdateActions
       Entry: 7
-      Data: 6|LDJam48.StateMachine.OneShotAction[], Assembly-CSharp
+      Data: 8|LDJam48.StateMachine.OneShotAction[], Assembly-CSharp
     - Name: 
       Entry: 12
       Data: 0
@@ -122,7 +161,7 @@ MonoBehaviour:
       Data: 
     - Name: OnFixedUpdateActions
       Entry: 7
-      Data: 7|LDJam48.StateMachine.OneShotAction[], Assembly-CSharp
+      Data: 9|LDJam48.StateMachine.OneShotAction[], Assembly-CSharp
     - Name: 
       Entry: 12
       Data: 0
@@ -132,3 +171,4 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+  LogTrueConditions: 0

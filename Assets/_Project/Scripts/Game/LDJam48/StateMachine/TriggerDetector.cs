@@ -8,6 +8,7 @@ namespace LDJam48.StateMachine
     {
         [SerializeField] private LayerMask mask;
 
+        // this is needed to draw the enabled box in the inspector
         private void Update()
         {
             

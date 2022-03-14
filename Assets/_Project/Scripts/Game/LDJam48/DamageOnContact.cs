@@ -18,6 +18,11 @@ namespace LDJam48
         [ShowIf("$isLayerBased"), SerializeField]
         private LayerMask layersToDamage;
 
+        // this is needed to draw the enabled box in the inspector
+        private void Update()
+        {
+            
+        }
 
         [SerializeField] private UnityEvent afterCollision;
         private void OnTriggerEnter2D(Collider2D other)

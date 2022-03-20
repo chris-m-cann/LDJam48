@@ -9,12 +9,19 @@ namespace LDJam48
     public class SpawnOnDeath: MonoBehaviour
     {
         public List<Pair<GameObject, Vector2>> ThingsToSpawn;
+        [SerializeField] private bool spawnOnDisable;
+        
 
 
         private bool _isQuitting;
         private void OnApplicationQuit()
         {
             _isQuitting = true;
+        }
+
+        private void OnDisable()
+        {
+            if (spawnOnDisable) SpawnObjects();
         }
 
 

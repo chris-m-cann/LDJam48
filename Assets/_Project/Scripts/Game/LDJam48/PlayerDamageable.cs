@@ -108,6 +108,11 @@ namespace LDJam48
             }
         }
 
+        public void Kill(GameObject damager)
+        {
+            Damage(health.Value, damager);
+        }
+
         private void GoInvincible()
         {
             _isInvincible = true;
@@ -129,6 +134,11 @@ namespace LDJam48
 
             _sprite.enabled = true;
             _isInvincible = false;
+        }
+
+        public void SetInvincible(bool invincible)
+        {
+            _isInvincible = invincible; // todo (chris) will this be overwritten by CoFlash on complete??
         }
     }
 }

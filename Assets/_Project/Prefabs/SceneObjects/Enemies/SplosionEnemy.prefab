@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4889595666613812131}
-  - component: {fileID: 41584584356690868}
   - component: {fileID: 6515455591160524509}
   - component: {fileID: 9116853642170119704}
+  - component: {fileID: 1892418491}
   m_Layer: 8
   m_Name: BounceDetector
   m_TagString: Untagged
@@ -34,34 +34,6 @@ Transform:
   m_Father: {fileID: 6787248660449325664}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &41584584356690868
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3617354033517708027}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c222e47682a841b8b2ef9771be958238, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  useSafeAngles: 1
-  safeAngle:
-    Start: -50
-    End: 50
-  sfxChannel: {fileID: 11400000, guid: fe62c46c8f30fda40800c60b8eede838, type: 2}
-  dieClip: {fileID: 0}
-  playerTag: Player
-  deathEffect:
-    Delimeter: 0
-    Event: {fileID: 11400000, guid: 280f09846efbdd849b35abb6f9f6738e, type: 2}
-    Variable: {fileID: 0}
-  objectToDestroy: {fileID: 6787248660449325666}
-  onDeath:
-    m_PersistentCalls:
-      m_Calls: []
-  drawGizmos: 1
 --- !u!58 &6515455591160524509
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -93,6 +65,28 @@ MonoBehaviour:
   mask:
     serializedVersion: 2
     m_Bits: 64
+--- !u!114 &1892418491
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3617354033517708027}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72ee03a8654542ec86fe636f6b07b038, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  useSafeAngles: 1
+  safeAngle:
+    Start: -50
+    End: 50
+  targetLayers:
+    serializedVersion: 2
+    m_Bits: 64
+  damage: 1
+  myRoot: {fileID: 6787248660449325666}
+  drawGizmos: 1
 --- !u!1 &6787248659408913289
 GameObject:
   m_ObjectHideFlags: 0
@@ -105,7 +99,7 @@ GameObject:
   - component: {fileID: 6787248659408913287}
   - component: {fileID: 6787248659408913286}
   - component: {fileID: 6787248659408913285}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SelfDetector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -190,7 +184,7 @@ GameObject:
   - component: {fileID: 6787248659592889165}
   - component: {fileID: 6787248659592889164}
   - component: {fileID: 6787248659592889167}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IdleDetector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -271,7 +265,12 @@ GameObject:
   - component: {fileID: 6787248660449325695}
   - component: {fileID: 6787248660449325688}
   - component: {fileID: 6787248660449325691}
-  m_Layer: 0
+  - component: {fileID: 4214665500142099522}
+  - component: {fileID: 2498354963654191911}
+  - component: {fileID: 300718402}
+  - component: {fileID: 300718400}
+  - component: {fileID: 300718401}
+  m_Layer: 8
   m_Name: SplosionEnemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -478,3 +477,137 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   initialTarget: {fileID: 11400000, guid: 5f460cec9e88ae844ad9d902d4fae17b, type: 2}
+--- !u!114 &4214665500142099522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6787248660449325666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a74252ff38834f64800706db7021e1e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ThingsToSpawn: []
+  spawnOnDisable: 0
+--- !u!114 &2498354963654191911
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6787248660449325666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b79285c88f24040814d8f5d65bb2bb5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  worth: {x: 50, y: 50}
+  gems:
+  - {fileID: 4019505570478468711, guid: bf258c1a659006148b1b223bc6c78492, type: 3}
+  offsetMax: 1
+--- !u!58 &300718402
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6787248660449325666}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
+--- !u!114 &300718400
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6787248660449325666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2896d262ea9456abc91c53077fb49f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &300718401
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6787248660449325666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 932425fd3b124a85b028ca2e964d183e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health:
+    Delimeter: 2
+    Variable: {fileID: 0}
+    Observable: {fileID: 0}
+    Constant: 1
+  onHealed:
+    m_PersistentCalls:
+      m_Calls: []
+  onHurt:
+    m_PersistentCalls:
+      m_Calls: []
+  onDead:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: fe62c46c8f30fda40800c60b8eede838, type: 2}
+        m_TargetAssemblyTypeName: Util.Var.Events.GameEvent`1[[Util.AudioClipAsset,
+          Assembly-CSharp
+        m_MethodName: Raise
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: a2a4aa7bdad84dd4bb4817469e1d0e5e, type: 2}
+          m_ObjectArgumentAssemblyTypeName: Util.AudioClipAsset, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 4214665500142099522}
+        m_TargetAssemblyTypeName: LDJam48.SpawnOnDeath, Assembly-CSharp
+        m_MethodName: SpawnObjects
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 6787248660449325690}
+        m_TargetAssemblyTypeName: LDJam48.ParticlesBehaviour, Assembly-CSharp
+        m_MethodName: PlayEffect
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 300718400}
+        m_TargetAssemblyTypeName: Util.DestroyBehaviour, Assembly-CSharp
+        m_MethodName: DestroyGameObject
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  IsInvincible: 0

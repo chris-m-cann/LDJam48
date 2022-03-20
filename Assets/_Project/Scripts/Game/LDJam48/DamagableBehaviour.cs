@@ -30,6 +30,15 @@ namespace LDJam48
             {
                 OnHurt();
             }
+        }       
+        // this is needed to draw the enabled box in the inspector
+        private void Update()
+        {
+        }
+
+        public void Kill(GameObject damager)
+        {
+            Damage(health.Value, damager);
         }
 
         protected virtual void OnHealed()
@@ -44,6 +53,7 @@ namespace LDJam48
 
         protected virtual void OnDead()
         {
+            Debug.Log($"{gameObject.name} OnDead");
             onDead?.Invoke();
         }
     }

@@ -85,7 +85,7 @@ GameObject:
   - component: {fileID: 6776963252828714793}
   - component: {fileID: 6776963252828714799}
   - component: {fileID: 6776963252828714792}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Hurter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -157,6 +157,8 @@ MonoBehaviour:
     Event: {fileID: 11400000, guid: 280f09846efbdd849b35abb6f9f6738e, type: 2}
     Variable: {fileID: 0}
   objectToDestroy: {fileID: 6776963253789686666}
+  spawner: {fileID: 3287513991671551602}
+  spawnOnDeath: 0
   onDeath:
     m_PersistentCalls:
       m_Calls: []
@@ -272,6 +274,8 @@ GameObject:
   - component: {fileID: 6776963253789686671}
   - component: {fileID: 6776963253789686664}
   - component: {fileID: 6776963253789686665}
+  - component: {fileID: 3287513991671551602}
+  - component: {fileID: 7770850746023616291}
   m_Layer: 0
   m_Name: Mimic
   m_TagString: Untagged
@@ -382,7 +386,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stateMachine: {fileID: 11400000, guid: b4ffd53ca05017849b2cc844a29afbe6, type: 2}
-  transitionOnUpdate: 1
+  transitionOnUpdate: 0
   transitionOnFixedUpdate: 1
   debugLogs: 1
 --- !u!114 &6776963253789686665
@@ -400,3 +404,33 @@ MonoBehaviour:
   disableAllOnStartUp: 0
   detectors:
   - {fileID: 6776963252561239784}
+--- !u!114 &3287513991671551602
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6776963253789686666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a74252ff38834f64800706db7021e1e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ThingsToSpawn: []
+  spawnOnDisable: 0
+--- !u!114 &7770850746023616291
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6776963253789686666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b79285c88f24040814d8f5d65bb2bb5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  worth: {x: 10, y: 20}
+  gems:
+  - {fileID: 4019505570478468711, guid: bf258c1a659006148b1b223bc6c78492, type: 3}
+  offsetMax: 1

@@ -15,7 +15,9 @@ GameObject:
   - component: {fileID: 8881964160286944985}
   - component: {fileID: 8881964160286944984}
   - component: {fileID: 8881964160286944935}
-  - component: {fileID: 8881964160286944934}
+  - component: {fileID: 8395436128146842367}
+  - component: {fileID: 9059232424109176179}
+  - component: {fileID: 440338544}
   m_Layer: 8
   m_Name: Poucer
   m_TagString: Untagged
@@ -185,7 +187,7 @@ MonoBehaviour:
     m_Bits: 17536
   boxcastDepth: 0.5
   debugLogs: 1
---- !u!114 &8881964160286944934
+--- !u!114 &8395436128146842367
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -194,7 +196,37 @@ MonoBehaviour:
   m_GameObject: {fileID: 8881964160286944930}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1a997b3878f7471085c2b17e02921592, type: 3}
+  m_Script: {fileID: 11500000, guid: a74252ff38834f64800706db7021e1e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ThingsToSpawn: []
+  spawnOnDisable: 0
+--- !u!114 &9059232424109176179
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8881964160286944930}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b79285c88f24040814d8f5d65bb2bb5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  worth: {x: 5, y: 10}
+  gems:
+  - {fileID: 4019505570478468711, guid: bf258c1a659006148b1b223bc6c78492, type: 3}
+  offsetMax: 1
+--- !u!114 &440338544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8881964160286944930}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c222e47682a841b8b2ef9771be958238, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   useSafeAngles: 1
@@ -208,6 +240,9 @@ MonoBehaviour:
     Delimeter: 0
     Event: {fileID: 11400000, guid: 280f09846efbdd849b35abb6f9f6738e, type: 2}
     Variable: {fileID: 0}
+  objectToDestroy: {fileID: 0}
+  spawner: {fileID: 0}
+  spawnOnDeath: 0
   onDeath:
     m_PersistentCalls:
       m_Calls:
@@ -224,4 +259,4 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  drawGizmos: 1
+  drawGizmos: 0

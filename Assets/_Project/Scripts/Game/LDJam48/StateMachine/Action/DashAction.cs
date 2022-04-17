@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using DG.Tweening;
 using DG.Tweening.Core;
@@ -54,8 +55,13 @@ namespace LDJam48.StateMachine.Action
             }
 
             var end = _raycasts.FindDashLandPoint(direction, rightWallX:_source.rightWallX, leftWallX:_source.leftWallX);
+
+            var maxDistance = Mathf.Abs(_source.rightWallX - _source.leftWallX);
+            var actualDistance = Mathf.Abs(((Vector2)_machine.transform.position - end).x);
+            var factor = (float)actualDistance / maxDistance;
+            var time = _source.dashTime * factor;
             
-            _dashCoroutine = _machine.transform.DOMoveX(end.x, _source.dashTime).SetEase(_source.dashCurve)
+            _dashCoroutine = _machine.transform.DOMoveX(end.x, time).SetEase(_source.dashCurve)
                 .SetUpdate(UpdateType.Fixed, isIndependentUpdate:false)
                 .OnComplete(() =>
                 {

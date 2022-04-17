@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d1694bd40014a78b23b2d5debcd3d0c, type: 3}
   m_Name: RestGenerator
   m_EditorClassIdentifier: 
-  chunks: {fileID: 11400000, guid: ef8fb155f2373c949b57070f28fa90d4, type: 2}
+  chunks: {fileID: 11400000, guid: dcb5166ab00ea954581290b368429c32, type: 2}

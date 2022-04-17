@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 8395436128146842367}
   - component: {fileID: 9059232424109176179}
   - component: {fileID: 440338544}
+  - component: {fileID: 1322391662776818544}
   m_Layer: 8
   m_Name: Poucer
   m_TagString: Untagged
@@ -127,7 +128,7 @@ MonoBehaviour:
   stateMachine: {fileID: 11400000, guid: 0b7e6b0c6d72adf478783c5ab45886e8, type: 2}
   transitionOnUpdate: 0
   transitionOnFixedUpdate: 1
-  debugLogs: 1
+  debugLogs: 0
 --- !u!58 &8881964160286944985
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -160,13 +161,13 @@ MonoBehaviour:
   Slash: {fileID: 0}
   Slam: {fileID: 0}
   horizontalDetectorOffset: {x: 0, y: 0}
-  horizontalDetectorSize: {x: 0, y: 0}
+  horizontalDetectorSize: {x: 0.3, y: 0.3}
   verticalDetectorOffset: {x: 0, y: 0}
   verticalDetectorSize: {x: 0, y: 0}
-  leftCastOffset: 0
-  rightCastOffset: 0
+  leftCastOffset: 0.5
+  rightCastOffset: 0.5
   bottomCastOffset: 0
-  drawGizmos: 0
+  drawGizmos: 1
 --- !u!114 &8881964160286944935
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -260,3 +261,17 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   drawGizmos: 0
+--- !u!114 &1322391662776818544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8881964160286944930}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b68852f22d5e457b919e25218525d796, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 11400000, guid: 5f460cec9e88ae844ad9d902d4fae17b, type: 2}
+  killDistance: 30

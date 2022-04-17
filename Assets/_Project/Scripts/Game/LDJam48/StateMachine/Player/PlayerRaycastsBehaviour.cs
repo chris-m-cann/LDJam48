@@ -64,16 +64,22 @@ namespace LDJam48.StateMachine.Player.Action
                 offset *= -1;
             }
 
-            var hit = Physics2D.BoxCast(castPoint, new Vector2(boxcastDepth, _colliders.horizontalDetectorSize.y), 0f, direction, rightWallX - leftWallX, dashWallMask);
+            var castBoxSize = new Vector2(boxcastDepth, _colliders.horizontalDetectorSize.y);
+            var hit = Physics2D.BoxCast(castPoint, castBoxSize, 0f, direction, rightWallX - leftWallX, dashWallMask);
             var hitX = finalX;
 
             if (hit.collider)
             {
                 hitX = hit.point.x;
             }
-            Debug.DrawLine(castPoint, new Vector3(hitX + offset, castPoint.y), Color.red, 1f);
 
-            
+            if (debugLogs)
+            {
+                Debug.Log($"Casting from {castPoint} in direction {direction}, distance {rightWallX - leftWallX}, hit {hit.collider}, hitx {hitX}, cast size {castBoxSize}");
+                Debug.DrawLine(castPoint, new Vector3(hitX + offset, castPoint.y), Color.red, 1f);
+            }
+
+
             var r = new Vector2(hitX + offset, transform.position.y);
             
             return r;

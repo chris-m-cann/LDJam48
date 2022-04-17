@@ -96,35 +96,11 @@ namespace LDJam48.LevelGen
         {
             // need to yeild here to give the world a chance to spawn so the things on our spawn layer can then interact with it
             yield return new WaitForFixedUpdate();
+            // yield return new WaitForSeconds(1);
 
             foreach (var layer in chunk.OnBuildProcessors)
             {
                 yield return StartCoroutine(layer.OnBuilt(new OnChunkBuilt.Parameters{ Chunk = chunk, ChunkStartPos = pos}));
-            }
-        }
-
-        private IEnumerator SpawnThings(Tilemap layer, Vector3 pos, int height, int width = 9)
-        {
-            if (layer == null) yield break;
-            
-            var startPos = pos + new Vector3(-4, -.5f);
-            var startCell = layer.WorldToCell(startPos);
-            var cell = new Vector3Int(startCell.x, startCell.y, startCell.z);
-
-            for (int x = 0; x < width; ++x)
-            {
-                for (int y = 0; y < height; ++y)
-                {
-                    cell.x = x + startCell.x;
-                    cell.y = startCell.y - y;
-                    var tile = layer.GetTile(cell);
-                    if (tile is PrefabHolderTile holder)
-                    {
-                        var worldPos = layer.CellToWorld(cell) + new Vector3(.5f, .5f);
-                        Instantiate(holder.Prefab, worldPos,
-                            layer.GetTransformMatrix(cell).rotation);
-                    }
-                }
             }
         }
 

@@ -9,36 +9,41 @@ namespace Util
     {
         [SerializeField] private GameObject prefab;
 
+        public Matrix4x4 Mat;
+
+        public GameObject Prefab => prefab;
 
         public override void GetTileData(Vector3Int position, ITilemap tilemap, ref TileData tileData)
         {
             base.GetTileData(position, tilemap, ref tileData);
             var sprite = prefab.GetComponentInChildren<SpriteRenderer>();
 
+            Mat = tilemap.GetTransformMatrix(position);
+
             if (!Application.isPlaying) tileData.sprite = sprite.sprite;
             else tileData.sprite = null;
-            tileData.gameObject = prefab;
+            tileData.gameObject = null; // prefab; dont do this as tilemap will instantiate without object pooling
         }
 
         public override bool StartUp(Vector3Int position, ITilemap tilemap, GameObject go)
         {
-            if (go != null)
-            {
-                var transform = tilemap.GetTransformMatrix(position);
-                go.transform.rotation = transform.rotation;
-            }
+            Debug.Log($"{position} rotation ITilemap = {tilemap.GetTransformMatrix(position).rotation.eulerAngles}");
+            Debug.Log($"{position} position ITilemap = {tilemap.GetTransformMatrix(position).GetPosition()}");
+            // StartUp(tilemap.GetTransformMatrix(position), go);
+            
+            // var worldPos = tilemap.CellToWorld(cell) + new Vector3(.5f, .5f);
+            // Debug.Log($"{cell} spike rot = {_tilemap.GetTransformMatrix(cell).rotation.eulerAngles}");
+            // var go = Instantiate(holder.Prefab, worldPos, _tilemap.GetTransformMatrix(cell).rotation);
 
             return base.StartUp(position, tilemap, go);
         }
 
-        // OP that I pinched the Prefab part of this from has this but not sure why its needed so commented out for now
-        // public override bool GetTileAnimationData(Vector3Int location, ITilemap tileMap, ref TileAnimationData tileAnimationData)
-        // {
-        //     tileAnimationData.animatedSprites = new Sprite[] { null};
-        //     tileAnimationData.animationSpeed = 0;
-        //     tileAnimationData.animationStartTime = 0;
-        //     return true;
-        // }
-
+        public void StartUp(Matrix4x4 tilemapTransform, GameObject go)
+        {
+            if (go != null)
+            {
+                go.transform.rotation = tilemapTransform.rotation;
+            }
+        }
     }
 }

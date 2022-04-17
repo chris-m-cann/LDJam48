@@ -276,6 +276,7 @@ GameObject:
   - component: {fileID: 6776963253789686665}
   - component: {fileID: 3287513991671551602}
   - component: {fileID: 7770850746023616291}
+  - component: {fileID: 258591524823205720}
   m_Layer: 0
   m_Name: Mimic
   m_TagString: Untagged
@@ -434,3 +435,17 @@ MonoBehaviour:
   gems:
   - {fileID: 4019505570478468711, guid: bf258c1a659006148b1b223bc6c78492, type: 3}
   offsetMax: 1
+--- !u!114 &258591524823205720
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6776963253789686666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b68852f22d5e457b919e25218525d796, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 11400000, guid: 5f460cec9e88ae844ad9d902d4fae17b, type: 2}
+  killDistance: 30

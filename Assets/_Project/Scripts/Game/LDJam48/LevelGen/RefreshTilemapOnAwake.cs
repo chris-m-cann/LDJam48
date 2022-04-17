@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
@@ -11,11 +12,24 @@ namespace LDJam48.LevelGen
         
         private Tilemap _tilemap;
 
+        // dont call it twice!! it wipes the rotation from prefab tiles rotation matrix
         private void Awake()
         {
             _tilemap = GetComponent<Tilemap>();
+            // _tilemap.RefreshAllTiles();
+            
+        }
+
+        private void OnEnable()
+        {
             _tilemap.RefreshAllTiles();
             // RefreshTiles();
+        }
+
+        [ContextMenu("RefreshAllTiles")]
+        public void RefreshAllTiles()
+        {
+            _tilemap.RefreshAllTiles();
         }
 
         private void RefreshTiles()

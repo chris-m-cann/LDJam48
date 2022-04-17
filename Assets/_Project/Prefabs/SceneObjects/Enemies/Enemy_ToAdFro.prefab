@@ -162,6 +162,6 @@ MonoBehaviour:
   speed: 4
   blockers:
     serializedVersion: 2
-    m_Bits: 4224
+    m_Bits: 20608
   castDistance: 0.4
   faceTravel: 0

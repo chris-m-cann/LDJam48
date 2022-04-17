@@ -17,14 +17,14 @@ namespace LDJam48.LevelGen
     public class IntensityBasedChunkGenerator: ChunkGenerator
     {
         public ChunkGroup Group;
-        public int IntensityFuzz;
+        public Range IntensityFuzz;
 
         [NonSerialized] private Dictionary<int, ScrabbleBag<LevelChunk>> _chunks;
         public override LevelChunk GenerateNext(GenerationData data)
         {
             Range allowed = new Range{
-                Start = data.Intensity - IntensityFuzz,
-                End = data.Intensity + IntensityFuzz
+                Start = data.Intensity - IntensityFuzz.Start,
+                End = data.Intensity + IntensityFuzz.End
 
             };
 
@@ -53,7 +53,7 @@ namespace LDJam48.LevelGen
             }
 
             var last = lessThan.Max(it => it.Key);
-            allowed = new Range(last - IntensityFuzz, last);
+            allowed = new Range(last - IntensityFuzz.Start, last);
             candidates = _chunks.Where(it => allowed.Contains(it.Key)).Select(it => it.Value).ToArray();
 
             if (candidates.Length == 0)

@@ -1,13 +1,15 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using Util;
 
 namespace LDJam48.LevelGen
 {
     [RequireComponent(typeof(Tilemap))]
     public class SpawningLayer : OnChunkBuilt
     {
-
+        [SerializeField] private bool disableOnComplete;
+        
         protected Tilemap _tilemap;
 
         private void Awake()
@@ -25,11 +27,11 @@ namespace LDJam48.LevelGen
             }
             finally
             {
-                gameObject.SetActive(false);
+                gameObject.SetActive(!disableOnComplete);
             }
         }
 
-        protected virtual void SpawnImpl(Parameters spawn)
+        protected void SpawnImpl(Parameters spawn)
         {
             var height = spawn.Chunk.Height;
             var width = spawn.Chunk.Width;
@@ -44,11 +46,15 @@ namespace LDJam48.LevelGen
                     cell.x = x + startCell.x;
                     cell.y = startCell.y - y;
                     var tile = _tilemap.GetTile(cell);
-                    if (tile is PrefabHolderTile holder)
+                    if (tile is PrefabTile holder)
                     {
                         var worldPos = _tilemap.CellToWorld(cell) + new Vector3(.5f, .5f);
-                        Instantiate(holder.Prefab, worldPos,
-                            _tilemap.GetTransformMatrix(cell).rotation);
+                        Debug.Log($"{cell} spike rot = {_tilemap.GetTransformMatrix(cell).rotation.eulerAngles}");
+                        Debug.Log($"{cell} spike edito rot = {_tilemap.GetEditorPreviewTransformMatrix(cell).rotation.eulerAngles}");
+                        var go = Instantiate(holder.Prefab, worldPos, _tilemap.GetTransformMatrix(cell).rotation);
+
+                        // _tilemap.GetEditorPreviewTile()
+                        // holder.StartUp(_tilemap.GetTransformMatrix(cell), go);
                     }
                 }
             }

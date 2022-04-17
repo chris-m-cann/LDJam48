@@ -1,3 +1,5 @@
+using System;
+using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
@@ -26,6 +28,28 @@ namespace LDJam48.LevelGen
                 case Neighbor.IsRule6Tile: return rule4Tile != null && tile == rule4Tile;
             }
             return base.RuleMatch(neighbor, tile);
+        }
+
+        [Button("Order rules")]
+        [ContextMenu("Order Items")]
+        public void OrderRules()
+        {
+            m_TilingRules.Sort(CompareRules);
+        }
+        
+        public int CompareRules(TilingRule lhs, TilingRule rhs)
+        {
+            var lhsContainsCustomRules = lhs.m_Neighbors.Exists(rule => rule >= Neighbor.IsRule3Tile);
+            var rhsContainsCustomRules = rhs.m_Neighbors.Exists(rule => rule >= Neighbor.IsRule3Tile);
+
+            int customRulesComp = rhsContainsCustomRules.CompareTo(lhsContainsCustomRules);
+
+            if (customRulesComp != 0)
+            {
+                return customRulesComp;
+            }
+            
+            return rhs.m_Neighbors.Count.CompareTo(lhs.m_Neighbors.Count);
         }
 
         private bool IsTaggedTile(TileBase tile)

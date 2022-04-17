@@ -12,7 +12,7 @@ namespace LDJam48.LevelGen
         public override void GetTileData(Vector3Int position, ITilemap tilemap, ref TileData tileData)
         {
             base.GetTileData(position, tilemap, ref tileData);
-            bool display = !HideAtRuntime || (Application.isEditor && !Application.isPlaying);
+            bool display = !Application.isPlaying || !HideAtRuntime;
             tileData.sprite = display ? Sprite : null;
             tileData.color = display ? Colour : Color.clear;
         }

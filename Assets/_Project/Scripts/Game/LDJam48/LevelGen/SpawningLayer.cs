@@ -49,12 +49,7 @@ namespace LDJam48.LevelGen
                     if (tile is PrefabTile holder)
                     {
                         var worldPos = _tilemap.CellToWorld(cell) + new Vector3(.5f, .5f);
-                        Debug.Log($"{cell} spike rot = {_tilemap.GetTransformMatrix(cell).rotation.eulerAngles}");
-                        Debug.Log($"{cell} spike edito rot = {_tilemap.GetEditorPreviewTransformMatrix(cell).rotation.eulerAngles}");
-                        var go = Instantiate(holder.Prefab, worldPos, _tilemap.GetTransformMatrix(cell).rotation);
-
-                        // _tilemap.GetEditorPreviewTile()
-                        // holder.StartUp(_tilemap.GetTransformMatrix(cell), go);
+                        Instantiate(holder.Prefab, worldPos, _tilemap.GetTransformMatrix(cell).rotation);
                     }
                 }
             }

@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: mat_PotionFill
-  m_Shader: {fileID: -6465566751694194690, guid: c25b17f9a629a6643af05baeb5962179, type: 3}
+  m_Name: mat_scanline
+  m_Shader: {fileID: -6465566751694194690, guid: 865d4aca3dcd30b42838ebe7435f9ae7, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
   m_LightmapFlags: 4
@@ -21,7 +21,11 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 7f5cc6226aa40854eb1f35a008bffa72, type: 3}
+        m_Texture: {fileID: 2800000, guid: de2d41b8d1c6f7e4a8ff714caf4596e3, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Mask:
+        m_Texture: {fileID: 2800000, guid: 01ff2d96d45f25f40b7d54a9c52e6eb7, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
@@ -38,8 +42,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - Fill: 0.22
-    - MaxRotationDegrees: 15
-    - SloshFequencyFactor: 2
-    m_Colors: []
+    - Disolve: 0.39
+    m_Colors:
+    - MaskColour: {r: 1, g: 0, b: 1, a: 1}
   m_BuildTextureStacks: []

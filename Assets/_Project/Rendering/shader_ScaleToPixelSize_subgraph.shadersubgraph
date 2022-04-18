@@ -1,5 +1,5 @@
 {
-    "m_SGVersion": 2,
+    "m_SGVersion": 3,
     "m_Type": "UnityEditor.ShaderGraph.GraphData",
     "m_ObjectId": "b68d7738af2041c995b2caf0c2ca9302",
     "m_Properties": [
@@ -8,6 +8,12 @@
         }
     ],
     "m_Keywords": [],
+    "m_Dropdowns": [],
+    "m_CategoryData": [
+        {
+            "m_Id": "81e0141462ed4d1883816e53d75ce0d9"
+        }
+    ],
     "m_Nodes": [
         {
             "m_Id": "89ac6aefcc0641c49bced3cb974707d0"
@@ -134,10 +140,11 @@
         "serializedMesh": {
             "m_SerializedMesh": "{\"mesh\":{\"instanceID\":0}}",
             "m_Guid": ""
-        }
+        },
+        "preventRotation": false
     },
     "m_Path": "Sub Graphs",
-    "m_ConcretePrecision": 0,
+    "m_GraphPrecision": 0,
     "m_PreviewMode": 2,
     "m_OutputNode": {
         "m_Id": "89ac6aefcc0641c49bced3cb974707d0"
@@ -312,6 +319,18 @@
     "m_Property": {
         "m_Id": "d1c146393749443ca7e6c7ccba326f31"
     }
+}
+
+{
+    "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.CategoryData",
+    "m_ObjectId": "81e0141462ed4d1883816e53d75ce0d9",
+    "m_Name": "",
+    "m_ChildObjectList": [
+        {
+            "m_Id": "d1c146393749443ca7e6c7ccba326f31"
+        }
+    ]
 }
 
 {
@@ -535,6 +554,8 @@
     "m_DefaultReferenceName": "Vector2",
     "m_OverrideReferenceName": "",
     "m_GeneratePropertyBlock": true,
+    "m_UseCustomSlotLabel": false,
+    "m_CustomSlotLabel": "",
     "m_Precision": 0,
     "overrideHLSLDeclaration": false,
     "hlslDeclarationOverride": 0,

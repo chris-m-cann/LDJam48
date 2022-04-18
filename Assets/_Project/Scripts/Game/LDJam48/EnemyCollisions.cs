@@ -1,6 +1,4 @@
-using LDJam48.PlayerState;
 using Sirenix.OdinInspector;
-using UnityEditor.U2D.Sprites;
 using UnityEngine;
 using UnityEngine.Events;
 using Util;

@@ -31,6 +31,7 @@ namespace LDJam48
         [SerializeField] private float vignetteTime;
 
         [SerializeField] private Material hurtMaterial;
+        [SerializeField] private Material resetMaterial;
         [SerializeField] private float hurtTime;
 
         [SerializeField] private bool godmode;
@@ -40,7 +41,6 @@ namespace LDJam48
         private bool _isInvincible;
         private float _prevVignetteIntensity;
         private Vector2 _prevVignetteCenter;
-        private Material _prevMat;
         private void Awake()
         {
             _sprite = GetComponent<SpriteRenderer>();
@@ -68,6 +68,8 @@ namespace LDJam48
                 }
                 else
                 {
+                    onHurt?.Invoke();
+                    
                     hurtEffect.Raise(new ParticleEffectRequest
                     {
                         Position = transform.position,
@@ -90,15 +92,13 @@ namespace LDJam48
                         });
                     }
                     
-                    _prevMat = _sprite.material;
                     _sprite.material = hurtMaterial;
             
                     this.ExecuteAfter(hurtTime, () =>
                     {
-                        _sprite.material = _prevMat;
+                        _sprite.material = resetMaterial;
                     });
                     
-                    onHurt?.Invoke();
                 }
             }
 

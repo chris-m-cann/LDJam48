@@ -14,8 +14,8 @@ namespace LDJam48
         [SerializeField] private ObservableIntVariable health;
         [SerializeField] private IntReference healthPerLife;
         [SerializeField] private float flashTime = .2f;
-        
-        
+
+
         private Image _image;
         private Material _mat;
         private Color _c;

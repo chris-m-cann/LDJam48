@@ -50,7 +50,16 @@ MonoBehaviour:
       Data: 2|LDJam48.StateMachine.OneShotAction[], Assembly-CSharp
     - Name: 
       Entry: 12
-      Data: 0
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 3|LDJam48.StateMachine.Action.ChangeAnimStateAction, Assembly-CSharp
+    - Name: AnimState
+      Entry: 1
+      Data: player_bounce
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: 
       Entry: 13
       Data: 
@@ -58,18 +67,6 @@ MonoBehaviour:
       Entry: 8
       Data: 
     - Name: OnExitActions
-      Entry: 7
-      Data: 3|LDJam48.StateMachine.OneShotAction[], Assembly-CSharp
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: OnUpdateActions
       Entry: 7
       Data: 4|LDJam48.StateMachine.OneShotAction[], Assembly-CSharp
     - Name: 
@@ -81,7 +78,7 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: OnFixedUpdateActions
+    - Name: OnUpdateActions
       Entry: 7
       Data: 5|LDJam48.StateMachine.OneShotAction[], Assembly-CSharp
     - Name: 
@@ -93,3 +90,16 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: OnFixedUpdateActions
+      Entry: 7
+      Data: 6|LDJam48.StateMachine.OneShotAction[], Assembly-CSharp
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+  LogTrueConditions: 0

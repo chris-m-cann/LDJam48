@@ -1,6 +1,8 @@
 using System;
+using Sirenix.OdinInspector;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 using Util;
 using Util.Var;
@@ -14,7 +16,6 @@ namespace LDJam48
         [SerializeField] private ObservableIntVariable health;
         [SerializeField] private IntReference healthPerLife;
         [SerializeField] private float flashTime = .2f;
-
 
         private Image _image;
         private Material _mat;

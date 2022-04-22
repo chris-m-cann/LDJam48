@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: mat_PotionFill
+  m_Name: mat_PotionFill_Unscaled
   m_Shader: {fileID: -6465566751694194690, guid: c25b17f9a629a6643af05baeb5962179, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
@@ -41,6 +41,6 @@ Material:
     - Fill: 0
     - MaxRotationDegrees: 15
     - SloshFequencyFactor: 2
-    - _UseUnscaledTime: 0
+    - _UseUnscaledTime: 1
     m_Colors: []
   m_BuildTextureStacks: []

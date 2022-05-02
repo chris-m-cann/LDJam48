@@ -1,0 +1,101 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!244 &-9131392343982812841
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: 8d36a33d166518447bae5cee037022f8
+  m_EffectName: Lowpass Simple
+  m_MixLevel: 72cbd5a7b39cf9947bfa00a2e7f7a1e1
+  m_Parameters:
+  - m_ParameterName: Cutoff freq
+    m_GUID: fb794d6e87c27644da59fec7dbb6e2a1
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
+--- !u!245 &-6439561393541701126
+AudioMixerSnapshotController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: MusicPaused
+  m_AudioMixer: {fileID: 24100000}
+  m_SnapshotID: 9cc1da215029bbd47965c4191585d0e3
+  m_FloatValues:
+    fb794d6e87c27644da59fec7dbb6e2a1: 1125
+  m_TransitionOverrides: {}
+--- !u!241 &24100000
+AudioMixerController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: music_mixer
+  m_OutputGroup: {fileID: -3080100638481153203, guid: 92cf64eafba294446ae244dcd00ffe48, type: 2}
+  m_MasterGroup: {fileID: 24300002}
+  m_Snapshots:
+  - {fileID: 24500006}
+  - {fileID: -6439561393541701126}
+  m_StartSnapshot: {fileID: 24500006}
+  m_SuspendThreshold: -80
+  m_EnableSuspend: 1
+  m_UpdateMode: 1
+  m_ExposedParameters:
+  - guid: 36ff68aa08556b343b04ac7417a2c13c
+    name: MusicVolume
+  m_AudioMixerGroupViews:
+  - guids:
+    - f41b78bdc49c6044da8c7cb41a612079
+    name: View
+  m_CurrentViewIndex: 0
+  m_TargetSnapshot: {fileID: 24500006}
+--- !u!243 &24300002
+AudioMixerGroupController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Master
+  m_AudioMixer: {fileID: 24100000}
+  m_GroupID: f41b78bdc49c6044da8c7cb41a612079
+  m_Children: []
+  m_Volume: 36ff68aa08556b343b04ac7417a2c13c
+  m_Pitch: d2724792a1dddfe4ca894e6cc7604d5f
+  m_Send: 00000000000000000000000000000000
+  m_Effects:
+  - {fileID: 24400004}
+  - {fileID: -9131392343982812841}
+  m_UserColorIndex: 0
+  m_Mute: 0
+  m_Solo: 0
+  m_BypassEffects: 0
+--- !u!244 &24400004
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: 0184fbba695d3b54ba4c49152770f904
+  m_EffectName: Attenuation
+  m_MixLevel: ed1cb72256888374f82299425eff7780
+  m_Parameters: []
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
+--- !u!245 &24500006
+AudioMixerSnapshotController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: MusicUnpaused
+  m_AudioMixer: {fileID: 24100000}
+  m_SnapshotID: e7044c9dcb4218f468d805b9a6860d35
+  m_FloatValues:
+    fb794d6e87c27644da59fec7dbb6e2a1: 22000
+  m_TransitionOverrides: {}

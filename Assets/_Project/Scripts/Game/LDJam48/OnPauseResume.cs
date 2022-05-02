@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.Events;
 using Util.Var;
 using Util.Var.Observe;
@@ -11,7 +12,7 @@ namespace LDJam48
         [SerializeField] private ObservableStringVariable activeActionMap;
         [SerializeField] private string pauseActionMap = "Menu";
         [SerializeField] private BoolReference isPaused;
-        
+
         [SerializeField] private UnityEvent onPause;
         [SerializeField] private UnityEvent onResume;
 

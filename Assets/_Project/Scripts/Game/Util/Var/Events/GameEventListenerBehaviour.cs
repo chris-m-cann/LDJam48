@@ -22,7 +22,7 @@ namespace Util.Var.Events
             gameEvent.OnEventTriggered -= OnEventRaised;
         }
 
-        public void OnEventRaised(T t)
+        public virtual void OnEventRaised(T t)
         {
             onEventRaised.Invoke(t);
         }

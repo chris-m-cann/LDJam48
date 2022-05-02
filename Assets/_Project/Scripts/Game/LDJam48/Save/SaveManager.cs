@@ -9,7 +9,7 @@ namespace LDJam48.Save
     {
         [SerializeField] private SaveableSoCollection saveData;
         [SerializeField] private SaveStorageSo storage;
-        [SerializeField] private bool loadOnEnable = true;
+        [SerializeField] private bool loadOnStart = true;
 
         private void OnEnable()
         {
@@ -23,6 +23,15 @@ namespace LDJam48.Save
             saveData.OnRequestSave -= Save;
             saveData.OnRequestLoad -= Load;
             saveData.Disable();
+        }
+
+        private void Start()
+        {
+            // is in start as certain things (namely AuioMixer.SetFloat) wont work until start
+            if (loadOnStart)
+            {
+                Load();
+            }
         }
 
         [HorizontalGroup("Buttons"), Button("Save")]

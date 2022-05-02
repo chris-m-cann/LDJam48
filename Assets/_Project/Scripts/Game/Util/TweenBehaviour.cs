@@ -158,6 +158,16 @@ namespace Util
                 _tweeners.Remove(hash);
             }
         }
+
+        public void StopAll()
+        {
+            foreach (var tweener in _tweeners)
+            {
+                tweener.Value.Kill();
+            }
+            
+            _tweeners.Clear();
+        }
         
         public TweenDescription GetTween(int index)
         {

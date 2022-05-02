@@ -15,25 +15,37 @@ MonoBehaviour:
   Clips:
   - clip: {fileID: 8300000, guid: 290f274e9c2df5d4a8ac49490df225b1, type: 3}
     volume: 1
-    mixer: {fileID: 0}
+    mixer: {fileID: 8454096155543783724, guid: 92cf64eafba294446ae244dcd00ffe48, type: 2}
     Loop: 0
     VaryPitch: 0
     PitchFactor:
       Start: 0
       End: 0
+    Transition:
+      TransitionType: 0
+      DurationIn: 0
+      DurationOut: 0
   - clip: {fileID: 8300000, guid: bd409f08b2f4d9c44840fabb10fecdbe, type: 3}
     volume: 1
-    mixer: {fileID: 0}
+    mixer: {fileID: 8454096155543783724, guid: 92cf64eafba294446ae244dcd00ffe48, type: 2}
     Loop: 0
     VaryPitch: 0
     PitchFactor:
       Start: 0
       End: 0
+    Transition:
+      TransitionType: 0
+      DurationIn: 0
+      DurationOut: 0
   - clip: {fileID: 8300000, guid: 73538a6d52e71484a882f7336fea3a08, type: 3}
     volume: 0.482
-    mixer: {fileID: 0}
+    mixer: {fileID: 8454096155543783724, guid: 92cf64eafba294446ae244dcd00ffe48, type: 2}
     Loop: 0
     VaryPitch: 0
     PitchFactor:
       Start: 0
       End: 0
+    Transition:
+      TransitionType: 0
+      DurationIn: 0
+      DurationOut: 0

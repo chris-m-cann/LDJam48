@@ -20,6 +20,7 @@ namespace Util.UI
         public Binding<string> stringBinding;
         public Binding<Sprite> spriteBinding;
         public Binding<bool> boolBinding;
+        public Binding<float> floatBinding;
 
         [Serializable]
         public struct Binding<T>
@@ -108,6 +109,7 @@ namespace Util.UI
             stringBinding.UnBind();
             spriteBinding.UnBind();
             boolBinding.UnBind();
+            floatBinding.UnBind();
         }
 
         private void BindUp(Model model)
@@ -125,6 +127,7 @@ namespace Util.UI
             stringBinding.Bind(field, model);
             spriteBinding.Bind(field, model);
             boolBinding.Bind(field, model);
+            floatBinding.Bind(field, model);
         }
         private void BindUpSaveable()
         {
@@ -142,6 +145,7 @@ namespace Util.UI
             stringBinding.Bind(field, saveable);
             spriteBinding.Bind(field, saveable);
             boolBinding.Bind(field, saveable);
+            floatBinding.Bind(field, saveable);
         }
 
             public FieldInfo[] GetFeilds()
@@ -207,7 +211,8 @@ namespace Util.UI
             typeof(Sprite),
             typeof(ObservableIntVariable),
             typeof(ObservableStringVariable),
-            typeof(bool)
+            typeof(bool),
+            typeof(float)
         };
     }
 }

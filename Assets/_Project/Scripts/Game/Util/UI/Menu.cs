@@ -5,6 +5,8 @@ using UnityEngine.Events;
 
 namespace Util.UI
 {
+    // Todo(chris): currently this isnt really using the explicit transitions and relies on the indices in transitions and actions
+    // needs making a bit more user friendly, seperating the transitions form the events that can fire perhaps?
     [RequireComponent(typeof(TweenBehaviour))]
     public class Menu : MonoBehaviour
     {

@@ -15,9 +15,13 @@ MonoBehaviour:
   Clips:
   - clip: {fileID: 8300000, guid: d455b625d6f1eee458a1fae3abd2d6bf, type: 3}
     volume: 1
-    mixer: {fileID: 0}
+    mixer: {fileID: 8454096155543783724, guid: 92cf64eafba294446ae244dcd00ffe48, type: 2}
     Loop: 0
     VaryPitch: 0
     PitchFactor:
       Start: 0
       End: 0
+    Transition:
+      TransitionType: 0
+      DurationIn: 0
+      DurationOut: 0

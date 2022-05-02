@@ -21,6 +21,7 @@ namespace Util.UI
         private SerializedProperty _propStringEvent;
         private SerializedProperty _propSpriteEvent;
         private SerializedProperty _propBoolEvent;
+        private SerializedProperty _propFloatEvent;
         private SerializedProperty _propFieldIndex;
         private SerializedProperty _propFieldName;
 
@@ -33,6 +34,7 @@ namespace Util.UI
             _propStringEvent = serializedObject.FindProperty(nameof(ModelBinding.stringBinding)).FindPropertyRelative(nameof(ModelBinding.Binding<int>.OnValueChanged));
             _propSpriteEvent = serializedObject.FindProperty(nameof(ModelBinding.spriteBinding)).FindPropertyRelative(nameof(ModelBinding.Binding<int>.OnValueChanged));
             _propBoolEvent = serializedObject.FindProperty(nameof(ModelBinding.boolBinding)).FindPropertyRelative(nameof(ModelBinding.Binding<int>.OnValueChanged));
+            _propFloatEvent = serializedObject.FindProperty(nameof(ModelBinding.floatBinding)).FindPropertyRelative(nameof(ModelBinding.Binding<int>.OnValueChanged));
             _propFieldIndex = serializedObject.FindProperty("fieldIndex");
             _propFieldName = serializedObject.FindProperty("fieldName");
         }
@@ -55,6 +57,7 @@ namespace Util.UI
                 DisplayEventIfRequired<string>(field, _propStringEvent);
                 DisplayEventIfRequired<Sprite>(field, _propSpriteEvent);
                 DisplayEventIfRequired<bool>(field, _propBoolEvent);
+                DisplayEventIfRequired<float>(field, _propFloatEvent);
             }
         }
 

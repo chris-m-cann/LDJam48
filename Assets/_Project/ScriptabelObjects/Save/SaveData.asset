@@ -15,3 +15,4 @@ MonoBehaviour:
   Saveables:
   - {fileID: 11400000, guid: 847148a2f0790df47bc4b02a3576380d, type: 2}
   - {fileID: 11400000, guid: 6db8c36701da3c44baffd2ff2be059d8, type: 2}
+  - {fileID: 11400000, guid: 501b09d2ea3ffc24ab04a753a43fab55, type: 2}

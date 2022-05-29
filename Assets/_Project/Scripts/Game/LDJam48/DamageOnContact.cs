@@ -32,7 +32,6 @@ namespace LDJam48
             {
                 if (layersToDamage.Contains(other.gameObject.layer))
                 {
-                    Debug.Log($"DamageOnContact: {gameObject.name} hit {other.gameObject.name}");
                     other.GetComponent<IDamageable>()?.Damage(amount, gameObject);
                 }
             }

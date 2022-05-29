@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using DG.Tweening;
 using Sirenix.OdinInspector;
 using Unity.VisualScripting;
@@ -19,6 +20,13 @@ namespace LDJam48
         [SerializeField] private float tweenDelay;
         [SerializeField] private float minTweenSpeed;
         [SerializeField] private float maxTweenTime;
+
+        [SerializeField] private AudioSource source;
+        [SerializeField] private AudioClipAsset clip;
+        [SerializeField] private float minPitch;
+        [SerializeField] private float maxPitch;
+        [SerializeField] private float gap;
+        
         
         [SerializeField] private UnityEvent<int> onHealthIncrease;
         [SerializeField] private UnityEvent<int> onLivesIncrease;
@@ -51,6 +59,32 @@ namespace LDJam48
                 .SetUpdate(true);
 
             _tweener.Play();
+
+            StartCoroutine(CoTweenSoundPitch());
+        }
+
+        private IEnumerator CoTweenSoundPitch()
+        {
+            
+            var time = Mathf.Min(maxTweenTime, totalHealth.Value * minTweenSpeed);
+            var start = Time.unscaledTime;
+            var end = start + time;
+            var elem = clip.Clips.RandomElement();
+            float length = elem.clip.length;
+            float lastPlaying = 0;
+            
+            while (Time.unscaledTime < end)
+            {
+                var t = (Time.unscaledTime - start) / time;
+                var pitch = Mathf.Lerp(minPitch, maxPitch, t);
+
+                elem.SetSourceDetails(source);
+                source.pitch = pitch;
+                source.Play();
+
+                yield return new WaitForSecondsRealtime(gap);
+            }
+
         }
 
         private void OnDisable()

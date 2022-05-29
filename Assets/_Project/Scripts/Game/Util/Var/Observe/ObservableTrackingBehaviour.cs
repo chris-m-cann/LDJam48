@@ -61,6 +61,8 @@ namespace Util.Var.Observe
             {
                 onValueDecreased?.Invoke(t);
             }
+
+            _prev = t;
         }
     }
 }

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8463032002252643133}
   - component: {fileID: 8463032002252643134}
   - component: {fileID: 8463032002252643135}
+  - component: {fileID: 8947325841380811388}
   m_Layer: 0
   m_Name: AudioManager
   m_TagString: Untagged
@@ -96,6 +97,41 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &8947325841380811388
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8463032002252643128}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a051f7bbf94940a688545d0fa9cb0027, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  observable: {fileID: 11400000, guid: 177353dd7b20d9746a226f30ed2fb049, type: 2}
+  onValueChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  onValueIncreased:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: fe62c46c8f30fda40800c60b8eede838, type: 2}
+        m_TargetAssemblyTypeName: Util.Var.Events.GameEvent`1[[Util.AudioClipAsset,
+          Assembly-CSharp
+        m_MethodName: Raise
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: 7faa45caaf52e1f49ad5c3788e9fd40f, type: 2}
+          m_ObjectArgumentAssemblyTypeName: Util.AudioClipAsset, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onValueDecreased:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &2623791037728273393
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -103,6 +139,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8463032002252643133}
     m_Modifications:
+    - target: {fileID: 5844316379139318400, guid: 625122545353a824490c02b21ccdcca4, type: 3}
+      propertyPath: numberOfSources
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 5844316379139318401, guid: 625122545353a824490c02b21ccdcca4, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -151,7 +191,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sfx
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5844316379139318403, guid: 625122545353a824490c02b21ccdcca4, type: 3}
+    - {fileID: 5844316379139318402, guid: 625122545353a824490c02b21ccdcca4, type: 3}
+    - {fileID: 5844316379139318413, guid: 625122545353a824490c02b21ccdcca4, type: 3}
+    - {fileID: 5844316379139318412, guid: 625122545353a824490c02b21ccdcca4, type: 3}
+    - {fileID: 5844316379139318415, guid: 625122545353a824490c02b21ccdcca4, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 625122545353a824490c02b21ccdcca4, type: 3}
 --- !u!4 &8463032002457440624 stripped
 Transform:
@@ -165,6 +210,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8463032002252643133}
     m_Modifications:
+    - target: {fileID: 2539998171968404328, guid: d3e5c863e016fc54aaed9190688fde40, type: 3}
+      propertyPath: numberOfSources
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2539998171968404340, guid: d3e5c863e016fc54aaed9190688fde40, type: 3}
       propertyPath: m_Name
       value: MusicManager

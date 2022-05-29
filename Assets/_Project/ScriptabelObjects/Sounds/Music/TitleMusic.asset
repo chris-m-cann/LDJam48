@@ -13,11 +13,41 @@ MonoBehaviour:
   m_Name: TitleMusic
   m_EditorClassIdentifier: 
   Clips:
-  - clip: {fileID: 8300000, guid: b36defe9b8715f44289614be77fad82f, type: 3}
+  - Enabled: 1
+    clip: {fileID: 8300000, guid: 480868e14bfe8dd4bb52da24986c1e18, type: 3}
     volume: 1
     mixer: {fileID: 24300002, guid: 5b5102140367c0846922d872dea112df, type: 2}
     Loop: 1
     VaryPitch: 0
+    Pitch: 1
+    PitchFactor:
+      Start: 0
+      End: 0
+    Transition:
+      TransitionType: 0
+      DurationIn: 0
+      DurationOut: 0
+  - Enabled: 1
+    clip: {fileID: 8300000, guid: 474c842121658a04e8ad9887616afbfc, type: 3}
+    volume: 1
+    mixer: {fileID: 24300002, guid: 5b5102140367c0846922d872dea112df, type: 2}
+    Loop: 1
+    VaryPitch: 0
+    Pitch: 1
+    PitchFactor:
+      Start: 0
+      End: 0
+    Transition:
+      TransitionType: 0
+      DurationIn: 0
+      DurationOut: 0
+  - Enabled: 1
+    clip: {fileID: 8300000, guid: 8381959f5aa59804eaca5eba837c6eea, type: 3}
+    volume: 1
+    mixer: {fileID: 24300002, guid: 5b5102140367c0846922d872dea112df, type: 2}
+    Loop: 1
+    VaryPitch: 0
+    Pitch: 1
     PitchFactor:
       Start: 0
       End: 0

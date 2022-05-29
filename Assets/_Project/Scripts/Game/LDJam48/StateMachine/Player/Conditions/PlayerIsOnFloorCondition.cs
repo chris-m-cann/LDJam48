@@ -6,6 +6,7 @@ namespace LDJam48.StateMachine.Player.Conditions
     [System.Serializable]
     public class PlayerIsOnFloorCondition : Condition
     {
+        public bool invert = false;
         protected override ICondition BuildRuntimeImpl()
         {
             return new PlayerIsOnFloorConditionRuntime();
@@ -34,7 +35,7 @@ namespace LDJam48.StateMachine.Player.Conditions
             }
 
 
-            return ponf;
+            return _source.invert ? !ponf : ponf;
         }
     }
 }

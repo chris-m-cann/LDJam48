@@ -34,8 +34,6 @@ namespace LDJam48
             bool wasEmpty = _ongoingRequests.Count == 0;
             _ongoingRequests.Add(requestor);
             
-            Debug.Log($"activation received, running values = {_ongoingRequests.Count }");
-            
             // if this is the first to ask for it to be activated then trigger the callback
             if (wasEmpty)
             {
@@ -47,7 +45,6 @@ namespace LDJam48
         {
             _ongoingRequests.Remove(requestor);
             
-            Debug.Log($"deactivation received, running values = {_ongoingRequests.Count}");
             // only trigger callback if everyone who requested activation have requested deactivation
             if (_ongoingRequests.Count == 0)
             {

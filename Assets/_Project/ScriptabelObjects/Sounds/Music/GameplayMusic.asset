@@ -13,15 +13,101 @@ MonoBehaviour:
   m_Name: GameplayMusic
   m_EditorClassIdentifier: 
   Clips:
-  - clip: {fileID: 8300000, guid: a7334caac8652d24c8cc942f5d4cee38, type: 3}
-    volume: 0.466
+  - Enabled: 1
+    clip: {fileID: 8300000, guid: 9aeb00715b00ab9469cef921f6cee460, type: 3}
+    volume: 1
     mixer: {fileID: 24300002, guid: 5b5102140367c0846922d872dea112df, type: 2}
     Loop: 1
     VaryPitch: 0
+    Pitch: 1
     PitchFactor:
       Start: 0
       End: 0
     Transition:
-      TransitionType: 2
-      DurationIn: 1
-      DurationOut: 1
+      TransitionType: 0
+      DurationIn: 0
+      DurationOut: 0
+  - Enabled: 1
+    clip: {fileID: 8300000, guid: 31e502a2ccf8dca41a9d1f4a5ddecadc, type: 3}
+    volume: 1
+    mixer: {fileID: 24300002, guid: 5b5102140367c0846922d872dea112df, type: 2}
+    Loop: 1
+    VaryPitch: 0
+    Pitch: 1
+    PitchFactor:
+      Start: 0
+      End: 0
+    Transition:
+      TransitionType: 0
+      DurationIn: 0
+      DurationOut: 0
+  - Enabled: 1
+    clip: {fileID: 8300000, guid: f60f32970cdb8aa448e5b8658ca7fbf9, type: 3}
+    volume: 1
+    mixer: {fileID: 24300002, guid: 5b5102140367c0846922d872dea112df, type: 2}
+    Loop: 1
+    VaryPitch: 0
+    Pitch: 1
+    PitchFactor:
+      Start: 0
+      End: 0
+    Transition:
+      TransitionType: 0
+      DurationIn: 0
+      DurationOut: 0
+  - Enabled: 1
+    clip: {fileID: 8300000, guid: 63cca55e19109a045beac9855291b112, type: 3}
+    volume: 1
+    mixer: {fileID: 24300002, guid: 5b5102140367c0846922d872dea112df, type: 2}
+    Loop: 1
+    VaryPitch: 0
+    Pitch: 1
+    PitchFactor:
+      Start: 0
+      End: 0
+    Transition:
+      TransitionType: 0
+      DurationIn: 0
+      DurationOut: 0
+  - Enabled: 1
+    clip: {fileID: 8300000, guid: df06bcd2ae475304686336e3723a0577, type: 3}
+    volume: 1
+    mixer: {fileID: 24300002, guid: 5b5102140367c0846922d872dea112df, type: 2}
+    Loop: 1
+    VaryPitch: 0
+    Pitch: 1
+    PitchFactor:
+      Start: 0
+      End: 0
+    Transition:
+      TransitionType: 0
+      DurationIn: 0
+      DurationOut: 0
+  - Enabled: 1
+    clip: {fileID: 8300000, guid: 010e97e31d267a34e96991950327b6de, type: 3}
+    volume: 1
+    mixer: {fileID: 24300002, guid: 5b5102140367c0846922d872dea112df, type: 2}
+    Loop: 1
+    VaryPitch: 0
+    Pitch: 1
+    PitchFactor:
+      Start: 0
+      End: 0
+    Transition:
+      TransitionType: 0
+      DurationIn: 0
+      DurationOut: 0
+  - Enabled: 1
+    clip: {fileID: 8300000, guid: 31c056ca852eff44bafe4659f68f80e9, type: 3}
+    volume: 1
+    mixer: {fileID: 24300002, guid: 5b5102140367c0846922d872dea112df, type: 2}
+    Loop: 1
+    VaryPitch: 0
+    Pitch: 1
+    PitchFactor:
+      Start: 0
+      End: 0
+    Transition:
+      TransitionType: 0
+      DurationIn: 0
+      DurationOut: 0

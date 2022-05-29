@@ -1,50 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &2215868286084674950
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6377352108432484652}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 2100000, guid: 2f232ee13a3f3ab4e98c1aaf4d9b5290, type: 2}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 2929781974967096326, guid: de0f2d52037f86b438d7d2a3d9c1fada, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 1
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!114 &3513808060014168388
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6377352108432484652}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d25e4f3e8e154df68273931cfce972e1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  colours: {fileID: 11400000, guid: 6b00a330c865904409f9fe572680299e, type: 2}
-  colourIndex: 0
-  alphaOverride: 1
 --- !u!1001 &5627700225727539355
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -140,6 +95,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: FlexibleButton_Icon
       objectReference: {fileID: 0}
+    - target: {fileID: 1628469620582433206, guid: 6299f682fcee6a0428ac59a5c6016274, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -42.04
+      objectReference: {fileID: 0}
+    - target: {fileID: 1628469620582433206, guid: 6299f682fcee6a0428ac59a5c6016274, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: -26.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1628469620582433206, guid: 6299f682fcee6a0428ac59a5c6016274, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.5400009
+      objectReference: {fileID: 0}
+    - target: {fileID: 1628469620582433206, guid: 6299f682fcee6a0428ac59a5c6016274, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 5.6800003
+      objectReference: {fileID: 0}
     - target: {fileID: 1628469620582433207, guid: 6299f682fcee6a0428ac59a5c6016274, type: 3}
       propertyPath: m_Name
       value: Icon
@@ -152,3 +123,48 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1628469620582433207, guid: 6299f682fcee6a0428ac59a5c6016274, type: 3}
   m_PrefabInstance: {fileID: 5627700225727539355}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2215868286084674950
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6377352108432484652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 2100000, guid: 2f232ee13a3f3ab4e98c1aaf4d9b5290, type: 2}
+  m_Color: {r: 0.93725497, g: 0.2784314, b: 0.43529415, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 2929781974967096326, guid: de0f2d52037f86b438d7d2a3d9c1fada, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 1
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!114 &3513808060014168388
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6377352108432484652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d25e4f3e8e154df68273931cfce972e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  colours: {fileID: 11400000, guid: 6b00a330c865904409f9fe572680299e, type: 2}
+  colourIndex: 0
+  alphaOverride: 1

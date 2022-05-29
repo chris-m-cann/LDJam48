@@ -15,7 +15,7 @@ namespace Util
 
         private void OnCollisionEnter2D(Collision2D other)
         {
-            if (layers.Contains(other.gameObject.layer))
+            if (isActiveAndEnabled && layers.Contains(other.gameObject.layer))
             {
                 onCollisionEnter.Invoke(other);
             }
@@ -23,7 +23,7 @@ namespace Util
 
         private void OnCollisionExit2D(Collision2D other)
         {
-            if (layers.Contains(other.gameObject.layer))
+            if (isActiveAndEnabled && layers.Contains(other.gameObject.layer))
             {
                 onCollisionExit.Invoke(other);
             }
@@ -31,7 +31,7 @@ namespace Util
 
         private void OnTriggerEnter2D(Collider2D other)
         {
-            if (layers.Contains(other.gameObject.layer))
+            if (isActiveAndEnabled && layers.Contains(other.gameObject.layer))
             {
                 onTriggerEnter.Invoke(other);
             }
@@ -39,7 +39,7 @@ namespace Util
 
         private void OnTriggerExit2D(Collider2D other)
         {
-            if (layers.Contains(other.gameObject.layer))
+            if (isActiveAndEnabled && layers.Contains(other.gameObject.layer))
             {
                 onTriggerExit.Invoke(other);
             }

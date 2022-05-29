@@ -1,5 +1,7 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace Util
 {
@@ -31,5 +33,42 @@ namespace Util
 
         public static T RandomElement<T>(this T[] self) => self[Random.Range(0, self.Length)];
         public static T RandomElement<T>(this List<T> self) => self[Random.Range(0, self.Count)];
+
+
+        public static T RandomElement<T>(this T[] self, Predicate<T> predicate, int attemptCount = 100)
+        {
+            for (int i = 0; i < attemptCount; i++)
+            {
+                T choice = self[Random.Range(0, self.Length)];
+                if (predicate(choice))
+                {
+                    return choice;
+                }
+            }
+
+            foreach (var element in self)
+            {
+                if (predicate(element))
+                {
+                    return element;
+                }
+            }
+
+            Debug.LogError("Predicate was false for all attempts");
+            return RandomElement(self);
+        }
+        public static T RandomElement<T>(this List<T> self, Predicate<T> predicate, int attemptCount = 10)
+        {
+            for (int i = 0; i < attemptCount; i++)
+            {
+                T choice = self[Random.Range(0, self.Count)];
+                if (predicate(choice))
+                {
+                    return choice;
+                }
+            }
+
+            throw new ArgumentException("Predicate was false for all attempts");
+        }
     }
 }

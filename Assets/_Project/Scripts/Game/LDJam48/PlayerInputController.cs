@@ -1,4 +1,6 @@
 using System;
+using LDJam48.Tut;
+using Sirenix.OdinInspector;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -27,6 +29,11 @@ namespace LDJam48
         [SerializeField] private VoidGameEvent slamAction;
         [SerializeField] private FloatReference dashPressTime;
         [SerializeField] private FloatReference slamPressTime;
+        [EnumToggleButtons] 
+        [SerializeField] private PlayerInputs initialAllowedInputs;
+
+        [SerializeField] private TutorialSaveableSO isTutorialEnabled;
+        
         
 
         public event Action<PlayerInputs> OnPlayerInput;
@@ -91,7 +98,8 @@ namespace LDJam48
 
         private void Awake()
         {
-            AllowedInputs = (PlayerInputs)0xFF; // all
+            // AllowedInputs = (PlayerInputs)0xFF; // all
+            AllowedInputs = isTutorialEnabled.Data.TutorialRequired ? initialAllowedInputs : (PlayerInputs)0xFF;
         }
 
         public void OnDash(Vector2 direction)

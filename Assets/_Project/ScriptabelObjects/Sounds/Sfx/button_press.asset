@@ -13,11 +13,13 @@ MonoBehaviour:
   m_Name: button_press
   m_EditorClassIdentifier: 
   Clips:
-  - clip: {fileID: 8300000, guid: 24b496e2bef763d4692ea84a3734285b, type: 3}
+  - Enabled: 0
+    clip: {fileID: 8300000, guid: f2f125aad111707479338386c776f35d, type: 3}
     volume: 1
     mixer: {fileID: 24300002, guid: 10f00995b6c937d4ba2926eed98aba44, type: 2}
     Loop: 0
     VaryPitch: 0
+    Pitch: 1
     PitchFactor:
       Start: 0
       End: 0
@@ -25,11 +27,13 @@ MonoBehaviour:
       TransitionType: 0
       DurationIn: 0
       DurationOut: 0
-  - clip: {fileID: 8300000, guid: bec8f01e56fc5ed41bf0d9cf46d61ec3, type: 3}
+  - Enabled: 1
+    clip: {fileID: 8300000, guid: a15f1fc33028a3446803ef324307d89d, type: 3}
     volume: 1
     mixer: {fileID: 24300002, guid: 10f00995b6c937d4ba2926eed98aba44, type: 2}
     Loop: 0
     VaryPitch: 0
+    Pitch: 1
     PitchFactor:
       Start: 0
       End: 0
@@ -37,11 +41,13 @@ MonoBehaviour:
       TransitionType: 0
       DurationIn: 0
       DurationOut: 0
-  - clip: {fileID: 8300000, guid: de0c774b7547cd448ace3c88b671a2c6, type: 3}
+  - Enabled: 1
+    clip: {fileID: 8300000, guid: 4293248fe72a110439cacee98c3ad438, type: 3}
     volume: 1
     mixer: {fileID: 24300002, guid: 10f00995b6c937d4ba2926eed98aba44, type: 2}
     Loop: 0
     VaryPitch: 0
+    Pitch: 1
     PitchFactor:
       Start: 0
       End: 0
@@ -49,11 +55,41 @@ MonoBehaviour:
       TransitionType: 0
       DurationIn: 0
       DurationOut: 0
-  - clip: {fileID: 8300000, guid: 05cfb76f2851bae4e9f7b69c7393e237, type: 3}
+  - Enabled: 0
+    clip: {fileID: 8300000, guid: 13b0330c7047ac343b80d42da1075191, type: 3}
     volume: 1
     mixer: {fileID: 24300002, guid: 10f00995b6c937d4ba2926eed98aba44, type: 2}
     Loop: 0
     VaryPitch: 0
+    Pitch: 1
+    PitchFactor:
+      Start: 0
+      End: 0
+    Transition:
+      TransitionType: 0
+      DurationIn: 0
+      DurationOut: 0
+  - Enabled: 0
+    clip: {fileID: 8300000, guid: 88cd9a3eb36d0784986d1c3e1d67ff51, type: 3}
+    volume: 1
+    mixer: {fileID: 24300002, guid: 10f00995b6c937d4ba2926eed98aba44, type: 2}
+    Loop: 0
+    VaryPitch: 0
+    Pitch: 1
+    PitchFactor:
+      Start: 0
+      End: 0
+    Transition:
+      TransitionType: 0
+      DurationIn: 0
+      DurationOut: 0
+  - Enabled: 0
+    clip: {fileID: 8300000, guid: 8a43e7b46250e8444b3466c183f4d592, type: 3}
+    volume: 1
+    mixer: {fileID: 24300002, guid: 10f00995b6c937d4ba2926eed98aba44, type: 2}
+    Loop: 0
+    VaryPitch: 0
+    Pitch: 1
     PitchFactor:
       Start: 0
       End: 0

@@ -9,6 +9,7 @@ namespace LDJam48
         [SerializeField] private AudioClipAssetGameEvent channel;
 
         [SerializeField] private AudioClipAsset[] clips;
+        [SerializeField] private AudioSource[] sources;
 
 
         public void PlaySound(int idx)
@@ -20,6 +21,28 @@ namespace LDJam48
             }
             
             channel.Raise(clips[idx]);
+        }
+
+        public void PlaySource(int idx)
+        {
+            if (!sources.HasIndex(idx))
+            {
+                Debug.LogError($"{name}.SoundsBehaviour.PlaySource does not have a source at index {idx}");
+                return;
+            }
+            
+            sources[idx].Play();
+        }
+        
+        public void StopSource(int idx)
+        {
+            if (!sources.HasIndex(idx))
+            {
+                Debug.LogError($"{name}.SoundsBehaviour.StopSource does not have a source at index {idx}");
+                return;
+            }
+            
+            sources[idx].Stop();
         }
     }
 }

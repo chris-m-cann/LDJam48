@@ -103,13 +103,22 @@ MonoBehaviour:
       Data: 3|LDJam48.StateMachine.OneShotAction[], Assembly-CSharp
     - Name: 
       Entry: 12
-      Data: 1
+      Data: 2
     - Name: 
       Entry: 7
       Data: 4|LDJam48.StateMachine.Action.ChangeAnimStateAction, Assembly-CSharp
     - Name: AnimState
       Entry: 1
       Data: player_wall_land
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 5|LDJam48.StateMachine.Action.PlayAudioSourceAction, Assembly-CSharp
+    - Name: sourceIndex
+      Entry: 3
+      Data: 0
     - Name: 
       Entry: 8
       Data: 
@@ -121,10 +130,19 @@ MonoBehaviour:
       Data: 
     - Name: OnExitActions
       Entry: 7
-      Data: 5|LDJam48.StateMachine.OneShotAction[], Assembly-CSharp
+      Data: 6|LDJam48.StateMachine.OneShotAction[], Assembly-CSharp
     - Name: 
       Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 7|LDJam48.StateMachine.Action.StopAudioSourceAction, Assembly-CSharp
+    - Name: sourceIndex
+      Entry: 3
       Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: 
       Entry: 13
       Data: 
@@ -133,7 +151,7 @@ MonoBehaviour:
       Data: 
     - Name: OnUpdateActions
       Entry: 7
-      Data: 6|LDJam48.StateMachine.OneShotAction[], Assembly-CSharp
+      Data: 8|LDJam48.StateMachine.OneShotAction[], Assembly-CSharp
     - Name: 
       Entry: 12
       Data: 0
@@ -145,7 +163,7 @@ MonoBehaviour:
       Data: 
     - Name: OnFixedUpdateActions
       Entry: 7
-      Data: 7|LDJam48.StateMachine.OneShotAction[], Assembly-CSharp
+      Data: 9|LDJam48.StateMachine.OneShotAction[], Assembly-CSharp
     - Name: 
       Entry: 12
       Data: 0
@@ -155,3 +173,4 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+  LogTrueConditions: 0

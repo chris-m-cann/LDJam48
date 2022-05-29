@@ -1,6 +1,9 @@
 using System;
+using System.Diagnostics.Tracing;
+using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.Audio;
+using Object = UnityEngine.Object;
 
 namespace Util
 {
@@ -13,12 +16,16 @@ namespace Util
     [Serializable]
     public class AudioClipEx
     {
+        public bool Enabled = true;
         public AudioClip clip;
         [Range(0, 1)] public float volume = 1f;
         public AudioMixerGroup mixer;
         public bool Loop;
         public bool VaryPitch;
-        [RangeSlider(-3, 3)]
+        
+        [ShowIf("@!VaryPitch"), Range(0, 3)]
+        public float Pitch = 1;
+        [ShowIf("@VaryPitch"), RangeSlider(-3, 3)]
         public Range PitchFactor;
         public AudioTransition Transition = new AudioTransition
         {
@@ -39,8 +46,16 @@ namespace Util
             }
             else
             {
-                source.pitch = 1;
+                source.pitch = Pitch;
             }
+        }
+
+        [Button]
+        public void PlaySound()
+        {
+            AudioSource source = Object.FindObjectOfType<AudioSource>();
+            SetSourceDetails(source);
+            source.Play();
         }
     }
 

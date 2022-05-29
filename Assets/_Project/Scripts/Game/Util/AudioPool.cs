@@ -7,13 +7,19 @@ namespace Util
     public class AudioPool : MonoBehaviour
     {
         [SerializeField] private AudioClipAssetGameEvent channel;
-
+        [SerializeField] private int numberOfSources = 10;
+        
+        
         private AudioSource[] _sources;
         private int _idx;
 
         private void Awake()
         {
-            _sources = GetComponentsInChildren<AudioSource>();
+            _sources = new AudioSource[numberOfSources];
+            for (int i = 0; i < numberOfSources; ++i)
+            {
+                _sources[i] = gameObject.AddComponent<AudioSource>();
+            }
         }
 
         private void OnEnable()
@@ -27,12 +33,20 @@ namespace Util
             channel.OnEventTrigger -= PlayAsset;
         }
 
+        private bool IsClipEnabled(AudioClipEx clip) => clip.Enabled;
         private void PlayAsset(AudioClipAsset obj)
         {
-            var clip = obj.Clips.RandomElement();
+            var clip = obj.Clips.RandomElement(IsClipEnabled);
 
             var source = _sources[_idx];
-            _idx = (_idx + 1) % _sources.Length;
+            var next = (_idx + 1) % _sources.Length;
+            while (source.isPlaying && next != _idx)
+            {
+                source = _sources[next];
+                next = (next + 1) % _sources.Length;
+            }
+
+            _idx = next;
 
 
             switch (clip.Transition.TransitionType)

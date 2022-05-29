@@ -32,6 +32,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -145,6 +146,18 @@ MonoBehaviour:
   dashLeftAction: {fileID: 11400000, guid: d569e6d01a946a445badb545ebd2cd34, type: 2}
   dashRightAction: {fileID: 11400000, guid: a7240e5a07528eb4eb5cb8325fa32277, type: 2}
   slamAction: {fileID: 11400000, guid: 5c4f9ba9186d84246a3f2ed2308e6cc0, type: 2}
+  dashPressTime:
+    Delimeter: 0
+    Variable: {fileID: 11400000, guid: 7ad2494979fe8f04996c802f7bf69b9b, type: 2}
+    Observable: {fileID: 0}
+    Constant: 0
+  slamPressTime:
+    Delimeter: 0
+    Variable: {fileID: 11400000, guid: 2489b4d7ceb4c06489d83f25303f29aa, type: 2}
+    Observable: {fileID: 0}
+    Constant: 0
+  initialAllowedInputs: 0
+  isTutorialEnabled: {fileID: 11400000, guid: 6db8c36701da3c44baffd2ff2be059d8, type: 2}
 --- !u!114 &1613489902227506811
 MonoBehaviour:
   m_ObjectHideFlags: 0

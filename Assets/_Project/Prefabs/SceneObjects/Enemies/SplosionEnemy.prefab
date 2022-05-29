@@ -363,7 +363,7 @@ MonoBehaviour:
   stateMachine: {fileID: 11400000, guid: 1f69ef0adef98bf45b6946f2f1b10ee6, type: 2}
   transitionOnUpdate: 1
   transitionOnFixedUpdate: 1
-  debugLogs: 1
+  debugLogs: 0
 --- !u!114 &6787248660449325693
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -453,6 +453,7 @@ MonoBehaviour:
   channel: {fileID: 11400000, guid: fe62c46c8f30fda40800c60b8eede838, type: 2}
   clips:
   - {fileID: 11400000, guid: a2a4aa7bdad84dd4bb4817469e1d0e5e, type: 2}
+  sources: []
 --- !u!114 &6787248660449325688
 MonoBehaviour:
   m_ObjectHideFlags: 0

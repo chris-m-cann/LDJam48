@@ -80,12 +80,15 @@ namespace LDJam48
             {
                 Time.timeScale = scale;
             }
+            
+            Debug.Log($"Pushed Time Scale {id}");
 
             return id;
         }
 
         public void PopTimeScale(int id)
         {
+            Debug.Log($"popping Time Scale {id}");
             _scalesInEffect.Remove(id);
 
             float minScale = timeScale;

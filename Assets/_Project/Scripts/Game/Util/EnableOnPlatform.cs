@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 
 namespace Util
@@ -7,29 +8,31 @@ namespace Util
     {
         [SerializeField] private GameObject[] targets;
         [SerializeField] private RuntimePlatform[] platforms;
+
         [SerializeField] private bool enableTargets;
+
         [SerializeField] private bool enabledInEditor;
 
         private void Awake()
         {
+
 #if UNITY_EDITOR
             foreach (var target in targets)
             {
                 target.SetActive(enabledInEditor);
             }
+
+
 #else
-            if (Array.IndexOf(platforms, Application.platform) != -1)
+
+            Debug.Log($"EnableOnPlatform: platform is {Application.platform}");
+
+            var validPlatform = Array.IndexOf(platforms, Application.platform) != -1;
+            foreach (var target in targets)
             {
-                foreach (var target in targets)
-                {
-                    target.SetActive(enableTargets);
-                }
-            } else {
-                foreach (var target in targets)
-                {
-                    target.SetActive(!enableTargets);
-                }
-}
+                var active = validPlatform ? enableTargets : !enableTargets;
+                target.SetActive(active);
+            }
 
 #endif
         }

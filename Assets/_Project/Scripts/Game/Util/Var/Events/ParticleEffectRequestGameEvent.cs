@@ -8,6 +8,8 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using LDJam48;
+
 namespace Util.Var.Events
 {
     using UnityEngine;
@@ -16,6 +18,16 @@ namespace Util.Var.Events
     [CreateAssetMenu(menuName = "Custom/Event/LDJam48.ParticleEffectRequest")]
     public sealed class ParticleEffectRequestGameEvent : GameEvent<LDJam48.ParticleEffectRequest>
     {
+        public void Raise(Transform transform)
+        {
+            Value = new ParticleEffectRequest
+            {
+                Position = transform.position,
+                Rotation = transform.rotation,
+                Scale = transform.localScale
+            };
+            Raise();
+        }
     }
     [System.Serializable()]
     public sealed class ParticleEffectRequestEventReference : EventReference<ParticleEffectRequestGameEvent, ObservableParticleEffectRequestVariable, LDJam48.ParticleEffectRequest>

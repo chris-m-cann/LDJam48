@@ -1,11 +1,13 @@
 
 using UnityEngine;
+using Util;
 
 namespace LDJam48.StateMachine.Player.Conditions
 {
     [System.Serializable]
     public class PlayerIsOnFloorCondition : Condition
     {
+        public LayerMask floorLayers;
         public bool invert = false;
         protected override ICondition BuildRuntimeImpl()
         {
@@ -27,7 +29,7 @@ namespace LDJam48.StateMachine.Player.Conditions
 
         public override bool Evaluate()
         {
-            var ponf = _contacts.ContactDetails.IsOnFloor;
+            var ponf = _contacts.ContactDetails.IsOnFloor && _source.floorLayers.Contains(_contacts.ContactDetails.FloorCollider.gameObject.layer);
 
             if (Time.time > _nextT)
             {

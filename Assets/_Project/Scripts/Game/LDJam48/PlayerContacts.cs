@@ -19,8 +19,6 @@ namespace LDJam48
 
         private PlayerColliders _colliders;
         
-        private bool _updatedThisFrame;
-
         private void Awake()
         {
             _colliders = GetComponent<PlayerColliders>();
@@ -28,27 +26,17 @@ namespace LDJam48
 
         private void FixedUpdate()
         {
-            _updatedThisFrame = false;
             if (!trackYourself) return;
             UpdateContactDetails();
         }
         
 
-        private ContactDetails DetectContacts(ContactDetails contact)
+        private ContactDetails DetectContacts(ContactDetails contact, bool log = false)
         {
-            if (_updatedThisFrame)
-            {
-                return contact;
-            }
-            else
-            {
-                var next = DetectContactsNew(contact);
-                _updatedThisFrame = true;
-                return next;
-            }
-
+            var next = DetectContactsNew(contact, log);
+            return next;
         }
-        public ContactDetails DetectContactsNew(ContactDetails contact)
+        public ContactDetails DetectContactsNew(ContactDetails contact, bool log = false)
         {
             contact.WasOnLeftWall = contact.IsOnLeftWall;
             contact.WasOnRightWall = contact.IsOnRightWall;
@@ -57,6 +45,9 @@ namespace LDJam48
             contact.IsOnFloor = false;
             contact.IsOnLeftWall = false;
             contact.IsOnRightWall = false;
+            contact.FloorCollider = null;
+            contact.LeftWallCollider = null;
+            contact.RightWallCollider = null;
 
             var filer = new ContactFilter2D();
             filer.layerMask = wallLayer;
@@ -82,6 +73,7 @@ namespace LDJam48
                 if (hit.normal.y > .5f)
                 {
                     contact.IsOnFloor = true;
+                    contact.FloorCollider = hit.collider;
                     if (debug && !contact.WasOnFloor)
                     {
                         Debug.LogWarning($"Ray normal = {hit.normal}, hit p={hit.point}");
@@ -100,13 +92,24 @@ namespace LDJam48
                 wallLayer
             );
 
+            if (log)
+            {
+                Debug.Log($"horizontal detection, results = {results}");
+            }
+
             for (int i = 0; i < results; ++i)
             {
                 RaycastHit2D hit = overlaps[i];
+                
+                if (log)
+                {
+                    Debug.Log($"horizontal detection hit {hit.collider.gameObject.name}, normal = {hit.normal}");
+                }
 
                 if (hit.normal.x > .5f)
                 {
                     contact.IsOnLeftWall = true;
+                    contact.LeftWallCollider = hit.collider;
 
                     if (debug && !contact.WasOnLeftWall)
                     {
@@ -118,6 +121,7 @@ namespace LDJam48
                 if (hit.normal.x < -.5f)
                 {
                     contact.IsOnRightWall = true;
+                    contact.RightWallCollider = hit.collider;
 
                     if (debug && !contact.WasOnRightWall)
                     {
@@ -146,9 +150,9 @@ namespace LDJam48
             return contact;
         }
 
-        public ContactDetails UpdateContactDetails()
+        public ContactDetails UpdateContactDetails(bool log = false)
         {
-            ContactDetails = DetectContacts(ContactDetails);
+            ContactDetails = DetectContacts(ContactDetails, log);
             return ContactDetails;
         }
 
@@ -169,6 +173,10 @@ namespace LDJam48
 
         public bool WasOnFloor;
         public bool IsOnFloor;
+
+        public Collider2D FloorCollider;
+        public Collider2D LeftWallCollider;
+        public Collider2D RightWallCollider;
 
         public bool HitLeftWallThisTurn => !WasOnLeftWall && IsOnLeftWall;
         public bool HitRightWallThisTurn => !WasOnRightWall && IsOnRightWall;

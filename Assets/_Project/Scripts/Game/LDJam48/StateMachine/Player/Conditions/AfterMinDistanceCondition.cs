@@ -32,7 +32,7 @@ namespace LDJam48.StateMachine.Player.Conditions
         {
             var r = Mathf.Abs(_machine.transform.position.x - _startX) > _source.distance;
             
-            if (_machine.debugLogs)
+            if (_machine.debugLogs && r)
             {
                 Debug.Log($"AfterMinDistanceCondition: initial pos = {_startX}, _minDistance = {_source.distance}, eval ={r}");
             }

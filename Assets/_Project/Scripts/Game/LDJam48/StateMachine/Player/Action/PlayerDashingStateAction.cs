@@ -1,5 +1,7 @@
 using System.Collections;
 using DG.Tweening;
+using DG.Tweening.Core;
+using DG.Tweening.Plugins.Options;
 using LDJam48.PlayerState;
 using Sirenix.OdinInspector;
 using UnityEngine;
@@ -14,7 +16,7 @@ namespace LDJam48.StateMachine.Player.Action
     [System.Serializable]
     public class PlayerDashingStateAction : StateAction
     {
-        public float dashSpeed = 15;
+        public float dashTime = 15;
         public string anim = "player_slice";
         public string actionMap = "Dashing";
         public string onExitActionMap = "NotDashing";
@@ -78,6 +80,8 @@ namespace LDJam48.StateMachine.Player.Action
         private SoundsBehaviour _sounds;
         private ParticlesBehaviour _particles;
         private PlayerRaycastsBehaviour _raycasts;
+        private TweenerCore<Vector3, Vector3, VectorOptions> _tweener;
+
         public override void OnAwake(StateMachineBehaviour machine)
         {
             base.OnAwake(machine);
@@ -132,7 +136,18 @@ namespace LDJam48.StateMachine.Player.Action
                 _particles.PlayEffect(effectIdx);
             }
 
-            _dashCoroutine = _machine.StartCoroutine(CoDash(end.x));
+            // _dashCoroutine = _machine.StartCoroutine(CoDash(end.x));
+            
+            var maxDistance = Mathf.Abs(_source.rightWallX - _source.leftWallX);
+            var actualDistance = Mathf.Abs(((Vector2)_machine.transform.position - end).x);
+            var factor = (float)actualDistance / maxDistance;
+            var time = _source.dashTime * factor;
+            _tweener = _machine.transform.DOMoveX(end.x, time).SetEase(_source.dashCurve)
+                .SetUpdate(UpdateType.Fixed, isIndependentUpdate:false)
+                .OnComplete(() =>
+                {
+                    _source.ToOnWallEvent.Raise();
+                });
         }
 
         private IEnumerator CoDash(float finalX)
@@ -178,6 +193,7 @@ namespace LDJam48.StateMachine.Player.Action
             base.OnStateExit();
             _rigidbody.gravityScale = _prevGravity;
             _dashTweener?.Kill();
+            _tweener?.Kill();
 
             if (_dashCoroutine != null)
             {

@@ -187,7 +187,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 17536
   boxcastDepth: 0.5
-  debugLogs: 1
+  debugLogs: 0
 --- !u!114 &8395436128146842367
 MonoBehaviour:
   m_ObjectHideFlags: 0

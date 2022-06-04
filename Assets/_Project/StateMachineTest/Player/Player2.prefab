@@ -15193,6 +15193,9 @@ MonoBehaviour:
     IsOnRightWall: 0
     WasOnFloor: 0
     IsOnFloor: 0
+    FloorCollider: {fileID: 0}
+    LeftWallCollider: {fileID: 0}
+    RightWallCollider: {fileID: 0}
 --- !u!114 &606575477889178590
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15211,8 +15214,8 @@ MonoBehaviour:
   stickWallMask:
     serializedVersion: 2
     m_Bits: 17536
-  boxcastDepth: 0.5
-  debugLogs: 0
+  boxcastDepth: 0.1
+  debugLogs: 1
 --- !u!61 &606575477889178591
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -15226,7 +15229,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.03129082, y: -0.017627954}
+  m_Offset: {x: 0, y: -0.017627954}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -15237,7 +15240,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.42898846, y: 0.9592242}
+  m_Size: {x: 0.4, y: 0.9592242}
   m_EdgeRadius: 0
 --- !u!114 &606575477889178584
 MonoBehaviour:
@@ -15257,7 +15260,7 @@ MonoBehaviour:
   horizontalDetectorOffset: {x: 0, y: 0}
   horizontalDetectorSize: {x: 1.2, y: 0.8}
   verticalDetectorOffset: {x: 0, y: 0}
-  verticalDetectorSize: {x: 0.48, y: 1.07}
+  verticalDetectorSize: {x: 0.6, y: 1.07}
   leftCastOffset: 0.3
   rightCastOffset: 0.3
   bottomCastOffset: 0.3
@@ -15550,6 +15553,19 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 11400000, guid: fe62c46c8f30fda40800c60b8eede838, type: 2}
+        m_TargetAssemblyTypeName: Util.Var.Events.GameEvent`1[[Util.AudioClipAsset,
+          Assembly-CSharp
+        m_MethodName: Raise
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: 324688b8c22cb8246b70b911d029c375, type: 2}
+          m_ObjectArgumentAssemblyTypeName: Util.AudioClipAsset, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 

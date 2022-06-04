@@ -12,6 +12,7 @@ namespace LDJam48.StateMachine.Player.Action
         [SerializeField] private bool debugLogs;
         
         private PlayerColliders _colliders;
+        private RaycastHit2D[] _hits = new RaycastHit2D[4];
 
 
         private void Awake()
@@ -24,20 +25,26 @@ namespace LDJam48.StateMachine.Player.Action
 
             // cast from farthest point toward wall
             var direction = Vector2.left;
-            var projectionPoint = _colliders.rightProjectionPoint + Vector2.left * (boxcastDepth / 2);
+            var projectionPoint = _colliders.rightProjectionPoint + Vector2.right * (boxcastDepth / 2);
             var offset = .6f;
 
             if (!isLeftWall)
             {
                 direction.x *= -1;
-                projectionPoint = _colliders.leftProjectionPoint + Vector2.right * (boxcastDepth / 2);
+                projectionPoint = _colliders.leftProjectionPoint + Vector2.left * (boxcastDepth / 2);
                 offset *= -1;
             }
+
             
             var hit = Physics2D.BoxCast(projectionPoint, new Vector2(boxcastDepth, _colliders.horizontalDetectorSize.y), 0f, direction, 1f, stickWallMask);
 
             if (hit.collider != null)
             {
+                if (hit.normal != direction * -1)
+                {
+                    return;
+                }
+
                 Debug.DrawLine(projectionPoint, hit.point);
 
                 var pos = transform.position;
@@ -65,17 +72,32 @@ namespace LDJam48.StateMachine.Player.Action
             }
 
             var castBoxSize = new Vector2(boxcastDepth, _colliders.horizontalDetectorSize.y);
-            var hit = Physics2D.BoxCast(castPoint, castBoxSize, 0f, direction, rightWallX - leftWallX, dashWallMask);
+            var hitsCount = Physics2D.BoxCastNonAlloc(castPoint, castBoxSize, 0f, direction, _hits, rightWallX - leftWallX, dashWallMask);
             var hitX = finalX;
 
-            if (hit.collider)
+            RaycastHit2D? hit = null;
+            
+            if (hitsCount > 0)
             {
-                hitX = hit.point.x;
+                var end = Mathf.Min(hitsCount, _hits.Length);
+                for (int i = 0; i < end ; i++)
+                {
+                    hit = _hits[i];
+                    
+                    if (hit.Value.normal != direction)
+                    {
+                        hitX = hit.Value.point.x;
+                        break;
+                    }
+
+                    hit = null;
+                }
             }
 
             if (debugLogs)
             {
-                Debug.Log($"Casting from {castPoint} in direction {direction}, distance {rightWallX - leftWallX}, hit {hit.collider}, hitx {hitX}, cast size {castBoxSize}");
+                string colliderString = hit == null ? "null" : hit.Value.point.ToString();
+                Debug.Log($"Casting from {castPoint} in direction {direction}, distance {rightWallX - leftWallX}, hit {colliderString}, hitx {hitX}, cast size {castBoxSize}");
                 Debug.DrawLine(castPoint, new Vector3(hitX + offset, castPoint.y), Color.red, 1f);
             }
 

@@ -53,7 +53,6 @@ namespace LDJam48
 
         protected virtual void OnDead()
         {
-            Debug.Log($"{gameObject.name} OnDead");
             onDead?.Invoke();
         }
     }

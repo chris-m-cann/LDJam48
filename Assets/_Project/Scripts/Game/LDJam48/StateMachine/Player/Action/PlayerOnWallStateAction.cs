@@ -50,7 +50,8 @@ namespace LDJam48.StateMachine.Player.Action
     public override void OnStateEnter()
     {
         base.OnStateEnter();
-        _contacts.UpdateContactDetails();
+        Debug.Log($"updating on contacts on sliding");
+        _contacts.UpdateContactDetails(true);
         _isLeft = _contacts.ContactDetails.IsOnLeftWall;
         
         _source.maxVelocity.Value = new Vector2(0, _source.maxWallSpeed);

@@ -1,10 +1,14 @@
+using System;
 using System.Collections;
+using System.Runtime.CompilerServices;
 using Unity.XR.OpenVR;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
+using UnityEngine.UI;
 using Util;
+using Util.Var;
 using Util.Var.Events;
 using Util.Var.Observe;
 
@@ -26,25 +30,24 @@ namespace LDJam48
 
         [SerializeField] private ParticleEffectRequestEventReference hurtEffect;
 
-        [SerializeField] private Volume volume;
-        [SerializeField] [Range(0, 1)] private float on;
-        [SerializeField] private float vignetteTime;
-
         [SerializeField] private Material hurtMaterial;
         [SerializeField] private Material resetMaterial;
         [SerializeField] private float hurtTime;
+
+        [SerializeField] private GameObjectReference spotlight;
+        [SerializeField] private float spotlightTime;
+        
 
         [SerializeField] private bool godmode;
 
         private SpriteRenderer _sprite;
 
         private bool _isInvincible;
-        private float _prevVignetteIntensity;
-        private Vector2 _prevVignetteCenter;
+        private static readonly int ViewportPos = Shader.PropertyToID("_ViewportPos");
+
         private void Awake()
         {
             _sprite = GetComponent<SpriteRenderer>();
-            volume = FindObjectOfType<Volume>();
         }
 
         private void OnEnable()
@@ -78,27 +81,18 @@ namespace LDJam48
                     });
                     
                     sfxChannel.Raise(hitClip);
-                    
-                    if (volume.profile.TryGet(out Vignette vignette))
+
+                    if (spotlight != null && spotlight.Value != null)
                     {
-                        _prevVignetteIntensity = vignette.intensity.value;
-                        _prevVignetteCenter = vignette.center.value;
-                        vignette.intensity.value = on;
-                        vignette.center.value = Camera.main.WorldToViewportPoint(transform.position);
-                        this.ExecuteAfter(vignetteTime, () =>
-                        {
-                            vignette.intensity.value = _prevVignetteIntensity;
-                            vignette.center.value = _prevVignetteCenter;
-                        });
+                        StartCoroutine(CoSpotlight());
+
                     }
-                    
+
                     _sprite.material = hurtMaterial;
-            
-                    this.ExecuteAfter(hurtTime, () =>
-                    {
-                        _sprite.material = resetMaterial;
-                    });
+
+                    this.ExecuteAfter(hurtTime, () => { _sprite.material = resetMaterial; });
                     
+
                 }
             }
 
@@ -106,6 +100,27 @@ namespace LDJam48
             {
                 GoInvincible();
             }
+        }
+
+        private IEnumerator CoSpotlight()
+        {
+            var go = spotlight.Value;
+            go.SetActive(true);
+            Debug.Log($"enabled spotlight name = {go.name}");
+            var image = go.GetComponent<Image>();
+
+            var cam = Camera.main;
+            var end = Time.time + spotlightTime;
+
+            while (Time.time < end)
+            {
+                var pos = (Vector2)cam.WorldToViewportPoint(transform.position);
+                image.material.SetVector(ViewportPos, pos);
+                Debug.Log($"setting spotlight pos = {pos}");
+                yield return null;
+            }
+
+            go.SetActive(false);
         }
 
         public void Kill(GameObject damager)

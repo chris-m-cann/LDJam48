@@ -15278,6 +15278,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   variable: {fileID: 11400000, guid: 5f460cec9e88ae844ad9d902d4fae17b, type: 2}
+  assignSelf: 1
+  objectToAssign: {fileID: 0}
 --- !u!114 &606575477889178577
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15438,12 +15440,15 @@ MonoBehaviour:
     Delimeter: 0
     Event: {fileID: 11400000, guid: af2afee91577a6e408759c776ad75695, type: 2}
     Variable: {fileID: 0}
-  volume: {fileID: 0}
-  on: 1
-  vignetteTime: 0.1
   hurtMaterial: {fileID: 2100000, guid: 1cc0e5a992f494943966267d5acf4500, type: 2}
   resetMaterial: {fileID: 2100000, guid: fc19902f22ef861469149340a28bda64, type: 2}
   hurtTime: 0.5
+  spotlight:
+    Delimeter: 0
+    Variable: {fileID: 11400000, guid: a4988f706210d3047bc34059097f4b7a, type: 2}
+    Observable: {fileID: 0}
+    Constant: {fileID: 0}
+  spotlightTime: 0.2
   godmode: 0
 --- !u!114 &606575477889178582
 MonoBehaviour:

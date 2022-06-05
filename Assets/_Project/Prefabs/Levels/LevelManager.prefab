@@ -28,6 +28,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -61,4 +62,4 @@ MonoBehaviour:
   activeWindowBottom: 25
   target: {fileID: 0}
   startChunk: {fileID: 0}
-  chunkGenerator: {fileID: 11400000, guid: 66aeb55e33b5f1a4388768246697141a, type: 2}
+  chunkGenerator: {fileID: 11400000, guid: 2ed518b7444fcec4f819c9bbe72f1a74, type: 2}

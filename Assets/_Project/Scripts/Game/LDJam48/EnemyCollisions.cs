@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.Events;
@@ -27,6 +28,8 @@ namespace LDJam48
         private SpawnOnDeath spawner;
 
         [SerializeField] bool spawnOnDeath;
+        [SerializeField] private LayerMask playerLayer;
+        
 
 
         [SerializeField] private UnityEvent onDeath;
@@ -62,8 +65,10 @@ namespace LDJam48
         {
         }
 
+        private ContactPoint2D[] _contacts = new ContactPoint2D[4];
         private void OnTriggerEnter2D(Collider2D other)
         {
+            Debug.Log($"{gameObject.name} colission {other.gameObject}, tag = {other.tag}");
             if (!enabled || !other.CompareTag(playerTag)) return;
 
             bool attacking = other.GetComponent<AttackCollider>() != null;
@@ -77,17 +82,17 @@ namespace LDJam48
 
             if (useSafeAngles)
             {
-                var contact = other.ClosestPoint(transform.position);
-
-                var relativePoint = contact - (Vector2)transform.position;
+                var relativePoint = other.gameObject.transform.position - transform.position;
                 var angle = Vector2.SignedAngle(Vector2.up, relativePoint);
+
+                Debug.Log($"{gameObject.name} colission angle: {angle}");
                 var isSafe = safeAngle.Contains(angle);
 
                 if (drawGizmos)
                 {
-                    Debug.DrawLine(contact, transform.position, Color.red, 1f);
+                    Debug.DrawLine(relativePoint, transform.position, Color.red, 1f);
                 }
-                
+
                 if (isSafe)
                 {
                     // head bounce

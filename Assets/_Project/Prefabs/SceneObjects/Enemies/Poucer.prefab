@@ -260,7 +260,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  drawGizmos: 0
+  drawGizmos: 1
 --- !u!114 &1322391662776818544
 MonoBehaviour:
   m_ObjectHideFlags: 0

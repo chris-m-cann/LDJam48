@@ -106,7 +106,6 @@ namespace LDJam48
         {
             var go = spotlight.Value;
             go.SetActive(true);
-            Debug.Log($"enabled spotlight name = {go.name}");
             var image = go.GetComponent<Image>();
 
             var cam = Camera.main;
@@ -116,7 +115,6 @@ namespace LDJam48
             {
                 var pos = (Vector2)cam.WorldToViewportPoint(transform.position);
                 image.material.SetVector(ViewportPos, pos);
-                Debug.Log($"setting spotlight pos = {pos}");
                 yield return null;
             }
 

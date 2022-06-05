@@ -15070,7 +15070,7 @@ MonoBehaviour:
   stateMachine: {fileID: 11400000, guid: 64dc12f184969854bb1c898edeb582ed, type: 2}
   transitionOnUpdate: 0
   transitionOnFixedUpdate: 1
-  debugLogs: 1
+  debugLogs: 0
 --- !u!114 &606575477889178579
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15215,7 +15215,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 17536
   boxcastDepth: 0.1
-  debugLogs: 1
+  debugLogs: 0
 --- !u!61 &606575477889178591
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -15717,7 +15717,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &606575477934226358
 Transform:
   m_ObjectHideFlags: 0
@@ -15810,7 +15810,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &606575478002881770
 Transform:
   m_ObjectHideFlags: 0
@@ -15833,7 +15833,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 606575478002881781}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1

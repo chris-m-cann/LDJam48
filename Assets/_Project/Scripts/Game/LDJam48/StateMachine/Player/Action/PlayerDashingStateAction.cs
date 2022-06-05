@@ -113,8 +113,11 @@ namespace LDJam48.StateMachine.Player.Action
             
             _source.dashAnimEvent.OnEventTrigger += StartDash;
 
+            // _colliders.Main.enabled = false;
+            // _colliders.Slash.enabled = true;
+
             _colliders.Main.enabled = false;
-            _colliders.Slash.enabled = true;
+            _colliders.Slash.gameObject.SetActive(true);
 
             // Debug.Log($"OnEnter Setting actionMap = {actionMap}");
             _source.activeActionMap.Value = _source.actionMap;
@@ -204,8 +207,10 @@ namespace LDJam48.StateMachine.Player.Action
 
             _source.dashAnimEvent.OnEventTrigger -= StartDash;
 
+            // _colliders.Main.enabled = true;
+            // _colliders.Slash.enabled = false;
             _colliders.Main.enabled = true;
-            _colliders.Slash.enabled = false;
+            _colliders.Slash.gameObject.SetActive(false);
 
             _source.activeActionMap.Value = _source.onExitActionMap;
 

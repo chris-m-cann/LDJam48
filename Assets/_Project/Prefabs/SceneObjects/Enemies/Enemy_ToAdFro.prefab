@@ -21,11 +21,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1422691526355482850, guid: 28eadf832ca75e643b6be126d95d87b4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.6599914
+      value: -2.692
       objectReference: {fileID: 0}
     - target: {fileID: 1422691526355482850, guid: 28eadf832ca75e643b6be126d95d87b4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -11.66
+      value: -9.9683485
       objectReference: {fileID: 0}
     - target: {fileID: 1422691526355482850, guid: 28eadf832ca75e643b6be126d95d87b4, type: 3}
       propertyPath: m_LocalPosition.z
@@ -65,7 +65,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1422691526355482851, guid: 28eadf832ca75e643b6be126d95d87b4, type: 3}
       propertyPath: safeAngle.End
-      value: 70
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 1422691526355482851, guid: 28eadf832ca75e643b6be126d95d87b4, type: 3}
       propertyPath: useSafeAngles
@@ -73,7 +73,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1422691526355482851, guid: 28eadf832ca75e643b6be126d95d87b4, type: 3}
       propertyPath: safeAngle.Start
-      value: -70
+      value: -50
+      objectReference: {fileID: 0}
+    - target: {fileID: 1422691526355482851, guid: 28eadf832ca75e643b6be126d95d87b4, type: 3}
+      propertyPath: playerLayer.m_Bits
+      value: 64
       objectReference: {fileID: 0}
     - target: {fileID: 1422691526355482851, guid: 28eadf832ca75e643b6be126d95d87b4, type: 3}
       propertyPath: safeColliders.Array.size
@@ -101,7 +105,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1422691526355482860, guid: 28eadf832ca75e643b6be126d95d87b4, type: 3}
       propertyPath: m_Size.y
-      value: 0.5460243
+      value: 0.43894577
       objectReference: {fileID: 0}
     - target: {fileID: 1422691526355482860, guid: 28eadf832ca75e643b6be126d95d87b4, type: 3}
       propertyPath: m_Offset.x
@@ -109,7 +113,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1422691526355482860, guid: 28eadf832ca75e643b6be126d95d87b4, type: 3}
       propertyPath: m_Offset.y
-      value: -0.022678375
+      value: -0.07621765
       objectReference: {fileID: 0}
     - target: {fileID: 4538026430102126512, guid: 28eadf832ca75e643b6be126d95d87b4, type: 3}
       propertyPath: worth.x

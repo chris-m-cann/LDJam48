@@ -138,6 +138,52 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   effectPrefab: {fileID: 6349695656989029043, guid: 1d87b38e7c06f69448e4378585d8ba8c, type: 3}
   poolSize: 3
+--- !u!1 &2882612157759642802
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9047219832183137621}
+  - component: {fileID: 7946326757268020899}
+  m_Layer: 0
+  m_Name: SkullExplosion
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9047219832183137621
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2882612157759642802}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8389851465421259392}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7946326757268020899
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2882612157759642802}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03b1421383374dd99a8441f2a124354c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  effectPrefab: {fileID: 4713909142965780325, guid: 190d2a732f995744aa9e3cdd542f421f, type: 3}
+  poolSize: 3
 --- !u!1 &8389851464338065400
 GameObject:
   m_ObjectHideFlags: 0
@@ -342,6 +388,7 @@ GameObject:
   - component: {fileID: 2080383598711162482}
   - component: {fileID: 8599633248516809265}
   - component: {fileID: 1085691305}
+  - component: {fileID: 2580954108420648676}
   m_Layer: 0
   m_Name: Particles
   m_TagString: Untagged
@@ -371,6 +418,7 @@ Transform:
   - {fileID: 1293872199}
   - {fileID: 1160451808848837921}
   - {fileID: 7047841748618501528}
+  - {fileID: 9047219832183137621}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -704,6 +752,37 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1293872198}
+        m_TargetAssemblyTypeName: LDJam48.ParticleEffectPool, Assembly-CSharp
+        m_MethodName: Play
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &2580954108420648676
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8389851465421259393}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11b7f86f3584f554387ffc259f7803c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent:
+    Delimeter: 0
+    Event: {fileID: 11400000, guid: fcf97bf8635d58c4fa1f43a7937fdeb9, type: 2}
+    Variable: {fileID: 0}
+  onEventRaised:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7946326757268020899}
         m_TargetAssemblyTypeName: LDJam48.ParticleEffectPool, Assembly-CSharp
         m_MethodName: Play
         m_Mode: 0

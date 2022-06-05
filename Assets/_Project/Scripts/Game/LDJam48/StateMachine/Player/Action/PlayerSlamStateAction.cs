@@ -67,8 +67,10 @@ namespace LDJam48.StateMachine.Player.Action
             _source.maxVelocity.Value = new Vector2(_source.maxVelocity.Value.x, _source.maxSpeed);
             _rigidbody.velocity = new Vector2(0, -_source.maxSpeed);
 
+            // _colliders.Main.enabled = false;
+            // _colliders.Slam.enabled = true;
             _colliders.Main.enabled = false;
-            _colliders.Slam.enabled = true;
+            _colliders.Slam.gameObject.SetActive(true);
 
             _particles.PlayEffect(_source.SlamEffectId);
             _particles.PlayEffect(_source.OngoingSlamEffectId);
@@ -84,8 +86,13 @@ namespace LDJam48.StateMachine.Player.Action
         {
             base.OnStateExit();
             _machine.StopAllCoroutines();
-            _colliders.Slam.enabled = false;
+            
+            // _colliders.Slam.enabled = false;
+            // _colliders.Main.enabled = true;
+
             _colliders.Main.enabled = true;
+            _colliders.Slam.gameObject.SetActive(false);
+            
             _particles.StopEffect(_source.OngoingSlamEffectId);
             _rigidbody.velocity = new Vector2(0, _source.CarriedYVel.Value);
             

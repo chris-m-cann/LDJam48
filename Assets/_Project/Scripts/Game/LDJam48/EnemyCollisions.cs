@@ -68,7 +68,6 @@ namespace LDJam48
         private ContactPoint2D[] _contacts = new ContactPoint2D[4];
         private void OnTriggerEnter2D(Collider2D other)
         {
-            Debug.Log($"{gameObject.name} colission {other.gameObject}, tag = {other.tag}");
             if (!enabled || !other.CompareTag(playerTag)) return;
 
             bool attacking = other.GetComponent<AttackCollider>() != null;
@@ -85,7 +84,6 @@ namespace LDJam48
                 var relativePoint = other.gameObject.transform.position - transform.position;
                 var angle = Vector2.SignedAngle(Vector2.up, relativePoint);
 
-                Debug.Log($"{gameObject.name} colission angle: {angle}");
                 var isSafe = safeAngle.Contains(angle);
 
                 if (drawGizmos)
@@ -96,7 +94,6 @@ namespace LDJam48
                 if (isSafe)
                 {
                     // head bounce
-                    Debug.Log("Bouncing player");
                     other.GetComponent<Bounceable>()?.Bounce();
                     Die();
                     return;
@@ -104,7 +101,6 @@ namespace LDJam48
             }
 
             // damage player
-            Debug.Log("damaging player");
             other.GetComponent<IDamageable>()?.Damage(1, gameObject);
         }
 

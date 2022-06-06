@@ -23,13 +23,20 @@ namespace LDJam48.Stats
         private void EditorReset() => Reset();
 
     }
-    public abstract class EventDrivenStat<TEvent, TObservable, T> : Stat where TEvent : EventReferenceBase<T> where TObservable : ObservableVariable<T>
+
+    public abstract class StatT<T> : Stat
+    {
+        public virtual T Value { get; set; }
+    }
+    
+    public abstract class EventDrivenStat<TEvent, TObservable, T> : StatT<T> where TEvent : EventReferenceBase<T> where TObservable : ObservableVariable<T>
     {
         
         [SerializeField] protected TEvent @event;
         [Nested] public TObservable Current;
         [SerializeField] protected T resetValue;
 
+        public override T Value { get => Current.Value; set => Current.Value = value; }
 
         protected abstract void OnUpdate(T value);
         

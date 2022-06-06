@@ -9,7 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6d1694bd40014a78b23b2d5debcd3d0c, type: 3}
-  m_Name: RestGenerator
+  m_Script: {fileID: 11500000, guid: 2e8187053cf64c919b62ef56b51ae557, type: 3}
+  m_Name: Saveable_Stats
   m_EditorClassIdentifier: 
-  chunks: {fileID: 11400000, guid: 2655e9ae87046d2409f2f8627d85de57, type: 2}
+  Key: StatsSaveable
+  intStats:
+  - {fileID: 11400000, guid: 7dac869b5c0cf99448f25bbfcc69e919, type: 2}
+  - {fileID: 11400000, guid: bb22c1c5c818017468089a937a07364c, type: 2}

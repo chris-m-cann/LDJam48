@@ -2,7 +2,9 @@ using System;
 using UnityEngine;
 using Util;
 using Util.Var;
+using Util.Var.Events;
 using Util.Var.Observe;
+using Void = Util.Void;
 
 namespace LDJam48
 {
@@ -10,7 +12,8 @@ namespace LDJam48
     {
         [SerializeField] private SideMarker markerPrefab;
         [SerializeField] private IntReference placementPoint;
-        [SerializeField] private ObservableIntVariable distanceTravelled;
+        [SerializeField] private GameObjectReference player;
+        [SerializeField] private VoidGameEvent onRunStarted;
         [SerializeField] private float spawnDistance;
         [SerializeField] private float offsetY;
         [SerializeField] private float spawnPointX;
@@ -20,19 +23,35 @@ namespace LDJam48
         private bool _passed;
         private SideMarker _marker;
         private Action<int> _onDistanceChanged;
+        private bool _running = false;
+        private float _startY = 0f;
 
         private void OnEnable()
         {
+            onRunStarted.OnEventTrigger += RunStart;
             _onDistanceChanged = TrySpawnMarker;
-            distanceTravelled.OnValueChanged += OnDistanceChanged;
-        }
-        
-        
-        private void OnDisable()
-        {
-            distanceTravelled.OnValueChanged -= OnDistanceChanged;
         }
 
+        private void OnDisable()
+        {
+            onRunStarted.OnEventTrigger -= RunStart;
+        }
+
+        private void Update()
+        {
+            if (!_running) return;
+
+            OnDistanceChanged((int)Mathf.Abs(player.Value.transform.position.y - _startY));
+        }
+
+        private void RunStart(Void v)
+        {
+            if (placementPoint.Value <= 0) return;
+            
+            _startY = player.Value.transform.position.y;
+            _running = true;
+        }
+        
         private void OnDistanceChanged(int d)
         {
             _onDistanceChanged(d);
@@ -40,11 +59,9 @@ namespace LDJam48
 
         private void TrySpawnMarker(int distance)
         {
-            var v = Math.Abs(placementPoint.Value - distance);
-                
             if (Math.Abs(placementPoint.Value - distance) < spawnDistance)
             {
-                var position = new Vector3(spawnPointX, offsetY - placementPoint.Value, 0f);
+                var position = new Vector3(spawnPointX,  _startY- placementPoint.Value, 0f);
                 _marker = Instantiate(markerPrefab, position, Quaternion.identity);
                 
 
@@ -59,6 +76,7 @@ namespace LDJam48
                 _marker.OnPassedMarker();
 
                 _onDistanceChanged = NullOp.Fun;
+                _running = false;
             }
         }
     }

@@ -612,10 +612,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6377352109166331180, guid: 3b8305ead9c7bdb4ea4135d6f70bf4cd, type: 3}
       propertyPath: onClick.m_PersistentCalls.m_Calls.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6377352109166331180, guid: 3b8305ead9c7bdb4ea4135d6f70bf4cd, type: 3}
       propertyPath: onClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6377352109166331180, guid: 3b8305ead9c7bdb4ea4135d6f70bf4cd, type: 3}
+      propertyPath: onClick.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6377352109166331180, guid: 3b8305ead9c7bdb4ea4135d6f70bf4cd, type: 3}
@@ -623,7 +627,15 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 945088129}
     - target: {fileID: 6377352109166331180, guid: 3b8305ead9c7bdb4ea4135d6f70bf4cd, type: 3}
+      propertyPath: onClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 11400000, guid: 501b09d2ea3ffc24ab04a753a43fab55, type: 2}
+    - target: {fileID: 6377352109166331180, guid: 3b8305ead9c7bdb4ea4135d6f70bf4cd, type: 3}
       propertyPath: onClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6377352109166331180, guid: 3b8305ead9c7bdb4ea4135d6f70bf4cd, type: 3}
+      propertyPath: onClick.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6377352109166331180, guid: 3b8305ead9c7bdb4ea4135d6f70bf4cd, type: 3}
@@ -631,8 +643,16 @@ PrefabInstance:
       value: PopBackstack
       objectReference: {fileID: 0}
     - target: {fileID: 6377352109166331180, guid: 3b8305ead9c7bdb4ea4135d6f70bf4cd, type: 3}
+      propertyPath: onClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: RequestSave
+      objectReference: {fileID: 0}
+    - target: {fileID: 6377352109166331180, guid: 3b8305ead9c7bdb4ea4135d6f70bf4cd, type: 3}
       propertyPath: onClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
       value: Util.UI.Menu, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6377352109166331180, guid: 3b8305ead9c7bdb4ea4135d6f70bf4cd, type: 3}
+      propertyPath: onClick.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: LDJam48.Save.SaveableSO, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 6377352109166331180, guid: 3b8305ead9c7bdb4ea4135d6f70bf4cd, type: 3}
       propertyPath: onClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
@@ -640,6 +660,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6377352109166331180, guid: 3b8305ead9c7bdb4ea4135d6f70bf4cd, type: 3}
       propertyPath: onClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 6377352109166331180, guid: 3b8305ead9c7bdb4ea4135d6f70bf4cd, type: 3}
+      propertyPath: onClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -22735,7 +22759,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 0.5619048, y: 1}
+    m_SensorSize: {x: 0.5619597, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -25418,18 +25442,6 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: LDJam48.Tut.TutorialSaveableSO, Assembly-CSharp
         m_MethodName: SetTutorialRequired
         m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 11400000, guid: 6db8c36701da3c44baffd2ff2be059d8, type: 2}
-        m_TargetAssemblyTypeName: LDJam48.Save.SaveableSO, Assembly-CSharp
-        m_MethodName: RequestSave
-        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -32323,7 +32335,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4293194722
-  m_fontColor: {r: 0.9528302, g: 0.9303578, b: 0.9303578, a: 1}
+  m_fontColor: {r: 1, g: 0.8196079, b: 0.40000004, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:

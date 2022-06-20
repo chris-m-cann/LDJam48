@@ -6,6 +6,7 @@ using LDJam48.PlayerState;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using Util;
+using Util.ObjPool;
 using Util.Var;
 using Util.Var.Events;
 using Util.Var.Observe;
@@ -224,7 +225,7 @@ namespace LDJam48.StateMachine.Player.Action
             foreach (var delay in _source.ghostDelays)
             {
                 yield return new WaitForSeconds(delay);
-                var ghost = Object.Instantiate(_source.ghostPrefab, _machine.transform.position, Quaternion.identity);
+                var ghost = InstantiateEx.Create(_source.ghostPrefab, _machine.transform.position, Quaternion.identity);
                 ghost.sprite = _sprite.sprite;
                 ghost.flipX = _sprite.flipX;
             }

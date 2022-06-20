@@ -9,6 +9,8 @@ namespace LDJam48
     {
         [SerializeField] private ObservableBoolVariable isPaused;
         [Range(0, 1)] [SerializeField] private float timeScale = 1;
+        [SerializeField] private bool debugLog;
+        
         
         private Dictionary<int, float> _scalesInEffect = new Dictionary<int, float>();
         private int _nextId = 0;
@@ -80,15 +82,22 @@ namespace LDJam48
             {
                 Time.timeScale = scale;
             }
-            
-            Debug.Log($"Pushed Time Scale {id}");
+
+            if (debugLog)
+            {
+                Debug.Log($"Pushed Time Scale {id}");
+            }
 
             return id;
         }
 
         public void PopTimeScale(int id)
         {
-            Debug.Log($"popping Time Scale {id}");
+            if (debugLog)
+            {
+                Debug.Log($"popping Time Scale {id}");
+            }
+
             _scalesInEffect.Remove(id);
 
             float minScale = timeScale;

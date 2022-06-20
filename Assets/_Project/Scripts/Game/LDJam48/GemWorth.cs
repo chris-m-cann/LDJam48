@@ -21,7 +21,7 @@ namespace LDJam48
             _spawner = GetComponent<SpawnOnDeath>();
         }
 
-        private void Start()
+        private void OnEnable()
         {
             gems = gems.OrderByDescending(gem => gem.Value).ToList();
 
@@ -33,18 +33,16 @@ namespace LDJam48
                 lastAmount = amount;
                 foreach (var gem in gems)
                 {
-                    if (gem.Value <= amount)
+                    while (gem.Value <= amount)
                     {
                         var offset = new Vector2(
                             Random.Range(0, offsetMax),
                             Random.Range(0, offsetMax)
                         );
 
-                        _spawner.ThingsToSpawn.Add(PairEx.Make(gem.gameObject, Vector2.zero));
-                        // _spawner.ThingsToSpawn.Add(PairEx.Make(gem.gameObject, offset));
+                        _spawner.Add(gem.gameObject, offset);
 
                         amount -= gem.Value;
-                        break;
                     }
                 }
             }

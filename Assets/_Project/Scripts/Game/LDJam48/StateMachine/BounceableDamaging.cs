@@ -78,7 +78,6 @@ namespace LDJam48.StateMachine
 
         private void Bounce(Collider2D other)
         {
-            Debug.Log("Bouncing player");
             var bounceable = other.GetComponent<Bounceable>();
             if (bounceable == null) return;
             

@@ -200,7 +200,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a74252ff38834f64800706db7021e1e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ThingsToSpawn: []
+  thingsToSpawn: []
   spawnOnDisable: 0
 --- !u!114 &9059232424109176179
 MonoBehaviour:
@@ -217,6 +217,9 @@ MonoBehaviour:
   worth: {x: 5, y: 10}
   gems:
   - {fileID: 4019505570478468711, guid: bf258c1a659006148b1b223bc6c78492, type: 3}
+  - {fileID: 8398203839392267494, guid: a5a11f144c3f8b74d8f9a1cbe4baa674, type: 3}
+  - {fileID: 8398203839392267494, guid: bbdac54eaff80a047907bb72f2cd8dc3, type: 3}
+  - {fileID: 8398203839392267494, guid: c149c66b7b515dc4a98a26acaf9a66ec, type: 3}
   offsetMax: 1
 --- !u!114 &440338544
 MonoBehaviour:
@@ -244,6 +247,9 @@ MonoBehaviour:
   objectToDestroy: {fileID: 0}
   spawner: {fileID: 0}
   spawnOnDeath: 0
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 0
   onDeath:
     m_PersistentCalls:
       m_Calls:

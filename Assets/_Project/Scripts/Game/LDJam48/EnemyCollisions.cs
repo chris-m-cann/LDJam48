@@ -3,6 +3,7 @@ using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.Events;
 using Util;
+using Util.ObjPool;
 using Util.Var.Events;
 
 namespace LDJam48
@@ -123,7 +124,7 @@ namespace LDJam48
 
             spawner?.SpawnObjects();
             onDeath?.Invoke();
-            Destroy(objectToDestroy);
+            InstantiateEx.Destroy(objectToDestroy);
         }
 
         public void SetBounceable(bool isBounceable)

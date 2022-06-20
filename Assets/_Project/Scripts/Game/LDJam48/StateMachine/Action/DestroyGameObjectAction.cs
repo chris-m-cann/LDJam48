@@ -1,4 +1,5 @@
 using System;
+using Util.ObjPool;
 using Object = UnityEngine.Object;
 
 namespace LDJam48.StateMachine.Action
@@ -16,7 +17,7 @@ namespace LDJam48.StateMachine.Action
     {
         public override void Execute()
         {
-            Object.Destroy(_machine.gameObject);
+            InstantiateEx.Destroy(_machine.gameObject);
         }
     }
 }

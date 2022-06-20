@@ -12,7 +12,7 @@ namespace LDJam48
 
         private Pair<Transform, ParticleSystem>[] _particles;
 
-        private void Start()
+        private void Awake()
         {
             _particles = new Pair<Transform, ParticleSystem>[poolSize];
             for (int i = 0; i < poolSize; i++)

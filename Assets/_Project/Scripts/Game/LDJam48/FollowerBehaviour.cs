@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using Util.Var;
 using Random = UnityEngine.Random;
@@ -29,6 +30,10 @@ namespace LDJam48
         private void Start()
         {
             _target = target.Value.transform;
+        }
+
+        private void OnEnable()
+        {
             _idleCounter = Random.Range(initialDelay.x, initialDelay.y);
             _actualSpeed = Random.Range(speed.x, speed.y);
         }

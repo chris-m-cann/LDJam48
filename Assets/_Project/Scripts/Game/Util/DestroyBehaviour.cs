@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using Util.ObjPool;
 
 namespace Util
 {
@@ -7,7 +8,7 @@ namespace Util
     {
         public void DestroyGameObject(GameObject go)
         {
-            Destroy(go);
+            InstantiateEx.Destroy(go);
         }
 
         public void DestroyGameObject() => DestroyGameObject(gameObject);

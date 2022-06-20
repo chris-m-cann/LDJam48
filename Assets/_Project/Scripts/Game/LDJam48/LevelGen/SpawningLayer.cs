@@ -2,6 +2,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 using Util;
+using Util.ObjPool;
 
 namespace LDJam48.LevelGen
 {
@@ -49,7 +50,7 @@ namespace LDJam48.LevelGen
                     if (tile is PrefabTile holder)
                     {
                         var worldPos = _tilemap.CellToWorld(cell) + new Vector3(.5f, .5f);
-                        Instantiate(holder.Prefab, worldPos, _tilemap.GetTransformMatrix(cell).rotation);
+                        InstantiateEx.Create(holder.Prefab, worldPos, _tilemap.GetTransformMatrix(cell).rotation);
                     }
                 }
             }

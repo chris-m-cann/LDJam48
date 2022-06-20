@@ -1,6 +1,7 @@
 
 using System;
 using UnityEngine;
+using Util.ObjPool;
 using Util.Var;
 
 namespace LDJam48
@@ -16,7 +17,7 @@ namespace LDJam48
 
             if (transform.position.y - target.Value.transform.position.y  > killDistance)
             {
-                Destroy(gameObject);
+                InstantiateEx.Destroy(gameObject);
             }
         }
     }

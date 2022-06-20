@@ -9,7 +9,7 @@ namespace LDJam48
         [SerializeField] private bool disableAllOnStartUp = true;
         [SerializeField] private Detector[] detectors;
 
-        private void Awake()
+        private void OnEnable()
         {
             if (disableAllOnStartUp)
             {

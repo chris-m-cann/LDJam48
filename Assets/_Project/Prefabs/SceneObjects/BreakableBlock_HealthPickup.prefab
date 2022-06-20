@@ -66,6 +66,20 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 9077482022088278768, guid: 9bfb3767e9ff44140867c701ae5098af, type: 3}
   m_PrefabInstance: {fileID: 661435109477414642}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1277211156986434972
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8418444277533537282}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a74252ff38834f64800706db7021e1e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thingsToSpawn: []
+  spawnOnDisable: 1
 --- !u!114 &6727208107429386569
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -81,4 +95,7 @@ MonoBehaviour:
   worth: {x: 5, y: 10}
   gems:
   - {fileID: 4019505570478468711, guid: bf258c1a659006148b1b223bc6c78492, type: 3}
+  - {fileID: 8398203839392267494, guid: a5a11f144c3f8b74d8f9a1cbe4baa674, type: 3}
+  - {fileID: 8398203839392267494, guid: bbdac54eaff80a047907bb72f2cd8dc3, type: 3}
+  - {fileID: 8398203839392267494, guid: c149c66b7b515dc4a98a26acaf9a66ec, type: 3}
   offsetMax: 1

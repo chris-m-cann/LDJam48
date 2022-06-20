@@ -24,7 +24,7 @@ namespace LDJam48
             _sprite = GetComponent<SpriteRenderer>();
         }
 
-        private void Start()
+        private void OnEnable()
         {
             // pick a random dir to start off in
             _dir = transform.right * Mathf.Sign(Random.value - .5f);

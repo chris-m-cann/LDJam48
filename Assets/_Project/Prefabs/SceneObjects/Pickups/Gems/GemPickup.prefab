@@ -34,6 +34,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -135,6 +136,9 @@ MonoBehaviour:
   worth: {x: 1, y: 1}
   gems:
   - {fileID: 4019505570478468711, guid: bf258c1a659006148b1b223bc6c78492, type: 3}
+  - {fileID: 8398203839392267494, guid: a5a11f144c3f8b74d8f9a1cbe4baa674, type: 3}
+  - {fileID: 8398203839392267494, guid: bbdac54eaff80a047907bb72f2cd8dc3, type: 3}
+  - {fileID: 8398203839392267494, guid: c149c66b7b515dc4a98a26acaf9a66ec, type: 3}
   offsetMax: 1
 --- !u!114 &1371081298181747492
 MonoBehaviour:
@@ -149,6 +153,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ThingsToSpawn: []
+  spawnOnDisable: 0
 --- !u!114 &-526301539128864939
 MonoBehaviour:
   m_ObjectHideFlags: 0

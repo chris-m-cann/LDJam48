@@ -17,14 +17,16 @@ namespace LDJam48.StateMachine
 
         public StateRuntime PrevState;
         private StateRuntime _state;
+        private StateRuntime _initialState;
 
         private void Awake()
         {
-            _state = stateMachine.BuildRuntime(this);
+            _initialState = stateMachine.BuildRuntime(this);
         }
 
         private void OnEnable()
         {
+            _state = _initialState;
             if (debugLogs)
             {
                 Debug.Log($"{name}: entering initial state: {_state.Name}");

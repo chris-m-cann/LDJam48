@@ -96,7 +96,7 @@ namespace LDJam48
         private Action _onDashRight;
         private Action _onSlam;
 
-        private void Awake()
+        private void Start()
         {
             // AllowedInputs = (PlayerInputs)0xFF; // all
             AllowedInputs = isTutorialEnabled.Data.TutorialRequired ? initialAllowedInputs : (PlayerInputs)0xFF;

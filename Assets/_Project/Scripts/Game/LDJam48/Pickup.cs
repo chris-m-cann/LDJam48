@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using Util;
+using Util.ObjPool;
 using Util.Var;
 using Util.Var.Events;
 using Util.Var.Observe;
@@ -19,9 +20,13 @@ namespace LDJam48
         [SerializeField] private IntEventReference onPickupEvent;
 
         private Collider2D _col;
-        private void Start()
+        private void Awake()
         {
             _col = GetComponent<Collider2D>();
+        }
+
+        private void OnEnable()
+        {
             _col.enabled = false;
             this.ExecuteAfter(inactiveTime, () => _col.enabled = true);
         }
@@ -38,7 +43,7 @@ namespace LDJam48
         private void DestroyPickup()
         {
             sfxChannel.Raise(clip);
-            Destroy(gameObject);
+            InstantiateEx.Destroy(gameObject);
         }
     }
 }

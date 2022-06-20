@@ -31,7 +31,7 @@ namespace LDJam48
         private bool _lerping = false;
         private bool _paused;
 
-        private void Awake()
+        private void OnEnable()
         {
             _facing = Mathf.Sign(Random.value - .5f);
             _dir = transform.right * _facing;

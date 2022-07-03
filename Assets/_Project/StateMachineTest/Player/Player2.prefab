@@ -15462,7 +15462,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a74252ff38834f64800706db7021e1e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ThingsToSpawn:
+  thingsToSpawn:
   - Item1: {fileID: 3660628703174580137, guid: 55334611ef9e6f147b5a21e5097aa652, type: 3}
     Item2: {x: 0, y: 0}
   spawnOnDisable: 0

@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32123cd113ce4421929ebf818b0d7891, type: 3}
   m_Name: GraceTime_FallingDash
   m_EditorClassIdentifier: 
-  value: 0.2
+  value: 0.4
   persistValue: 1
-  resetValue: 0.2
+  resetValue: 0.4

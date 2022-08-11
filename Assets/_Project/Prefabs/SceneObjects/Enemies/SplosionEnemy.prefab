@@ -363,7 +363,7 @@ MonoBehaviour:
   stateMachine: {fileID: 11400000, guid: 1f69ef0adef98bf45b6946f2f1b10ee6, type: 2}
   transitionOnUpdate: 1
   transitionOnFixedUpdate: 1
-  debugLogs: 0
+  debugLogs: 1
 --- !u!114 &6787248660449325693
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -433,7 +433,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effects:
-  - Name: 
+  - Name: EnemyDead effect
     IsLoopingEffect: 0
     Channel: {fileID: 11400000, guid: 280f09846efbdd849b35abb6f9f6738e, type: 2}
     Position: {fileID: 0}
@@ -574,6 +574,18 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 11400000, guid: a2a4aa7bdad84dd4bb4817469e1d0e5e, type: 2}
           m_ObjectArgumentAssemblyTypeName: Util.AudioClipAsset, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 6787248660449325665}
+        m_TargetAssemblyTypeName: LDJam48.StateMachine.StateMachineBehaviour, Assembly-CSharp
+        m_MethodName: Stop
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 

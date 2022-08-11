@@ -26,7 +26,7 @@ MonoBehaviour:
       Data: 0|LDJam48.StateMachine.StateAction[], Assembly-CSharp
     - Name: 
       Entry: 12
-      Data: 2
+      Data: 3
     - Name: 
       Entry: 7
       Data: 1|LDJam48.StateMachine.Action.EnableBehaviourStateAction, Assembly-CSharp
@@ -79,36 +79,45 @@ MonoBehaviour:
       Entry: 8
       Data: 
     - Name: 
+      Entry: 7
+      Data: 4|LDJam48.StateMachine.Action.EnableGameObjectsStateAction, Assembly-CSharp
+    - Name: objects
+      Entry: 7
+      Data: 5|LDJam48.StateMachine.Action.EnableGameObject[], Assembly-CSharp
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: LDJam48.StateMachine.Action.EnableGameObject, Assembly-CSharp
+    - Name: GameObjectName
+      Entry: 1
+      Data: BounceDetector
+    - Name: enabledOnEnter
+      Entry: 5
+      Data: true
+    - Name: enabledOnExit
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
       Entry: 13
       Data: 
     - Name: 
       Entry: 8
       Data: 
     - Name: OnEnterActions
-      Entry: 7
-      Data: 4|LDJam48.StateMachine.OneShotAction[], Assembly-CSharp
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: OnExitActions
-      Entry: 7
-      Data: 5|LDJam48.StateMachine.OneShotAction[], Assembly-CSharp
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: OnUpdateActions
       Entry: 7
       Data: 6|LDJam48.StateMachine.OneShotAction[], Assembly-CSharp
     - Name: 
@@ -120,9 +129,33 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: OnFixedUpdateActions
+    - Name: OnExitActions
       Entry: 7
       Data: 7|LDJam48.StateMachine.OneShotAction[], Assembly-CSharp
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: OnUpdateActions
+      Entry: 7
+      Data: 8|LDJam48.StateMachine.OneShotAction[], Assembly-CSharp
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: OnFixedUpdateActions
+      Entry: 7
+      Data: 9|LDJam48.StateMachine.OneShotAction[], Assembly-CSharp
     - Name: 
       Entry: 12
       Data: 0

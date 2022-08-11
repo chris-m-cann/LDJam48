@@ -13,3 +13,6 @@ MonoBehaviour:
   m_Name: Tile_OnOffSpikes
   m_EditorClassIdentifier: Assembly-CSharp:LDJam48.LevelGen:ProbabilityTile
   prefab: {fileID: 1300161613226361153, guid: 1c570f441447df446a48421ddf98fd87, type: 3}
+  BlackboardEntries:
+  - Item1: delay
+    Item2: 0.5

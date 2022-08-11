@@ -1,4 +1,5 @@
 using System;
+using System.Diagnostics.CodeAnalysis;
 using Unity.VisualScripting;
 using UnityEngine;
 using Util.Var.Events;
@@ -18,6 +19,15 @@ namespace LDJam48.StateMachine
         public StateRuntime PrevState;
         private StateRuntime _state;
         private StateRuntime _initialState;
+
+        private StateRuntime _nullState = new StateRuntime(
+            null,
+            new IStateAction[] { },
+            new IOneShotAction[] { },
+            new IOneShotAction[] { },
+            new IOneShotAction[] { },
+            new IOneShotAction[] { }
+        );
 
         private void Awake()
         {
@@ -86,6 +96,11 @@ namespace LDJam48.StateMachine
         public void StateComplete(int exitCode)
         {
             StateCompletedItself?.Invoke(exitCode);
+        }
+
+        public void Stop()
+        {
+            _state = _nullState;
         }
 
     }

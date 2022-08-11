@@ -202,12 +202,30 @@ namespace Util
         [MenuItem("Tools/ScreenshotAllLevels")]
         private static void ScreenshotAllLevels()
         {
+            ClearOutputDirectory();
+
             ForeachForldersAndFiles(Application.dataPath + "/" + LEVELS_ASSET_FOLDER);
             
             // Refresh the AssetsDatabase so all the file actually appears in Unity
             AssetDatabase.Refresh();
         }
-        
+
+        private static void ClearOutputDirectory()
+        {
+            var outputFolder = Application.dataPath + "/" + SCREENSHOT_ASSET_FOLDER;
+            var di = new DirectoryInfo(outputFolder);
+
+            foreach (FileInfo file in di.EnumerateFiles())
+            {
+                file.Delete();
+            }
+
+            foreach (DirectoryInfo dir in di.EnumerateDirectories())
+            {
+                dir.Delete(true);
+            }
+        }
+
         private static void ForeachForldersAndFiles(string path)
         {
             DirectoryInfo di = new DirectoryInfo(path);

@@ -42,7 +42,7 @@ namespace LDJam48.StateMachine
 
     public class StateRuntime : IStateMachineRuntimeComponent
     {
-        public string Name => _source.name;
+        public string Name;
         private readonly State _source;
         private readonly IStateAction[] _actions;
         private readonly IOneShotAction[] _onEnterActions;
@@ -63,6 +63,14 @@ namespace LDJam48.StateMachine
         )
         {
             _source = source;
+            if (source != null)
+            {
+                Name = source.name;
+            }
+            else
+            {
+                Name = "null state";
+            }
             _actions = actions ?? Array.Empty<IStateAction>();
             _onEnterActions = onEnterActions ?? Array.Empty<IOneShotAction>();
             _onExitActions = onExitActions ?? Array.Empty<IOneShotAction>();
@@ -192,7 +200,7 @@ namespace LDJam48.StateMachine
                             sb.Append($"{result.First}={result.Second}, ");
                         }
 
-                        Debug.Log($"{Name}->{transition.To.Name}. because: {sb}");
+                        Debug.Log($"{_machine.gameObject.name}: {Name}->{transition.To.Name}. because: {sb}");
                     }
 
 

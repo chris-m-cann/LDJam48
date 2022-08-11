@@ -39,7 +39,7 @@ namespace LDJam48
 
         private void Update()
         {
-            if (!_running) return;
+            if (!_running || player.Value == null) return;
 
             OnDistanceChanged((int)Mathf.Abs(player.Value.transform.position.y - _startY));
         }

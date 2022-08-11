@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Tilemaps;
@@ -50,7 +51,21 @@ namespace LDJam48.LevelGen
                     if (tile is PrefabTile holder)
                     {
                         var worldPos = _tilemap.CellToWorld(cell) + new Vector3(.5f, .5f);
-                        InstantiateEx.Create(holder.Prefab, worldPos, _tilemap.GetTransformMatrix(cell).rotation);
+                        var mat = _tilemap.GetTransformMatrix(cell);
+
+                        var zrot = mat.rotation.eulerAngles.z;
+                        var instance = InstantiateEx.Create(holder.Prefab, worldPos, Quaternion.Euler(0, 0, zrot));
+                        
+                        var flipX = Mathf.Approximately(mat.m00, -1);
+                        var flipY = Mathf.Approximately(mat.m11, -1);
+                        if (flipX || flipY)
+                        {
+                            if (instance.TryGetComponent(out SpriteRenderer sprite))
+                            {
+                                sprite.flipX = flipX;
+                                sprite.flipY = flipY;
+                            }
+                        }
                     }
                 }
             }

@@ -18,6 +18,7 @@ MonoBehaviour:
     ReferencedUnityObjects:
     - {fileID: 11400000, guid: d6c91301799fd544b83bc3c842d8f23c, type: 2}
     - {fileID: 11400000, guid: 7ada8ad8ed2b33c438df8b1f9cba7923, type: 2}
+    - {fileID: 11400000, guid: 248397d18be88a04596b0d8275b7645c, type: 2}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -28,7 +29,7 @@ MonoBehaviour:
       Data: 0|LDJam48.StateMachine.StateTransition[], Assembly-CSharp
     - Name: 
       Entry: 12
-      Data: 2
+      Data: 3
     - Name: 
       Entry: 7
       Data: LDJam48.StateMachine.StateTransition, Assembly-CSharp
@@ -180,9 +181,84 @@ MonoBehaviour:
       Entry: 8
       Data: 
     - Name: 
+      Entry: 7
+      Data: LDJam48.StateMachine.StateTransition, Assembly-CSharp
+    - Name: From
+      Entry: 10
+      Data: 2
+    - Name: Descriptions
+      Entry: 7
+      Data: 9|LDJam48.StateMachine.TransitionDesc[], Assembly-CSharp
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: LDJam48.StateMachine.TransitionDesc, Assembly-CSharp
+    - Name: To
+      Entry: 10
+      Data: 0
+    - Name: Conditions
+      Entry: 7
+      Data: 10|LDJam48.StateMachine.ConditionPair[], Assembly-CSharp
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: LDJam48.StateMachine.ConditionPair, Assembly-CSharp
+    - Name: Condition
+      Entry: 7
+      Data: 11|LDJam48.StateMachine.Conditions.AfterTimeCondition, Assembly-CSharp
+    - Name: timeout
+      Entry: 4
+      Data: 0
+    - Name: debug
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: Operator
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
       Entry: 13
       Data: 
     - Name: 
       Entry: 8
       Data: 
-  InitialState: {fileID: 11400000, guid: d6c91301799fd544b83bc3c842d8f23c, type: 2}
+    - Name: OnTransitionActions
+      Entry: 7
+      Data: 12|LDJam48.StateMachine.OneShotAction[], Assembly-CSharp
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+  InitialState: {fileID: 11400000, guid: 248397d18be88a04596b0d8275b7645c, type: 2}

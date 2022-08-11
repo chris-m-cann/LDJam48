@@ -85,6 +85,7 @@ namespace LDJam48.StateMachine
 
             if (_myDamageable != null)
             {
+                Debug.Log($"{myRoot.name}: killing the damageable");
                 _myDamageable.Kill(gameObject);
             }
         }

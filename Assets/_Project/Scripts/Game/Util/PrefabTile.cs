@@ -1,3 +1,5 @@
+using System;
+using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
@@ -9,8 +11,6 @@ namespace Util
     {
         [SerializeField] private GameObject prefab;
 
-        public Matrix4x4 Mat;
-
         public GameObject Prefab => prefab;
 
         public override void GetTileData(Vector3Int position, ITilemap tilemap, ref TileData tileData)
@@ -18,10 +18,16 @@ namespace Util
             base.GetTileData(position, tilemap, ref tileData);
             var sprite = prefab.GetComponentInChildren<SpriteRenderer>();
 
-            Mat = tilemap.GetTransformMatrix(position);
-
-            if (!Application.isPlaying) tileData.sprite = sprite.sprite;
-            else tileData.sprite = null;
+            if (!Application.isPlaying)
+            {
+                tileData.sprite = sprite.sprite;
+            }
+            else
+            {
+                tileData.sprite = null;
+            }
+            
+            
             tileData.gameObject = null; // prefab; dont do this as tilemap will instantiate without object pooling
         }
     }

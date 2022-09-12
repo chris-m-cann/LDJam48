@@ -9,6 +9,7 @@ namespace LDJam48
         [SerializeField] private bool disableAllOnStartUp = true;
         [SerializeField] private Detector[] detectors;
 
+        // todo (chris) what to do if enableDetector called before OnEnable and disableAllOnStartUp is on?
         private void OnEnable()
         {
             if (disableAllOnStartUp)

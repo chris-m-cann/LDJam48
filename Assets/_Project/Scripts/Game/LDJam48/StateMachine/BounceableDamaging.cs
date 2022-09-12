@@ -18,6 +18,11 @@ namespace LDJam48.StateMachine
         [SerializeField] private GameObject myRoot;
         [SerializeField] private bool drawGizmos;
 
+        public bool UseSafeAngles
+        {
+            get => useSafeAngles;
+            set => useSafeAngles = value;
+        }
 
         private IDamageable _myDamageable;
         private void Awake()

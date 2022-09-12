@@ -63,7 +63,7 @@ namespace LDJam48.LevelGen
                             if (instance.TryGetComponent(out SpriteRenderer sprite))
                             {
                                 sprite.flipX = flipX;
-                                sprite.flipY = flipY;
+                                //sprite.flipY = flipY;
                             }
                         }
                     }

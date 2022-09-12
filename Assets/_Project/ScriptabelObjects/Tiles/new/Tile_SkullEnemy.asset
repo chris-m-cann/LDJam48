@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ca10217ac8f4f0ea21272765002962f, type: 3}
   m_Name: Tile_SkullEnemy
   m_EditorClassIdentifier: Assembly-CSharp:LDJam48.LevelGen:ProbabilityTile
-  prefab: {fileID: 6787248660449325666, guid: 4eb6e286b9b1bf54e9f2d5472e5c3fd7, type: 3}
+  prefab: {fileID: 7497916663847188841, guid: dad4e3871efe6c848a5911f822b94155, type: 3}

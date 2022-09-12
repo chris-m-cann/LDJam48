@@ -36,8 +36,6 @@ namespace LDJam48
 
             var effect = effects[idx];
 
-            Debug.Log($"{name}: playing effect {effect.Name}");
-            
             if (effect.IsLoopingEffect)
             {
                 PlayLoopingEffect(effect);

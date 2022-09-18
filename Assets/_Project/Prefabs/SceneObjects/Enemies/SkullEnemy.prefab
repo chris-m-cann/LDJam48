@@ -160,7 +160,7 @@ MonoBehaviour:
   stateMachine: {fileID: 11400000, guid: 46e83947b952b6446a9868206a3f1846, type: 2}
   transitionOnUpdate: 1
   transitionOnFixedUpdate: 1
-  debugLogs: 1
+  debugLogs: 0
 --- !u!212 &7497916663847188863
 SpriteRenderer:
   m_ObjectHideFlags: 0

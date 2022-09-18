@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e425c681320e4b319225948d09639ee7, type: 3}
   m_Name: IntesityBasedGenerator
   m_EditorClassIdentifier: 
-  Group: {fileID: 11400000, guid: 713658e1c6c266640a34622d8eac7f9b, type: 2}
+  Group: {fileID: 11400000, guid: 4a5053cd41d853644824ce7cbf09c98b, type: 2}
   IntensityFuzz:
     Start: 3
     End: 1

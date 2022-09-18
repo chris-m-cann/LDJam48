@@ -29,7 +29,11 @@ namespace LDJam48
 
         private void OnDisable()
         {
-            if (spawnOnDisable) SpawnObjects();
+            if (spawnOnDisable)
+            {
+                Debug.LogError($"{gameObject.name} SpawnObjects Spawning on ondisable");
+                SpawnObjects();
+            }
         }
 
         public void Add(GameObject prefab, Vector2 offset = default, Action<GameObject> onSpawn = default)
@@ -42,6 +46,8 @@ namespace LDJam48
 
         public void SpawnObjects()
         {
+            
+            Debug.LogError($"{gameObject.name} SpawnObjects call: quitting = {_isQuitting}");
             if (_isQuitting) return;
 
             foreach (var thing in thingsToSpawn)

@@ -272,7 +272,7 @@ GameObject:
   - component: {fileID: 300718401}
   - component: {fileID: -7947203742046877426}
   m_Layer: 8
-  m_Name: SplosionEnemy
+  m_Name: SplosionEnemy_old
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

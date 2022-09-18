@@ -8,15 +8,15 @@ namespace Util.ObjPool
     {
         public ObjectPool Pool;
 
-        private PoolableLifecycleAware[] _poolAwareComponents;
+        private PoolableLifecycleAwareBehaviour[] _poolAwareComponents;
 
-        private PoolableLifecycleAware[] _PoolAwareComponents
+        private PoolableLifecycleAwareBehaviour[] _PoolAwareComponents
         {
             get
             {
                 if (_poolAwareComponents == null)
                 {
-                    _poolAwareComponents = GetComponentsInChildren<PoolableLifecycleAware>();
+                    _poolAwareComponents = GetComponentsInChildren<PoolableLifecycleAwareBehaviour>();
                 }
 
                 return _poolAwareComponents;

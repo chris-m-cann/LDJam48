@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Util.ObjPool
 {
-    public abstract class PoolableLifecycleAware : MonoBehaviour
+    public abstract class PoolableLifecycleAwareBehaviour : MonoBehaviour
     {
         public virtual void OnPush()
         {
@@ -13,4 +13,6 @@ namespace Util.ObjPool
             
         }
     }
+    
+    
 }

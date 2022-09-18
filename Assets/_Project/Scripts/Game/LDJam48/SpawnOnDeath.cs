@@ -7,7 +7,7 @@ using Util.ObjPool;
 
 namespace LDJam48
 {
-    public class SpawnOnDeath: PoolableLifecycleAware
+    public class SpawnOnDeath: PoolableLifecycleAwareBehaviour
     {
         [SerializeField] private List<Pair<GameObject, Vector2>> thingsToSpawn;
         [SerializeField] private bool spawnOnDisable;
@@ -46,8 +46,6 @@ namespace LDJam48
 
         public void SpawnObjects()
         {
-            
-            Debug.LogError($"{gameObject.name} SpawnObjects call: quitting = {_isQuitting}");
             if (_isQuitting) return;
 
             foreach (var thing in thingsToSpawn)

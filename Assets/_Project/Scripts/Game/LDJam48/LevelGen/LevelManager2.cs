@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Transactions;
+using Sirenix.OdinInspector;
 using Unity.VisualScripting;
 using Unity.VisualScripting.FullSerializer;
 using UnityEngine;
@@ -29,6 +30,9 @@ namespace LDJam48.LevelGen
         private Queue<LevelChunk> _activeChunks = new Queue<LevelChunk>();
 
 
+        [SerializeField]
+        [ReadOnly]
+        [InlineProperty]
         private GenerationData _generationData = new GenerationData();
 
 

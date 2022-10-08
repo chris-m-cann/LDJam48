@@ -15,12 +15,12 @@ MonoBehaviour:
   StartChunkGenerator: {fileID: 11400000, guid: 06c909eeb0a914242945baf2313c4778, type: 2}
   AreaGenerators:
   - {fileID: 11400000, guid: 28835fa7a775ffe43b8a8d72ebc3a00d, type: 2}
-  AreasToMaxIntensity: 2
+  AreasToMaxIntensity: 3
   IntensityStart: 0
   IntensityMax: 5
-  AreasToMaxSprintsPerArea: 3
+  AreasToMaxSprintsPerArea: 4
   SprintsPerAreaStart: 5
   SprintsPerAreaMax: 10
-  AreasToMaxChunksPerSprint: 3
+  AreasToMaxChunksPerSprint: 4
   ChunksPerSprintStart: 5
   ChunksPerSprintMax: 10

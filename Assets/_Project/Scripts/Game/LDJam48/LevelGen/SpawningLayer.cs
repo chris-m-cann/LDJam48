@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 using Util;
@@ -48,24 +49,45 @@ namespace LDJam48.LevelGen
                     cell.x = x + startCell.x;
                     cell.y = startCell.y - y;
                     var tile = _tilemap.GetTile(cell);
+
                     if (tile is PrefabTile holder)
                     {
                         var worldPos = _tilemap.CellToWorld(cell) + new Vector3(.5f, .5f);
                         var mat = _tilemap.GetTransformMatrix(cell);
 
-                        var zrot = mat.rotation.eulerAngles.z;
-                        var instance = InstantiateEx.Create(holder.Prefab, worldPos, Quaternion.Euler(0, 0, zrot));
-                        
                         var flipX = Mathf.Approximately(mat.m00, -1);
                         var flipY = Mathf.Approximately(mat.m11, -1);
-                        if (flipX || flipY)
-                        {
-                            if (instance.TryGetComponent(out SpriteRenderer sprite))
-                            {
-                                sprite.flipX = flipX;
-                                //sprite.flipY = flipY;
-                            }
-                        }
+
+                        var eulers = mat.rotation.eulerAngles;
+                        var zrot = eulers.z;
+                        
+                        
+                        GameObject instance;
+                        
+                        
+                        
+                        instance = InstantiateEx.Create(holder.Prefab, worldPos, mat.rotation);
+
+                        // wierd bug i couldnt figure out on mobile. x flipped tiles had eulers ~= Vector3(309.39f, 318.79f, 256.99f)
+                        // so having to limit to either rot or flip. not both
+                        // if (flipX)
+                        // {
+                        //     if (instance.TryGetComponent(out SpriteRenderer sprite))
+                        //     {
+                        //         sprite.flipX = flipX;
+                        //     }
+                        // }
+                        //
+                        // if (flipY)
+                        // {
+                        //     if (instance.TryGetComponent(out SpriteRenderer sprite))
+                        //     {
+                        //         sprite.flipY = flipY;
+                        //     }
+                        // }
+                        
+                        // Debug.LogError($"spawning {instance.name}: rot={eulers}/{zrot}, flip=({flipX}, {flipY})");
+                        
                     }
                 }
             }

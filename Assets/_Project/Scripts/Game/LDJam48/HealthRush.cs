@@ -80,9 +80,9 @@ namespace LDJam48
         // todo (chris) get an event on idle and call this ourselves
         public void Reset()
         {
+            _lastResetYPos = transform.position.y;
             if (!_activated) return;
             StopAllCoroutines();
-            _lastResetYPos = transform.position.y;
             _activated = false;
             onDeactivate?.Invoke();
         }

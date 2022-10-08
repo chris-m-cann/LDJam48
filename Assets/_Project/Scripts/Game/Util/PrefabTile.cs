@@ -21,6 +21,13 @@ namespace Util
             if (!Application.isPlaying)
             {
                 tileData.sprite = sprite.sprite;
+                if (sprite.flipX)
+                {
+                    tileData.color = Color.cyan;
+                } else if (sprite.flipY)
+                {
+                    tileData.color = Color.magenta;
+                }
             }
             else
             {

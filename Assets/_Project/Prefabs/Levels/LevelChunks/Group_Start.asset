@@ -15,3 +15,9 @@ MonoBehaviour:
   Description: The start of a run
   Chunks:
   - {fileID: 7965636448107021769, guid: ae7b470e1ddb95f48b40483df8348e1c, type: 3}
+  - {fileID: 7965636448107021769, guid: 20413e2a9b88ae44385c5b1bbdd0b22e, type: 3}
+  - {fileID: 7965636448107021769, guid: a7261f11a3826e14097f3c83f8bb5c4e, type: 3}
+  - {fileID: 7965636448107021769, guid: 37314c6e993d98e448a5cf63502e4e41, type: 3}
+  - {fileID: 7965636448107021769, guid: 75b9ea6981e4f334c816a717a05ea4c4, type: 3}
+  - {fileID: 7965636448107021769, guid: 9d0ec1d2fc0577146a3e9c8b68ba374d, type: 3}
+  - {fileID: 7965636448107021769, guid: 0e3235a13d7ce564887434bac06c4cf8, type: 3}

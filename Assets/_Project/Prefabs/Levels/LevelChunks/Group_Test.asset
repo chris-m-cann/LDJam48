@@ -14,14 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Description: 
   Chunks:
-  - {fileID: 8654629744598429804, guid: 02d24ca8955fb334785f5bf335306df3, type: 3}
-  - {fileID: 8654629744598429804, guid: aa8bb682ea4953e45aa902172a5eda39, type: 3}
-  - {fileID: 8654629744598429804, guid: e9b82f3a6ee8d1c4e8e8ec24b67c0770, type: 3}
-  - {fileID: 8654629744598429804, guid: b0d06ef6d07d92048b54f3f6b5d6b5ef, type: 3}
-  - {fileID: 8654629744598429804, guid: b56bd8c2a56ef334eb33292a1230db81, type: 3}
-  - {fileID: 8654629744598429804, guid: 24a7fc5b2d3618548a0fc0a9028631db, type: 3}
-  - {fileID: 8654629744598429804, guid: 1ea9d7c7b2bea9948879856b7bd7370b, type: 3}
-  - {fileID: 8654629744598429804, guid: 8dc5bfa4c0118804d819224129534008, type: 3}
-  - {fileID: 8654629744598429804, guid: 579062c40411ce74b8cb0113ecc4103d, type: 3}
-  - {fileID: 8654629744598429804, guid: 6482f5619bf38c546b23c72081a21d39, type: 3}
-  - {fileID: 8654629744598429804, guid: 5e9e56fce94d89d4eae2dba0579a3b12, type: 3}
+  - {fileID: 8654629744598429804, guid: 37cde7b3fb11ce646bc10fd5823396d8, type: 3}

@@ -1,5 +1,8 @@
+using System;
+
 namespace LDJam48.LevelGen
 {
+    [Serializable]
     public class GenerationData
     {
         public float Intensity;

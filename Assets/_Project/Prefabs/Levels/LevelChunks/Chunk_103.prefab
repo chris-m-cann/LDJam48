@@ -41,7 +41,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 649830129626593407, guid: bb245561e9da8d44a87670a148586135, type: 3}
       propertyPath: m_TileSpriteArray.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 649830129626593407, guid: bb245561e9da8d44a87670a148586135, type: 3}
       propertyPath: m_Tiles.Array.data[0].first.x
@@ -74,7 +74,11 @@ PrefabInstance:
     - target: {fileID: 649830129626593407, guid: bb245561e9da8d44a87670a148586135, type: 3}
       propertyPath: m_TileSpriteArray.Array.data[0].m_Data
       value: 
-      objectReference: {fileID: -7281642421239304630, guid: bf1d539a0fe25aa429dc2a6602fbbf13, type: 3}
+      objectReference: {fileID: 0}
+    - target: {fileID: 649830129626593407, guid: bb245561e9da8d44a87670a148586135, type: 3}
+      propertyPath: m_TileSpriteArray.Array.data[1].m_Data
+      value: 
+      objectReference: {fileID: 1039017927, guid: 47f74123ddfd5094a873e0fe5538050a, type: 3}
     - target: {fileID: 649830129626593407, guid: bb245561e9da8d44a87670a148586135, type: 3}
       propertyPath: m_TileColorArray.Array.data[0].m_Data.a
       value: 1
@@ -161,7 +165,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 649830129626593407, guid: bb245561e9da8d44a87670a148586135, type: 3}
       propertyPath: m_TileSpriteArray.Array.data[0].m_RefCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 649830129626593407, guid: bb245561e9da8d44a87670a148586135, type: 3}
+      propertyPath: m_TileSpriteArray.Array.data[1].m_RefCount
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 649830129626593407, guid: bb245561e9da8d44a87670a148586135, type: 3}
+      propertyPath: m_Tiles.Array.data[0].second.m_TileSpriteIndex
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 649830129626593407, guid: bb245561e9da8d44a87670a148586135, type: 3}
+      propertyPath: m_Tiles.Array.data[1].second.m_TileSpriteIndex
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 649830129626593407, guid: bb245561e9da8d44a87670a148586135, type: 3}
       propertyPath: m_Tiles.Array.data[0].second.m_TileObjectToInstantiateIndex

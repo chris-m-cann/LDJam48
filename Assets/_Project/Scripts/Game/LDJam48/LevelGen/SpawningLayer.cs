@@ -55,21 +55,18 @@ namespace LDJam48.LevelGen
                         var worldPos = _tilemap.CellToWorld(cell) + new Vector3(.5f, .5f);
                         var mat = _tilemap.GetTransformMatrix(cell);
 
-                        var flipX = Mathf.Approximately(mat.m00, -1);
-                        var flipY = Mathf.Approximately(mat.m11, -1);
-
-                        var eulers = mat.rotation.eulerAngles;
-                        var zrot = eulers.z;
+                        InstantiateEx.Create(holder.Prefab, worldPos, mat.rotation);
                         
-                        
-                        GameObject instance;
-                        
-                        
-                        
-                        instance = InstantiateEx.Create(holder.Prefab, worldPos, mat.rotation);
+                        // refresh the tile so that its sprite gets removed
+                        _tilemap.RefreshTile(cell);
 
                         // wierd bug i couldnt figure out on mobile. x flipped tiles had eulers ~= Vector3(309.39f, 318.79f, 256.99f)
                         // so having to limit to either rot or flip. not both
+                        // var flipX = Mathf.Approximately(mat.m00, -1);
+                        // var flipY = Mathf.Approximately(mat.m11, -1);
+                        //
+                        // var eulers = mat.rotation.eulerAngles;
+                        // var zrot = eulers.z;
                         // if (flipX)
                         // {
                         //     if (instance.TryGetComponent(out SpriteRenderer sprite))

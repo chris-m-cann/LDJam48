@@ -107,6 +107,7 @@ namespace LDJam48
             var go = spotlight.Value;
             go.SetActive(true);
             var image = go.GetComponent<Image>();
+            image.enabled = true;
 
             var cam = Camera.main;
             var end = Time.time + spotlightTime;

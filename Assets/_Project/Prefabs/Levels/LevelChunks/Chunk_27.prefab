@@ -223,6 +223,10 @@ PrefabInstance:
       propertyPath: m_ColliderPaths.Array.data[0].m_ColliderPaths.Array.data[3].Array.data[7].Y
       value: -80000100
       objectReference: {fileID: 0}
+    - target: {fileID: 1559319112013746583, guid: bb245561e9da8d44a87670a148586135, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
     - target: {fileID: 3755610583786745287, guid: bb245561e9da8d44a87670a148586135, type: 3}
       propertyPath: m_Name
       value: Chunk_27

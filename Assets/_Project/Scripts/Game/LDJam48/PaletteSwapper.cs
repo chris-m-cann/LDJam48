@@ -1,4 +1,5 @@
 using System;
+using Sirenix.OdinInspector;
 using UnityEngine;
 using Util;
 using Util.Colour;
@@ -33,6 +34,12 @@ namespace LDJam48
             {
                 swap.ReplaceColours(newPalette);
             }
+        }
+
+        [Button]
+        private void RunReplacement()
+        {
+            SwapPalette(palette.Value);
         }
 
     }

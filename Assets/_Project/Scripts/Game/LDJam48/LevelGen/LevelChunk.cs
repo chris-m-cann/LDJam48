@@ -21,11 +21,18 @@ namespace LDJam48
         [Range(0, 1)]
         public float PickupTilesSpawnProbablity = 1f;
 
-        public OnChunkBuilt[] OnBuildProcessors => GetComponentsInChildren<OnChunkBuilt>();
+        public OnChunkBuilt[] OnBuildProcessors;
 
         public float Bottom => transform.position.y - Height;
 
         [Button]
         private void Screenshot() => OnScreenshotRequest?.Invoke(this);
+
+        [Button]
+        private void CollectOnBuildProcessors()
+        {
+            OnBuildProcessors = GetComponentsInChildren<OnChunkBuilt>();
+        }
+        
     }
 }

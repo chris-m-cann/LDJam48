@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: RepalcementShaderReplacements
   m_EditorClassIdentifier: 
   materials:
-  - {fileID: 2100000, guid: a79293b58bc304f4e9a8ed59b5d96f08, type: 2}
+  - {fileID: 2100000, guid: 413456c8975dd28498843c38438fad2e, type: 2}
   replacements:
   - Item1: Replacement1
     Item2: 0

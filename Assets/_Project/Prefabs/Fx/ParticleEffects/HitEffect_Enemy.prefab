@@ -9,15 +9,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5751662077703712428, guid: a742ed8fdf279d949a5a1236fea31bd6, type: 3}
       propertyPath: m_Name
-      value: EnemyHitEffect
+      value: HitEffect_Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 5751662077703712434, guid: a742ed8fdf279d949a5a1236fea31bd6, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.b
+      value: 0.67
       objectReference: {fileID: 0}
     - target: {fileID: 5751662077703712434, guid: a742ed8fdf279d949a5a1236fea31bd6, type: 3}
       propertyPath: InitialModule.startColor.maxColor.g
-      value: 1
+      value: 0.67
       objectReference: {fileID: 0}
     - target: {fileID: 5751662077703712434, guid: a742ed8fdf279d949a5a1236fea31bd6, type: 3}
       propertyPath: InitialModule.startColor.maxColor.r
-      value: 0
+      value: 0.67
       objectReference: {fileID: 0}
     - target: {fileID: 5751662077703712435, guid: a742ed8fdf279d949a5a1236fea31bd6, type: 3}
       propertyPath: m_RootOrder

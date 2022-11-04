@@ -93,7 +93,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6953537258690232707, guid: 0c859ec6d3bb89c4c8094ac356642b72, type: 3}
       propertyPath: m_Name
-      value: BertCole
+      value: SubTiltleText_Link
       objectReference: {fileID: 0}
     - target: {fileID: 7361138347777251078, guid: 0c859ec6d3bb89c4c8094ac356642b72, type: 3}
       propertyPath: m_text
@@ -108,8 +108,16 @@ PrefabInstance:
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7361138347777251078, guid: 0c859ec6d3bb89c4c8094ac356642b72, type: 3}
+      propertyPath: m_fontColor.b
+      value: 0.34
+      objectReference: {fileID: 0}
+    - target: {fileID: 7361138347777251078, guid: 0c859ec6d3bb89c4c8094ac356642b72, type: 3}
       propertyPath: m_fontColor.g
-      value: 0
+      value: 0.34
+      objectReference: {fileID: 0}
+    - target: {fileID: 7361138347777251078, guid: 0c859ec6d3bb89c4c8094ac356642b72, type: 3}
+      propertyPath: m_fontColor.r
+      value: 0.34
       objectReference: {fileID: 0}
     - target: {fileID: 7361138347777251078, guid: 0c859ec6d3bb89c4c8094ac356642b72, type: 3}
       propertyPath: m_fontSizeBase
@@ -121,7 +129,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7361138347777251078, guid: 0c859ec6d3bb89c4c8094ac356642b72, type: 3}
       propertyPath: m_fontColor32.rgba
-      value: 4293722355
+      value: 4283914071
       objectReference: {fileID: 0}
     - target: {fileID: 7361138347777251078, guid: 0c859ec6d3bb89c4c8094ac356642b72, type: 3}
       propertyPath: m_VerticalAlignment

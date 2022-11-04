@@ -11,6 +11,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: f522d6443b47dca448d913c6827e225e, type: 3}
+    - target: {fileID: 2309808070555530016, guid: 1e563621c464a9242b028effeae815b2, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
     - target: {fileID: 2309808070555530018, guid: 1e563621c464a9242b028effeae815b2, type: 3}
       propertyPath: m_Name
       value: SideMarker_Start

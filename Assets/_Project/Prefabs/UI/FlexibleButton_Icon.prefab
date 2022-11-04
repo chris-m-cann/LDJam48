@@ -95,6 +95,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FlexibleButton_Icon
       objectReference: {fileID: 0}
+    - target: {fileID: 1628469619759123144, guid: 6299f682fcee6a0428ac59a5c6016274, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
     - target: {fileID: 1628469620582433206, guid: 6299f682fcee6a0428ac59a5c6016274, type: 3}
       propertyPath: m_SizeDelta.x
       value: -42.04
@@ -105,7 +109,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1628469620582433206, guid: 6299f682fcee6a0428ac59a5c6016274, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0.5400009
+      value: 0.54000854
       objectReference: {fileID: 0}
     - target: {fileID: 1628469620582433206, guid: 6299f682fcee6a0428ac59a5c6016274, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -136,7 +140,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 2100000, guid: 2f232ee13a3f3ab4e98c1aaf4d9b5290, type: 2}
-  m_Color: {r: 0.93725497, g: 0.2784314, b: 0.43529415, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -153,18 +157,3 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &3513808060014168388
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6377352108432484652}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d25e4f3e8e154df68273931cfce972e1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  colours: {fileID: 11400000, guid: 6b00a330c865904409f9fe572680299e, type: 2}
-  colourIndex: 0
-  alphaOverride: 1

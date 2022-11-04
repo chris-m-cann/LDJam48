@@ -13,10 +13,17 @@ namespace Util
 
         public GameObject Prefab => prefab;
 
+        private static bool once = false;
         public override void GetTileData(Vector3Int position, ITilemap tilemap, ref TileData tileData)
         {
             base.GetTileData(position, tilemap, ref tileData);
             var sprite = prefab.GetComponentInChildren<SpriteRenderer>();
+
+            // if (!once)
+            {
+                Debug.Log($"is application playing? {Application.isPlaying}");
+                once = true;
+            }
 
             if (!Application.isPlaying)
             {

@@ -1,0 +1,102 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: MainMenu_Background_atlas
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 0
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: DefaultTexturePlatform
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: -1
+      m_TextureCompression: 0
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 1
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 2088537897, guid: 83014443f24ea224a8a334eb8c655e98, type: 3}
+    - {fileID: -465339252, guid: 83014443f24ea224a8a334eb8c655e98, type: 3}
+    - {fileID: 679959459, guid: 83014443f24ea224a8a334eb8c655e98, type: 3}
+    - {fileID: 21300000, guid: 35401478ef2c12f4db7a42b1e8599d36, type: 3}
+    - {fileID: 21300000, guid: 16b8e0cd375f1a646a5b99ad82293498, type: 3}
+    - {fileID: 21300000, guid: 209aa17b1a9a97349afb290621eb262c, type: 3}
+    - {fileID: 2007717296, guid: 8b47f16cf66600344ae933446b683d1d, type: 3}
+    - {fileID: 1552765965, guid: 8b47f16cf66600344ae933446b683d1d, type: 3}
+    - {fileID: -419881148, guid: 8b47f16cf66600344ae933446b683d1d, type: 3}
+    - {fileID: 1329960399, guid: 8b47f16cf66600344ae933446b683d1d, type: 3}
+    - {fileID: 2800000, guid: 472a6c5b4c5c1a04588951762de85835, type: 3}
+    - {fileID: 2800000, guid: 4e7c61f52702a294882066d3c9ac2a53, type: 3}
+    - {fileID: 21300000, guid: 01ff2d96d45f25f40b7d54a9c52e6eb7, type: 3}
+    - {fileID: 21300000, guid: c049667b03f7e9e4dbc3ed4880c654cb, type: 3}
+    - {fileID: 21300000, guid: 27ab5bcce836769479da0a2d66cd6bfc, type: 3}
+    - {fileID: 21300000, guid: 08a5df7c16ccf6e459f8fcd4ad49007b, type: 3}
+    - {fileID: 21300000, guid: 2a1cbeb00dcf51543a6e15ad13326d88, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 2a1cbeb00dcf51543a6e15ad13326d88, type: 3}
+  - {fileID: -465339252, guid: 83014443f24ea224a8a334eb8c655e98, type: 3}
+  - {fileID: 2088537897, guid: 83014443f24ea224a8a334eb8c655e98, type: 3}
+  - {fileID: 679959459, guid: 83014443f24ea224a8a334eb8c655e98, type: 3}
+  - {fileID: 21300000, guid: 01ff2d96d45f25f40b7d54a9c52e6eb7, type: 3}
+  - {fileID: 21300000, guid: 35401478ef2c12f4db7a42b1e8599d36, type: 3}
+  - {fileID: 21300000, guid: 209aa17b1a9a97349afb290621eb262c, type: 3}
+  - {fileID: 21300000, guid: c049667b03f7e9e4dbc3ed4880c654cb, type: 3}
+  - {fileID: 2007717296, guid: 8b47f16cf66600344ae933446b683d1d, type: 3}
+  - {fileID: 1552765965, guid: 8b47f16cf66600344ae933446b683d1d, type: 3}
+  - {fileID: -419881148, guid: 8b47f16cf66600344ae933446b683d1d, type: 3}
+  - {fileID: 1329960399, guid: 8b47f16cf66600344ae933446b683d1d, type: 3}
+  - {fileID: 21300000, guid: 08a5df7c16ccf6e459f8fcd4ad49007b, type: 3}
+  - {fileID: 21300000, guid: 27ab5bcce836769479da0a2d66cd6bfc, type: 3}
+  - {fileID: 21300000, guid: 16b8e0cd375f1a646a5b99ad82293498, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - background-front
+  - stars-Sheet_1
+  - stars-Sheet_0
+  - stars-Sheet_2
+  - white-square
+  - title-bush-1
+  - title-bush-small
+  - title-tree-leaves
+  - grass-sheet_0
+  - grass-sheet_1
+  - grass-sheet_2
+  - grass-sheet_3
+  - background-mid
+  - background-back
+  - title-bush-2
+  m_RenderDataMap: {}
+  m_Tag: MainMenu_Background_atlas
+  m_IsVariant: 0

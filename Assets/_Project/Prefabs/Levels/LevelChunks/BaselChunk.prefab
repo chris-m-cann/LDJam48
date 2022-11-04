@@ -160,6 +160,11 @@ MonoBehaviour:
   EnemyTiles: {fileID: 649830129626593407}
   PickupTiles: {fileID: 8172453412099849063}
   PickupTilesSpawnProbablity: 1
+  OnBuildProcessors:
+  - {fileID: 8072803424220617516}
+  - {fileID: 1705036146663754033}
+  - {fileID: 9120870749011512657}
+  - {fileID: 7276673843341024337}
 --- !u!1 &4623606791977166593
 GameObject:
   m_ObjectHideFlags: 0
@@ -1348,7 +1353,7 @@ TilemapRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: fc19902f22ef861469149340a28bda64, type: 2}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1474,7 +1479,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb67571f03034884acedac49a9a5cb57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tilesToRefresh: []
 --- !u!114 &8072803424220617516
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1611,7 +1615,7 @@ TilemapRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: fc19902f22ef861469149340a28bda64, type: 2}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1745,7 +1749,7 @@ TilemapRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: fc19902f22ef861469149340a28bda64, type: 2}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

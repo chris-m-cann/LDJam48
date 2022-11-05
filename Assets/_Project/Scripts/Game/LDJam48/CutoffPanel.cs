@@ -1,12 +1,11 @@
 using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 using Util;
 
 namespace LDJam48
 {
-    [RequireComponent(typeof(Image))]
-    [RequireComponent(typeof(TweenBehaviour))]
     public class CutoffPanel : MonoBehaviour
     {
         private static ScreenWipe? lastWipe = null;
@@ -39,14 +38,14 @@ namespace LDJam48
                 SetupWipe(screenWipes.RandomElement());
             }
 
-            tween.Play(0);
+            StartCoroutine(CoPlay(0));
         }
 
         public void WipeOut()
         {
             SetupWipe(screenWipes.RandomElement());
-            
-            tween.Play(1);
+
+            StartCoroutine(CoPlay(1));
         }
 
         private void SetupWipe(ScreenWipe wipe)
@@ -59,8 +58,17 @@ namespace LDJam48
             inDesc.Duration = wipe.WipeInTime;
             outDesc.Duration = wipe.WipeOutTime;
             
+            image.gameObject.SetActive(true);
             image.sprite = wipe.EffectImage;
             lastWipe = wipe;
+        }
+
+        private IEnumerator CoPlay(int idx)
+        {
+            TweenDescription t = tween.GetTween(idx);
+
+            yield return StartCoroutine(tween.CoPlay(t));
+            image.gameObject.SetActive(false);
         }
     }
 }

@@ -1,4 +1,5 @@
 using System;
+using UnityEditor.Rendering.Universal.ShaderGUI;
 using UnityEngine;
 
 namespace Util.Var
@@ -52,9 +53,16 @@ namespace Util.Var
         }
         public T Get() => Value;
 
-        public void Reset()
+        public void Reset(bool silent = false)
         {
-            Value = resetValue;
+            if (silent)
+            {
+                value = resetValue;
+            }
+            else
+            {
+                Value = resetValue;
+            }
         }
     }
 }

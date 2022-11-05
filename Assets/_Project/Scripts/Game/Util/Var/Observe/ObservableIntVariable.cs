@@ -15,5 +15,14 @@ namespace Util.Var.Observe
     [CreateAssetMenu(menuName = "Custom/Observable/int")]
     public sealed class ObservableIntVariable : ObservableVariable<int>
     {
+        
+        public override int Value
+        {
+            get => base.Value;
+            set
+            {
+                base.Value = value;
+            }
+        }
     }
 }

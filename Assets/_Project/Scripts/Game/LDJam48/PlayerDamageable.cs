@@ -52,7 +52,7 @@ namespace LDJam48
 
         private void OnEnable()
         {
-            health.Reset();
+            health.Reset(true);
         }
 
         public void Damage(int amount, GameObject damager)

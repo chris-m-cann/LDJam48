@@ -154,6 +154,8 @@ namespace Util.UI
             yield return StartCoroutine(onCloseTransition.CoTween(this, _tweenBehaviour));
 
             onCloseTransition.OnTransitionComplete?.Invoke();
+            
+            menus[_currentMenu].gameObject.SetActive(false);
         }
 
         private IEnumerator CoDisableMenu()

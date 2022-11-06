@@ -58,7 +58,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 2100000, guid: b4ea0ecf742cd1840be60f6c62f66261, type: 2}
+  m_Material: {fileID: 2100000, guid: 1697f806cc6482e4595256a9df82bafe, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
@@ -1691,7 +1691,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 2100000, guid: 09f2442475114784698a9f41c542ab5f, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 0
+  m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -1929,7 +1929,7 @@ MonoBehaviour:
     PlayType: 0
     PlayOnEnable: 1
     RandomDelay: 0
-    DefaultDelay: {x: 0.1, y: 0}
+    DefaultDelay: {x: 0.5, y: 0}
     TimeScaleDependent: 0
     OnComplete:
       m_PersistentCalls:
@@ -1958,7 +1958,7 @@ MonoBehaviour:
       m_RotationOrder: 0
     Property: 5
     PropertyName: Cutoff
-    Duration: 0.3
+    Duration: 0.5
     RelativeToCurrent: 0
     Start: {x: 1.1, y: 0, z: 0}
     End: {x: 0, y: 0, z: 0}

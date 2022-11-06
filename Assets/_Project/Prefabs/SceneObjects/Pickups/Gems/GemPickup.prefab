@@ -152,7 +152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a74252ff38834f64800706db7021e1e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ThingsToSpawn: []
+  thingsToSpawn: []
   spawnOnDisable: 0
 --- !u!114 &-526301539128864939
 MonoBehaviour:
@@ -250,7 +250,7 @@ MonoBehaviour:
     PlayOnEnable: 1
     RandomDelay: 0
     DefaultDelay: {x: 0, y: 0.5}
-    TimeScaleDependent: 0
+    TimeScaleDependent: 1
     OnComplete:
       m_PersistentCalls:
         m_Calls: []

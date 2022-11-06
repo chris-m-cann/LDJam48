@@ -45,7 +45,7 @@ namespace LDJam48
         {
             SetupWipe(screenWipes.RandomElement());
 
-            StartCoroutine(CoPlay(1));
+            tween.Play(1);
         }
 
         private void SetupWipe(ScreenWipe wipe)
@@ -68,6 +68,7 @@ namespace LDJam48
             TweenDescription t = tween.GetTween(idx);
 
             yield return StartCoroutine(tween.CoPlay(t));
+            yield return new WaitForSeconds(.5f);
             image.gameObject.SetActive(false);
         }
     }

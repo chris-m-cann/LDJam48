@@ -22,7 +22,7 @@ namespace Util.UI
 
         private void Update()
         {
-            _time += Time.deltaTime;
+            _time += Time.unscaledDeltaTime;
             --_count;
             if (_count < 0)
             {

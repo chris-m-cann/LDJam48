@@ -8,12 +8,14 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using Util.Scenes;
+
 namespace Util.Var.Observe
 {
     using UnityEngine;
     
     [CreateAssetMenu(menuName = "Custom/Observable/Util.Scene.SceneManagementRequest")]
-    public sealed class ObservableSceneManagementRequestVariable : ObservableVariable<Util.Scene.SceneManagementRequest>
+    public sealed class ObservableSceneManagementRequestVariable : ObservableVariable<SceneManagementRequest>
     {
     }
 }

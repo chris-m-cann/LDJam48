@@ -1,11 +1,11 @@
 using System.Collections;
+using System.Collections.Generic;
 using System.Linq;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
-namespace Util.Scene
+namespace Util.Scenes
 {
     public class SceneManagementBehaviour : MonoBehaviour
     {
@@ -69,6 +69,48 @@ namespace Util.Scene
             StartCoroutine(CoLoadScene(current));
         }
 
-        public void HandleRequest(SceneManagementRequest request) => request.Perform(this);
+        public void HandleRequest(SceneManagementRequest request)
+        {
+            Debug.Log($"Handling request {request.name}");
+            request.Perform(this);
+        }
+
+        private Dictionary<string, AsyncOperation> _pendingSceneLoads = new();
+        
+        public void LoadInBackground(string sceneName, bool waitForCompletion)
+        {
+            StartCoroutine(CoLoadInBackground(sceneName, waitForCompletion, 30));
+        }
+
+        private IEnumerator CoLoadInBackground(string sceneName, bool waitForCompletion, float maxWait)
+        {
+            yield return null;
+
+            //Begin to load the Scene you specify
+            AsyncOperation asyncOperation = SceneManager.LoadSceneAsync(sceneName);
+            //Don't let the Scene activate until you allow it to
+            asyncOperation.allowSceneActivation = !waitForCompletion;
+
+            if (waitForCompletion)
+            {
+                _pendingSceneLoads[sceneName] = asyncOperation;
+            }
+            
+            float end = Time.unscaledTime + maxWait;
+            
+            while (!asyncOperation.isDone || Time.unscaledTime > end)
+            {
+                yield return null;
+            }
+        }
+        
+        public void CompleteSceneLoad(string sceneName)
+        {
+            if (_pendingSceneLoads.ContainsKey(sceneName))
+            {
+                _pendingSceneLoads[sceneName].allowSceneActivation = true;
+                _pendingSceneLoads.Remove(sceneName);
+            }
+        }
     }
 }

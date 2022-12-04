@@ -8,11 +8,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using Util.Scenes;
+
 namespace Util.Var.Events
 {
     using UnityEngine;
     
-    public sealed class SceneManagementRequestGameEventListenerBehaviour : GameEventListenerBehaviour<Util.Scene.SceneManagementRequest, SceneManagementRequestEventReference>
+    public sealed class SceneManagementRequestGameEventListenerBehaviour : GameEventListenerBehaviour<SceneManagementRequest, SceneManagementRequestEventReference>
     {
     }
 }

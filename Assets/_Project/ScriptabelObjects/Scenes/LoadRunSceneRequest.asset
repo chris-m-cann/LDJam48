@@ -12,5 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8e124f964ca44dc9dca8efd9c0168f1, type: 3}
   m_Name: LoadRunSceneRequest
   m_EditorClassIdentifier: 
-  sceneName: 1_Run
-  scene: {fileID: 102900000, guid: c05955dd8b2666748845092adb19ffec, type: 3}
+  sceneName: Assets/_Project/Scenes/1_Run.unity

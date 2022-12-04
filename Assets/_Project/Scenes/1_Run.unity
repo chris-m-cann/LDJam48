@@ -2506,6 +2506,38 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4805164706726792199, guid: ca2aba6606374dd4ab8edb2070c59b1c, type: 3}
+      propertyPath: onClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: Util.Var.Events.GameEvent`1[[Util.Scenes.SceneManagementRequest, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4805164706726792199, guid: ca2aba6606374dd4ab8edb2070c59b1c, type: 3}
+      propertyPath: onClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: Util.Scenes.SceneManagementRequest, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4805164706924620011, guid: ca2aba6606374dd4ab8edb2070c59b1c, type: 3}
+      propertyPath: onClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: Util.Var.Events.GameEvent`1[[Util.Scenes.SceneManagementRequest, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4805164706924620011, guid: ca2aba6606374dd4ab8edb2070c59b1c, type: 3}
+      propertyPath: onClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: Util.Scenes.SceneManagementRequest, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4805164707050274532, guid: ca2aba6606374dd4ab8edb2070c59b1c, type: 3}
+      propertyPath: onClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: Util.Var.Events.GameEvent`1[[Util.Scenes.SceneManagementRequest, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4805164707050274532, guid: ca2aba6606374dd4ab8edb2070c59b1c, type: 3}
+      propertyPath: onClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: Util.Scenes.SceneManagementRequest, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4805164707213540929, guid: ca2aba6606374dd4ab8edb2070c59b1c, type: 3}
+      propertyPath: onClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: Util.Var.Events.GameEvent`1[[Util.Scenes.SceneManagementRequest, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4805164707213540929, guid: ca2aba6606374dd4ab8edb2070c59b1c, type: 3}
+      propertyPath: onClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: Util.Scenes.SceneManagementRequest, Assembly-CSharp
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ca2aba6606374dd4ab8edb2070c59b1c, type: 3}
 --- !u!4 &1886929231511683511 stripped

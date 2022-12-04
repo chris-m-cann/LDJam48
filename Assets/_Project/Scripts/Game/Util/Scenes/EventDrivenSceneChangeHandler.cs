@@ -2,7 +2,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace Util.Scene
+namespace Util.Scenes
 {
     public class EventDrivenSceneChangeHandler : SceneChangeHandler
     {

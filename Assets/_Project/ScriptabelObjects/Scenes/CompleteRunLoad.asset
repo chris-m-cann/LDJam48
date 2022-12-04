@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f8e124f964ca44dc9dca8efd9c0168f1, type: 3}
-  m_Name: LoadMainMenuRequest
+  m_Script: {fileID: 11500000, guid: 46eedc76a09b44e88979ef0f6b607180, type: 3}
+  m_Name: CompleteRunLoad
   m_EditorClassIdentifier: 
-  sceneName: Assets/_Project/Scenes/0_MainMenu.unity
+  sceneName: Assets/_Project/Scenes/1_Run.unity

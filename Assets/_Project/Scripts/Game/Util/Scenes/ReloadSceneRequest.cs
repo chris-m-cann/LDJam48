@@ -1,7 +1,6 @@
-using LDJam48.LevelGen;
 using UnityEngine;
 
-namespace Util.Scene
+namespace Util.Scenes
 {
     [CreateAssetMenu(menuName = "Custom/Scenes/ReloadSceneRequest")]
     public class ReloadSceneRequest : SceneManagementRequest

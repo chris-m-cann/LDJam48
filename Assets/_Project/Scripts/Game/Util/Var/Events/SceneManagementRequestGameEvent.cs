@@ -8,17 +8,19 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using Util.Scenes;
+
 namespace Util.Var.Events
 {
     using UnityEngine;
     using Util.Var.Observe;
     
     [CreateAssetMenu(menuName = "Custom/Event/Util.Scene.SceneManagementRequest")]
-    public sealed class SceneManagementRequestGameEvent : GameEvent<Util.Scene.SceneManagementRequest>
+    public sealed class SceneManagementRequestGameEvent : GameEvent<SceneManagementRequest>
     {
     }
     [System.Serializable()]
-    public sealed class SceneManagementRequestEventReference : EventReference<SceneManagementRequestGameEvent, ObservableSceneManagementRequestVariable, Util.Scene.SceneManagementRequest>
+    public sealed class SceneManagementRequestEventReference : EventReference<SceneManagementRequestGameEvent, ObservableSceneManagementRequestVariable, SceneManagementRequest>
     {
     }
 }

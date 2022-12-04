@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-namespace Util.Scene
+namespace Util.Scenes
 {
     public abstract class SceneChangeHandler: MonoBehaviour
     {

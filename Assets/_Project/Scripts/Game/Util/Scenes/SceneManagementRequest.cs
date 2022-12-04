@@ -1,8 +1,6 @@
-using System;
-using UnityEditor;
 using UnityEngine;
 
-namespace Util.Scene
+namespace Util.Scenes
 {
     public abstract class SceneManagementRequest : ScriptableObject
     {

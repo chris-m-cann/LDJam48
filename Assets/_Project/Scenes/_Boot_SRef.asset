@@ -9,7 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f8e124f964ca44dc9dca8efd9c0168f1, type: 3}
-  m_Name: LoadMainMenuRequest
+  m_Script: {fileID: 11500000, guid: 50755ec38d7e42f3bc00697f52fe6bd7, type: 3}
+  m_Name: _Boot_SRef
   m_EditorClassIdentifier: 
-  sceneName: Assets/_Project/Scenes/0_MainMenu.unity
+  scene: Assets/_Project/Scenes/_Boot.unity
+  requires: []

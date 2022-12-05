@@ -12,7 +12,7 @@ namespace Util.Scenes
         public override void Perform(SceneManagementBehaviour manager)
         {
             Debug.Log($"completeing scene start: {sceneName}");
-            manager.CompleteSceneLoad(sceneName);
+            manager.CompleteLoadInBackground(sceneName);
         }
     }
 }

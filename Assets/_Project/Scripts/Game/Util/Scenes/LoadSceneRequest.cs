@@ -11,7 +11,7 @@ namespace Util.Scenes
 
         public override void Perform(SceneManagementBehaviour manager)
         {
-            manager.LoadScene(sceneName);
+            manager.ReplaceActiveScene(sceneName);
         }
     }
 }

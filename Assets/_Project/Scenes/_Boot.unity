@@ -182,8 +182,59 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3306669559423055651, guid: 5f69ca2606ba77143812c2ac12bcc642, type: 3}
+      propertyPath: firstScene
+      value: Assets/_Project/Scenes/0_MainMenu.unity
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5f69ca2606ba77143812c2ac12bcc642, type: 3}
+--- !u!1 &291184301 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3306669559423055649, guid: 5f69ca2606ba77143812c2ac12bcc642, type: 3}
+  m_PrefabInstance: {fileID: 143850200}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &291184305
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 291184301}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32e0dea82d30448ea5eb4369d5f95d96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onSceneLoaded:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 7a67817ab4e3aec489c268963f265f25, type: 2}
+        m_TargetAssemblyTypeName: Util.Var.Events.VoidGameEvent, Assembly-CSharp
+        m_MethodName: Raise
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 291184305}
+        m_TargetAssemblyTypeName: Util.Scenes.EventDrivenSceneChangeHandler, Assembly-CSharp
+        m_MethodName: SceneLoadingEventProcessingComplete
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onSceneEnding:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &759125218
 GameObject:
   m_ObjectHideFlags: 0
@@ -221,20 +272,7 @@ MonoBehaviour:
       m_Calls: []
   onStart:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 11400000, guid: dcd444a6a8e47d046b1bdd832446f5eb, type: 2}
-        m_TargetAssemblyTypeName: Util.Var.Events.GameEvent`1[[Util.Scenes.SceneManagementRequest,
-          Assembly-CSharp
-        m_MethodName: Raise
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 11400000, guid: 1f5f4846438482740863d54056242dfb, type: 2}
-          m_ObjectArgumentAssemblyTypeName: Util.Scenes.SceneManagementRequest, Assembly-CSharp
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   onApplicationQuit:
     m_PersistentCalls:
       m_Calls: []

@@ -13,6 +13,7 @@ namespace Util.Scenes
         private bool _sceneEndingNotified;
         public override IEnumerator CoSceneLoaded()
         {
+            if (onSceneLoaded == null || onSceneLoaded.GetPersistentEventCount() == 0) yield break;
             _sceneLoadedNotified = false;
             onSceneLoaded?.Invoke();
 
@@ -24,6 +25,7 @@ namespace Util.Scenes
 
         public override IEnumerator CoSceneEnding()
         {          
+            if (onSceneEnding == null || onSceneEnding.GetPersistentEventCount() == 0) yield break;
             _sceneEndingNotified = false;
             onSceneEnding?.Invoke();
 

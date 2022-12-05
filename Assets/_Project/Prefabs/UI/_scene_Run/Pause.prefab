@@ -611,8 +611,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1628469619714076087, guid: 6299f682fcee6a0428ac59a5c6016274, type: 3}
       propertyPath: onClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: ReloadScene
-      objectReference: {fileID: 0}
+      value:ReloadActiveScene      objectReference: {fileID: 0}
     - target: {fileID: 1628469619714076087, guid: 6299f682fcee6a0428ac59a5c6016274, type: 3}
       propertyPath: onClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: Util.Events.GameEvent`1[[Util.AudioClipAsset, Assembly-CSharp

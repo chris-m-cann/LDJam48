@@ -843,8 +843,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6377352109166331180, guid: 3b8305ead9c7bdb4ea4135d6f70bf4cd, type: 3}
       propertyPath: onClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: ReloadScene
-      objectReference: {fileID: 0}
+      value:ReloadActiveScene      objectReference: {fileID: 0}
     - target: {fileID: 6377352109166331180, guid: 3b8305ead9c7bdb4ea4135d6f70bf4cd, type: 3}
       propertyPath: onClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
       value: Util.SceneManagementBehaviour, Assembly-CSharp

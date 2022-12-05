@@ -10,38 +10,29 @@ namespace Util.Scenes
     public class SceneManagementBehaviour : MonoBehaviour
     {
         [SerializeField] private UnityEvent onSceneLoadingComplete;
-        
-        public void LoadNextScene()
-        {
-            var current = SceneManager.GetActiveScene().buildIndex;
-            var next = current + 1;
-
-            if (next >= SceneManager.sceneCount)
-            {
-                next = 0;
-            }
-
-            StartCoroutine(CoLoadScene(next));
-        }
 
         private IEnumerator CoLoadScene(int sceneIndex)
         {
             yield return StartCoroutine(CoNotifyEnding());
 
-            SceneManager.LoadScene(sceneIndex);
+            SceneManager.LoadScene(sceneIndex, LoadSceneMode.Additive);
 
             yield return StartCoroutine(CoNotifyLoaded());
-            
+
             onSceneLoadingComplete?.Invoke();
         }
 
         private IEnumerator CoLoadScene(string sceneName)
         {
-            yield return StartCoroutine(CoNotifyEnding());
+            Scene active = SceneManager.GetActiveScene();
+            Scene load = SceneManager.GetSceneByPath(sceneName);
+            if (load.isLoaded)
+            {
+                SceneManager.SetActiveScene(load);
+                yield break;
+            }
 
-            SceneManager.LoadScene(sceneName);
-
-            yield return StartCoroutine(CoNotifyLoaded());
+            yield return StartCoroutine(CoReplaceScene(active, sceneName));
         }
 
         private IEnumerator CoNotifyEnding()
@@ -62,11 +53,36 @@ namespace Util.Scenes
 
         public void LoadScene(string sceneName) => StartCoroutine(CoLoadScene(sceneName));
 
-        public void ReloadScene()
+        public void ReloadActiveScene()
         {
-            var current = SceneManager.GetActiveScene().buildIndex;
+            StartCoroutine(CoReloadScene());
+        }
 
-            StartCoroutine(CoLoadScene(current));
+        public IEnumerator CoReloadScene()
+        {
+            yield return StartCoroutine(CoReplaceScene(SceneManager.GetActiveScene(), SceneManager.GetActiveScene().path));
+        }
+
+        public IEnumerator CoReplaceScene(Scene unload, string loadPath)
+        {
+            yield return StartCoroutine(CoNotifyEnding());
+
+            var unloadOp = SceneManager.UnloadSceneAsync(unload);
+            while (unloadOp.isDone)
+            {
+                yield return null;
+            }
+
+
+            var op = SceneManager.LoadSceneAsync(loadPath, LoadSceneMode.Additive);
+
+            op.completed += operation => { SceneManager.SetActiveScene(SceneManager.GetSceneByPath(loadPath)); };
+            while (!op.isDone)
+            {
+                yield return null;
+            }
+
+            yield return StartCoroutine(CoNotifyLoaded());
         }
 
         public void HandleRequest(SceneManagementRequest request)
@@ -76,7 +92,7 @@ namespace Util.Scenes
         }
 
         private Dictionary<string, AsyncOperation> _pendingSceneLoads = new();
-        
+
         public void LoadInBackground(string sceneName, bool waitForCompletion)
         {
             StartCoroutine(CoLoadInBackground(sceneName, waitForCompletion, 30));
@@ -84,10 +100,11 @@ namespace Util.Scenes
 
         private IEnumerator CoLoadInBackground(string sceneName, bool waitForCompletion, float maxWait)
         {
+            if (SceneManager.GetSceneByPath(sceneName).isLoaded) yield break;
             yield return null;
 
             //Begin to load the Scene you specify
-            AsyncOperation asyncOperation = SceneManager.LoadSceneAsync(sceneName);
+            AsyncOperation asyncOperation = SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Additive);
             //Don't let the Scene activate until you allow it to
             asyncOperation.allowSceneActivation = !waitForCompletion;
 
@@ -95,22 +112,48 @@ namespace Util.Scenes
             {
                 _pendingSceneLoads[sceneName] = asyncOperation;
             }
-            
+
             float end = Time.unscaledTime + maxWait;
-            
+
             while (!asyncOperation.isDone || Time.unscaledTime > end)
             {
                 yield return null;
             }
+
+            SceneManager.SetActiveScene(SceneManager.GetSceneByPath(sceneName));
         }
-        
+
         public void CompleteSceneLoad(string sceneName)
+        {
+            StartCoroutine(CoCompleteSceneLoad(sceneName));
+        }
+
+        private IEnumerator CoCompleteSceneLoad(string sceneName)
         {
             if (_pendingSceneLoads.ContainsKey(sceneName))
             {
+                var unloadTask = SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
+
+                Debug.Log($"unloaded menu");
+                _pendingSceneLoads[sceneName].completed += operation =>
+                {
+                    SceneManager.SetActiveScene(SceneManager.GetSceneByPath(sceneName));
+                };
                 _pendingSceneLoads[sceneName].allowSceneActivation = true;
                 _pendingSceneLoads.Remove(sceneName);
+
+                unloadTask.allowSceneActivation = true;
+                while (!unloadTask.isDone)
+                {
+                    yield return null;
+                }
             }
+        }
+
+
+        public void SetActiveScene(string scenePath)
+        {
+            SceneManager.SetActiveScene(SceneManager.GetSceneByPath(scenePath));
         }
     }
 }

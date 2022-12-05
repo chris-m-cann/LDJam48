@@ -2863,7 +2863,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 786991301}
         m_TargetAssemblyTypeName: Util.SceneManagementBehaviour, Assembly-CSharp
-        m_MethodName: ReloadScene
+        m_MethodName: ReloadActiveScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

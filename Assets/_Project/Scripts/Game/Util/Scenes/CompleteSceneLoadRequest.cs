@@ -5,7 +5,7 @@ namespace Util.Scenes
     [CreateAssetMenu(menuName = "Custom/Scenes/CompleteSceneLoadRequest")]
     public class CompleteSceneLoadRequest : SceneManagementRequest
     {
-        [SceneName]
+        [ScenePath]
         [SerializeField] private string sceneName;
         
 

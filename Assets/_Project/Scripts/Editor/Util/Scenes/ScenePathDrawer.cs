@@ -3,8 +3,8 @@ using UnityEngine;
 
 namespace Util.Scenes
 {
-    [CustomPropertyDrawer(typeof(SceneNameAttribute))]
-    public class SceneNameDrawer : PropertyDrawer
+    [CustomPropertyDrawer(typeof(ScenePathAttribute))]
+    public class ScenePathDrawer : PropertyDrawer
     {
         public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
         {
@@ -15,7 +15,7 @@ namespace Util.Scenes
 
             using var change = new EditorGUI.ChangeCheckScope();
             
-            var newScene = EditorGUILayout.ObjectField("scene", oldScene, typeof(SceneAsset), false) as SceneAsset;
+            var newScene = EditorGUILayout.ObjectField(label, oldScene, typeof(SceneAsset), false) as SceneAsset;
 
             if (change.changed)
             {
@@ -24,6 +24,11 @@ namespace Util.Scenes
             }
 
             property.serializedObject.ApplyModifiedProperties();
+        }
+
+        public override float GetPropertyHeight(SerializedProperty property, GUIContent label)
+        {
+            return EditorGUIUtility.singleLineHeight;
         }
     }
 }

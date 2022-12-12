@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using LDJam48.Var.Observe;
 using UnityEngine;
 using UnityEngine.UI;
 using Util;
@@ -9,17 +10,10 @@ namespace LDJam48
     public class CutoffPanel : MonoBehaviour
     {
         private static ScreenWipe? lastWipe = null;
-        [Serializable]
-        public struct ScreenWipe
-        {
-            public Sprite EffectImage;
-            public float WipeInTime;
-            public float WipeOutTime;
-        }
 
         [SerializeField] private TweenBehaviour tween;
         [SerializeField] private Image image;
-        [SerializeField] private ScreenWipe[] screenWipes;
+        [SerializeField] private ObservableScreenWipeVariable screenWipe;
         [SerializeField] private bool wipeInOnStart = true;
 
         private void Start()
@@ -27,23 +21,29 @@ namespace LDJam48
             if (wipeInOnStart) WipeIn();
         }
 
-        public void WipeIn()
-        {            
-            if (lastWipe.HasValue)
-            {
-                SetupWipe(lastWipe.Value);
-            }
-            else
-            {
-                SetupWipe(screenWipes.RandomElement());
-            }
+        private void OnEnable()
+        {
+            screenWipe.OnValueChanged += WipeOut;
+        }
 
+        private void OnDisable()
+        {
+            screenWipe.OnValueChanged -= WipeOut;
+        }
+
+         
+
+        public void WipeIn()
+        {
+            if (screenWipe.Value.EffectImage == null) return;
+            
+            SetupWipe(screenWipe.Value);
             StartCoroutine(CoPlay(0));
         }
 
-        public void WipeOut()
+        private void WipeOut(ScreenWipe wipe)
         {
-            SetupWipe(screenWipes.RandomElement());
+            SetupWipe(wipe);
 
             tween.Play(1);
         }

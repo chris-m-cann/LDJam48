@@ -11,9 +11,18 @@ namespace Util
         private T[] _all;
         private int _idx;
 
-        public ScrabbleBag(T[] data)
+        public ScrabbleBag(T[] data, bool copy = false)
         {
-            _all = data;
+            if (copy)
+            {
+                _all = new T[data.Length];
+                Array.Copy(data, _all, data.Length);
+            }
+            else
+            {
+                _all = data;
+            }
+
             Shuffle();
         }
 

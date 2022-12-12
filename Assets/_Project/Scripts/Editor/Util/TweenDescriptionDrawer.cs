@@ -27,6 +27,7 @@ namespace Util
             var propPropertyName = property.FindPropertyRelative("PropertyName");
             var propDuration = property.FindPropertyRelative("Duration");
             var propRelativeToCurrent = property.FindPropertyRelative("RelativeToCurrent");
+            var propRelativeToParent = property.FindPropertyRelative(nameof(TweenDescription.RelativeToParent));
             var propStart = property.FindPropertyRelative("Start");
             var propEnd = property.FindPropertyRelative("End");
             var propPlayType = property.FindPropertyRelative("PlayType");
@@ -63,6 +64,20 @@ namespace Util
                 
                 rect = PropertyOnNextLine(rect, propDuration);
                 rect = PropertyOnNextLine(rect, propRelativeToCurrent);
+                
+
+                if (propRelativeToCurrent.boolValue)
+                {
+                    propRelativeToParent.boolValue = false;
+                }
+                
+                rect = PropertyOnNextLine(rect, propRelativeToParent);
+                
+                if (propRelativeToParent.boolValue)
+                {
+                    propRelativeToCurrent.boolValue = false;
+                }
+                
 
                 // display the start and end points based on what you are changing
                 rect = StartAndEndOnNextLines(

@@ -13,6 +13,9 @@ namespace Util.Var.Observe
             remove => OnValueChanged -= value;
         }
 
+
+        public int ActiveObservers => OnValueChanged == null ? 0 : OnValueChanged.GetInvocationList().Length;
+
         public override T Value
         {
             get => base.Value;
@@ -33,6 +36,15 @@ namespace Util.Var.Observe
         public void Raise(T t)
         {
             OnValueChanged?.Invoke(t);
+        }
+
+        public void SetAndRaise(T v, bool raiseIfEqual)
+        {
+            Value = v;
+            if (raiseIfEqual && base.Value?.Equals(v) == true)
+            {
+                Raise(v);
+            }
         }
     }
 }

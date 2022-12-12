@@ -689,6 +689,7 @@ MonoBehaviour:
     PropertyName: Disolve
     Duration: 2
     RelativeToCurrent: 0
+    RelativeToParent: 0
     Start: {x: 0, y: 0, z: 0}
     End: {x: 1, y: 0, z: 0}
     PlayType: 3
@@ -713,6 +714,7 @@ MonoBehaviour:
     PropertyName: Disolve
     Duration: 2
     RelativeToCurrent: 0
+    RelativeToParent: 0
     Start: {x: 1, y: 1, z: 0}
     End: {x: 2, y: 2, z: 0}
     PlayType: 3
@@ -1859,7 +1861,6 @@ GameObject:
   - component: {fileID: 1812579010}
   - component: {fileID: 1812579015}
   - component: {fileID: 1812579013}
-  - component: {fileID: 1725979776}
   - component: {fileID: 1146469217}
   m_Layer: 5
   m_Name: CutoffPannel
@@ -1924,6 +1925,7 @@ MonoBehaviour:
     PropertyName: Cutoff
     Duration: 0.5
     RelativeToCurrent: 0
+    RelativeToParent: 0
     Start: {x: 0, y: 0, z: 0}
     End: {x: 1.1, y: 0, z: 0}
     PlayType: 0
@@ -1933,19 +1935,7 @@ MonoBehaviour:
     TimeScaleDependent: 0
     OnComplete:
       m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1725979776}
-          m_TargetAssemblyTypeName: Util.Scene.EventDrivenSceneChangeHandler, Assembly-CSharp
-          m_MethodName: SceneLoadingEventProcessingComplete
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+        m_Calls: []
   - Name: cover screen
     ObjectToAnimate: {fileID: 1636363592}
     Ease: 1
@@ -1960,6 +1950,7 @@ MonoBehaviour:
     PropertyName: Cutoff
     Duration: 0.5
     RelativeToCurrent: 0
+    RelativeToParent: 0
     Start: {x: 1.1, y: 0, z: 0}
     End: {x: 0, y: 0, z: 0}
     PlayType: 0
@@ -1970,9 +1961,9 @@ MonoBehaviour:
     OnComplete:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1725979776}
-          m_TargetAssemblyTypeName: Util.Scene.EventDrivenSceneChangeHandler, Assembly-CSharp
-          m_MethodName: SceneEndingEventProcessingComplete
+        - m_Target: {fileID: 11400000, guid: 69e5aa21541a3094d85a8037f4688710, type: 2}
+          m_TargetAssemblyTypeName: Util.Var.Events.VoidGameEvent, Assembly-CSharp
+          m_MethodName: Raise
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -1982,36 +1973,6 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
---- !u!114 &1725979776
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1812579009}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 32e0dea82d30448ea5eb4369d5f95d96, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  onSceneLoaded:
-    m_PersistentCalls:
-      m_Calls: []
-  onSceneEnding:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1146469217}
-        m_TargetAssemblyTypeName: LDJam48.CutoffPanel, Assembly-CSharp
-        m_MethodName: WipeOut
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &1146469217
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2026,37 +1987,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tween: {fileID: 1812579013}
   image: {fileID: 1636363594}
-  screenWipes:
-  - EffectImage: {fileID: 21300000, guid: 339973c6d0cd07a4cab323c5300fe236, type: 3}
-    WipeInTime: 0.5
-    WipeOutTime: 0.5
-  - EffectImage: {fileID: 21300000, guid: c5340f81422d62d408280d8823180470, type: 3}
-    WipeInTime: 0.5
-    WipeOutTime: 0.5
-  - EffectImage: {fileID: 21300000, guid: 500b93c0ad229e849bc68c65fd8ceb4b, type: 3}
-    WipeInTime: 0.5
-    WipeOutTime: 0.5
-  - EffectImage: {fileID: 21300000, guid: edd5c1745b2bff6488e0a39de639310f, type: 3}
-    WipeInTime: 0.5
-    WipeOutTime: 0.5
-  - EffectImage: {fileID: 21300000, guid: c1bf022cbff6a6349a414781b9484126, type: 3}
-    WipeInTime: 0.5
-    WipeOutTime: 0.5
-  - EffectImage: {fileID: 21300000, guid: 3e8caa6e7cc00014ea88dc207223ddf5, type: 3}
-    WipeInTime: 0.5
-    WipeOutTime: 0.5
-  - EffectImage: {fileID: 21300000, guid: 4ac7a1b9199b90847b5f428317bf1280, type: 3}
-    WipeInTime: 0.5
-    WipeOutTime: 0.5
-  - EffectImage: {fileID: 21300000, guid: b82ccd1c6920b04408a1b545a18589f7, type: 3}
-    WipeInTime: 0.5
-    WipeOutTime: 0.5
-  - EffectImage: {fileID: 21300000, guid: 035ada7c5484e2142a931b03252b1044, type: 3}
-    WipeInTime: 0.5
-    WipeOutTime: 0.5
-  - EffectImage: {fileID: 21300000, guid: 3e3f1a30419c37b4f9024ed2156013b8, type: 3}
-    WipeInTime: 0.5
-    WipeOutTime: 0.5
+  screenWipe: {fileID: 11400000, guid: 3b3d3844a7c6bb04e91e573b5b4576fb, type: 2}
   wipeInOnStart: 1
 --- !u!1 &1898403255
 GameObject:
@@ -2135,6 +2066,7 @@ MonoBehaviour:
     PropertyName: Disolve
     Duration: 0.5
     RelativeToCurrent: 0
+    RelativeToParent: 0
     Start: {x: 1, y: 0, z: 0}
     End: {x: 0, y: 0, z: 0}
     PlayType: 0
@@ -2171,6 +2103,7 @@ MonoBehaviour:
     PropertyName: Disolve
     Duration: 0.5
     RelativeToCurrent: 0
+    RelativeToParent: 0
     Start: {x: 0, y: 0, z: 0}
     End: {x: 1, y: 0, z: 0}
     PlayType: 0
@@ -2207,6 +2140,7 @@ MonoBehaviour:
     PropertyName: Disolve
     Duration: 2
     RelativeToCurrent: 0
+    RelativeToParent: 0
     Start: {x: 0, y: 0, z: 0}
     End: {x: 0.5, y: 0, z: 0}
     PlayType: 1
@@ -2231,6 +2165,7 @@ MonoBehaviour:
     PropertyName: Disolve
     Duration: 0
     RelativeToCurrent: 0
+    RelativeToParent: 0
     Start: {x: 1, y: 0, z: 0}
     End: {x: 1, y: 0, z: 0}
     PlayType: 0
@@ -3269,19 +3204,7 @@ MonoBehaviour:
   gameEvent: {fileID: 11400000, guid: fa894cfe62d872e44a22d6e2c832eee4, type: 2}
   onEventRaised:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Util.UI.MenuManager, Assembly-CSharp
-        m_MethodName: OpenMenuTo
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &8218987021884100412
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3974,7 +3897,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6377352107545013688, guid: 43111f8ed70bc004b86eec996784736b, type: 3}
       propertyPath: onClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: Util.Var.Events.GameEvent`1[[Util.Scene.SceneManagementRequest, Assembly-CSharp
+      value: Util.Var.Events.GameEvent`1[[Util.Scenes.SceneManagementRequest, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 6377352107545013688, guid: 43111f8ed70bc004b86eec996784736b, type: 3}
       propertyPath: onClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
@@ -3982,7 +3905,7 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: 24dc6ac8984a385478c02913dbe0acde, type: 2}
     - target: {fileID: 6377352107545013688, guid: 43111f8ed70bc004b86eec996784736b, type: 3}
       propertyPath: onClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: Util.Scene.SceneManagementRequest, Assembly-CSharp
+      value: Util.Scenes.SceneManagementRequest, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 6377352107993292635, guid: 43111f8ed70bc004b86eec996784736b, type: 3}
       propertyPath: onClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
@@ -3998,7 +3921,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6377352107993292635, guid: 43111f8ed70bc004b86eec996784736b, type: 3}
       propertyPath: onClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: Util.Var.Events.GameEvent`1[[Util.Scene.SceneManagementRequest, Assembly-CSharp
+      value: Util.Var.Events.GameEvent`1[[Util.Scenes.SceneManagementRequest, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 6377352107993292635, guid: 43111f8ed70bc004b86eec996784736b, type: 3}
       propertyPath: onClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
@@ -4006,7 +3929,7 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: 1f5f4846438482740863d54056242dfb, type: 2}
     - target: {fileID: 6377352107993292635, guid: 43111f8ed70bc004b86eec996784736b, type: 3}
       propertyPath: onClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: Util.Scene.SceneManagementRequest, Assembly-CSharp
+      value: Util.Scenes.SceneManagementRequest, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 6377352108207245714, guid: 43111f8ed70bc004b86eec996784736b, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -4268,6 +4191,7 @@ MonoBehaviour:
     PropertyName: 
     Duration: 0.2
     RelativeToCurrent: 0
+    RelativeToParent: 0
     Start: {x: 0, y: -5, z: 0}
     End: {x: 0, y: 0, z: 0}
     PlayType: 0
@@ -4469,7 +4393,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3721469523005173361, guid: 8a78cee48fdd9644289396acd947e938, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -772.92993
+      value: -772.93
       objectReference: {fileID: 0}
     - target: {fileID: 3721469523005173361, guid: 8a78cee48fdd9644289396acd947e938, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -4653,7 +4577,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8291301314714841879, guid: 8a78cee48fdd9644289396acd947e938, type: 3}
       propertyPath: onClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: Util.Var.Events.GameEvent`1[[Util.Scene.SceneManagementRequest, Assembly-CSharp
+      value: Util.Var.Events.GameEvent`1[[Util.Scenes.SceneManagementRequest, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 8291301314714841879, guid: 8a78cee48fdd9644289396acd947e938, type: 3}
       propertyPath: onClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
@@ -4661,7 +4585,7 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: 24dc6ac8984a385478c02913dbe0acde, type: 2}
     - target: {fileID: 8291301314714841879, guid: 8a78cee48fdd9644289396acd947e938, type: 3}
       propertyPath: onClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: Util.Scene.SceneManagementRequest, Assembly-CSharp
+      value: Util.Scenes.SceneManagementRequest, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 8291301314714841880, guid: 8a78cee48fdd9644289396acd947e938, type: 3}
       propertyPath: m_SizeDelta.x
@@ -4693,7 +4617,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8291301314936579517, guid: 8a78cee48fdd9644289396acd947e938, type: 3}
       propertyPath: onClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: Util.Var.Events.GameEvent`1[[Util.Scene.SceneManagementRequest, Assembly-CSharp
+      value: Util.Var.Events.GameEvent`1[[Util.Scenes.SceneManagementRequest, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 8291301314936579517, guid: 8a78cee48fdd9644289396acd947e938, type: 3}
       propertyPath: onClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
@@ -4701,7 +4625,7 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: 1f5f4846438482740863d54056242dfb, type: 2}
     - target: {fileID: 8291301314936579517, guid: 8a78cee48fdd9644289396acd947e938, type: 3}
       propertyPath: onClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: Util.Scene.SceneManagementRequest, Assembly-CSharp
+      value: Util.Scenes.SceneManagementRequest, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 8293681103746369823, guid: 8a78cee48fdd9644289396acd947e938, type: 3}
       propertyPath: m_fontAsset
@@ -4932,6 +4856,7 @@ MonoBehaviour:
     PropertyName: 
     Duration: 1
     RelativeToCurrent: 0
+    RelativeToParent: 0
     Start: {x: 0, y: 0, z: -10}
     End: {x: 0, y: 0, z: 10}
     PlayType: 1
@@ -4956,6 +4881,7 @@ MonoBehaviour:
     PropertyName: 
     Duration: 1
     RelativeToCurrent: 0
+    RelativeToParent: 0
     Start: {x: 1, y: 1, z: 1}
     End: {x: 1.1, y: 1.1, z: 1}
     PlayType: 1
@@ -4998,6 +4924,7 @@ MonoBehaviour:
     PropertyName: 
     Duration: 0.2
     RelativeToCurrent: 0
+    RelativeToParent: 0
     Start: {x: 0, y: 5, z: 0}
     End: {x: 0, y: 0, z: 0}
     PlayType: 0
@@ -5180,6 +5107,7 @@ MonoBehaviour:
     PropertyName: 
     Duration: 0.2
     RelativeToCurrent: 0
+    RelativeToParent: 0
     Start: {x: 0, y: 5, z: 0}
     End: {x: 0, y: 0, z: 0}
     PlayType: 0

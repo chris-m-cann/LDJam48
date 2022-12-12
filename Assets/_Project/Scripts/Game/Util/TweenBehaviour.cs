@@ -269,9 +269,18 @@ namespace Util
                 tweenEnd += tween.ObjectToAnimate.transform.position;
             }
 
-            // in the middle of chaning te start points
-            tween.ObjectToAnimate.transform.position = tweenStart;
-            return tween.ObjectToAnimate.transform.DOMove(tweenEnd, tween.Duration).From(tweenStart);
+            if (tween.RelativeToParent)
+            {
+                // in the middle of chaning te start points
+                tween.ObjectToAnimate.transform.position = tween.ObjectToAnimate.transform.parent.position + tweenStart;
+                return tween.ObjectToAnimate.transform.DOLocalMove(tweenEnd, tween.Duration).From(tweenStart);
+            }
+            else
+            {
+                // in the middle of chaning te start points
+                tween.ObjectToAnimate.transform.position = tweenStart;
+                return tween.ObjectToAnimate.transform.DOMove(tweenEnd, tween.Duration).From(tweenStart);
+            }
         }
 
         private Tweener BuildRectPositionTweener(TweenDescription tween)

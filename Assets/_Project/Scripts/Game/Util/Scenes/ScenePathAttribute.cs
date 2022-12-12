@@ -4,7 +4,7 @@ using UnityEngine;
 namespace Util.Scenes
 {
     [AttributeUsage(AttributeTargets.Field)]
-    public class SceneNameAttribute : PropertyAttribute
+    public class ScenePathAttribute : PropertyAttribute
     {
         
     }

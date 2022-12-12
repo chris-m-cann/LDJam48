@@ -61,6 +61,8 @@ SpriteAtlas:
     - {fileID: 21300000, guid: 27ab5bcce836769479da0a2d66cd6bfc, type: 3}
     - {fileID: 21300000, guid: 08a5df7c16ccf6e459f8fcd4ad49007b, type: 3}
     - {fileID: 21300000, guid: 2a1cbeb00dcf51543a6e15ad13326d88, type: 3}
+    - {fileID: 21300000, guid: ae6abed9751d4104390f1603b1486601, type: 3}
+    - {fileID: 21300000, guid: f2f3949da6ebc424fb050bb7f6d20052, type: 3}
     bindAsDefault: 1
     isAtlasV2: 0
     cachedData: {fileID: 0}
@@ -72,6 +74,7 @@ SpriteAtlas:
   - {fileID: 679959459, guid: 83014443f24ea224a8a334eb8c655e98, type: 3}
   - {fileID: 21300000, guid: 01ff2d96d45f25f40b7d54a9c52e6eb7, type: 3}
   - {fileID: 21300000, guid: 35401478ef2c12f4db7a42b1e8599d36, type: 3}
+  - {fileID: 21300000, guid: ae6abed9751d4104390f1603b1486601, type: 3}
   - {fileID: 21300000, guid: 209aa17b1a9a97349afb290621eb262c, type: 3}
   - {fileID: 21300000, guid: c049667b03f7e9e4dbc3ed4880c654cb, type: 3}
   - {fileID: 2007717296, guid: 8b47f16cf66600344ae933446b683d1d, type: 3}
@@ -80,6 +83,7 @@ SpriteAtlas:
   - {fileID: 1329960399, guid: 8b47f16cf66600344ae933446b683d1d, type: 3}
   - {fileID: 21300000, guid: 08a5df7c16ccf6e459f8fcd4ad49007b, type: 3}
   - {fileID: 21300000, guid: 27ab5bcce836769479da0a2d66cd6bfc, type: 3}
+  - {fileID: 21300000, guid: f2f3949da6ebc424fb050bb7f6d20052, type: 3}
   - {fileID: 21300000, guid: 16b8e0cd375f1a646a5b99ad82293498, type: 3}
   m_PackedSpriteNamesToIndex:
   - background-front
@@ -88,6 +92,7 @@ SpriteAtlas:
   - stars-Sheet_2
   - white-square
   - title-bush-1
+  - moon
   - title-bush-small
   - title-tree-leaves
   - grass-sheet_0
@@ -96,6 +101,7 @@ SpriteAtlas:
   - grass-sheet_3
   - background-mid
   - background-back
+  - title
   - title-bush-2
   m_RenderDataMap: {}
   m_Tag: MainMenu_Background_atlas

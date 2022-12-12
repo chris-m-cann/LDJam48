@@ -5,7 +5,7 @@ namespace Util.Scenes
     [CreateAssetMenu(menuName = "Custom/Scenes/StartBackgroundSceneLoad")]
     public class StartBackgroundSceneLoad : SceneManagementRequest
     {
-        [SceneName]
+        [ScenePath]
         [SerializeField] private string sceneName;
         [SerializeField] private bool awaitCompletion;
         

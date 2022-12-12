@@ -18,6 +18,7 @@ namespace Util
             public string PropertyName;
             public float Duration;
             public bool RelativeToCurrent;
+            public bool RelativeToParent;
             public Vector3 Start;
             public Vector3 End;
             public TweenBehaviour.PlayType PlayType;

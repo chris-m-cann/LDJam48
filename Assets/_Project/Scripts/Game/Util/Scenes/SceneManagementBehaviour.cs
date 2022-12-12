@@ -10,7 +10,7 @@ namespace Util.Scenes
 {
     public class SceneManagementBehaviour : MonoBehaviour
     {
-        [SceneName] [SerializeField] private string firstScene;
+        [ScenePath] [SerializeField] private string firstScene;
         private Dictionary<string, AsyncOperation> _pendingSceneLoads = new();
 
         private void Start()
@@ -147,12 +147,16 @@ namespace Util.Scenes
         {
             if (_pendingSceneLoads.ContainsKey(sceneName))
             {
+                
+                yield return StartCoroutine(CoNotifyEnding());
                 var unloadTask = SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
 
                 Debug.Log($"unloaded menu");
                 _pendingSceneLoads[sceneName].completed += operation =>
                 {
                     SceneManager.SetActiveScene(SceneManager.GetSceneByPath(sceneName));
+                    
+                    StartCoroutine(CoNotifyLoaded());
                 };
                 _pendingSceneLoads[sceneName].allowSceneActivation = true;
                 _pendingSceneLoads.Remove(sceneName);

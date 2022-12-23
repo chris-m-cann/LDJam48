@@ -13755,7 +13755,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 2100000, guid: 09f2442475114784698a9f41c542ab5f, type: 2}
+  m_Material: {fileID: 2100000, guid: 0853fbffe8c37f04293aed352d8efcdb, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
@@ -22904,7 +22904,16 @@ MonoBehaviour:
   tween: {fileID: 2099642251}
   image: {fileID: 1097962899}
   screenWipe: {fileID: 11400000, guid: 3b3d3844a7c6bb04e91e573b5b4576fb, type: 2}
-  wipeInOnStart: 1
+  wipeInOnStart:
+    Delimeter: 0
+    Variable: {fileID: 11400000, guid: d2672f1b30b4ec94492c8be539887f05, type: 2}
+    Observable: {fileID: 0}
+    Constant: 0
+  setupOnAwake:
+    Delimeter: 0
+    Variable: {fileID: 11400000, guid: d2672f1b30b4ec94492c8be539887f05, type: 2}
+    Observable: {fileID: 0}
+    Constant: 0
 --- !u!114 &2099642251
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22936,7 +22945,7 @@ MonoBehaviour:
     Start: {x: 0, y: 0, z: 0}
     End: {x: 1.1, y: 0, z: 0}
     PlayType: 0
-    PlayOnEnable: 1
+    PlayOnEnable: 0
     RandomDelay: 0
     DefaultDelay: {x: 0.5, y: 0}
     TimeScaleDependent: 0

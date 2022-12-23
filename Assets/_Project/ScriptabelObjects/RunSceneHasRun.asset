@@ -9,6 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9f343e7219f64eb2ba38e8376e0113d7, type: 3}
-  m_Name: completed tween 1
+  m_Script: {fileID: 11500000, guid: 7543a3dbee9647d88b418fb3e309ddf4, type: 3}
+  m_Name: RunSceneHasRun
   m_EditorClassIdentifier: 
+  value: 0
+  persistValue: 0
+  resetValue: 0

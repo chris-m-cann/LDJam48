@@ -40,10 +40,13 @@ namespace Util.Var.Observe
 
         public void SetAndRaise(T v, bool raiseIfEqual)
         {
-            Value = v;
-            if (raiseIfEqual && base.Value?.Equals(v) == true)
+            if (raiseIfEqual && Value?.Equals(v) == true)
             {
                 Raise(v);
+            }
+            else
+            {
+                Value = v;
             }
         }
     }

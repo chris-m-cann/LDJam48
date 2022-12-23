@@ -12,6 +12,8 @@ namespace Util.Scenes
     {
         [ScenePath] [SerializeField] private string firstScene;
         private Dictionary<string, AsyncOperation> _pendingSceneLoads = new();
+        [SerializeField] private UnityEvent sceneUnloaded;
+        
 
         private void Start()
         {
@@ -105,7 +107,6 @@ namespace Util.Scenes
                 yield return null;
             }
 
-
             var op = SceneManager.LoadSceneAsync(loadPath, LoadSceneMode.Additive);
 
             op.completed += operation => { SceneManager.SetActiveScene(SceneManager.GetSceneByPath(loadPath)); };
@@ -149,23 +150,30 @@ namespace Util.Scenes
             {
                 
                 yield return StartCoroutine(CoNotifyEnding());
+                
+                Debug.Log($"unloading {SceneManager.GetActiveScene().name}");
                 var unloadTask = SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
-
-                Debug.Log($"unloaded menu");
+                
+                
                 _pendingSceneLoads[sceneName].completed += operation =>
                 {
+                    Debug.Log($"loaded {sceneName}");
                     SceneManager.SetActiveScene(SceneManager.GetSceneByPath(sceneName));
                     
                     StartCoroutine(CoNotifyLoaded());
                 };
                 _pendingSceneLoads[sceneName].allowSceneActivation = true;
                 _pendingSceneLoads.Remove(sceneName);
-
+                
+                // weird unity nuance that you cant unload on scene async while loading another so need set other scene allowed to load first
                 unloadTask.allowSceneActivation = true;
                 while (!unloadTask.isDone)
                 {
                     yield return null;
                 }
+                
+                sceneUnloaded?.Invoke();
+                Debug.Log($"unloaded done");
             }
         }
     }

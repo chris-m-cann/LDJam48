@@ -50,7 +50,8 @@ namespace LDJam48
             if (wipe.ActiveObservers == 0) yield break;
             
             _wiping = true;
-            wipe.SetAndRaise(test >= 0 ? screenWipes[test] : _wipes.GetRandomElement(), true);
+            wipe.Value = (test >= 0 ? screenWipes[test] : _wipes.GetRandomElement());
+            // wipe.SetAndRaise(test >= 0 ? screenWipes[test] : _wipes.GetRandomElement(), true);
 
             while (_wiping)
             {

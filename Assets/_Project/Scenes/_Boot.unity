@@ -465,7 +465,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 291184301}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 93fbe855cf9f46a5a0ce9f67870d9e93, type: 3}
+  m_Script: {fileID: 11500000, guid: d88c18b1207a4ddaa63693a170b09479, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   screenWipes:
@@ -499,9 +499,11 @@ MonoBehaviour:
   - EffectImage: {fileID: 21300000, guid: 3e3f1a30419c37b4f9024ed2156013b8, type: 3}
     WipeInTime: 0.5
     WipeOutTime: 0.5
-  wipe: {fileID: 11400000, guid: 3b3d3844a7c6bb04e91e573b5b4576fb, type: 2}
-  onWipeComplete: {fileID: 11400000, guid: 69e5aa21541a3094d85a8037f4688710, type: 2}
+  setImage: {fileID: 11400000, guid: 19ea030f771a0c84f8c85ed7b10cde41, type: 2}
+  clearImage: {fileID: 11400000, guid: c48284fbb2a9b4d48970c377c3df547b, type: 2}
   test: -1
+  covered: 0
+  uncovered: 1.1
 --- !u!1 &425878682
 GameObject:
   m_ObjectHideFlags: 0

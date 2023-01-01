@@ -65,13 +65,16 @@ namespace Util.Scenes
 
             var op = SceneManager.LoadSceneAsync(scenePath, LoadSceneMode.Additive);
 
-            op.completed += operation => { SceneManager.SetActiveScene(SceneManager.GetSceneByPath(scenePath)); };
+            op.completed += operation =>
+            {
+                SceneManager.SetActiveScene(SceneManager.GetSceneByPath(scenePath));
+                StartCoroutine(CoNotifyLoaded());
+            };
             while (!op.isDone)
             {
                 yield return null;
             }
 
-            yield return StartCoroutine(CoNotifyLoaded());
         }
 
         private IEnumerator CoNotifyEnding()
@@ -109,13 +112,16 @@ namespace Util.Scenes
 
             var op = SceneManager.LoadSceneAsync(loadPath, LoadSceneMode.Additive);
 
-            op.completed += operation => { SceneManager.SetActiveScene(SceneManager.GetSceneByPath(loadPath)); };
+            op.completed += operation =>
+            {
+                SceneManager.SetActiveScene(SceneManager.GetSceneByPath(loadPath));
+                StartCoroutine(CoNotifyLoaded());
+                
+            };
             while (!op.isDone)
             {
                 yield return null;
             }
-
-            yield return StartCoroutine(CoNotifyLoaded());
         }
 
 

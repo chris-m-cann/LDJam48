@@ -45,7 +45,7 @@ namespace LDJam48
             yield break;
         }
 
-        public override IEnumerator CoSceneEnding()
+        public override IEnumerator CoSceneEnding(string currentScenePath, string nextScenePath)
         {
             if (wipe.ActiveObservers == 0) yield break;
             

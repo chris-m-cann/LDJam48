@@ -23,7 +23,7 @@ namespace Util.Scenes
             }
         }
 
-        public override IEnumerator CoSceneEnding()
+        public override IEnumerator CoSceneEnding(string currentScenePath, string nextScenePath)
         {          
             if (onSceneEnding == null || onSceneEnding.GetPersistentEventCount() == 0) yield break;
             _sceneEndingNotified = false;

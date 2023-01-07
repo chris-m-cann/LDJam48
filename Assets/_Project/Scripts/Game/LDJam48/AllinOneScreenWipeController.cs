@@ -27,6 +27,9 @@ namespace LDJam48
         [SerializeField] private float covered = 0;
         [SerializeField] private float uncovered = 1.1f;
 
+        [SerializeField] private AddManager ads;
+        
+
         private ScrabbleBag<ScreenWipe> _wipes;
         private Material _mat;
         private Image _image;
@@ -108,7 +111,6 @@ namespace LDJam48
             {
                 var t = (Time.unscaledTime - start) / duration;
                 var f = from + (to - from) * Mathf.Clamp01(t);
-                Debug.Log($"CoTween from {from} to {to}: duration {duration},f = {f}");
                 SetCutoff(f);
                 yield return null;
             }
@@ -126,12 +128,14 @@ namespace LDJam48
             _mat.SetFloat(Cutoff, f);
         }
 
-        public override IEnumerator CoSceneEnding()
+        public override IEnumerator CoSceneEnding(string currentScenePath, string nextScenePath)
         {
             _sceneEnded = true;
             _current = (test >= 0) ? screenWipes[test] : _wipes.GetRandomElement();
             yield return StartCoroutine(CoTween(uncovered, covered, _current.WipeOutTime, _current.EffectImage));
             // yield return new WaitForSecondsRealtime(1);
+
+            yield return StartCoroutine(ads.OnSceneEnd(currentScenePath, nextScenePath));
         }
     }
 }

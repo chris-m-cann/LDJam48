@@ -23,7 +23,7 @@ namespace LDJam48
         
         private bool _firstLoad = true;
 
-        private void Start()
+        private void Awake()
         {
             if (SceneManager.sceneCount == 1)
             {
@@ -51,7 +51,7 @@ namespace LDJam48
             yield break;
         }
 
-        public override IEnumerator CoSceneEnding()
+        public override IEnumerator CoSceneEnding(string currentScenePath, string nextScenePath)
         {
             yield break;
         }

@@ -60,7 +60,7 @@ namespace Util.Scenes
 
         private IEnumerator CoLoadScene(string scenePath)
         {
-            yield return StartCoroutine(CoNotifyEnding());
+            yield return StartCoroutine(CoNotifyEnding(SceneManager.GetActiveScene().path, scenePath));
 
 
             var op = SceneManager.LoadSceneAsync(scenePath, LoadSceneMode.Additive);
@@ -77,10 +77,10 @@ namespace Util.Scenes
 
         }
 
-        private IEnumerator CoNotifyEnding()
+        private IEnumerator CoNotifyEnding(string currentScenePath, string nextScenePath)
         {
             var handlers = FindObjectsOfType<SceneChangeHandler>()
-                .Select(h => StartCoroutine(h.CoSceneEnding()));
+                .Select(h => StartCoroutine(h.CoSceneEnding(currentScenePath, nextScenePath)));
 
             yield return this.WaitForAll(handlers);
         }
@@ -102,7 +102,7 @@ namespace Util.Scenes
 
         public IEnumerator CoReplaceScene(Scene unload, string loadPath)
         {
-            yield return StartCoroutine(CoNotifyEnding());
+            yield return StartCoroutine(CoNotifyEnding(unload.path, loadPath));
 
             var unloadOp = SceneManager.UnloadSceneAsync(unload);
             while (unloadOp.isDone)
@@ -155,7 +155,7 @@ namespace Util.Scenes
             if (_pendingSceneLoads.ContainsKey(sceneName))
             {
                 
-                yield return StartCoroutine(CoNotifyEnding());
+                yield return StartCoroutine(CoNotifyEnding(SceneManager.GetActiveScene().path, sceneName));
                 
                 Debug.Log($"unloading {SceneManager.GetActiveScene().name}");
                 var unloadTask = SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());

@@ -4,53 +4,27 @@ using System.Threading.Tasks;
 using UnityEngine;
 using Util.Scenes;
 using Util.Var;
-using Util.Var.Events;
 
 namespace LDJam48
 {
-    public class AddManager : MonoBehaviour
+    public class AddManager : SceneChangeHandler
     {
         [ScenePath]
         [SerializeField] private string runScene;
-        // [SerializeField] private VoidGameEvent onRunStart;
-        // [SerializeField] private VoidGameEvent onRunEnd;
         [SerializeField] private IntReference runDistance;
-        [SerializeField] private float timeBeforeAd = 20;
-        
+        [SerializeField] private float distanceBeforeAd = 20;
+
+
+#if UNITY_ANDROID
         
         private AddMediation _mediation = new AddMediation();
-
-        // private float _runStart;
-        private float _timeSinceLastAd;
+        private float _distanceSinceLastAd;
 
         private void Start()
         {
             _mediation.InitServices();
         }
 
-        // private void OnEnable()
-        // {
-            // onRunStart.OnEventTrigger += OnRunStart;
-            // onRunEnd.OnEventTrigger += OnRunEnd;
-        // }
-        
-        // private void OnDisable()
-        // {
-            // onRunStart.OnEventTrigger -= OnRunStart;
-            // onRunEnd.OnEventTrigger -= OnRunEnd;
-        // }
-
-        // private void OnRunStart(Util.Void v)
-        // {
-        //     _runStart = Time.unscaledTime;
-        //     Debug.Log($"RunStarted @ {_runStart}");
-        // }
-        //
-        // private void OnRunEnd(Util.Void v)
-        // {
-        //     _timeSinceLastAd += Time.unscaledTime - _runStart;
-        //     Debug.Log($"Run Ended _timeSinceLastAdd =  {_timeSinceLastAd}");
-        // }
 
         [ContextMenu("Show Add")]
         public void ShowAdd()
@@ -58,27 +32,35 @@ namespace LDJam48
             _mediation.ShowAd();
         }
 
-        // public IEnumerator MaybeShowAdd()
-        // {
-        //     Debug.Log($"Show ad? {_timeSinceLastAd} > {timeBeforeAd}");
-        //     if (_timeSinceLastAd > timeBeforeAd)
-        //     {
-        //         Debug.Log($"Showing ad");
-        //         Task task = _mediation.ShowAd();
-        //         yield return new WaitUntil(() => task.IsCompleted);
-        //         _timeSinceLastAd = 0;
-        //     }
-        // }
-
-
-        public IEnumerator OnSceneEnd(string oldScene, string newScene)
+        private IEnumerator CoShowAdd()
         {
-            if (oldScene == runScene)
+            Task task = _mediation.ShowAd();
+            yield return new WaitUntil(() => task.IsCompleted);
+        }
+
+        private bool ShouldShowAd()
+        {
+            return _distanceSinceLastAd > distanceBeforeAd;
+        }
+
+        private void Reset()
+        {
+            _distanceSinceLastAd = 0;
+        }
+
+        public override IEnumerator CoSceneLoaded()
+        {
+            yield break;
+        }
+
+        public override IEnumerator CoSceneEnding(string currentScenePath, string nextScenePath)
+        {
+            if (currentScenePath == runScene)
             {
-                _timeSinceLastAd += runDistance.Value;
+                _distanceSinceLastAd += runDistance.Value;
             }
 
-            if (newScene == runScene)
+            if (nextScenePath == runScene)
             {
                 if (ShouldShowAd())
                 {
@@ -89,21 +71,17 @@ namespace LDJam48
             }
         }
         
-        
-        public IEnumerator CoShowAdd()
+#else
+        public override IEnumerator CoSceneLoaded()
         {
-            Task task = _mediation.ShowAd();
-            yield return new WaitUntil(() => task.IsCompleted);
-        }
-        
-        public bool ShouldShowAd()
-        {
-            return _timeSinceLastAd > timeBeforeAd;
+            yield break;
         }
 
-        public void Reset()
+        public override IEnumerator CoSceneEnding(string currentScenePath, string nextScenePath)
         {
-            _timeSinceLastAd = 0;
+
+            yield break;
         }
+#endif
     }
 }

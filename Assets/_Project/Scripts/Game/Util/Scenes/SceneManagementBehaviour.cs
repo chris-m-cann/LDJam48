@@ -80,6 +80,7 @@ namespace Util.Scenes
         private IEnumerator CoNotifyEnding(string currentScenePath, string nextScenePath)
         {
             var handlers = FindObjectsOfType<SceneChangeHandler>()
+                .Where(h => !h.Exclude)
                 .Select(h => StartCoroutine(h.CoSceneEnding(currentScenePath, nextScenePath)));
 
             yield return this.WaitForAll(handlers);
@@ -88,6 +89,7 @@ namespace Util.Scenes
         private IEnumerator CoNotifyLoaded()
         {
             var handlers = FindObjectsOfType<SceneChangeHandler>()
+                .Where(h => !h.Exclude)
                 .Select(h => StartCoroutine(h.CoSceneLoaded()));
 
             yield return this.WaitForAll(handlers);

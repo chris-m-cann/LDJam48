@@ -4,7 +4,6 @@ using UnityEngine.UI;
 using Util;
 using Util.Scenes;
 using Util.Var.Events;
-using Util.Var.Observe;
 
 
 /*
@@ -26,9 +25,6 @@ namespace LDJam48
         [SerializeField] private int test = -1;
         [SerializeField] private float covered = 0;
         [SerializeField] private float uncovered = 1.1f;
-
-        [SerializeField] private AddManager ads;
-        
 
         private ScrabbleBag<ScreenWipe> _wipes;
         private Material _mat;
@@ -133,9 +129,6 @@ namespace LDJam48
             _sceneEnded = true;
             _current = (test >= 0) ? screenWipes[test] : _wipes.GetRandomElement();
             yield return StartCoroutine(CoTween(uncovered, covered, _current.WipeOutTime, _current.EffectImage));
-            // yield return new WaitForSecondsRealtime(1);
-
-            yield return StartCoroutine(ads.OnSceneEnd(currentScenePath, nextScenePath));
         }
     }
 }

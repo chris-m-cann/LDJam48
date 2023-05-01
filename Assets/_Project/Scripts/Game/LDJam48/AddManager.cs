@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Threading.Tasks;
+using LDJam48.Stats;
 using UnityEngine;
 using Util.Scenes;
 using Util.Var;
@@ -12,7 +13,11 @@ namespace LDJam48
         [ScenePath]
         [SerializeField] private string runScene;
         [SerializeField] private IntReference runDistance;
-        [SerializeField] private float distanceBeforeAd = 20;
+        [SerializeField] private float minDistanceBeforeAd = 20;
+        [SerializeField] private StatT<int> maxDistance;
+        [SerializeField] private float maxDistanceFactor = 1.0f;
+        
+        
 
 
 #if UNITY_ANDROID
@@ -40,7 +45,8 @@ namespace LDJam48
 
         private bool ShouldShowAd()
         {
-            return _distanceSinceLastAd > distanceBeforeAd;
+            var distanceBeforeAdd = Mathf.Max(minDistanceBeforeAd, maxDistance.Value * maxDistanceFactor);
+            return _distanceSinceLastAd > distanceBeforeAdd;
         }
 
         private void Reset()

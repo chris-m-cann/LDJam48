@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8463032002252643134}
   - component: {fileID: 8463032002252643135}
   - component: {fileID: 8947325841380811388}
+  - component: {fileID: 1238202177249833093}
   m_Layer: 0
   m_Name: AudioManager
   m_TagString: Untagged
@@ -132,6 +133,35 @@ MonoBehaviour:
   onValueDecreased:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1238202177249833093
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8463032002252643128}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a4a3e39143b4ffa9a2ed9b21c7d92fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 897c8d6bd992b4b49a133da1ca46e96a, type: 2}
+  onEventRaised:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8947325841380811388}
+        m_TargetAssemblyTypeName: Util.Var.Observe.ObservableTrackingBehaviour`2[[System.Int32,
+          mscorlib
+        m_MethodName: Reset
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &2623791037728273393
 PrefabInstance:
   m_ObjectHideFlags: 0

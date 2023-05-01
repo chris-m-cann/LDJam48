@@ -50,14 +50,12 @@ namespace LDJam48
         
         public async Task ShowAd()
         {
-            Debug.Log("Showing ad");
             if (ad.AdState == AdState.Loaded)
             {
                 try
                 {
                     InterstitialAdShowOptions showOptions = new InterstitialAdShowOptions();
                     showOptions.AutoReload = true;
-                    Debug.Log("async Showing ad");
                     await ad.ShowAsync(showOptions);
                     AdShown();
                 }
@@ -67,7 +65,6 @@ namespace LDJam48
                     AdFailedShow(e);
                 }
             }
-            Debug.Log("Showded ad");
         }
 
         void InitializationComplete()
@@ -95,7 +92,7 @@ namespace LDJam48
 
         void AdLoaded(object sender, EventArgs e)
         {
-            Debug.Log("Ad loaded");
+            // Debug.Log("Ad loaded");
         }
 
         void AdFailedLoad(object sender, LoadErrorEventArgs e)
@@ -106,19 +103,14 @@ namespace LDJam48
         
         void AdShown()
         {
-            Debug.Log("Ad shown!");
         }
         
         void AdClosed(object sender, EventArgs e)
         {
-            Debug.Log("Ad has closed");
-            // Execute logic after an ad has been closed.
         }
 
         void AdClicked(object sender, EventArgs e)
         {
-            Debug.Log("Ad has been clicked");
-            // Execute logic after an ad has been clicked.
         }
         
         void AdFailedShow(ShowFailedException e)
@@ -129,7 +121,6 @@ namespace LDJam48
         void ImpressionEvent(object sender, ImpressionEventArgs args)
         {
             var impressionData = args.ImpressionData != null ? JsonUtility.ToJson(args.ImpressionData, true) : "null";
-            Debug.Log("Impression event from ad unit id " + args.AdUnitId + " " + impressionData);
         }
         
     }

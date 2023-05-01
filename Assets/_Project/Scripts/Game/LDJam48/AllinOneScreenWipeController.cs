@@ -92,7 +92,7 @@ namespace LDJam48
         
         private IEnumerator CoTween(float from, float to, float duration, Sprite sprite)
         {
-            Debug.Log($"CoTween from {from} to {to}: duration {duration}, _mat == null:{_mat == null}, _image == null:{_image == null}");
+            // Debug.Log($"CoTween from {from} to {to}: duration {duration}, _mat == null:{_mat == null}, _image == null:{_image == null}");
             if (_mat == null) yield break;
             if (_image == null) yield break; 
             _image.sprite = sprite;

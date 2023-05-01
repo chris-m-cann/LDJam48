@@ -64,5 +64,10 @@ namespace Util.Var.Observe
 
             _prev = t;
         }
+
+        public void Reset()
+        {
+            _prev = observable.Value;
+        }
     }
 }

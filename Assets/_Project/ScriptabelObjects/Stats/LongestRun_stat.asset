@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84b9e436ecab47918204d75ad09406a4, type: 3}
   m_Name: LongestRun_stat-Current
   m_EditorClassIdentifier: 
-  value: 90
+  value: 0
   persistValue: 1
   resetValue: 0
 --- !u!114 &11400000

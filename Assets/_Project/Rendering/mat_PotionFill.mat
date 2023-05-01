@@ -51,7 +51,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - Fill: 0
+    - Fill: 0.14
     - MaxRotationDegrees: 15
     - SloshFequencyFactor: 2
     - _BUILTIN_QueueControl: 0

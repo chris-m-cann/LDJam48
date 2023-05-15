@@ -43,5 +43,13 @@ namespace LDJam48.Save
                 saveable.OnRequestLoad -= RequestLoad;
             }
         }
+
+        public void Reset()
+        {
+            foreach (var saveable in Saveables)
+            {
+                saveable.Reset();
+            }
+        }
     }
 }

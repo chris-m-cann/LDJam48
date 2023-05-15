@@ -57,6 +57,15 @@ namespace LDJam48.Stats
 
             return null;
         }
+
+        public override void Reset()
+        {
+            base.Reset();
+            foreach (var stat in intStats)
+            {
+                stat.Reset();
+            }
+        }
     }
 
     [Serializable]

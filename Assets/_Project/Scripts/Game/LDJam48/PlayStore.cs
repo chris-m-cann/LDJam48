@@ -6,12 +6,15 @@ using LDJam48.Stats;
 using UnityEngine;
 using Util;
 using Util.Var;
+using Util.Var.Events;
 
 namespace LDJam48
 {
     public class PlayStore : MonoBehaviour
     {
         [SerializeField] private StatT<int> maxDistance;
+        [SerializeField] private VoidGameEvent onShowLeaderboardFailed;
+        
 
 
         private bool _isConnected;
@@ -24,15 +27,25 @@ namespace LDJam48
 
         public void ShowLeaderboard()
         {
-            Upload(() => PlayGamesPlatform.Instance.ShowLeaderboardUI(GPGSIds.leaderboard_global_max_distance));
+            Upload(success =>
+            {
+                if (success)
+                {
+                    PlayGamesPlatform.Instance.ShowLeaderboardUI(GPGSIds.leaderboard_global_max_distance);
+                }
+                else
+                {
+                    onShowLeaderboardFailed?.Raise();
+                }
+            });
         }
 
         public void Upload()
         {
-            Upload(() => { });
+            Upload(_ => { });
         }
 
-        private void Upload(Action onUploadComplete)
+        private void Upload(Action<bool> onUploadComplete)
         {
             if (!_isConnected)
             {
@@ -43,12 +56,12 @@ namespace LDJam48
                 OnLoginResponse(SignInStatus.Success, onUploadComplete);
             }
         }
-        private void Login(Action onUploadComplete)
+        private void Login(Action<bool> onUploadComplete)
         {
             PlayGamesPlatform.Instance.Authenticate(status => OnLoginResponse(status, onUploadComplete));
         }
 
-        private void OnLoginResponse(SignInStatus status, Action onUploadComplete)
+        private void OnLoginResponse(SignInStatus status, Action<bool> onUploadComplete)
         {
             if (status == SignInStatus.Success)
             {
@@ -58,10 +71,11 @@ namespace LDJam48
             else
             {
                 _isConnected = false;
+                onUploadComplete?.Invoke(false);
             }
         }
 
-        private void UploadRun(Action onUploadComplete)
+        private void UploadRun(Action<bool> onUploadComplete)
         {           
             PlayGamesPlatform.Instance.ReportScore(maxDistance.Value, GPGSIds.leaderboard_global_max_distance, sent =>
             {
@@ -69,7 +83,7 @@ namespace LDJam48
                 // only returns false f your not authenticated!!!
                 Debug.Log($"Sent run, distance = {maxDistance.Value}, succeeded = {sent}");
   
-                onUploadComplete.Invoke();
+                onUploadComplete.Invoke(true);
             });
         }
         

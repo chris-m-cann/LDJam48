@@ -53,5 +53,11 @@ namespace LDJam48.Save
             
             saveData.LoadComplete();
         }
+        
+        [HorizontalGroup("Buttons"), Button("Reset")]
+        public void Reset()
+        {
+            saveData.Reset();
+        }
     }
 }

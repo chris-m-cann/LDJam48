@@ -11,6 +11,12 @@ namespace LDJam48.Tut
         {
             Data.TutorialRequired = required;
         }
+
+        public override void Reset()
+        {
+            base.Reset();
+            Data.TutorialRequired = true;
+        }
     }
 
     [Serializable]

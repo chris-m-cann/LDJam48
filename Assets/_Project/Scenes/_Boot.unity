@@ -1223,6 +1223,7 @@ GameObject:
   m_Component:
   - component: {fileID: 759125220}
   - component: {fileID: 759125219}
+  - component: {fileID: 759125221}
   m_Layer: 0
   m_Name: BootSequence
   m_TagString: Untagged
@@ -1275,6 +1276,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &759125221
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 759125218}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e7bbbf3dd044d8c97c9b53ea8a16ca8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  screenshotPath: C:\Users\canni\Documents\Code\Unity\LDJam48\Assets\_Project\Sprites\Screenshots
+  filename: screenshot
+  burstDelay: 2
+  burstGap: 0.2
+  numberInBurst: 5
 --- !u!1 &762555109
 GameObject:
   m_ObjectHideFlags: 0
@@ -2199,6 +2217,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxDistance: {fileID: 11400000, guid: 7dac869b5c0cf99448f25bbfcc69e919, type: 2}
+  onShowLeaderboardFailed: {fileID: 11400000, guid: 4a93a6a949b361c42a5086f1e0617563, type: 2}
 --- !u!4 &1478197782
 Transform:
   m_ObjectHideFlags: 0

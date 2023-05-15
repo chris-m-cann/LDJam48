@@ -41,7 +41,7 @@ Material:
     - _BUILTIN_QueueControl: 0
     - _BUILTIN_QueueOffset: 0
     m_Colors:
-    - _ViewportPos: {r: 0.81775856, g: 0.765092, b: 0, a: 0}
+    - _ViewportPos: {r: 0.6764967, g: 0.806746, b: 0, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &5715718254861761486
 MonoBehaviour:

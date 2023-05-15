@@ -23915,6 +23915,39 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 2846048228665042412, guid: ca6b98dd28fbd4a47bdc1c66d3fc962f, type: 3}
   m_PrefabInstance: {fileID: 8378826272913060243}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &8378826272913060245 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3369079674876033002, guid: ca6b98dd28fbd4a47bdc1c66d3fc962f, type: 3}
+  m_PrefabInstance: {fileID: 8378826272913060243}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8378826272913060246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8378826272913060245}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a4a3e39143b4ffa9a2ed9b21c7d92fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 4a93a6a949b361c42a5086f1e0617563, type: 2}
+  onEventRaised:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1012933893}
+        m_TargetAssemblyTypeName: Util.UI.Menu, Assembly-CSharp
+        m_MethodName: SwitchToMenu
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &8501404170506579871
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -40,6 +40,11 @@ namespace LDJam48.Save
                 Key = name;
             }
         }
+
+        public virtual void Reset()
+        {
+            
+        }
     }
 
     public class SaveableSOT<T> : SaveableSO where T : ISaveable

@@ -56,6 +56,14 @@ namespace LDJam48
             sfxMixer.SetFloat(sfxVolumeParam, volumeLevel);
             Data.sfxLevel = level;
         }
+
+        public override void Reset()
+        {
+            base.Reset();
+            SetSfxVolumeLevel(1);
+            SetMusicVolumeLevel(1);
+            SetMasterVolumeLevel(1);
+        }
     }
 
     [Serializable]

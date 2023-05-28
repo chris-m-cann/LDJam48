@@ -22,6 +22,8 @@ namespace LDJam48
         private void OnEnable()
         {
             PlayGamesPlatform.DebugLogEnabled = true;
+            // Activate the Google Play Games platform
+            PlayGamesPlatform.Activate();
             Upload();
         }
 
@@ -58,7 +60,7 @@ namespace LDJam48
         }
         private void Login(Action<bool> onUploadComplete)
         {
-            PlayGamesPlatform.Instance.Authenticate(status => OnLoginResponse(status, onUploadComplete));
+            PlayGamesPlatform.Instance.Authenticate(SignInInteractivity.CanPromptOnce, status => OnLoginResponse(status, onUploadComplete));
         }
 
         private void OnLoginResponse(SignInStatus status, Action<bool> onUploadComplete)
@@ -70,6 +72,7 @@ namespace LDJam48
             }
             else
             {
+                Debug.LogError($"sign in failed, status = {status}");
                 _isConnected = false;
                 onUploadComplete?.Invoke(false);
             }

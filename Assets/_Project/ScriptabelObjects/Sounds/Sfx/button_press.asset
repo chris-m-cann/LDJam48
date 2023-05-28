@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Clips:
   - Enabled: 0
-    clip: {fileID: 8300000, guid: f2f125aad111707479338386c776f35d, type: 3}
+    clip: {fileID: 8300000, guid: c4e53c106f7e47a4b9c80b0455bd94d0, type: 3}
     volume: 1
     mixer: {fileID: 24300002, guid: 10f00995b6c937d4ba2926eed98aba44, type: 2}
     Loop: 0
@@ -28,7 +28,7 @@ MonoBehaviour:
       DurationIn: 0
       DurationOut: 0
   - Enabled: 1
-    clip: {fileID: 8300000, guid: a15f1fc33028a3446803ef324307d89d, type: 3}
+    clip: {fileID: 8300000, guid: 5e969b16d80de8343b7f066dac2ad8fd, type: 3}
     volume: 1
     mixer: {fileID: 24300002, guid: 10f00995b6c937d4ba2926eed98aba44, type: 2}
     Loop: 0
@@ -42,7 +42,7 @@ MonoBehaviour:
       DurationIn: 0
       DurationOut: 0
   - Enabled: 1
-    clip: {fileID: 8300000, guid: 4293248fe72a110439cacee98c3ad438, type: 3}
+    clip: {fileID: 8300000, guid: 8cbdda8263fe61648a0377f1a68effb5, type: 3}
     volume: 1
     mixer: {fileID: 24300002, guid: 10f00995b6c937d4ba2926eed98aba44, type: 2}
     Loop: 0
@@ -56,7 +56,7 @@ MonoBehaviour:
       DurationIn: 0
       DurationOut: 0
   - Enabled: 0
-    clip: {fileID: 8300000, guid: 13b0330c7047ac343b80d42da1075191, type: 3}
+    clip: {fileID: 8300000, guid: 1b7645f64643d6d4f8603e10f27399d5, type: 3}
     volume: 1
     mixer: {fileID: 24300002, guid: 10f00995b6c937d4ba2926eed98aba44, type: 2}
     Loop: 0
@@ -70,7 +70,7 @@ MonoBehaviour:
       DurationIn: 0
       DurationOut: 0
   - Enabled: 0
-    clip: {fileID: 8300000, guid: 88cd9a3eb36d0784986d1c3e1d67ff51, type: 3}
+    clip: {fileID: 8300000, guid: 3ab3ea4beef43e241a136afbecd5df7a, type: 3}
     volume: 1
     mixer: {fileID: 24300002, guid: 10f00995b6c937d4ba2926eed98aba44, type: 2}
     Loop: 0
@@ -84,7 +84,7 @@ MonoBehaviour:
       DurationIn: 0
       DurationOut: 0
   - Enabled: 0
-    clip: {fileID: 8300000, guid: 8a43e7b46250e8444b3466c183f4d592, type: 3}
+    clip: {fileID: 8300000, guid: 089f11d20156c9f499a6e3005c5e5f24, type: 3}
     volume: 1
     mixer: {fileID: 24300002, guid: 10f00995b6c937d4ba2926eed98aba44, type: 2}
     Loop: 0

@@ -15,7 +15,7 @@ MonoBehaviour:
   Clips:
   - Enabled: 1
     clip: {fileID: 8300000, guid: 252356accfa3c97418e708a7e554fd6a, type: 3}
-    volume: 0.023
+    volume: 0.3
     mixer: {fileID: 24300002, guid: 10f00995b6c937d4ba2926eed98aba44, type: 2}
     Loop: 0
     VaryPitch: 0

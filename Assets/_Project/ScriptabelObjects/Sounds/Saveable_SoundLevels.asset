@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Key: SoundLevelsSaveable
   Data:
-    masterVolume: 0.52910644
-    musicLevel: 0.50151604
-    sfxLevel: 0.7084444
+    masterVolume: 1
+    musicLevel: 1
+    sfxLevel: 1
   masterMixer: {fileID: 24100000, guid: 92cf64eafba294446ae244dcd00ffe48, type: 2}
   masterVolumeParam: MasterVolume
   musicMixer: {fileID: 24100000, guid: 5b5102140367c0846922d872dea112df, type: 2}
